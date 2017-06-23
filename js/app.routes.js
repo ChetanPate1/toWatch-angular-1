@@ -17,7 +17,6 @@ function config($stateProvider, $urlProvider){
          controllerAs: 'SigninCtrl'
       })
       .state('account',{
-         // the rest is the same for ui-router and ngRoute...
          url: '/account',
          templateUrl: 'templates/account.html',
       });

@@ -31,7 +31,7 @@ gulp.task('bootstrap', function(){
         .pipe(gulp.dest('build/css'));
 });
 
-gulp.task('css', function(){
+gulp.task('css', ['sass'], function(){
     return gulp.src('css/main.css')
         .pipe(minifycss())
         .pipe(gulp.dest('build/css'));
