@@ -1,15 +1,24 @@
 angular
    .module('app')
    .config(config);
-   
-function config($stateProvider, $urlRouterProvider){
+
+config.$inject = ['$stateProvider'];
+
+function config($stateProvider, $urlProvider){
    $stateProvider
       .state('home',{
          url: '/home',
          templateUrl: 'templates/home.html'
-      }
-
-   );
-
-   $urlRouterProvider.otherwise('home');
+      })
+      .state('signin',{
+         url: '/signin',
+         templateUrl: 'templates/sign.html',
+         controller: 'SigninController',
+         controllerAs: 'SigninCtrl'
+      })
+      .state('account',{
+         // the rest is the same for ui-router and ngRoute...
+         url: '/account',
+         templateUrl: 'templates/account.html',
+      });
 }

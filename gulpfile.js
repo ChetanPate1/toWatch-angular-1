@@ -51,6 +51,11 @@ gulp.task('angular-ui-router', function(){
 });
 
 gulp.task('firebase', function(){
+    return gulp.src('bower_components/firebase/firebase.js')
+        .pipe(gulp.dest('build/js/libs'));
+});
+
+gulp.task('angularfire', function(){
     return gulp.src('bower_components/angularfire/dist/angularfire.min.js')
         .pipe(gulp.dest('build/js/libs'));
 });
