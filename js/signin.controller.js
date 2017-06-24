@@ -2,9 +2,9 @@ angular
    .module('app')
    .controller('SigninController', SigninController);
 
-SigninController.$inject = ['firebaseAuth'];
+SigninController.$inject = ['firebaseAuth', '$state'];
 
-function SigninController(firebaseAuth){
+function SigninController(firebaseAuth, $state){
    var vm = this;
 
    vm.login = login;
@@ -15,12 +15,12 @@ function SigninController(firebaseAuth){
          password: vm.password
       }
 
-      console.log(user);
-      firebaseAuth.$createUserWithEmailAndPassword(vm.email, vm.password)
+      firebaseAuth.$signInWithEmailAndPassword(vm.email, vm.password)
          .then(function(firebaseUser) {
-            console.log("User created with uid: " + firebaseUser.uid);
+            $state.go('account');
          }).catch(function(error) {
-         console.log(error);
-      });
+            console.log(error);
+         }
+      );
    }
 }
