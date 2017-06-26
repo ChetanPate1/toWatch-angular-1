@@ -27,6 +27,8 @@ function config($stateProvider, $urlRouterProvider){
       .state('account',{
          url: '/account',
          templateUrl: 'templates/account.html',
+         controller: 'AccountController',
+         controllerAs: 'AccountCtrl',
          resolve: {
         // controller will not be loaded until $requireSignIn resolves
         // Auth refers to our $firebaseAuth wrapper in the factory below
