@@ -24,11 +24,11 @@ function config($stateProvider, $urlRouterProvider){
          controller: 'SigninController',
          controllerAs: 'SigninCtrl'
       })
-      .state('account',{
-         url: '/account',
-         templateUrl: 'templates/account.html',
-         controller: 'AccountController',
-         controllerAs: 'AccountCtrl',
+      .state('watchlist',{
+         url: '/watchlist',
+         templateUrl: 'templates/watchlist.html',
+         controller: 'WatchlistController',
+         controllerAs: 'WatchlistCtrl',
          resolve: {
         // controller will not be loaded until $requireSignIn resolves
         // Auth refers to our $firebaseAuth wrapper in the factory below

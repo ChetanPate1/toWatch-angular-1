@@ -12,7 +12,12 @@ function countdownCard() {
       templateUrl: 'js/components/countdown-card/countdown-card.html',
       restrict: 'E',
       controller: 'CountdownCardController',
-      controllerAs: 'CountdownCtrl'
+      controllerAs: 'CountdownCtrl',
+      scope: {
+         title: '=',
+         subtitle: '=',
+         imgSrc: '='
+      }
    };
    return directive;
 }

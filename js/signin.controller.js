@@ -17,7 +17,7 @@ function SigninController(firebaseAuth, $state){
 
       firebaseAuth.$signInWithEmailAndPassword(vm.email, vm.password)
          .then(function(firebaseUser) {
-            $state.go('account');
+            $state.go('watchlist');
          }).catch(function(error) {
             console.log(error);
          }

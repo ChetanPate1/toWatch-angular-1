@@ -12,3 +12,15 @@ h1 {
 .navbar-nav li a {
   font-size: 12px;
   letter-spacing: 1px; }
+
+.countdown-card {
+  display: block;
+  margin: auto;
+  max-width: 330px;
+  height: 400px;
+  background-color: #f8f8f8;
+  border-radius: 9px;
+  padding: 20px 30px; }
+  .countdown-card h2 {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.35); }
