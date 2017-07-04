@@ -2,11 +2,13 @@
    <h1>Home</h1>
    <div class="row" ng-controller="CountdownCardController as CountdownCtrl">
       <div class="col-md-4" ng-repeat="show in CountdownCtrl.shows">
+
          <countdown-card
             heading="show.heading"
             subheading="show.subHeading"
-            imgSrc="show.imgSrc"
-         ></countdown-card>
+            imgsrc="show.imgSrc" >
+         </countdown-card>
+
       </div>
    </div>
 </div>

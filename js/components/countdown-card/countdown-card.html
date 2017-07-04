@@ -1,5 +1,22 @@
-<div class="countdown-card" ng-style="{ 'background': 'url( {{ imgSrc }} )' }">
+<div class="countdown-card" ng-style="{ 'background-image': 'url({{ imgsrc }})' }">
+   <button class="more-button" type="button" name="more"></button>
    <h2>{{ heading }}</h2>
    <h5>{{ subheading }}</h5>
-   <p>{{ imgSrc }}</p>
+
+   <div class="glass">
+      <span class="time">
+         50 <i>days</i>
+      </span>
+      <div class="time">
+         12 <i>hours</i>
+      </div>
+      <div class="time">
+         30 <i>mins</i>
+      </div>
+      <div class="time">
+         20 <i>secs</i>
+      </div>
+      <div class="next">Next</div>
+      <div class="frost" ng-style="{ 'background-image': 'url({{ imgsrc }})' }"></div>
+   </div>
 </div>

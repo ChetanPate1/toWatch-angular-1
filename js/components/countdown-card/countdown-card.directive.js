@@ -16,7 +16,7 @@ function countdownCard() {
       scope: {
          heading: '=',
          subheading: '=',
-         imgSrc: '='
+         imgsrc: '='
       }
    };
    return directive;
