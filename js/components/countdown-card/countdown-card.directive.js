@@ -14,8 +14,8 @@ function countdownCard() {
       controller: 'CountdownCardController',
       controllerAs: 'CountdownCtrl',
       scope: {
-         title: '=',
-         subtitle: '=',
+         heading: '=',
+         subheading: '=',
          imgSrc: '='
       }
    };
