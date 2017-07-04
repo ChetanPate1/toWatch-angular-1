@@ -2,9 +2,9 @@ angular
    .module('app')
    .controller('CountdownCardController', CountdownCardController);
 
-// CountdownCardController.$inject = [''];
+CountdownCardController.$inject = ['firebaseAuth'];
 
-function CountdownCardController(){
+function CountdownCardController(firebaseAuth){
    var vm = this;
 
    vm.shows = [
@@ -12,11 +12,6 @@ function CountdownCardController(){
          "heading": "Game of Thrones",
          "subHeading": "Season 7 Episode 1",
          "imgSrc": "http://www.gstatic.com/tv/thumb/tvbanners/12502846/p12502846_b_v8_aa.jpg"
-      },
-      {
-         "heading": "The Leftovers",
-         "subHeading": "Season 4 Episode 1",
-         "imgSrc": "http://thenerdrecites.com/wp-content/uploads/2017/03/tlft.png"
       },
       {
          "heading": "Lucifer",
@@ -27,6 +22,16 @@ function CountdownCardController(){
          "heading": "Silicon Valley",
          "subHeading": "Season 4 Episode 7",
          "imgSrc": "http://toptvshows.me/images/poster/Silicon%20Valley%20season%204%20poster.jpg"
+      },
+      {
+         "heading": "The Leftovers",
+         "subHeading": "Season 4 Episode 1",
+         "imgSrc": "http://thenerdrecites.com/wp-content/uploads/2017/03/tlft.png"
+      },
+      {
+         "heading": "Daredevil",
+         "subHeading": "Season 3 Episode 1",
+         "imgSrc": "http://www.btchflcks.com/wp-content/uploads/2015/04/daredevilposter.png"
       },
       {
          "heading": "Suits",
@@ -44,11 +49,6 @@ function CountdownCardController(){
          "imgSrc": "http://biiinge.konbini.com/files/2016/11/westworld-music-feat.jpg"
       },
       {
-         "heading": "Daredevil",
-         "subHeading": "Season 3 Episode 1",
-         "imgSrc": "http://www.btchflcks.com/wp-content/uploads/2015/04/daredevilposter.png"
-      },
-      {
          "heading": "Iron Fist",
          "subHeading": "Season 2 Episode 1",
          "imgSrc": "http://cdn1-www.superherohype.com/assets/uploads/gallery/iron-fist/16508182_1863674427225326_8251850749542215766_n.png"
@@ -60,5 +60,10 @@ function CountdownCardController(){
       }
    ];
 
-   console.log(vm.shows);
+   vm.loggedIn = loggedIn;
+
+   function loggedIn(){
+      return firebaseAuth.$getAuth();
+   }
+
 }

@@ -25,15 +25,19 @@ h1 {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 1px solid rgba(0, 0, 0, 0.05); }
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: inset 0 100px 100px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: inset 0 100px 100px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 100px 100px rgba(0, 0, 0, 0.1); }
   .countdown-card h2 {
-    letter-spacing: 1px;
-    font-weight: bold; }
+    letter-spacing: 1px; }
+  .countdown-card h5 {
+    font-size: 12px; }
   .countdown-card h2, .countdown-card h5 {
     z-index: 10;
+    font-weight: bold;
     position: relative;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.45); }
+    color: #ffffff; }
   .countdown-card .more-button {
     position: absolute;
     top: 15px;
