@@ -1,6 +1,6 @@
 /**
  * @desc Countdown Card directive
- * @example <countdown-card ></countdown-card>
+ * @example <countdown-card heading="" subheading="" imgsrc="" ></countdown-card>
  */
 
 angular
