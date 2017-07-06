@@ -50,10 +50,23 @@ function countdownTimer($interval) {
          return [days, hours, minutes, seconds];
       }
 
+      function prettifyTime(time) {
+         var prettifiedTime = {}, i = 0;
+         var names = ['day', 'hour', 'min', 'sec'];
 
-
+         for (i; i < 4; i++){
+            if (time[i] < 10){
+               prettifiedTime[names[i].charAt(0)] = { name: names[i]+'s', val: '0'+ time[i] };
+            }else {
+               prettifiedTime[names[i].charAt(0)] = { name: names[i], val: time[i] };
+            }
+         }
+         console.log(prettifiedTime);
+         return prettifiedTime;
+      }
+prettifyTime(delta(inSeconds.future, new Date().getTime()));
       $interval(function() {
-         console.log(delta(inSeconds.future, new Date().getTime()));
+         // scope.counter = prettifyTime(delta(inSeconds.future, new Date().getTime()));
       }, 1000);
    }
 
