@@ -19,22 +19,16 @@ function countdownTimer($interval) {
 
    function link(scope, element) {
       var inSeconds = {
-         future: new Date(scope.to).getTime(),
+         now: new Date().getTime() / 1000,
+         future: new Date(scope.to).getTime() / 1000,
          day: 86400,
          hour: 3600,
          minute: 60
       };
 
-      var time = {
-         day: '00',
-         hour: '00',
-         minutes: '00',
-         seconds: '00'
-      };
-
       function delta(futureDateMs, nowDateMs) {
          //in seconds
-         var delta = Math.abs(futureDateMs - nowDateMs) / 1000;
+         var delta = Math.abs(futureDateMs - nowDateMs);
 
          var days = Math.floor(delta / inSeconds.day);
          delta -= days * inSeconds.day;
@@ -55,18 +49,20 @@ function countdownTimer($interval) {
          var names = ['day', 'hour', 'min', 'sec'];
 
          for (i; i < 4; i++){
-            if (time[i] < 10){
-               prettifiedTime[names[i].charAt(0)] = { name: names[i]+'s', val: '0'+ time[i] };
-            }else {
-               prettifiedTime[names[i].charAt(0)] = { name: names[i], val: time[i] };
+            prettifiedTime[names[i].charAt(0)] = { name: names[i], val: '0'+time[i] };
+            if (time[i] > 1 && time[i] < 10){
+               prettifiedTime[names[i].charAt(0)] = { name: names[i]+'s', val: '0'+time[i] };
+            }
+            if (time[i] > 9){
+               prettifiedTime[names[i].charAt(0)] = { name: names[i]+'s', val: ''+time[i] };
             }
          }
-         console.log(prettifiedTime);
+
          return prettifiedTime;
       }
-prettifyTime(delta(inSeconds.future, new Date().getTime()));
+
       $interval(function() {
-         // scope.counter = prettifyTime(delta(inSeconds.future, new Date().getTime()));
+         scope.counter = prettifyTime(delta(inSeconds.future, inSeconds.now));
       }, 1000);
    }
 
