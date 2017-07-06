@@ -3,10 +3,8 @@
    <div class="row" ng-controller="CountdownCardController as CountdownCtrl">
       <div class="col-md-4" ng-repeat="show in CountdownCtrl.shows">
 
-         <countdown-card
-            heading="show.heading"
-            subheading="show.subHeading"
-            imgsrc="show.imgSrc" >
+         <countdown-card heading="show.heading" subheading="show.subHeading" imgsrc="show.imgSrc" >
+            <countdown-timer to="'July 7, 2017 17:00:00'" ></countdown-timer>
          </countdown-card>
 
       </div>

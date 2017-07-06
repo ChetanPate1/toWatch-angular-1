@@ -1,11 +1,13 @@
 /**
  * @desc Countdown Timer directive
- * @example <element start="" end="" ></element>
+ * @example <countdown-timer to="'July 7, 2017 17:00:00'" ></countdown-timer>
  */
 
 angular
    .module('app')
    .directive('countdownTimer', countdownTimer);
+
+countdownTimer.$inject = ['$interval'];
 
 function countdownTimer($interval) {
    var directive = {
@@ -19,7 +21,9 @@ function countdownTimer($interval) {
 
    function link(scope, element) {
       var inSeconds = {
-         now: new Date().getTime() / 1000,
+         now: function () {
+            return new Date().getTime() / 1000;
+         },
          future: new Date(scope.to).getTime() / 1000,
          day: 86400,
          hour: 3600,
@@ -45,8 +49,8 @@ function countdownTimer($interval) {
       }
 
       function prettifyTime(time) {
-         var prettifiedTime = {}, i = 0;
-         var names = ['day', 'hour', 'min', 'sec'];
+         var prettifiedTime = {};
+         var names = ['day', 'hour', 'min', 'sec'],  i = 0;
 
          for (i; i < 4; i++){
             prettifiedTime[names[i].charAt(0)] = { name: names[i], val: '0'+time[i] };
@@ -62,11 +66,9 @@ function countdownTimer($interval) {
       }
 
       $interval(function() {
-         scope.counter = prettifyTime(delta(inSeconds.future, inSeconds.now));
+         scope.counter = prettifyTime( delta(inSeconds.future, inSeconds.now()) );
       }, 1000);
    }
-
-
 
    return directive;
 }

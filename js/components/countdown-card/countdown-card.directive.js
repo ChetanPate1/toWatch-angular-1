@@ -13,6 +13,7 @@ function countdownCard() {
       restrict: 'E',
       controller: 'CountdownCardController',
       controllerAs: 'CountdownCtrl',
+      transclude: true,
       scope: {
          heading: '=',
          subheading: '=',
