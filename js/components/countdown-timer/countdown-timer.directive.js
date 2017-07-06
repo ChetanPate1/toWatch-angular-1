@@ -34,6 +34,10 @@ function countdownTimer($interval) {
          //in seconds
          var delta = Math.abs(futureDateMs - nowDateMs);
 
+         if(futureDateMs - nowDateMs < 0){
+            return [0, 0, 0, 0];
+         }
+
          var days = Math.floor(delta / inSeconds.day);
          delta -= days * inSeconds.day;
 
