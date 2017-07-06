@@ -13,17 +13,16 @@ function countdownTimer($interval) {
       templateUrl: 'js/components/countdown-timer/countdown-timer.html',
       restrict: 'E',
       scope: {
-         end: '='
+         to: '='
       }
    };
 
    function link(scope, element) {
-      var future = new Date(scope.end);
-      var inMs = {
-         day: 86400000,
-         hour: 3600000,
-         minutes: 60000,
-         secs: 1000
+      var inSeconds = {
+         future: new Date(scope.to).getTime(),
+         day: 86400,
+         hour: 3600,
+         minute: 60
       };
 
       var time = {
@@ -31,12 +30,34 @@ function countdownTimer($interval) {
          hour: '00',
          minutes: '00',
          seconds: '00'
+      };
+
+      function delta(futureDateMs, nowDateMs) {
+         //in seconds
+         var delta = Math.abs(futureDateMs - nowDateMs) / 1000;
+
+         var days = Math.floor(delta / inSeconds.day);
+         delta -= days * inSeconds.day;
+
+         var hours = Math.floor(delta / inSeconds.hour) % inSeconds.hour;
+         delta -= hours * inSeconds.hour;
+
+         var minutes = Math.floor(delta / inSeconds.minute) % inSeconds.hour;
+         delta -= minutes * inSeconds.minute;
+
+         var seconds = Math.floor(delta);
+
+         return [days, hours, minutes, seconds];
       }
 
-      $interval(function() {
 
+
+      $interval(function() {
+         console.log(delta(inSeconds.future, new Date().getTime()));
       }, 1000);
    }
+
+
 
    return directive;
 }
