@@ -3,8 +3,8 @@
    <div class="row" ng-controller="CountdownCardController as CountdownCtrl">
       <div class="col-md-4" ng-repeat="show in CountdownCtrl.shows">
 
-         <countdown-card heading="show.heading" subheading="show.subHeading" imgsrc="show.imgSrc" >
-            <countdown-timer to="show.airDate" ></countdown-timer>
+         <countdown-card heading="show.series" subheading="'Season '+ show.season +' Episode '+ show.episode.number" imgsrc="show.imgSrc" >
+            <countdown-timer to="show.episode.airDate" ></countdown-timer>
          </countdown-card>
 
       </div>
