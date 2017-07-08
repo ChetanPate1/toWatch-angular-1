@@ -10,6 +10,7 @@ function WatchlistController(currentAuth, firebaseArray){
    vm.data = firebaseArray.getAll();
 
    vm.send = send;
+   vm.openModal = openModal;
 
    function send() {
       var data = {
