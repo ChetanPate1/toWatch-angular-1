@@ -6,7 +6,7 @@ CountdownCardController.$inject = ['firebaseAuth'];
 
 function CountdownCardController(firebaseAuth){
    var vm = this;
-
+   
    vm.shows = [
       {
          "series": "Game of Thrones",
