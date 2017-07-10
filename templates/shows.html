@@ -1,10 +1,15 @@
 <div class="container">
    <h1>Shows</h1>
-   <div class="row">
-      <ul class="list-group" ng-repeat="shows in ShowsCtrl.shows">
-         <li class="list-group-item" ng-repeat="show in shows">{{ show }}</li>
-      </ul>
+   <div class="row" ng-repeat="shows in ShowsCtrl.shows">
+      <div class="col-md-4" ng-repeat="show in shows">
+
+         <countdown-card heading="show.series" subheading="'Season '+ show.season +' Episode '+ show.episode.number" imgsrc="show.imgSrc" >
+            <countdown-timer to="show.episode.airDate" ></countdown-timer>
+         </countdown-card>
+
+      </div>
    </div>
+
    <div class="row">
       <h3>Add Show</h3>
 
