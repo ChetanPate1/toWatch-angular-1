@@ -39,6 +39,7 @@ h1 {
     position: relative;
     color: #ffffff; }
   .countdown-card .more-button {
+    z-index: 300;
     position: absolute;
     top: 15px;
     right: 15px;
@@ -81,38 +82,59 @@ h1 {
     -ms-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.07);
     box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.07); }
 
-.countdown-card .season-info {
-  padding-top: 120px;
-  position: absolute;
-  z-index: 200;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5); }
-  .countdown-card .season-info .items {
-    position: relative;
-    height: 50px;
-    width: 90%;
-    background-color: #ffffff;
-    padding: 15px 10px;
-    display: block;
-    margin: 10px auto;
-    border-radius: 4px; }
-    .countdown-card .season-info .items .left {
-      font-size: 12px;
-      line-height: 20px;
-      font-weight: bold;
-      width: 30%;
-      float: left; }
-    .countdown-card .season-info .items .item {
-      font-weight: bold;
-      width: 40%;
-      float: left; }
-    .countdown-card .season-info .items .watched {
-      text-align: right;
-      width: 30%;
-      float: left; }
+.countdown-card {
+  overflow: hidden; }
+  .countdown-card .season-info {
+    padding-top: 120px;
+    position: absolute;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    transition: all 300ms ease;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%); }
+    .countdown-card .season-info.open {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      transform: translateY(0%); }
+    .countdown-card .season-info .items {
+      position: relative;
+      width: 100%;
+      display: block;
+      padding: 0;
+      margin: 0;
+      max-height: 265px;
+      overflow-y: auto; }
+      .countdown-card .season-info .items li {
+        margin: 10px auto;
+        height: 50px;
+        width: 90%;
+        background-color: #ffffff;
+        display: block;
+        padding: 15px 10px;
+        border-radius: 4px; }
+      .countdown-card .season-info .items .left {
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: bold;
+        width: 30%;
+        float: left; }
+      .countdown-card .season-info .items .item {
+        font-weight: bold;
+        width: 40%;
+        float: left; }
+      .countdown-card .season-info .items .watched {
+        text-align: right;
+        width: 30%;
+        float: left; }
 
 .countdown-timer .time {
   z-index: 10;

@@ -7,12 +7,10 @@ ShowsCountdownCardController.$inject = ['firebaseAuth'];
 function ShowsCountdownCardController(firebaseAuth){
    var vm = this;
 
-   // vm.shows = ;
+   vm.open = false;
+   vm.toggleOpen = toggleOpen;
 
-   vm.loggedIn = loggedIn;
-
-   function loggedIn(){
-      return firebaseAuth.$getAuth();
+   function toggleOpen() {
+      vm.open = !vm.open;
    }
-
 }

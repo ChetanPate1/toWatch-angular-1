@@ -1,6 +1,14 @@
 <div class="container">
    <h1>Watchlist</h1>
    <div class="row">
-
+      <div class="col-md-4">
+         <shows-countdown-card
+            heading="show.series"
+            subheading="'Season '+ show.season +' Episode '+ show.episode.number"
+            imgsrc="show.imgSrc"
+            seasoninfo="[{ 'days': '-2', 'episodeNumber': '1', 'watched': false }]" >
+            <countdown-timer to="show.episode.airDate" ></countdown-timer>
+         </shows-countdown-card>
+      </div>
    </div>
 </div>

@@ -2,11 +2,11 @@ angular
    .module('app')
    .controller('WatchlistController', WatchlistController);
 
-WatchlistController.$inject = ['currentAuth', 'firebaseArray'];
+WatchlistController.$inject = ['firebaseArray'];
 
-function WatchlistController(currentAuth, firebaseArray){
+function WatchlistController(firebaseArray){
    var vm = this;
 
-   vm.data = firebaseArray.getAll();
+   vm.watchlist = firebaseArray.getAll();
 
 }
