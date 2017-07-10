@@ -1,6 +1,10 @@
 <div class="container">
    <h1>Shows</h1>
-
+   <div class="row">
+      <ul class="list-group" ng-repeat="shows in ShowsCtrl.shows">
+         <li class="list-group-item" ng-repeat="show in shows">{{ show }}</li>
+      </ul>
+   </div>
    <div class="row">
       <h3>Add Show</h3>
 
@@ -20,10 +24,6 @@
                <input type="text" name="season" class="form-control" ng-model="ShowsCtrl.season">
             </div>
             <div class="form-group">
-               <label for="episodeName">Episode Name</label>
-               <input type="text" name="episodeName" class="form-control" ng-model="ShowsCtrl.episodeName">
-            </div>
-            <div class="form-group">
                <label for="episodeNumber">Episode Number</label>
                <input type="text" name="episodeNumber" class="form-control" ng-model="ShowsCtrl.episodeNumber">
             </div>
@@ -33,7 +33,7 @@
                <input type="text" name="airDate" class="form-control" ng-model="ShowsCtrl.airDate">
             </div>
 
-            <button class="btn btn-sm btn-primary" ng-click="ShowsCtrl.add()">Add</button>
+            <button class="btn btn-lg btn-primary pull-right" ng-click="ShowsCtrl.add()">Add</button>
          </form>
       </div>
    </div>
