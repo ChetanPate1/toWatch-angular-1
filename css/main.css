@@ -26,9 +26,9 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: inset 0 100px 100px rgba(0, 0, 0, 0.1);
-  -ms-box-shadow: inset 0 100px 100px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 100px 100px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2); }
   .countdown-card h2 {
     letter-spacing: 1px; }
   .countdown-card h5 {
