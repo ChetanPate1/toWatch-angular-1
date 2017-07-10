@@ -8,7 +8,6 @@ function ShowsController(firebaseArray){
    var vm = this;
 
    vm.shows = firebaseArray.getAll();
-
    vm.add = add
 
    function add() {
@@ -25,4 +24,6 @@ function ShowsController(firebaseArray){
 
       firebaseArray.save('shows', show);
    }
+
+
 }

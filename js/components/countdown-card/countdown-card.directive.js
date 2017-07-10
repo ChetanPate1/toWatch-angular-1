@@ -11,8 +11,6 @@ function countdownCard() {
    var directive = {
       templateUrl: 'js/components/countdown-card/countdown-card.html',
       restrict: 'E',
-      controller: 'CountdownCardController',
-      controllerAs: 'CountdownCtrl',
       transclude: true,
       scope: {
          heading: '=',
