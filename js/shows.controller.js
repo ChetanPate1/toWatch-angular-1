@@ -11,19 +11,28 @@ function ShowsController(firebaseArray){
    vm.add = add;
 
    function add() {
-      var show = {
-         "series": vm.series,
-         "imgSrc": vm.imgSrc,
-         "season": vm.season,
-         "episode": {
-            "number": vm.episodeNumber,
-            "seen": false,
-            "airDate": vm.airDate
-         }
-      };
 
-      firebaseArray.save('shows', show);
+      // firebaseArray.save('shows', gen);
    }
 
+   function generateEp(seriesName, url, seasons, episodes){
+      var eps = {}, series = {};
+      for(var i = 1; i <= episodes; i++){
+         eps[i] = {
+            number: i.toString()
+         }
+      }
+
+      series.series = seriesName;
+      series.imgSrc = url;
+
+      for(var i = 1; i <= seasons; i++){
+         series['season_'+ i] = {};
+         series['season_'+ i].number = i.toString();
+         series['season_'+ i].episodes = eps;
+      }
+
+      return series;
+   }
 
 }

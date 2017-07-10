@@ -11,4 +11,30 @@
          </shows-countdown-card>
       </div>
    </div>
+
+   <div class="row">
+      <h3>Add To Watchlist</h3>
+
+      <div class="col-md-6">
+         <form class="form-horizontal" name="form">
+            <div class="form-group">
+               <label for="series">Series</label>
+               <input type="text" name="series" class="form-control" ng-model="WatchlistCtrl.series">
+            </div>
+            <div class="form-group">
+               <label for="season">Season</label>
+               <input type="text" name="season" class="form-control" ng-model="WatchlistCtrl.season">
+            </div>
+            <div class="form-group">
+               <label for="episode">Episode</label>
+               <input type="text" name="episode" class="form-control" ng-model="WatchlistCtrl.episode">
+            </div>
+            <div class="form-group">
+               <label for="airDate">Air Date</label>
+               <input type="text" name="airDate" class="form-control" ng-model="WatchlistCtrl.airDate">
+            </div>
+            <button class="btn btn-lg btn-primary pull-right" ng-click="WatchlistCtrl.add()">Add</button>
+         </form>
+      </div>
+   </div>
 </div>
