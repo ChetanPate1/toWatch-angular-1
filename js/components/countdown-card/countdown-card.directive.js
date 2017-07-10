@@ -1,6 +1,6 @@
 /**
  * @desc Countdown Card directive
- * @example <countdown-card heading="" subheading="" imgsrc="" ></countdown-card>
+ * @example <countdown-card heading="" subheading="" imgsrc="" countdownvisible="" ></countdown-card>
  */
 
 angular
@@ -15,7 +15,8 @@ function countdownCard() {
       scope: {
          heading: '=',
          subheading: '=',
-         imgsrc: '='
+         imgsrc: '=',
+         countdownvisible: '='
       }
    };
    return directive;

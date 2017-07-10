@@ -64,7 +64,10 @@ h1 {
     left: 0;
     height: 70px;
     width: 100%;
-    border-top: 1px solid rgba(255, 255, 255, 0.17); }
+    border-top: 1px solid rgba(255, 255, 255, 0.17);
+    opacity: 0; }
+    .countdown-card .glass.show {
+      opacity: 1; }
   .countdown-card .frost {
     z-index: 5;
     position: absolute;
