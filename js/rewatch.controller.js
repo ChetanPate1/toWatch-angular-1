@@ -12,12 +12,15 @@ function RewatchController(currentAuth, firebaseArray){
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
 
+   console.log(vm.shows);
    function add() {
       var initRewatch = {
+         showId: vm.seriesIndex,
          currentSeason: 'season_1',
          show: initSeries(vm.shows[vm.seriesIndex].seasons)
       };
 
+      console.log(vm.shows[vm.seriesIndex]);
       firebaseArray.save(ref, initRewatch);
    }
 

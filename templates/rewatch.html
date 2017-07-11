@@ -1,14 +1,16 @@
 <div class="container">
    <h1>Rewatch</h1>
    <div class="row">
-      <div class="col-md-4" ng-repeat="Rewatch in RewatchCtrl.Rewatch">
+
+      <div class="col-md-4" ng-repeat="rewatch in RewatchCtrl.rewatch">
          <shows-countdown-card
-            heading="Rewatch.seriesId"
-            subheading="'Season '+ Rewatch.season +' Episode '+ Rewatch.episode"
-            imgsrc="show.imgSrc"
-            seasoninfo="[{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false }]" >
+            heading="RewatchCtrl.shows[rewatch.showId].series"
+            subheading="'Season '+ rewatch.currentSeason"
+            imgsrc="RewatchCtrl.shows[ rewatch.showId ].imgSrc"
+            seasoninfo="rewatch.seasons[ rewatch.currentSeason ]" >
             <countdown-timer to="show.episode.airDate" ></countdown-timer>
          </shows-countdown-card>
+      
       </div>
    </div>
 
@@ -20,7 +22,7 @@
                <label for="series">Series</label>
                <select class="form-control" name="series" ng-model="RewatchCtrl.seriesIndex">
                   <option ng-repeat="show in RewatchCtrl.shows" ng-selected="{{ RewatchCtrl.seriesIndex == RewatchCtrl.shows[$index] }}"
-                     value="{{ $index }}">{{ show.series }}
+                     value="{{ $index + 1 }}">{{ show.series }}
                   </option>
                </select>
             </div>
