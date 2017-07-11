@@ -1,10 +1,10 @@
 <div class="container">
-   <h1>Watchlist</h1>
+   <h1>Rewatch</h1>
    <div class="row">
-      <div class="col-md-4" ng-repeat="watchlist in WatchlistCtrl.watchlist">
+      <div class="col-md-4" ng-repeat="Rewatch in RewatchCtrl.Rewatch">
          <shows-countdown-card
-            heading="watchlist.seriesId"
-            subheading="'Season '+ watchlist.season +' Episode '+ watchlist.episode"
+            heading="Rewatch.seriesId"
+            subheading="'Season '+ Rewatch.season +' Episode '+ Rewatch.episode"
             imgsrc="show.imgSrc"
             seasoninfo="[{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false }]" >
             <countdown-timer to="show.episode.airDate" ></countdown-timer>
@@ -13,19 +13,19 @@
    </div>
 
    <div class="row">
-      <h3>Add To Watchlist</h3>
+      <h3>Add To Rewatch</h3>
       <div class="col-md-6">
          <form class="form-horizontal" name="form">
             <div class="form-group">
                <label for="series">Series</label>
-               <select class="form-control" name="series" ng-model="WatchlistCtrl.series">
-                  <option ng-repeat="show in WatchlistCtrl.shows" ng-selected="{{ WatchlistCtrl.series == WatchlistCtrl.shows[$index].$id }}"
-                     value="{{ WatchlistCtrl.shows[$index].$id }}">{{ show.series }}
+               <select class="form-control" name="series" ng-model="RewatchCtrl.seriesIndex">
+                  <option ng-repeat="show in RewatchCtrl.shows" ng-selected="{{ RewatchCtrl.seriesIndex == RewatchCtrl.shows[$index] }}"
+                     value="{{ $index }}">{{ show.series }}
                   </option>
                </select>
             </div>
 
-            <button class="btn btn-lg btn-primary pull-right" ng-click="WatchlistCtrl.add()">Add</button>
+            <button class="btn btn-lg btn-primary pull-right" ng-click="RewatchCtrl.add()">Add</button>
          </form>
       </div>
    </div>

@@ -12,8 +12,10 @@ function ShowsController(firebaseArray){
 
    function add() {
 
-      // firebaseArray.save('shows', gen);
+      // var gen = generateEp('Silicon Valley', 'http://toptvshows.me/images/poster/Silicon%20Valley%20season%204%20poster.jpg', 4, 10);
+      firebaseArray.save('shows', gen);
    }
+   
 
    function generateEp(seriesName, url, seasons, episodes){
       var eps = {}, series = {};
@@ -25,14 +27,17 @@ function ShowsController(firebaseArray){
 
       series.series = seriesName;
       series.imgSrc = url;
+      series.seasons = {};
 
       for(var i = 1; i <= seasons; i++){
-         series['season_'+ i] = {};
-         series['season_'+ i].number = i.toString();
-         series['season_'+ i].episodes = eps;
+         series.seasons['season_'+ i] = {};
+         series.seasons['season_'+ i].number = i.toString();
+         series.seasons['season_'+ i] = eps;
       }
 
+      console.log(series);
       return series;
    }
+
 
 }
