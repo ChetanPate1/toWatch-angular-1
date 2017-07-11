@@ -14,7 +14,8 @@ function WatchlistController(currentAuth, firebaseArray){
 
    function add() {
       var list = {
-         seriesId: vm.series
+         seriesId: vm.series,
+         watched: false
       };
 
       firebaseArray.save(ref, list);

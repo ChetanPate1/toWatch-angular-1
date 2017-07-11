@@ -1,8 +1,8 @@
 <div class="countdown-card" ng-style="{ 'background-image': 'url({{ imgsrc }})' }">
    <button type="button" name="more" class="more-button" ng-click="ShowsCountdownCtrl.toggleOpen()"><span class="glyphicon glyphicon-plus" ng-class="{ 'glyphicon-remove': ShowsCountdownCtrl.open }"></span></button>
    <div class="season-info" ng-class="{ 'open': ShowsCountdownCtrl.open }">
-      <ul class="items" ng-repeat="info in seasoninfo">
-         <li>
+      <ul class="items">
+         <li ng-repeat="info in seasoninfo">
             <span class="left">{{ info.days }}</span>
             <span class="item">Episode {{ info.episodeNumber }}</span>
             <span class="watched">[{{ info.watched }}]</span>

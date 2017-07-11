@@ -116,6 +116,11 @@ h1 {
       margin: 0;
       max-height: 265px;
       overflow-y: auto; }
+      .countdown-card .season-info .items::-webkit-scrollbar {
+        width: 0px;
+        /* remove scrollbar space */
+        background: transparent;
+        /* optional: just make scrollbar invisible */ }
       .countdown-card .season-info .items li {
         margin: 10px auto;
         height: 50px;
