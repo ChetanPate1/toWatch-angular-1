@@ -6,20 +6,18 @@ WatchlistController.$inject = ['currentAuth', 'firebaseArray'];
 
 function WatchlistController(currentAuth, firebaseArray){
    var vm = this;
-   var uid = currentAuth.uid;
+   var ref = 'watchlist/' + currentAuth.uid;
 
-   vm.watchlist = firebaseArray.getAll();
+   vm.watchlist = firebaseArray.getByRef(ref);
+   vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
 
    function add() {
       var list = {
-         series: vm.series,
-         season: vm.season,
-         episode: vm.episode,
-         airDate: vm.airDate,
-         watched: false
+         seriesId: vm.series
       };
-      firebaseArray.save('watchlist/'+ uid, list);
+
+      firebaseArray.save(ref, list);
    }
 
 }

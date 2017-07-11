@@ -1,9 +1,9 @@
 <div class="container">
    <h1>Watchlist</h1>
    <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4" ng-repeat="watchlist in WatchlistCtrl.watchlist">
          <shows-countdown-card
-            heading="show.series"
+            heading="watchlist.seriesId"
             subheading="'Season '+ show.season +' Episode '+ show.episode.number"
             imgsrc="show.imgSrc"
             seasoninfo="[{ 'days': '-2', 'episodeNumber': '1', 'watched': false }]" >
@@ -14,25 +14,17 @@
 
    <div class="row">
       <h3>Add To Watchlist</h3>
-
       <div class="col-md-6">
          <form class="form-horizontal" name="form">
             <div class="form-group">
                <label for="series">Series</label>
-               <input type="text" name="series" class="form-control" ng-model="WatchlistCtrl.series">
+               <select class="form-control" name="series" ng-model="WatchlistCtrl.series">
+                  <option ng-repeat="show in WatchlistCtrl.shows" ng-selected="{{ WatchlistCtrl.series == WatchlistCtrl.shows[$index].$id }}"
+                     value="{{ WatchlistCtrl.shows[$index].$id }}">{{ show.series }}
+                  </option>
+               </select>
             </div>
-            <div class="form-group">
-               <label for="season">Season</label>
-               <input type="text" name="season" class="form-control" ng-model="WatchlistCtrl.season">
-            </div>
-            <div class="form-group">
-               <label for="episode">Episode</label>
-               <input type="text" name="episode" class="form-control" ng-model="WatchlistCtrl.episode">
-            </div>
-            <div class="form-group">
-               <label for="airDate">Air Date</label>
-               <input type="text" name="airDate" class="form-control" ng-model="WatchlistCtrl.airDate">
-            </div>
+
             <button class="btn btn-lg btn-primary pull-right" ng-click="WatchlistCtrl.add()">Add</button>
          </form>
       </div>

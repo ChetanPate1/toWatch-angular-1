@@ -7,7 +7,7 @@ ShowsController.$inject = ['firebaseArray'];
 function ShowsController(firebaseArray){
    var vm = this;
 
-   vm.shows = firebaseArray.getAll();
+   vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
 
    function add() {
