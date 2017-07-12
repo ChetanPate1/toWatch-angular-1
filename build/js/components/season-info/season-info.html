@@ -3,10 +3,10 @@
 </button>
 <div class="season-info" ng-class="{ 'open': open }">
    <ul class="items">
-      <li ng-repeat="info in obj" ng-if="$index >= 1" >
-         <span class="item" >Episode 1</span>
-         <span class="watched" >
-            [false]
+      <li ng-repeat="info in season" ng-if="$index >= 1" >
+         <span class="item">Episode {{ info.number }}</span>
+         <span class="watched" ng-click="info.watched = !info.watched; rewatchobj.$save(index)" >
+            {{ info.watched }}
          </span>
       </li>
    </ul>

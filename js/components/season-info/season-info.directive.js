@@ -27,10 +27,6 @@ function seasonInfo() {
       function toggleOpen() {
          scope.open = !scope.open;
       }
-
-      function toggle(value) {
-         return !value;
-      }
    }
 
    return directive;

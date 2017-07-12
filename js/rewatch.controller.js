@@ -8,15 +8,9 @@ function RewatchController(currentAuth, firebaseArray){
    var vm = this;
    var ref = 'rewatch/' + currentAuth.uid;
 
-   vm.open = false;
    vm.rewatch = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
-   vm.toggleOpen = toggleOpen;
-
-   function toggleOpen() {
-      vm.open = !vm.open;
-   }
 
    function add() {
       var initRewatch = {
@@ -52,6 +46,6 @@ function RewatchController(currentAuth, firebaseArray){
       return count;
    }
 
-   //watched function
+   //progress next season function
 
 }
