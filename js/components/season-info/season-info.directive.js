@@ -13,7 +13,9 @@ function seasonInfo() {
       templateUrl: 'js/components/season-info/season-info.html',
       restrict: 'E',
       scope: {
-         season: '='
+         season: '=',
+         rewatchobj: '=',
+         index: '='
       }
    };
 

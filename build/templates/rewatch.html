@@ -6,7 +6,12 @@
             heading="RewatchCtrl.shows[ rewatch.showId ].series"
             subheading="'Season '+ rewatch.currentSeason"
             imgsrc="RewatchCtrl.shows[ rewatch.showId ].imgSrc" >
-            <season-info season="rewatch.show[ 'season_'+ rewatch.currentSeason ]" ></season-info>
+
+            <season-info
+               season="rewatch.show[ 'season_'+ rewatch.currentSeason ]"
+               rewatchobj="RewatchCtrl.rewatch"
+               index="rewatch.currentSeason - 1">
+            </season-info>
          </rewatch-card>
       </div>
    </div>
