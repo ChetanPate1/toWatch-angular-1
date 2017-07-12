@@ -13,11 +13,11 @@ function rewatchCard() {
       restrict: 'E',
       controller: 'RewatchCardController',
       controllerAs: 'RewatchCardCtrl',
+      transclude: true,
       scope: {
          heading: '=',
          subheading: '=',
-         imgsrc: '=',
-         seasoninfo: '='
+         imgsrc: '='
       }
    };
    return directive;

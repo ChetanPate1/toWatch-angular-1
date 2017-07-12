@@ -1,0 +1,13 @@
+<button type="button" name="more" class="more-button" ng-click="toggleOpen()">
+   <span class="glyphicon glyphicon-plus" ng-class="{ 'glyphicon-remove': open }"></span>
+</button>
+<div class="season-info" ng-class="{ 'open': open }">
+   <ul class="items">
+      <li ng-repeat="info in obj" ng-if="$index >= 1" >
+         <span class="item" >Episode 1</span>
+         <span class="watched" >
+            [false]
+         </span>
+      </li>
+   </ul>
+</div>
