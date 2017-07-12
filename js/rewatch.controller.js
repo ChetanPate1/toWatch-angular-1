@@ -8,19 +8,23 @@ function RewatchController(currentAuth, firebaseArray){
    var vm = this;
    var ref = 'rewatch/' + currentAuth.uid;
 
+   vm.open = false;
    vm.rewatch = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
+   vm.toggleOpen = toggleOpen;
 
-   console.log(vm.shows);
+   function toggleOpen() {
+      vm.open = !vm.open;
+   }
+
    function add() {
       var initRewatch = {
          showId: vm.seriesIndex,
-         currentSeason: 'season_1',
+         currentSeason: '1',
          show: initSeries(vm.shows[vm.seriesIndex].seasons)
       };
 
-      console.log(vm.shows[vm.seriesIndex]);
       firebaseArray.save(ref, initRewatch);
    }
 
@@ -49,6 +53,5 @@ function RewatchController(currentAuth, firebaseArray){
    }
 
    //watched function
-
 
 }

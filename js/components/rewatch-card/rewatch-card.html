@@ -1,0 +1,21 @@
+<div class="rewatch-card" ng-style="{ 'background-image': 'url({{ imgsrc }})' }">
+   <button type="button" name="more" class="more-button" ng-click="RewatchCardCtrl.toggleOpen()"><span class="glyphicon glyphicon-plus" ng-class="{ 'glyphicon-remove': RewatchCardCtrl.open }"></span></button>
+   <div class="season-info" ng-class="{ 'open': RewatchCardCtrl.open }">
+      <ul class="items">
+         <li ng-repeat="info in seasoninfo.obj" ng-if="$index >= 1" ng-click="info.watched = !info.watched">
+            <span class="item" >Episode {{ info.number }}</span>
+            <span class="watched" ng-click="seasoninfo.rewatch.$save(seasoninfo.key)">
+               {{ info.watched }}
+            </span>
+         </li>
+      </ul>
+   </div>
+
+   <h2>{{ heading }}</h2>
+   <h5>On {{ subheading }}</h5>
+
+   <div class="glass">
+
+      <div class="frost" ng-style="{ 'background-image': 'url({{ imgsrc }})' }"></div>
+   </div>
+</div>

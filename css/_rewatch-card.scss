@@ -1,0 +1,138 @@
+.rewatch-card{
+  position: relative;
+  display: block;
+  margin: 0 auto 25px auto;
+  max-width: 300px;
+  height: 400px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  padding: 20px 15px 0 15px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  @include box-shadow(inset 0 130px 130px rgba(0, 0, 0, 0.2));
+
+  h2{
+    letter-spacing: 1px;
+  }
+
+  h5{
+    font-size: 12px;
+  }
+
+  h2, h5{
+    z-index: 10;
+    font-weight: bold;
+    position: relative;
+    color: #ffffff;
+  }
+
+  .more-button{
+    z-index: 300;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-image: none;
+    height: 23px;
+    width: 23px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    @include box-shadow(0 2px 13px rgba(0, 0, 0, 0.26));
+
+    &:hover{
+      @include box-shadow(0 4px 18px rgba(0, 0, 0, 0.26));
+    }
+  }
+
+  .glass{
+    z-index: 20;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.17);
+    opacity: 0;
+
+    &.show{
+      opacity: 1;
+    }
+  }
+
+  .frost{
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-position: center 93%;
+    @include transforms(scale(1.08));
+    @include filter(blur(10px));
+    @include box-shadow(inset 0 -50px 30px rgba(0, 0, 0, 0.07));
+  }
+}
+
+.rewatch-card{
+  overflow: hidden;
+
+  .season-info{
+    padding-top: 120px;
+    position: absolute;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    @include transition(all 300ms ease);
+    @include transforms(translateY(100%));
+
+    &.open{
+      opacity: 1;
+      @include transforms(translateY(0%));
+    }
+
+    .items{
+      &::-webkit-scrollbar {
+        width: 0px;  /* remove scrollbar space */
+        background: transparent;  /* optional: just make scrollbar invisible */
+      }
+
+      position: relative;
+      width: 100%;
+      display: block;
+      padding: 0;
+      margin: 0;
+      max-height: 265px;
+      overflow-y: auto;
+
+      li{
+        margin: 10px auto;
+        height: 50px;
+        width: 90%;
+        background-color: #ffffff;
+        display: block;
+        padding: 15px 10px;
+        border-radius: 4px;
+      }
+
+      .item{
+        padding-left: 20px;
+        font-weight: bold;
+        width: 70%;
+        float: left;
+      }
+      .watched{
+        font-size: 20px;
+        text-align: right;
+        width: 30%;
+        float: left;
+      }
+    }
+  }
+}

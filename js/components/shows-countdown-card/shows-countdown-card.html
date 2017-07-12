@@ -3,8 +3,8 @@
    <div class="season-info" ng-class="{ 'open': ShowsCountdownCtrl.open }">
       <ul class="items">
          <li ng-repeat="info in seasoninfo">
-            <span class="left">{{ info.days }}</span>
-            <span class="item">Episode {{ info.episodeNumber }}</span>
+            <span class="left" >{{ info.days }}</span>
+            <span class="item">Episode {{ info.number }}</span>
             <span class="watched">[{{ info.watched }}]</span>
          </li>
       </ul>
