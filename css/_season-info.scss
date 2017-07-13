@@ -1,14 +1,14 @@
 .season-info{
-  padding-top: 120px;
+  padding-top: 50px;
   position: absolute;
   z-index: 200;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
-  @include transition(all 300ms ease);
+  @include transition(opacity 300ms ease);
   @include transforms(translateY(100%));
 
   &.open{
@@ -16,7 +16,7 @@
     @include transforms(translateY(0%));
   }
 
-  .items{
+  .lists{
     &::-webkit-scrollbar {
       width: 0px;  /* remove scrollbar space */
       background: transparent;  /* optional: just make scrollbar invisible */
@@ -27,10 +27,29 @@
     display: block;
     padding: 0;
     margin: 0;
-    max-height: 265px;
+    height: 260px;
     overflow-y: auto;
+  }
+
+  .items{
+    padding: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 0;
+    @include transforms(translateY(100%));
+    @include transition(all 300ms ease);
+
+    &.active{
+      opacity: 1;
+      @include transforms(translateY(0));
+    }
 
     li{
+      position: relative;
       margin: 10px auto;
       height: 50px;
       width: 90%;
@@ -51,6 +70,42 @@
       text-align: right;
       width: 30%;
       float: left;
+    }
+  }
+}
+
+.season-info{
+  .tabs{
+    min-height: 70px;
+    width: 90%;
+    margin: auto;
+    overflow-x: auto;
+
+    ul{
+      margin: 0;
+      padding: 0;
+    }
+
+    li{
+      text-align: center;
+      float: left;
+      width: 20%;
+      padding: 4px 0;
+      color: #ffffff;
+      display: inline-block;
+      border-radius: 2px;
+      border: 1px solid transparent;
+      margin: 5px 0;
+
+      &.active{
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffffff;
+        border: 1px solid #ffffff;
+      }
+      &:hover{
+        border: 1px solid #ffffff;
+      }
     }
   }
 }

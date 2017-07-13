@@ -13,7 +13,8 @@ function seasonInfo() {
       templateUrl: 'js/components/season-info/season-info.html',
       restrict: 'E',
       scope: {
-         season: '=',
+         seasons: '=',
+         currentseason: '=',
          rewatchobj: '=',
          index: '='
       }
@@ -22,10 +23,22 @@ function seasonInfo() {
    function link(scope) {
       scope.open = false;
       scope.toggleOpen = toggleOpen;
+      scope.tabSelect = tabSelect;
+      scope.isTabSelected = isTabSelected;
+      scope.tabActive = scope.currentseason;
 
       function toggleOpen() {
          scope.open = !scope.open;
       }
+
+      function tabSelect(number) {
+         scope.tabActive = number;
+      }
+
+      function isTabSelected(number) {
+         return scope.tabActive == number;
+      }
+      
    }
 
    return directive;
