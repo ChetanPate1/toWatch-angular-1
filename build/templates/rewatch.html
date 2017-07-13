@@ -4,7 +4,7 @@
       <div class="col-md-4" ng-repeat="rewatch in RewatchCtrl.rewatch">
          <rewatch-card
             heading="RewatchCtrl.shows[ rewatch.showId ].series"
-            subheading="'Season '+ rewatch.currentSeason"
+            subheading="'Season '+ RewatchCtrl.currentSeason( rewatch.show, $index )"
             imgsrc="RewatchCtrl.shows[ rewatch.showId ].imgSrc" >
 
             <season-info

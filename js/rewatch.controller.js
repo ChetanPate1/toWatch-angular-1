@@ -11,6 +11,7 @@ function RewatchController(currentAuth, firebaseArray, $timeout){
    vm.rewatch = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
+   vm.currentSeason = currentSeason;
 
    function add() {
       var initRewatch = {
@@ -47,13 +48,7 @@ function RewatchController(currentAuth, firebaseArray, $timeout){
       return count;
    }
 
-   $timeout(function () {
-      var test = vm.rewatch[1].show;
-      console.log(test);
-      currentSeason(test);
-   }, 1000);
-
-   function currentSeason(show) {
+   function currentSeason(show, index) {
       var seasons = objSize(show);
       var seasonSize = 0;
       var k = 0, onSeason = 1;
@@ -65,21 +60,14 @@ function RewatchController(currentAuth, firebaseArray, $timeout){
             if(show['season_' + i][j].watched === true){
                k++;
                if (k == seasonsSize) {
-                  console.log('seasonsSize '+seasonsSize);
                   onSeason++;
                }
             }
-            console.log(show['season_' + i][j].watched,'watched '+ k);
-
          }
-
-
       }
+      vm.rewatch[index].currentSeason = onSeason;
+      vm.rewatch.$save(index);
 
-      console.log('onSeason '+ onSeason);
-      // return onSeason;
+      return onSeason;
    }
-
-   //progress next season function
-
 }

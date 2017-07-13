@@ -2,11 +2,16 @@
    <span class="glyphicon glyphicon-plus" ng-class="{ 'glyphicon-remove': open }"></span>
 </button>
 <div class="season-info" ng-class="{ 'open': open }">
+   <ul class="tabs">
+      <li>Season 1</li>
+      <li>Season 2</li>
+      <li>Season 3</li>
+   </ul>
    <ul class="items">
       <li ng-repeat="info in season" ng-if="$index >= 1" >
          <span class="item">Episode {{ info.number }}</span>
          <span class="watched" ng-click="info.watched = !info.watched; rewatchobj.$save(index)" >
-            {{ info.watched }} | {{ index }}
+            {{ info.watched }}
          </span>
       </li>
    </ul>

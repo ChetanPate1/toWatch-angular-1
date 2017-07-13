@@ -162,6 +162,7 @@ h1 {
     width: 100%; }
 
 .rewatch-card {
+  overflow: hidden;
   position: relative;
   display: block;
   margin: 0 auto 25px auto;
@@ -233,60 +234,58 @@ h1 {
     -ms-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.07);
     box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.07); }
 
-.rewatch-card {
-  overflow: hidden; }
-  .rewatch-card .season-info {
-    padding-top: 120px;
-    position: absolute;
-    z-index: 200;
-    top: 0;
-    left: 0;
-    height: 100%;
+.season-info {
+  padding-top: 120px;
+  position: absolute;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  transition: all 300ms ease;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%); }
+  .season-info.open {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%); }
+  .season-info .items {
+    position: relative;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    -webkit-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    transition: all 300ms ease;
-    -webkit-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%); }
-    .rewatch-card .season-info.open {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-      -ms-transform: translateY(0%);
-      transform: translateY(0%); }
-    .rewatch-card .season-info .items {
-      position: relative;
-      width: 100%;
+    display: block;
+    padding: 0;
+    margin: 0;
+    max-height: 265px;
+    overflow-y: auto; }
+    .season-info .items::-webkit-scrollbar {
+      width: 0px;
+      /* remove scrollbar space */
+      background: transparent;
+      /* optional: just make scrollbar invisible */ }
+    .season-info .items li {
+      margin: 10px auto;
+      height: 50px;
+      width: 90%;
+      background-color: #ffffff;
       display: block;
-      padding: 0;
-      margin: 0;
-      max-height: 265px;
-      overflow-y: auto; }
-      .rewatch-card .season-info .items::-webkit-scrollbar {
-        width: 0px;
-        /* remove scrollbar space */
-        background: transparent;
-        /* optional: just make scrollbar invisible */ }
-      .rewatch-card .season-info .items li {
-        margin: 10px auto;
-        height: 50px;
-        width: 90%;
-        background-color: #ffffff;
-        display: block;
-        padding: 15px 10px;
-        border-radius: 4px; }
-      .rewatch-card .season-info .items .item {
-        padding-left: 20px;
-        font-weight: bold;
-        width: 70%;
-        float: left; }
-      .rewatch-card .season-info .items .watched {
-        font-size: 20px;
-        text-align: right;
-        width: 30%;
-        float: left; }
+      padding: 15px 10px;
+      border-radius: 4px; }
+    .season-info .items .item {
+      padding-left: 20px;
+      font-weight: bold;
+      width: 70%;
+      float: left; }
+    .season-info .items .watched {
+      font-size: 20px;
+      text-align: right;
+      width: 30%;
+      float: left; }
 
 .margin-none {
   margin: 0 !important; }
