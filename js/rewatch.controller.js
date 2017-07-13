@@ -2,9 +2,9 @@ angular
    .module('app')
    .controller('RewatchController', RewatchController);
 
-RewatchController.$inject = ['currentAuth', 'firebaseArray'];
+RewatchController.$inject = ['currentAuth', 'firebaseArray', '$timeout'];
 
-function RewatchController(currentAuth, firebaseArray){
+function RewatchController(currentAuth, firebaseArray, $timeout){
    var vm = this;
    var ref = 'rewatch/' + currentAuth.uid;
 
@@ -21,6 +21,7 @@ function RewatchController(currentAuth, firebaseArray){
 
       firebaseArray.save(ref, initRewatch);
    }
+
 
    function initSeries(show) {
       var seasons = objSize(show);
@@ -44,6 +45,39 @@ function RewatchController(currentAuth, firebaseArray){
          }
       }
       return count;
+   }
+
+   $timeout(function () {
+      var test = vm.rewatch[1].show;
+      console.log(test);
+      currentSeason(test);
+   }, 1000);
+
+   function currentSeason(show) {
+      var seasons = objSize(show);
+      var seasonSize = 0;
+      var k = 0, onSeason = 1;
+
+      for (var i = 1; i <= seasons; i++){
+         seasonsSize = objSize(show['season_' + i]);
+
+         for (var j = 1; j <= seasonsSize; j++) {
+            if(show['season_' + i][j].watched === true){
+               k++;
+               if (k == seasonsSize) {
+                  console.log('seasonsSize '+seasonsSize);
+                  onSeason++;
+               }
+            }
+            console.log(show['season_' + i][j].watched,'watched '+ k);
+
+         }
+
+
+      }
+
+      console.log('onSeason '+ onSeason);
+      // return onSeason;
    }
 
    //progress next season function

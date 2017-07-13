@@ -22,7 +22,6 @@ function seasonInfo() {
    function link(scope) {
       scope.open = false;
       scope.toggleOpen = toggleOpen;
-      scope.toggle = toggle;
 
       function toggleOpen() {
          scope.open = !scope.open;
