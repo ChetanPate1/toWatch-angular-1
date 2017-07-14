@@ -25,7 +25,6 @@ function seasonInfo() {
       scope.toggleOpen = toggleOpen;
       scope.tabSelect = tabSelect;
       scope.isTabSelected = isTabSelected;
-      scope.watched = watched;
       scope.tabActive = scope.currentseason;
 
       function toggleOpen() {
@@ -38,11 +37,6 @@ function seasonInfo() {
 
       function isTabSelected(number) {
          return scope.tabActive == number;
-      }
-
-      function watched(rewatchObj, treeIndex, watched) {
-         rewatchObj.$save(treeIndex);
-         return watched = !watched;
       }
    }
 

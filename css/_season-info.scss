@@ -40,13 +40,12 @@
     top: 0;
     left: 0;
     opacity: 0;
-    display: none;
+    display: block;
     @include transforms(translateY(100%));
     @include transition(all 300ms ease);
 
     &.active{
       z-index: 200;
-      display: block;
       opacity: 1;
       @include transforms(translateY(0));
     }
@@ -72,6 +71,18 @@
       text-align: right;
       width: 30%;
       float: left;
+
+      .glyphicon{
+        opacity: 0.5;
+        @include transition(opacity 200ms ease);
+        &.glyphicon-eye-open{
+          opacity: 1;
+        }
+
+        &:hover{
+          opacity: 1;
+        }
+      }
     }
   }
 }
