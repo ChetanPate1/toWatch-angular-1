@@ -3,11 +3,11 @@
    <div class="row">
       <div class="col-md-4" ng-repeat="watchlist in WatchlistCtrl.watchlist">
          <shows-countdown-card
-            heading="watchlist.seriesId"
-            subheading="'Season '+ watchlist.season +' Episode '+ watchlist.episode"
-            imgsrc="show.imgSrc"
-            seasoninfo="[{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false },{ 'days': '-2', 'episodeNumber': '1', 'watched': false }]" >
-            <countdown-timer to="show.episode.airDate" ></countdown-timer>
+            heading="WatchlistCtrl.shows[ watchlist.seriesId ].series"
+            subheading="'Season '+ watchlist.season +' Episode '+ watchlist.episode.number"
+            imgsrc="WatchlistCtrl.shows[ watchlist.seriesId ].imgSrc"
+            seasoninfo="[{ 'days': '-2', 'episode': watchlist.episode.number, 'watched': false },{ 'days': '0', 'episode': '2', 'watched': false }]" >
+            <countdown-timer to="WatchlistCtrl.shows[7].seasons['season_'+ watchlist.seriesId][watchlist.episode.number].airDate" ></countdown-timer>
          </shows-countdown-card>
       </div>
    </div>
@@ -28,14 +28,14 @@
             <div class="form-group">
                <label for="season">Season</label>
                <select class="form-control" name="season" ng-model="WatchlistCtrl.season">
-                  <option ng-repeat="season in WatchlistCtrl.shows[ WatchlistCtrl.series ].seasons" ng-if="$index >= 0" value="{{ 'season_' }}{{ $index + 1 }}">{{ $index + 1 }}</option>
+                  <option ng-repeat="season in WatchlistCtrl.shows[ WatchlistCtrl.series ].seasons" ng-if="$index >= 0" value="{{ $index + 1 }}">{{ $index + 1 }}</option>
                </select>
             </div>
 
             <div class="form-group">
                <label for="season">Episode</label>
                <select class="form-control" name="season" ng-model="WatchlistCtrl.episode">
-                  <option ng-repeat="episode in WatchlistCtrl.shows[ WatchlistCtrl.series ].seasons[ WatchlistCtrl.season ]" ng-if="$index > 0" value="{{ $index }}">{{ $index }} {{ episode.name }}</option>
+                  <option ng-repeat="episode in WatchlistCtrl.shows[ WatchlistCtrl.series ].seasons[ 'season_' + WatchlistCtrl.season ]" ng-if="$index > 0" value="{{ $index }}">{{ $index }} {{ episode.name }}</option>
                </select>
             </div>
 

@@ -14,14 +14,12 @@ function WatchlistController(currentAuth, firebaseArray){
 
    function add() {
       var list = {
-         seriesId: vm.series,
-         season: vm.season,
-         episode: vm.episode,
-         watched: false
+         seriesId: vm.series
       };
 
-      console.log(list);
-      // firebaseArray.save(ref, list);
+      list['season_'+ vm.season] = [null, { watched: false }];
+
+      firebaseArray.save(ref, list);
    }
 
    //self destroy once watched

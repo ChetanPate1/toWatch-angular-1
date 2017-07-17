@@ -3,9 +3,11 @@
    <div class="season-info" ng-class="{ 'open': open }">
       <ul class="items active">
          <li ng-repeat="info in seasoninfo">
-            <span class="left">{{ info.days }}</span>
-            <span class="item">Episode {{ info.number }}</span>
-            <span class="watched">[{{ info.watched }}]</span>
+            <span class="left">{{ info.days }} days</span>
+            <span class="item">Episode {{ info.episode }}</span>
+            <span class="watched" ng-click="episode.watched = !episode.watched" >
+               <span class="glyphicon" ng-class="{ 'glyphicon-eye-open' : episode.watched, 'glyphicon-eye-close' : !episode.watched }"></span>
+            </span>
          </li>
       </ul>
    </div>
