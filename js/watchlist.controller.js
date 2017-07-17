@@ -15,10 +15,15 @@ function WatchlistController(currentAuth, firebaseArray){
    function add() {
       var list = {
          seriesId: vm.series,
+         season: vm.season,
+         episode: vm.episode,
          watched: false
       };
 
-      firebaseArray.save(ref, list);
+      console.log(list);
+      // firebaseArray.save(ref, list);
    }
 
+   //self destroy once watched
+   //increment to next
 }

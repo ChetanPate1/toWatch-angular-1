@@ -9,10 +9,9 @@ angular
 
 function showsCountdownCard() {
    var directive = {
+      link: link,
       templateUrl: 'js/components/shows-countdown-card/shows-countdown-card.html',
       restrict: 'E',
-      controller: 'ShowsCountdownCardController',
-      controllerAs: 'ShowsCountdownCtrl',
       transclude: true,
       scope: {
          heading: '=',
@@ -21,5 +20,14 @@ function showsCountdownCard() {
          seasoninfo: '='
       }
    };
+
+   function link(scope) {
+      scope.open = false;
+      scope.toggleOpen = toggleOpen;
+
+      function toggleOpen() {
+         scope.open = !scope.open;
+      }
+   }
    return directive;
 }
