@@ -145,7 +145,7 @@ h1 {
         float: left; }
 
 .countdown-timer .time {
-  z-index: 10;
+  z-index: 100;
   width: 25%;
   position: relative;
   display: inline;

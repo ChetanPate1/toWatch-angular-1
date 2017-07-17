@@ -30,11 +30,11 @@ function countdownTimer($interval) {
          minute: 60
       };
 
-      function delta(futureDateMs, nowDateMs) {
+      function delta(futureDate, nowDate) {
          //in seconds
-         var delta = Math.abs(futureDateMs - nowDateMs);
+         var delta = Math.abs(futureDate - nowDate);
 
-         if(futureDateMs - nowDateMs < 0){
+         if(futureDate - nowDate < 0 || !futureDate){
             return [0, 0, 0, 0];
          }
 

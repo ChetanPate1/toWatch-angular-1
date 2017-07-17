@@ -1,6 +1,6 @@
 /**
  * @desc Shows Countdown Card directive
- * @example <shows-countdown-card heading="" subheading="" imgsrc="" seasoninfo=""></shows-countdown-card>
+ * @example <shows-countdown-card heading="" subheading="" imgsrc="" seasoninfo="" countdownvisible="true"></shows-countdown-card>
  */
 
 angular
@@ -17,7 +17,8 @@ function showsCountdownCard() {
          heading: '=',
          subheading: '=',
          imgsrc: '=',
-         seasoninfo: '='
+         seasoninfo: '=',
+         countdownvisible: '='
       }
    };
 

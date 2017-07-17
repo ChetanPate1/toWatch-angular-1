@@ -3,8 +3,8 @@
    <div class="season-info" ng-class="{ 'open': open }">
       <ul class="items active">
          <li ng-repeat="info in seasoninfo">
-            <span class="left">{{ info.days }} days</span>
-            <span class="item">Episode {{ info.episode }}</span>
+            <span class="left">{{ info }}</span>
+            <span class="item">Episode {{ info }}</span>
             <span class="watched" ng-click="episode.watched = !episode.watched" >
                <span class="glyphicon" ng-class="{ 'glyphicon-eye-open' : episode.watched, 'glyphicon-eye-close' : !episode.watched }"></span>
             </span>
@@ -15,7 +15,7 @@
    <h2>{{ heading }}</h2>
    <h5>{{ subheading }}</h5>
 
-   <div class="glass">
+   <div class="glass" ng-class="{ 'show': countdownvisible }">
       <ng-transclude></ng-transclude>
       <div class="frost" ng-style="{ 'background-image': 'url({{ imgsrc }})' }"></div>
    </div>

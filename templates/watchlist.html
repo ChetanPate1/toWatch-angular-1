@@ -4,10 +4,11 @@
       <div class="col-md-4" ng-repeat="watchlist in WatchlistCtrl.watchlist">
          <shows-countdown-card
             heading="WatchlistCtrl.shows[ watchlist.seriesId ].series"
-            subheading="'Season '+ watchlist.season +' Episode '+ watchlist.episode.number"
+            subheading="'Season '+ watchlist.on.season +' Episode '+ watchlist.on.episode"
             imgsrc="WatchlistCtrl.shows[ watchlist.seriesId ].imgSrc"
-            seasoninfo="[{ 'days': '-2', 'episode': watchlist.episode.number, 'watched': false },{ 'days': '0', 'episode': '2', 'watched': false }]" >
-            <countdown-timer to="WatchlistCtrl.shows[7].seasons['season_'+ watchlist.seriesId][watchlist.episode.number].airDate" ></countdown-timer>
+            seasoninfo="watchlist"
+            countdownvisible="true">
+            <countdown-timer to="WatchlistCtrl.nextAiredEpisodeDate()" ></countdown-timer>
          </shows-countdown-card>
       </div>
    </div>
