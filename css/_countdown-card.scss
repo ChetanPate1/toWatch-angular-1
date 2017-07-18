@@ -21,6 +21,21 @@
     font-size: 12px;
   }
 
+  h6{
+    z-index: 20;
+    position: absolute;
+    bottom: 65px;
+    font-weight: bold;
+    right: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    small{
+      text-transform: none;
+      color: inherit;
+    }
+  }
+
   h2, h5{
     z-index: 10;
     font-weight: bold;

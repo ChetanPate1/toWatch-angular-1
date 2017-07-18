@@ -12,7 +12,7 @@ function WatchlistController(currentAuth, firebaseArray){
    vm.watchlist = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
-   vm.aired = aired;
+   vm.nextAired = nextAired;
 
    function add() {
       var list = {
@@ -28,19 +28,37 @@ function WatchlistController(currentAuth, firebaseArray){
       firebaseArray.save(ref, list);
    }
 
-   function aired(airDate, on) {
-      var diff = new Date(airDate).getTime() - today;
-
-      //
-
-      if(diff < 0){
-         console.log('aired', diff);
-      }else {
-
+   function nextAired(show, watchlist, index) {
+      if(!show){
+         return;
       }
-      return airDate;
+
+      var nextAired, i = 1;
+      var seasons = objSize(show.seasons);
+      var showSeason = show.seasons['season_'+ seasons];
+      var episodes = objSize(showSeason);
+
+      for (i; i <= episodes; i++) {
+         var ms = new Date(showSeason[i].airDate).getTime();
+         if (ms - today > 0){
+            nextAired = showSeason[i].airDate;
+            break;
+         }
+      }
+
+      return nextAired;
    }
    //self destroy once season watched
    //next episode -
-
+   function objSize(obj) {
+      var count = 0;
+      for (var prop in obj) {
+         if (obj.hasOwnProperty(prop)) {
+            ++count;
+         }else {
+            break;
+         }
+      }
+      return count;
+   }
 }

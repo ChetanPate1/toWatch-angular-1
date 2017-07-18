@@ -8,8 +8,10 @@
             imgsrc="WatchlistCtrl.shows[ watchlist.seriesId ].imgSrc"
             seasoninfo="watchlist"
             countdownvisible="true">
-            <countdown-timer to="WatchlistCtrl.nextAiredEpisodeDate()" ></countdown-timer>
+            <countdown-timer to="WatchlistCtrl.nextAired(WatchlistCtrl.shows[ watchlist.seriesId ], watchlist, $index)" ></countdown-timer>
          </shows-countdown-card>
+
+
       </div>
    </div>
 
