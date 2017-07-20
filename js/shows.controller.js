@@ -2,9 +2,9 @@ angular
    .module('app')
    .controller('ShowsController', ShowsController);
 
-ShowsController.$inject = ['firebaseArray'];
+ShowsController.$inject = ['firebaseArray', '$timeout'];
 
-function ShowsController(firebaseArray){
+function ShowsController(firebaseArray, $timeout){
    var vm = this;
 
    vm.shows = firebaseArray.getByRef('shows');
@@ -15,7 +15,6 @@ function ShowsController(firebaseArray){
       // var gen = generateEp('Silicon Valley', 'http://toptvshows.me/images/poster/Silicon%20Valley%20season%204%20poster.jpg', 4, 10);
       firebaseArray.save('shows', gen);
    }
-   
 
    function generateEp(seriesName, url, seasons, episodes){
       var eps = {}, series = {};

@@ -470,6 +470,31 @@
           "number" : "15"
         }, {
           "number" : "16"
+        } ],
+        "season_7" : [ null, {
+          "airDate" : "1499893200000",
+          "number" : "1"
+        }, {
+          "airDate" : "1500498000000",
+          "number" : "2"
+        }, {
+          "airDate" : "1501102800000",
+          "number" : "3"
+        }, {
+          "airDate" : "1501707600000",
+          "number" : "4"
+        }, {
+          "airDate" : "1502312400000",
+          "number" : "5"
+        }, {
+          "airDate" : "1503003600000",
+          "number" : "6"
+        }, {
+          "airDate" : "1503608400000",
+          "number" : "7"
+        }, {
+          "airDate" : "1504213200000",
+          "number" : "8"
         } ]
       },
       "series" : "Suits"
