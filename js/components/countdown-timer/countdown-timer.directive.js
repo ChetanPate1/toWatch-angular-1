@@ -24,7 +24,7 @@ function countdownTimer($interval) {
          now: function () {
             return new Date().getTime() / 1000;
          },
-         future: new Date(scope.to).getTime() / 1000,
+         future: parseInt(scope.to) / 1000,
          day: 86400,
          hour: 3600,
          minute: 60

@@ -12,7 +12,9 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
    vm.watchlist = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
+   vm.remove = remove;
    vm.nextAired = nextAired;
+   vm.checkAired = checkAired;
 
    function add() {
       var list = {
@@ -20,35 +22,49 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
          on: {
             season: vm.season,
             episode: vm.episode
-         }
+         },
+         unwatched: {}
       };
-
+      list['unwatched'] = nextAired(list).unwatched
       list['season_'+ vm.season] = [null, { watched: false }];
 
       firebaseArray.save(ref, list);
    }
 
+   function remove(index) {
+      vm.watchlist.$remove(index);
+   }
+
 
    function nextAired(watchlist) {
-      if(!vm.shows){
-         return;
-      }
-
-      var nextAired, i = 1;
+      var nextAired, i = 1, j = 1, unwatched = {}, toMs;
       var show = vm.shows[watchlist.seriesId];
       var seasons = objSize(show.seasons);
-      var showSeason = show.seasons['season_'+ seasons];
-      var episodes = objSize(showSeason);
+      var latestSeason = show.seasons['season_'+ seasons];
+      var episodes = objSize(latestSeason);
+
+      for (j; j <= episodes; j++) {
+         unwatched[j] = {
+            watched: false,
+            airDate: latestSeason[j].airDate
+         };
+      }
 
       for (i; i <= episodes; i++) {
-         var ms = new Date(showSeason[i].airDate).getTime();
-         if (ms - today > 0){
-            nextAired = showSeason[i].airDate;
+         unwatched[i].aired = true;
+
+         if (latestSeason[i].airDate - today > 0){
+            unwatched[i].aired = false;
+            nextAired = latestSeason[i].airDate;
             break;
          }
       }
 
-      return nextAired;
+      return { nextAired: nextAired, unwatched: unwatched };
+   }
+
+   function checkAired(date) {
+      return date - today < 0;
    }
 
    function objSize(obj) {
@@ -63,8 +79,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
       return count;
    }
 
-   // TODO: missedEpisodes function
    // TODO: function for array of unwatched episodes upto latest aired temp
    // TODO: mark watched function
-   // TODO: convert to firebase functions
+
 }

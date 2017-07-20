@@ -38,7 +38,7 @@ h1 {
     position: absolute;
     bottom: 65px;
     font-weight: bold;
-    right: 15px;
+    left: 15px;
     color: #ffffff;
     font-size: 16px;
     text-transform: uppercase; }
@@ -141,6 +141,8 @@ h1 {
         display: block;
         padding: 15px 10px;
         border-radius: 4px; }
+        .countdown-card .season-info .items li.disabled {
+          opacity: 0.7; }
       .countdown-card .season-info .items .left {
         font-size: 12px;
         line-height: 20px;

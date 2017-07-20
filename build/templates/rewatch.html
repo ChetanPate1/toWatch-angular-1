@@ -1,7 +1,7 @@
 <div class="container">
    <h1>Rewatch</h1>
    <div class="row">
-      <div class="col-md-4" ng-repeat="rewatch in RewatchCtrl.rewatch">
+      <div class="col-md-4" ng-repeat="rewatch in RewatchCtrl.rewatch" ng-if="rewatch.show">
          <rewatch-card
             heading="RewatchCtrl.shows[ rewatch.showId ].series"
             subheading="'Season '+  RewatchCtrl.currentSeason(rewatch.show, $index)"
@@ -20,7 +20,7 @@
 
    <div class="row">
       <h3>Add To Rewatch</h3>
-      <div class="col-md-6">
+      <div class="col-md-4">
          <form class="form-horizontal" name="form">
             <div class="form-group">
                <label for="series">Series</label>

@@ -1,11 +1,11 @@
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyAKhpVyjLKR4d45XZ2ZcHTzC85R_H0bNAk",
-  authDomain: "towatch-23983.firebaseapp.com",
-  databaseURL: "https://towatch-23983.firebaseio.com",
-  projectId: "towatch-23983",
-  storageBucket: "towatch-23983.appspot.com",
-  messagingSenderId: "767959575687"
+  apiKey: "AIzaSyBThnFs67ZrJ6J0z6IXkGzT16077IGXk9c",
+  authDomain: "towatch-b9155.firebaseapp.com",
+  databaseURL: "https://towatch-b9155.firebaseio.com",
+  projectId: "towatch-b9155",
+  storageBucket: "towatch-b9155.appspot.com",
+  messagingSenderId: "989986376535"
 };
 
 firebase.initializeApp(config);
