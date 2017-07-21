@@ -4,9 +4,9 @@
    <div class="season-info" ng-class="{ 'open': open }">
       <ul class="items active">
          <li ng-repeat="info in seasoninfo" ng-if="$index > 0"  ng-class="{ 'disabled' : !aired(info.airDate).aired }">
-            <span class="left">{{ aired(info.airDate).by }}</span>
+            <span class="left" ng-class="{'invisible': info.watched }">{{ aired(info.airDate).by }}</span>
             <span class="item">Episode {{ $index }}</span>
-            <span class="watched" ng-click="save(watchlistobj ,index, info)" >
+            <span class="watched" ng-click="save(watchlistobj, index, info)" >
                <span class="glyphicon" ng-class="{ 'glyphicon-eye-open' : info.watched, 'glyphicon-eye-close' : !info.watched }"></span>
             </span>
          </li>

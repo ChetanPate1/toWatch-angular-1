@@ -139,6 +139,8 @@ h1 {
         font-weight: bold;
         width: 30%;
         float: left; }
+        .countdown-card .season-info .items .left.invisible {
+          opacity: 0; }
       .countdown-card .season-info .items .item {
         font-weight: bold;
         width: 40%;
