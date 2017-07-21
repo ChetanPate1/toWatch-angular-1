@@ -18,8 +18,8 @@ function showsCountdownCard() {
          subheading: '=',
          imgsrc: '=',
          seasoninfo: '=',
-         countdownvisible: '=',
-         watchlistObj: '=',
+         visible: '=',
+         watchlistobj: '=',
          index: '='
       }
    };
@@ -29,10 +29,21 @@ function showsCountdownCard() {
 
       scope.open = false;
       scope.toggleOpen = toggleOpen;
+      scope.save = save;
       scope.aired = aired;
 
       function toggleOpen() {
          scope.open = !scope.open;
+      }
+
+      function save(watchlistobj, index, watchlist) {
+         airDate = parseInt(watchlist.airDate);
+         if( Math.abs((airDate - now))/1000 > 0 ){
+            return;
+         }else {
+            watchlist.watched = !watchlist.watched;
+            watchlistobj.$save(index);
+         }
       }
 
       function aired(date) {

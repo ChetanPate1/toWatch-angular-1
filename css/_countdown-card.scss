@@ -125,6 +125,25 @@
       margin: 0;
       max-height: 265px;
       overflow-y: auto;
+      .left{
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: bold;
+        width: 30%;
+        float: left;
+      }
+
+      .item{
+        font-weight: bold;
+        width: 40%;
+        float: left;
+      }
+
+      .watched{
+        text-align: right;
+        width: 30%;
+        float: left;
+      }
 
       li{
         margin: 10px auto;
@@ -137,25 +156,15 @@
 
         &.disabled{
           opacity: 0.7;
+          
+          .watched{
+            .glyphicon{
+              &:hover{
+                opacity: 0.5;
+              }
+            }
+          }
         }
-      }
-
-      .left{
-        font-size: 12px;
-        line-height: 20px;
-        font-weight: bold;
-        width: 30%;
-        float: left;
-      }
-      .item{
-        font-weight: bold;
-        width: 40%;
-        float: left;
-      }
-      .watched{
-        text-align: right;
-        width: 30%;
-        float: left;
       }
     }
   }

@@ -133,16 +133,6 @@ h1 {
         /* remove scrollbar space */
         background: transparent;
         /* optional: just make scrollbar invisible */ }
-      .countdown-card .season-info .items li {
-        margin: 10px auto;
-        height: 50px;
-        width: 90%;
-        background-color: #ffffff;
-        display: block;
-        padding: 15px 10px;
-        border-radius: 4px; }
-        .countdown-card .season-info .items li.disabled {
-          opacity: 0.7; }
       .countdown-card .season-info .items .left {
         font-size: 12px;
         line-height: 20px;
@@ -157,6 +147,18 @@ h1 {
         text-align: right;
         width: 30%;
         float: left; }
+      .countdown-card .season-info .items li {
+        margin: 10px auto;
+        height: 50px;
+        width: 90%;
+        background-color: #ffffff;
+        display: block;
+        padding: 15px 10px;
+        border-radius: 4px; }
+        .countdown-card .season-info .items li.disabled {
+          opacity: 0.7; }
+          .countdown-card .season-info .items li.disabled .watched .glyphicon:hover {
+            opacity: 0.5; }
 
 .countdown-timer .time {
   z-index: 100;
