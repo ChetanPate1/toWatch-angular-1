@@ -36,12 +36,15 @@ h1 {
   .countdown-card h6 {
     z-index: 20;
     position: absolute;
-    bottom: 65px;
+    bottom: 60px;
     font-weight: bold;
-    left: 15px;
+    left: 0;
+    width: 50%;
+    padding: 10px 0 10px 15px;
     color: #ffffff;
     font-size: 16px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.2); }
     .countdown-card h6 small {
       text-transform: none;
       color: inherit; }
@@ -50,24 +53,6 @@ h1 {
     font-weight: bold;
     position: relative;
     color: #ffffff; }
-  .countdown-card .more-button {
-    z-index: 300;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-image: none;
-    height: 23px;
-    width: 23px;
-    border: none;
-    border-radius: 50%;
-    background-color: #f2f2f2;
-    -webkit-box-shadow: 0 2px 13px rgba(0, 0, 0, 0.26);
-    -ms-box-shadow: 0 2px 13px rgba(0, 0, 0, 0.26);
-    box-shadow: 0 2px 13px rgba(0, 0, 0, 0.26); }
-    .countdown-card .more-button:hover {
-      -webkit-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.26);
-      -ms-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.26);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.26); }
   .countdown-card .glass {
     z-index: 20;
     overflow: hidden;
@@ -97,6 +82,39 @@ h1 {
     -ms-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.07);
     box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.07); }
 
+.countdown-card .more-button {
+  z-index: 300;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-image: none;
+  height: 26px;
+  width: 26px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+  text-align: center;
+  font-weight: 100;
+  font-size: 10px;
+  color: #b5b5b5;
+  -webkit-transition: transform 300ms ease;
+  -ms-transition: transform 300ms ease;
+  transition: transform 300ms ease;
+  -webkit-transform: translateY(275px) scale(1.5) rotate(270deg);
+  -ms-transform: translateY(275px) scale(1.5) rotate(270deg);
+  transform: translateY(275px) scale(1.5) rotate(270deg);
+  -webkit-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
+  -ms-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4); }
+  .countdown-card .more-button:hover {
+    -webkit-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+    -ms-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6); }
+  .countdown-card .more-button.open {
+    -webkit-transform: translateY(0) scale(1);
+    -ms-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1); }
+
 .countdown-card {
   overflow: hidden; }
   .countdown-card .season-info {
@@ -109,9 +127,9 @@ h1 {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
-    -webkit-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    transition: all 300ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    transition: all 500ms ease;
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%); }

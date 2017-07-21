@@ -1,12 +1,14 @@
 <div class="countdown-card" ng-style="{ 'background-image': 'url({{ imgsrc }})' }">
-   <button type="button" name="more" class="more-button" ng-click="toggleOpen()"></button>
+   <button type="button" name="more" class="more-button" ng-class="{'open' : open}" ng-click="toggleOpen()">
+      <span class="glyphicon glyphicon-plus"></span>
+   </button>
 
-   <div class="season-info" ng-class="{ 'open': open }">
+   <div class="season-info" ng-class="{ 'open': open }" >
       <ul class="items active">
          <li ng-repeat="info in seasoninfo" ng-if="$index > 0"  ng-class="{ 'disabled' : !aired(info.airDate).aired }">
             <span class="left" ng-class="{'invisible': info.watched }">{{ aired(info.airDate).by }}</span>
             <span class="item">Episode {{ $index }}</span>
-            <span class="watched" ng-click="save(watchlistobj, index, info)" >
+            <span class="watched" ng-click="save(watchlistobj, index, seasoninfo, info)" >
                <span class="glyphicon" ng-class="{ 'glyphicon-eye-open' : info.watched, 'glyphicon-eye-close' : !info.watched }"></span>
             </span>
          </li>

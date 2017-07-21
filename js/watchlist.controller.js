@@ -25,8 +25,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
          },
          unwatched: {}
       };
-      list['unwatched'] = nextAired(list).unwatched
-      list['season_'+ vm.season] = [null, { watched: false }];
+      list['unwatched'] = nextAired(list).unwatched;
 
       firebaseArray.save(ref, list);
    }
@@ -34,7 +33,6 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
    function remove(index) {
       vm.watchlist.$remove(index);
    }
-
 
    function nextAired(watchlist) {
       var nextAired, i = 1, j = 1, unwatched = {}, toMs;
@@ -78,8 +76,4 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
       }
       return count;
    }
-
-   // TODO: function for array of unwatched episodes upto latest aired temp
-   // TODO: mark watched function
-
 }
