@@ -105,11 +105,11 @@
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     @include transition(all 300ms ease);
-    @include transforms(translateY(-100%));
+    @include transforms(translateX(-100%));
 
     &.open{
       opacity: 1;
-      @include transforms(translateY(0%));
+      @include transforms(translateX(0%));
     }
 
     .items{
@@ -132,6 +132,7 @@
         font-weight: bold;
         width: 30%;
         float: left;
+        @include transition(opacity 400ms ease);
         &.invisible{
           opacity: 0;
         }

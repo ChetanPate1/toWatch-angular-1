@@ -38,9 +38,10 @@ function showsCountdownCard() {
 
       function save(watchlistobj, index, watchlist) {
          airDate = parseInt(watchlist.airDate);
-         if( Math.abs((airDate - now))/1000 > 0 ){
+         if( Math.abs((airDate - now))/1000 < 0 ){
             return;
          }else {
+            console.log('watched');
             watchlist.watched = !watchlist.watched;
             watchlistobj.$save(index);
          }
