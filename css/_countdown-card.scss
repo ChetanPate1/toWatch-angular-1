@@ -95,7 +95,7 @@
     color: #b5b5b5;
 
     @include transition(transform 300ms ease);
-    @include transforms(translateY(275px) scale(1.5) rotate(270deg));
+    @include transforms(translateY(275px) scale(1.5));
     @include box-shadow(0 3px 13px rgba(0, 0, 0, 0.4));
 
     &:hover{

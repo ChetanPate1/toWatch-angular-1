@@ -16,6 +16,7 @@ function ShowsController(firebaseArray, $timeout){
       firebaseArray.save('shows', gen);
    }
 
+
    function generateEp(seriesName, url, seasons, episodes){
       var eps = {}, series = {};
       for(var i = 1; i <= episodes; i++){

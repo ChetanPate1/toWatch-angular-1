@@ -100,9 +100,9 @@ h1 {
   -webkit-transition: transform 300ms ease;
   -ms-transition: transform 300ms ease;
   transition: transform 300ms ease;
-  -webkit-transform: translateY(275px) scale(1.5) rotate(270deg);
-  -ms-transform: translateY(275px) scale(1.5) rotate(270deg);
-  transform: translateY(275px) scale(1.5) rotate(270deg);
+  -webkit-transform: translateY(275px) scale(1.5);
+  -ms-transform: translateY(275px) scale(1.5);
+  transform: translateY(275px) scale(1.5);
   -webkit-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
   -ms-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4); }
