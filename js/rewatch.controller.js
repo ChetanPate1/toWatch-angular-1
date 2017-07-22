@@ -15,7 +15,6 @@ function RewatchController(currentAuth, firebaseArray, $timeout){
 
    function add() {
       var initRewatch = {
-         init: false,
          showId: vm.seriesIndex,
          on: {s: '1', ep: '1'},
          show: initSeries(vm.shows[vm.seriesIndex].seasons)

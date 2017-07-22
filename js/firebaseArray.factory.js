@@ -5,6 +5,7 @@ angular
 firebaseArray.$inject = ['$firebaseArray'];
 
 function firebaseArray($firebaseArray){
+   var vm = this;
    var service = {
       save: save,
       getByRef: getByRef,

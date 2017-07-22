@@ -23,9 +23,10 @@ function seasonInfo() {
    function link(scope) {
       scope.open = false;
       scope.toggleOpen = toggleOpen;
+      scope.tabActive = scope.currentseason;
       scope.tabSelect = tabSelect;
       scope.isTabSelected = isTabSelected;
-      scope.tabActive = scope.currentseason;
+      scope.save = save;
 
       function toggleOpen() {
          scope.open = !scope.open;
@@ -37,6 +38,11 @@ function seasonInfo() {
 
       function isTabSelected(number) {
          return scope.tabActive == number;
+      }
+
+      function save(watchlistobj, index, rewatch) {
+         rewatch.watched = !rewatch.watched;
+         watchlistobj.$save(index);
       }
    }
 
