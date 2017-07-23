@@ -26,7 +26,6 @@ function showsCountdownCard() {
 
    function link(scope) {
       var now = new Date().getTime();
-
       scope.open = false;
       scope.toggleOpen = toggleOpen;
       scope.save = save;

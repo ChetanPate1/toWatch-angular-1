@@ -1,4 +1,6 @@
-<button type="button" name="more" class="more-button" ng-click="toggleOpen()"></button>
+<button type="button" name="more" class="more-button" ng-click="toggleOpen()" ng-class="{'open': open}">
+   <span class="glyphicon glyphicon-plus"></span>
+</button>
 <div class="season-info" ng-class="{ 'open': open }" >
    <div class="tabs">
       <ul ng-repeat="season in seasons" ng-if="$index >= 1">
@@ -7,7 +9,6 @@
    </div>
 
    <div class="lists">
-
       <ul class="items" ng-class="{ 'active': isTabSelected($index + 1) }" ng-repeat="season in seasons" >
          <li ng-repeat="episode in season" ng-if="$index > 0">
             <span class="item">Episode {{ episode.number }}</span>
@@ -16,6 +17,5 @@
             </span>
          </li>
       </ul>
-
    </div>
 </div>

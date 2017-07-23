@@ -93,17 +93,23 @@
     font-weight: 100;
     font-size: 10px;
     color: #b5b5b5;
+    padding: 0;
+    
+    .glyphicon{
+      left: 1px;
+    }
 
     @include transition(transform 300ms ease);
     @include transforms(translateY(275px) scale(1.5));
     @include box-shadow(0 3px 13px rgba(0, 0, 0, 0.4));
 
     &:hover{
+      cursor: pointer;
       @include box-shadow(0 4px 18px rgba(0, 0, 0, 0.6));
     }
 
     &.open{
-      @include transforms(translateY(0) scale(1));
+      @include transforms(translateY(0) scale(1) rotate(45deg));
     }
   }
 }

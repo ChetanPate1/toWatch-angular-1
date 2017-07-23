@@ -11,8 +11,6 @@ function rewatchCard() {
    var directive = {
       templateUrl: 'js/components/rewatch-card/rewatch-card.html',
       restrict: 'E',
-      controller: 'RewatchCardController',
-      controllerAs: 'RewatchCardCtrl',
       transclude: true,
       scope: {
          heading: '=',
