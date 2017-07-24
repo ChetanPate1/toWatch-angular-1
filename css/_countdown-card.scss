@@ -90,12 +90,11 @@
     border-radius: 50%;
     background-color: #ffffff;
     text-align: center;
-    font-weight: 100;
-    font-size: 10px;
-    color: #b5b5b5;
+    color: #737373;
     padding: 0;
-    
+
     .glyphicon{
+      font-size: 11px;
       left: 1px;
     }
 
@@ -104,7 +103,6 @@
     @include box-shadow(0 3px 13px rgba(0, 0, 0, 0.4));
 
     &:hover{
-      cursor: pointer;
       @include box-shadow(0 4px 18px rgba(0, 0, 0, 0.6));
     }
 

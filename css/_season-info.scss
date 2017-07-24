@@ -74,6 +74,7 @@
       float: left;
 
       .glyphicon{
+        cursor: pointer;
         opacity: 0.5;
         @include transition(opacity 200ms ease);
         &.glyphicon-eye-open{

@@ -28,6 +28,7 @@ function seasonInfo() {
       scope.tabSelect = tabSelect;
       scope.isTabSelected = isTabSelected;
       scope.save = save;
+      scope.hasAired = hasAired;
       scope.currentSeason = currentSeason;
 
       function toggleOpen() {
@@ -53,28 +54,34 @@ function seasonInfo() {
          }
       }
 
+      function hasAired(airDate) {
+         airDate = parseInt(airDate);
+         return airDate - now < 0;
+      }
+
       function currentSeason(show, watchlistobj, index) {
          var seasons = objSize(show);
          var seasonSize = 0;
-         var watched = 0, onSeason = 1;
+         var episode = 1, season = 1;
 
          for (var i = 1; i <= seasons; i++){
             seasonsSize = objSize(show['season_' + i]);
 
             for (var j = 1; j <= seasonsSize; j++) {
-               if(show['season_' + i][j].watched === false && show['season_' + i][j].airDate - now < 0){
-                  break;
+
+               if(show['season_' + i][j].watched == true){
+                  episode++;
                }
-               if (show['season_' + i][j].watched && show['season_' + i][j].airDate - now < 0) {
-                  watched++;
-               }
-               if (watched == seasonsSize) {
-                  onSeason++;
+
+               if (episode == seasonsSize) {
+                  season++;
+                  episode = 1;
                }
             }
          }
-         watchlistobj[index].on.episode = watched.toString();
-         watchlistobj[index].on.season = onSeason.toString();
+
+         watchlistobj[index].on.episode = (episode - 1).toString();
+         watchlistobj[index].on.season = season.toString();
       }
 
       function objSize(obj) {

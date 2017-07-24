@@ -25,7 +25,6 @@ function RewatchController(currentAuth, firebaseArray, $timeout){
       firebaseArray.save(ref, initRewatch);
    }
 
-
    function initSeries(show) {
       var seasons = objSize(show);
       var seasonSize = 0;
