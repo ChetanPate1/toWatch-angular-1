@@ -43,18 +43,17 @@ function seasonInfo() {
          return scope.tabActive == number;
       }
 
-      function save(watchlistobj, index, rewatch, episodeNumber) {
+      function save(rewatchobj, index, rewatch, episodeNumber) {
          var airDate = parseInt(rewatch.airDate);
-         var on = parseInt(watchlistobj[index].on.episode);
+         var on = parseInt(rewatchobj[index].on.episode);
          var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1;
 
-         console.log(isOneLessOneMore);
          if( Math.abs(airDate - now)/1000 < 0 || !isOneLessOneMore){
             return;
          }else {
             rewatch.watched = !rewatch.watched;
-            currentSeason(watchlistobj[index].show, watchlistobj, index);
-            watchlistobj.$save(index);
+            currentSeason(rewatchobj[index].show, rewatchobj, index);
+            rewatchobj.$save(index);
          }
       }
 
@@ -63,7 +62,7 @@ function seasonInfo() {
          return airDate - now < 0;
       }
 
-      function currentSeason(show, watchlistobj, index) {
+      function currentSeason(show, rewatchobj, index) {
          var seasons = objSize(show);
          var seasonSize = 0;
          var episode = 1, season = 1;
@@ -84,8 +83,8 @@ function seasonInfo() {
             }
          }
 
-         watchlistobj[index].on.episode = (episode - 1).toString();
-         watchlistobj[index].on.season = season.toString();
+         rewatchobj[index].on.episode = (episode - 1).toString();
+         rewatchobj[index].on.season = season.toString();
       }
 
       function objSize(obj) {

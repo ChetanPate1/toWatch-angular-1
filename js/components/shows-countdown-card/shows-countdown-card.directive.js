@@ -27,6 +27,7 @@ function showsCountdownCard() {
    function link(scope) {
       var now = new Date().getTime();
       scope.open = false;
+      scope.upToDate = false;
       scope.toggleOpen = toggleOpen;
       scope.save = save;
       scope.aired = aired;
@@ -37,10 +38,12 @@ function showsCountdownCard() {
          scope.open = !scope.open;
       }
 
-      function save(watchlistobj, index, seasoninfo, watchlist) {
-         airDate = parseInt(watchlist.airDate);
-         console.log(watchlist);
-         if( Math.abs((airDate - now))/1000 < 0 ){
+      function save(watchlistobj, index, seasoninfo, watchlist, episodeNumber) {
+         var airDate = parseInt(watchlist.airDate);
+         var on = parseInt(watchlistobj[index].on.episode);
+         var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1;
+
+         if( Math.abs((airDate - now))/1000 < 0 || !isOneLessOneMore){
             return;
          }else {
             watchlist.watched = !watchlist.watched;
@@ -49,9 +52,6 @@ function showsCountdownCard() {
          }
       }
 
-      function nextEpiside(w) {
-         
-      }
 
       function aired(date) {
          if(!date){
@@ -71,15 +71,23 @@ function showsCountdownCard() {
 
       function countWatched(seasoninfo, watchlistobj, index) {
          var i = 1, size = seasoninfo.length - 1;
+         var nextSeason = parseInt(watchlistobj[index].on.season) + 1;
+         var nextSeasonNull = watchlistobj[index].on.season['season_'+ nextSeason] == undefined;
+
          for (i; i < size; i++) {
             if(!seasoninfo[i].watched){
                break;
             }
          }
-         if(i == size){
-            watchlistobj[index].on.season = parseInt(watchlistobj[index].on.season) + 1;
-            watchlistobj[index].on.episode = 1;
+         if(i >= size){
+            if(nextSeasonNull){
+               watchlistobj[index].upToDate = true;
+            }else {
+               watchlistobj[index].on.season = nextSeason;
+               watchlistobj[index].on.episode = 1;
+            }
          }
+
          watchlistobj[index].on.episode = i;
       }
 

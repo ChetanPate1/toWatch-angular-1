@@ -184,6 +184,35 @@ h1 {
           opacity: 0.7; }
           .countdown-card .season-info .items li.disabled .watched .glyphicon:hover {
             opacity: 0.5; }
+  .countdown-card .shutter {
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    transition: all 300ms ease; }
+    .countdown-card .shutter h2 {
+      width: 100%;
+      position: absolute;
+      top: 100px;
+      left: 0; }
+    .countdown-card .shutter .btn {
+      margin: 180px auto 0 auto;
+      display: block;
+      max-width: 100px; }
+    .countdown-card .shutter.open {
+      -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      transform: translateY(0%);
+      opacity: 1; }
 
 .countdown-timer .time {
   z-index: 100;

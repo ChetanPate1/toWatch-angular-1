@@ -18,6 +18,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
 
    function add() {
       var list = {
+         upToDate: false,
          seriesId: vm.series,
          on: {
             season: vm.season,
