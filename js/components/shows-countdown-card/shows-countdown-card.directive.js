@@ -74,12 +74,12 @@ function showsCountdownCard() {
          var nextSeason = parseInt(watchlistobj[index].on.season) + 1;
          var nextSeasonNull = watchlistobj[index].on.season['season_'+ nextSeason] == undefined;
 
-         for (i; i < size; i++) {
+         for (i; i <= size; i++) {
             if(!seasoninfo[i].watched){
                break;
             }
          }
-         if(i >= size){
+         if(i > size){
             if(nextSeasonNull){
                watchlistobj[index].upToDate = true;
             }else {
@@ -87,7 +87,7 @@ function showsCountdownCard() {
                watchlistobj[index].on.episode = 1;
             }
          }
-
+         
          watchlistobj[index].on.episode = i;
       }
 

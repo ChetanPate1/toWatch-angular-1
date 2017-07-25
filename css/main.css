@@ -191,7 +191,7 @@ h1 {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     opacity: 0;
     -webkit-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
@@ -202,10 +202,10 @@ h1 {
     .countdown-card .shutter h2 {
       width: 100%;
       position: absolute;
-      top: 100px;
+      top: 120px;
       left: 0; }
     .countdown-card .shutter .btn {
-      margin: 180px auto 0 auto;
+      margin: 200px auto 0 auto;
       display: block;
       max-width: 100px; }
     .countdown-card .shutter.open {
@@ -385,14 +385,17 @@ h1 {
       padding: 15px 10px;
       border-radius: 4px; }
     .season-info .items .item {
+      position: relative;
       padding-left: 20px;
       font-weight: bold;
-      width: 70%;
+      width: 85%;
       float: left; }
+      .season-info .items .item small {
+        font-size: 75%; }
     .season-info .items .watched {
       font-size: 16px;
       text-align: right;
-      width: 30%;
+      width: 15%;
       float: left; }
       .season-info .items .watched .glyphicon {
         cursor: pointer;

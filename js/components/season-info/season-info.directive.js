@@ -30,6 +30,7 @@ function seasonInfo() {
       scope.save = save;
       scope.hasAired = hasAired;
       scope.currentSeason = currentSeason;
+      scope.limitLength = limitLength;
 
       function toggleOpen() {
          scope.open = !scope.open;
@@ -85,6 +86,14 @@ function seasonInfo() {
 
          rewatchobj[index].on.episode = (episode - 1).toString();
          rewatchobj[index].on.season = season.toString();
+      }
+
+      function limitLength(string, limit) {
+         if (string.length > limit) {
+            return string.substring(0 ,limit) + '...';
+         }else {
+            return string;
+         }
       }
 
       function objSize(obj) {

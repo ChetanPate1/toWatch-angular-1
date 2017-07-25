@@ -61,16 +61,20 @@
     }
 
     .item{
+      position: relative;
       padding-left: 20px;
       font-weight: bold;
-      width: 70%;
+      width: 85%;
       float: left;
+      small{
+        font-size: 75%;
+      }
     }
 
     .watched{
       font-size: 16px;
       text-align: right;
-      width: 30%;
+      width: 15%;
       float: left;
 
       .glyphicon{
