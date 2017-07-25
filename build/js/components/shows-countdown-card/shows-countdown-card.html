@@ -5,7 +5,7 @@
 
    <div class="season-info" ng-class="{ 'open': open }" >
       <ul class="items active">
-         <li ng-repeat="info in seasoninfo" ng-if="$index > 0"  ng-class="{ 'disabled' : !aired(info.airDate).aired }">
+         <li ng-repeat="info in seasoninfo" ng-if="$index > 0"  ng-class="{ 'disabled' : !aired(info.airDate).aired || !info.watched }">
             <span class="left" ng-class="{'invisible': info.watched }">{{ aired(info.airDate).by }}</span>
             <span class="item">Episode {{ $index }}</span>
             <span class="watched" ng-click="save(watchlistobj, index, seasoninfo, info)" >

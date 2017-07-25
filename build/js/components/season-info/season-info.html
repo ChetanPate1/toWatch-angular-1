@@ -12,7 +12,7 @@
       <ul class="items" ng-class="{ 'active': isTabSelected($index + 1) }" ng-repeat="season in seasons" >
          <li ng-repeat="episode in season" ng-if="$index > 0 && hasAired(episode.airDate)">
             <span class="item">Episode {{ episode.number }}</span>
-            <span class="watched" ng-click="save(rewatchobj, index, episode)" >
+            <span class="watched" ng-click="save(rewatchobj, index, episode, $index)" >
                <span class="glyphicon" ng-class="{ 'glyphicon-eye-open' : episode.watched, 'glyphicon-eye-close' : !episode.watched }"></span>
             </span>
          </li>

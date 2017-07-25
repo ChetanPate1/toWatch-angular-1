@@ -12,7 +12,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
    vm.watchlist = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
-   vm.remove = remove;
+
    vm.nextAired = nextAired;
    vm.checkAired = checkAired;
 
@@ -28,10 +28,6 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
       list['unwatched'] = nextAired(list).unwatched;
 
       firebaseArray.save(ref, list);
-   }
-
-   function remove(index) {
-      vm.watchlist.$remove(index);
    }
 
    function nextAired(watchlist) {

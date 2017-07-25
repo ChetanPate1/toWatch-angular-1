@@ -39,6 +39,7 @@ function showsCountdownCard() {
 
       function save(watchlistobj, index, seasoninfo, watchlist) {
          airDate = parseInt(watchlist.airDate);
+         console.log(watchlist);
          if( Math.abs((airDate - now))/1000 < 0 ){
             return;
          }else {
@@ -46,6 +47,10 @@ function showsCountdownCard() {
             countWatched(seasoninfo, watchlistobj, index);
             watchlistobj.$save(index);
          }
+      }
+
+      function nextEpiside(w) {
+         
       }
 
       function aired(date) {
@@ -61,16 +66,19 @@ function showsCountdownCard() {
          else {
             aired.by = '-' + Math.floor(delta / 86400) + ' days';
          }
-
          return aired;
       }
 
       function countWatched(seasoninfo, watchlistobj, index) {
-         var i = 1, size = seasoninfo.length;
+         var i = 1, size = seasoninfo.length - 1;
          for (i; i < size; i++) {
             if(!seasoninfo[i].watched){
                break;
             }
+         }
+         if(i == size){
+            watchlistobj[index].on.season = parseInt(watchlistobj[index].on.season) + 1;
+            watchlistobj[index].on.episode = 1;
          }
          watchlistobj[index].on.episode = i;
       }

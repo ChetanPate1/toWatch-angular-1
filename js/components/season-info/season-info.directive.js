@@ -43,9 +43,13 @@ function seasonInfo() {
          return scope.tabActive == number;
       }
 
-      function save(watchlistobj, index, rewatch) {
+      function save(watchlistobj, index, rewatch, episodeNumber) {
          var airDate = parseInt(rewatch.airDate);
-         if(Math.abs(airDate - now)/1000 < 0){
+         var on = parseInt(watchlistobj[index].on.episode);
+         var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1;
+
+         console.log(isOneLessOneMore);
+         if( Math.abs(airDate - now)/1000 < 0 || !isOneLessOneMore){
             return;
          }else {
             rewatch.watched = !rewatch.watched;
