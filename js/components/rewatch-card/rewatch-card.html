@@ -1,8 +1,9 @@
 <div class="rewatch-card" ng-style="{ 'background-image': 'url({{ imgsrc }})' }">
    <ng-transclude></ng-transclude>
 
-   <h2>{{ heading }}</h2>
-   <h5>On {{ subheading }}</h5>
+   <h2>{{ heading }} <span class="details">{{ details }}</span></h2>
+
+   <h5><strong>On</strong> {{ subheading }}</h5>
 
    <div class="glass">
       <div class="frost" ng-style="{ 'background-image': 'url({{ imgsrc }})' }"></div>

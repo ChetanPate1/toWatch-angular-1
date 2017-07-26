@@ -46,10 +46,11 @@ function seasonInfo() {
 
       function save(rewatchobj, index, rewatch, episodeNumber) {
          var airDate = parseInt(rewatch.airDate);
-         var on = parseInt(rewatchobj[index].on.episode);
-         var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1;
+         var onEp = parseInt(rewatchobj[index].on.episode);
+         var valid = episodeNumber === onEp || episodeNumber === (onEp - 1) && (scope.tabActive).toString() == rewatchobj[index].on.season;
 
-         if( Math.abs(airDate - now)/1000 < 0 || !isOneLessOneMore){
+
+         if( Math.abs(airDate - now)/1000 < 0 || !valid){
             return;
          }else {
             rewatch.watched = !rewatch.watched;
@@ -64,27 +65,24 @@ function seasonInfo() {
       }
 
       function currentSeason(show, rewatchobj, index) {
-         var seasons = objSize(show);
-         var seasonSize = 0;
-         var episode = 1, season = 1;
+         var episode = parseInt(rewatchobj[index].on.episode);
+         var season = parseInt(rewatchobj[index].on.season);
+         var seasonKey = 'season_' + season;
+         var seasonsSize = objSize(show[seasonKey]);
+         var watched = 0;
 
-         for (var i = 1; i <= seasons; i++){
-            seasonsSize = objSize(show['season_' + i]);
+         for (var j = 1; j <= seasonsSize; j++) {
+            if(show[seasonKey][j].watched == true){
+               watched++;
+            }
 
-            for (var j = 1; j <= seasonsSize; j++) {
-
-               if(show['season_' + i][j].watched == true){
-                  episode++;
-               }
-
-               if (episode == seasonsSize) {
-                  season++;
-                  episode = 1;
-               }
+            if (watched == seasonsSize) {
+               season++;
+               watched = 0;
             }
          }
 
-         rewatchobj[index].on.episode = (episode - 1).toString();
+         rewatchobj[index].on.episode = (watched + 1).toString();
          rewatchobj[index].on.season = season.toString();
       }
 

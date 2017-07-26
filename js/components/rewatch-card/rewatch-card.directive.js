@@ -1,6 +1,6 @@
 /**
  * @desc Rewatch Card directive
- * @example <rewatch-card heading="" subheading="" imgsrc="" seasoninfo=""></rewatch-card>
+ * @example <rewatch-card heading="" subheading="" details="" imgsrc="" seasoninfo=""></rewatch-card>
  */
 
 angular
@@ -15,6 +15,7 @@ function rewatchCard() {
       scope: {
          heading: '=',
          subheading: '=',
+         details: '=',
          imgsrc: '='
       }
    };

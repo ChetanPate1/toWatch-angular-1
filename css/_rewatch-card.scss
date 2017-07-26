@@ -19,14 +19,44 @@
   }
 
   h5{
+    margin-top: 5px;
     font-size: 12px;
+    width: 100%;
   }
 
   h2, h5{
+    float: left;
     z-index: 10;
     font-weight: bold;
     position: relative;
     color: #ffffff;
+  }
+
+  h2{
+    .details{
+      display: block;
+      width: 100%;
+      font-size: 15px;
+      padding: 7px 0 10px 0;
+      font-weight: normal;
+      letter-spacing: normal;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .delete-button{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    z-index: 300;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    opacity: 0.2;
+
+    &:hover{
+      opacity: 1;
+    }
   }
 
   .more-button{

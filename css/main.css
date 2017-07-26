@@ -251,12 +251,34 @@ h1 {
   .rewatch-card h2 {
     letter-spacing: 1px; }
   .rewatch-card h5 {
-    font-size: 12px; }
+    margin-top: 5px;
+    font-size: 12px;
+    width: 100%; }
   .rewatch-card h2, .rewatch-card h5 {
+    float: left;
     z-index: 10;
     font-weight: bold;
     position: relative;
     color: #ffffff; }
+  .rewatch-card h2 .details {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    padding: 7px 0 10px 0;
+    font-weight: normal;
+    letter-spacing: normal;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8); }
+  .rewatch-card .delete-button {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    z-index: 300;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    opacity: 0.2; }
+    .rewatch-card .delete-button:hover {
+      opacity: 1; }
   .rewatch-card .more-button {
     z-index: 300;
     position: absolute;
