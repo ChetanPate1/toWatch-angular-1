@@ -17,7 +17,7 @@ gulp.task('sass', function () {
    return gulp.src('app/css/main.scss')
         .pipe(plumber())
         .pipe(sass())
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest('app/css'))
         .pipe(reload({ stream: true }));
 });
 

@@ -71,7 +71,7 @@
     border-radius: 50%;
     background-color: #ffffff;
     padding: 0;
-    @include transforms(translateY(340px) scale(1.5));
+    @include transforms(translateY(300px) scale(1.5));
 
     .glyphicon{
       font-size: 11px;

@@ -1,12 +1,13 @@
 <div class="container">
-   <h1>Rewatch</h1>
+
    <div class="row">
       <div class="col-md-4" ng-repeat="rewatch in RewatchCtrl.rewatch" ng-if="rewatch.show">
          <rewatch-card
             heading="RewatchCtrl.shows[ rewatch.showId ].series"
             subheading="'Season '+ rewatch.on.season +' Episode ' + rewatch.on.episode"
             details="RewatchCtrl.shows[ rewatch.showId ].seasons['season_'+ rewatch.on.season ][ rewatch.on.episode ].name"
-            imgsrc="RewatchCtrl.shows[ rewatch.showId ].imgSrc" >
+            imgsrc="RewatchCtrl.shows[ rewatch.showId ].imgSrc"
+            visible="true" >
 
             <season-info
                seasons="rewatch.show"
