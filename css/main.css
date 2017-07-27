@@ -1,8 +1,11 @@
 body {
-  padding-top: 50px; }
+  padding-top: 100px; }
 
 button {
   outline: 0; }
+
+#view {
+  min-height: 500px; }
 
 body {
   font-family: 'Nunito', sans-serif; }
@@ -12,9 +15,116 @@ h1 {
   font-size: 60px;
   font-weight: bold; }
 
-.navbar-nav li a {
-  font-size: 12px;
-  letter-spacing: 1px; }
+.navigation-bar {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1200;
+  padding-top: 50px;
+  -webkit-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  transition: all 400ms ease; }
+  .navigation-bar .brand {
+    float: left;
+    font-weight: bold;
+    line-height: 56px;
+    font-size: 20px; }
+  .navigation-bar .links {
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: block; }
+    .navigation-bar .links.auth {
+      position: absolute;
+      top: 0;
+      right: 0; }
+      .navigation-bar .links.auth a {
+        font-size: 10px; }
+    .navigation-bar .links li {
+      display: inline-block;
+      float: left;
+      /*tablet*/ }
+      .navigation-bar .links li a {
+        text-align: center;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        font-size: 12px;
+        float: left;
+        letter-spacing: 1px; }
+      .navigation-bar .links li.active a {
+        color: #000000;
+        font-weight: bold; }
+      @media (max-width: 991px) {
+        .navigation-bar .links li {
+          display: block;
+          float: left;
+          width: 100%; } }
+  .navigation-bar.open {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%); }
+  @media (max-width: 991px) {
+    .navigation-bar {
+      height: 100%;
+      width: 40%;
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%); }
+      .navigation-bar .container {
+        width: auto; } }
+  @media (max-width: 767px) {
+    .navigation-bar {
+      width: 50%; } }
+  @media (max-width: 480px) {
+    .navigation-bar {
+      width: 90%; } }
+
+.navigation-underlay {
+  top: 0;
+  right: 0;
+  z-index: 1100;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%); }
+  .navigation-underlay:hover {
+    cursor: pointer; }
+  .navigation-underlay.open {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%); }
+  @media (min-width: 992px) {
+    .navigation-underlay.open {
+      -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      transform: translateX(100%); } }
+
+.navigation-button {
+  padding: 10px;
+  z-index: 2000;
+  top: 15px;
+  right: 15px;
+  position: fixed;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold; }
+  .navigation-button:hover {
+    background-color: #f0f0f0; }
+  @media (min-width: 992px) {
+    .navigation-button {
+      display: none; } }
+  @media (max-width: 480px) {
+    .navigation-button {
+      right: auto;
+      top: 10px;
+      left: 15px; } }
 
 .countdown-card {
   position: relative;
