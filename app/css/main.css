@@ -1,8 +1,10 @@
+body {
+  padding-top: 100px; }
+
 button {
   outline: 0; }
 
 #view {
-  padding-top: 120px;
   min-height: 500px; }
 
 body {

@@ -1,0 +1,231 @@
+.countdown-card{
+  position: relative;
+  display: block;
+  margin: 0 auto 25px auto;
+  max-width: 300px;
+  height: 400px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px 15px 0 15px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  @include box-shadow(inset 0 130px 130px rgba(0, 0, 0, 0.2));
+
+  h2{
+    letter-spacing: 1px;
+  }
+
+  h5{
+    font-size: 12px;
+  }
+
+  h6{
+    z-index: 20;
+    position: absolute;
+    bottom: 60px;
+    font-weight: bold;
+    left: 0;
+    width: 50%;
+    padding: 10px 0 10px 15px;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    small{
+      text-transform: none;
+      color: inherit;
+    }
+  }
+
+  h2, h5{
+    z-index: 10;
+    font-weight: bold;
+    position: relative;
+    color: #ffffff;
+  }
+
+  .glass{
+    z-index: 20;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.17);
+    opacity: 0;
+
+    &.show{
+      opacity: 1;
+    }
+  }
+
+  .frost{
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-position: center 93%;
+    @include transforms(scale(1.08));
+    @include filter(blur(10px));
+    @include box-shadow(inset 0 -50px 30px rgba(0, 0, 0, 0.07));
+  }
+}
+
+.countdown-card{
+  .more-button{
+    z-index: 300;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-image: none;
+    height: 26px;
+    width: 26px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+    padding: 0;
+
+    .glyphicon{
+      font-size: 11px;
+      left: 1px;
+    }
+
+    @include transition(transform 300ms ease);
+    @include transforms(translateY(275px) scale(1.5));
+    @include box-shadow(0 3px 13px rgba(0, 0, 0, 0.4));
+
+    &:hover{
+      @include box-shadow(0 4px 18px rgba(0, 0, 0, 0.6));
+    }
+
+    &.open{
+      @include transforms(translateY(0) scale(1) rotate(45deg));
+    }
+  }
+}
+
+
+.countdown-card{
+  overflow: hidden;
+
+  .season-info{
+    padding-top: 120px;
+    position: absolute;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    @include transition(all 500ms ease);
+    @include transforms(translateX(-100%));
+
+    &.open{
+      opacity: 1;
+      @include transforms(translateX(0%));
+    }
+
+    .items{
+      &::-webkit-scrollbar {
+        width: 0px;  /* remove scrollbar space */
+        background: transparent;  /* optional: just make scrollbar invisible */
+      }
+
+      position: relative;
+      width: 100%;
+      display: block;
+      padding: 0;
+      margin: 0;
+      max-height: 265px;
+      overflow-y: auto;
+
+      .left{
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: bold;
+        width: 30%;
+        float: left;
+        @include transition(opacity 400ms ease);
+        &.invisible{
+          opacity: 0;
+        }
+      }
+
+      .item{
+        font-weight: bold;
+        width: 40%;
+        float: left;
+      }
+
+      .watched{
+        text-align: right;
+        width: 30%;
+        float: left;
+      }
+
+      li{
+        margin: 10px auto;
+        height: 50px;
+        width: 90%;
+        background-color: #ffffff;
+        display: block;
+        padding: 15px 10px;
+        border-radius: 4px;
+        @include transition(opacity 500ms ease);
+
+        &.disabled{
+          opacity: 0.7;
+
+          .watched{
+            .glyphicon{
+              &:hover{
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .shutter{
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+
+    h2{
+      width: 100%;
+      position: absolute;
+      top: 120px;
+      left: 0;
+    }
+
+    .btn{
+      margin: 200px auto 0 auto;
+      display: block;
+      max-width: 100px;
+    }
+
+    @include transforms(translateY(-100%));
+    @include transition(all 300ms ease);
+
+    &.open{
+      @include transforms(translateY(0%));
+      opacity: 1;
+    }
+  }
+}

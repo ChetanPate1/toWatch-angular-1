@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+   <meta name="theme-color" content="#ffffff">
+
+   <!-- <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+   <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+   <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+   <link rel="manifest" href="images/manifest.json">
+   <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5"> -->
+
+   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+   <body>
+      <navigation-bar></navigation-bar>
+      <div ui-view autoscroll="true" id="view"></div>
+   </body>
+
+   <script src="/bower_components/angular/angular.min.js"></script>
+   <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+   <script src="/bower_components/firebase/firebase.js"></script>
+   <script src="/bower_components/angularfire/dist/angularfire.min.js"></script>
+
+   <script src="services/firebase.config.js"></script>
+
+   <!-- Angular App.js -->
+   <script src="app.js"></script>
+   <script src="app.run.js"></script>
+   <!-- routes -->
+   <script src="app.routes.js"></script>
+   <!-- directives -->
+   <script src="components/navigation-bar/navigation-bar.directive.js"></script>
+   <script src="components/countdown-card/countdown-card.directive.js"></script>
+   <script src="components/shows-countdown-card/shows-countdown-card.directive.js"></script>
+   <script src="components/countdown-timer/countdown-timer.directive.js"></script>
+   <script src="components/rewatch-card/rewatch-card.directive.js"></script>
+   <script src="components/season-info/season-info.directive.js"></script>
+   <!-- controllers -->
+   <script src="signin/signin.controller.js"></script>
+   <script src="watchlist/watchlist.controller.js"></script>
+   <script src="shows/shows.controller.js"></script>
+   <script src="rewatchlist/rewatch.controller.js"></script>
+   <script src="components/navigation-bar/navigation-bar.controller.js"></script>
+   <!-- services & factories -->
+   <script src="services/firebase-auth.factory.js"></script>
+   <script src="services/firebase-array.factory.js"></script>
+</html>

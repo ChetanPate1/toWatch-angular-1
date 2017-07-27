@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 
 /* SASS Task*/
 gulp.task('sass', function () {
-   return gulp.src('css/main.scss')
+   return gulp.src('app/css/main.scss')
         .pipe(plumber())
         .pipe(sass())
         .pipe(gulp.dest('css'))
@@ -31,8 +31,8 @@ gulp.task('bootstrap', function(){
         .pipe(gulp.dest('build/css'));
 });
 
-gulp.task('css', ['sass'], function(){
-    return gulp.src('css/main.css')
+gulp.task('css', ['sass', 'fonts', 'bootstrap'], function(){
+    return gulp.src('app/css/main.css')
         .pipe(minifycss())
         .pipe(gulp.dest('build/css'));
 });
@@ -61,13 +61,13 @@ gulp.task('angularfire', function(){
 });
 
 gulp.task('components', function(){
-    return gulp.src('js/components/**/*.html')
-        .pipe(gulp.dest('build/js/components'))
+    return gulp.src('app/components/**/*.html')
+        .pipe(gulp.dest('build/components'))
         .pipe(reload({ stream: true }));
 });
 
-gulp.task('scripts', ['components'], function(){
-    return gulp.src(['js/components/**/*.js', 'js/**/*.js'])
+gulp.task('scripts', ['components', 'angular', 'angular-ui-router', 'firebase', 'angularfire'], function(){
+    return gulp.src(['app/components/**/*.js', 'app/**/*.js'])
         .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(rename('app.min.js'))
@@ -79,19 +79,19 @@ gulp.task('scripts', ['components'], function(){
 
 /* HTML Task */
 gulp.task('html', function(){
-    return gulp.src(['templates/**/*.html'])
-        .pipe(gulp.dest('build/templates'))
+    return gulp.src(['app/**/*.html', '!app/*index.html'])
+        .pipe(gulp.dest('build'))
         .pipe(reload({ stream: true }));
 });
 
 
 
 /* Images Task */
-gulp.task('compressImages', function() {
-    return gulp.src('images/**/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('build/images'));
-});
+// gulp.task('compressImages', function() {
+//     return gulp.src('app/images/**/*')
+//         .pipe(imagemin())
+//         .pipe(gulp.dest('build/images'));
+// });
 
 
 
@@ -99,7 +99,10 @@ gulp.task('compressImages', function() {
 gulp.task('browser-sync', function(){
     browserSync({
         server:{
-            baseDir: './'
+           baseDir: 'app',
+           routes: {
+             "/bower_components": "bower_components"
+          }
         }
     });
 });
@@ -108,11 +111,11 @@ gulp.task('browser-sync', function(){
 
 /* Watch Tasks */
 gulp.task('watch', function(){
-    gulp.watch('js/**/*.js', ['scripts']);
-    gulp.watch('js/components/**/*.html', ['components']);
-    gulp.watch('css/**/*.scss', ['css']);
-    gulp.watch('templates/**/*.html', ['html']);
-    gulp.watch('images/**/*', ['compressImages']);
+    gulp.watch('app/**/*.js', ['scripts']);
+    gulp.watch('app/components/**/*.html', ['components']);
+    gulp.watch('app/css/**/*.scss', ['css']);
+    gulp.watch('app/**/*.html', ['html']);
+   //  gulp.watch('app/images/**/*', ['compressImages']);
 });
 
 
@@ -122,7 +125,7 @@ gulp.task('default', [
     'scripts',
     'css',
     'html',
-    'compressImages',
+   //  'compressImages',
     'browser-sync',
     'watch'
 ]);
