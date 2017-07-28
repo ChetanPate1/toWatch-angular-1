@@ -2,9 +2,9 @@ angular
    .module('app')
    .controller('WatchlistController', WatchlistController);
 
-WatchlistController.$inject = ['currentAuth', 'firebaseArray', '$timeout'];
+WatchlistController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'helperFunctions'];
 
-function WatchlistController(currentAuth, firebaseArray, $timeout){
+function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctions){
    var vm = this;
    var ref = 'watchlist/' + currentAuth.uid;
    var today = new Date().getTime();
@@ -34,9 +34,9 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
    function nextAired(watchlist) {
       var nextAired, i = 1, j = 1, unwatched = {}, toMs;
       var show = vm.shows[watchlist.seriesId];
-      var seasons = objSize(show.seasons);
+      var seasons = helperFunctions.objSize(show.seasons);
       var latestSeason = show.seasons['season_'+ seasons];
-      var episodes = objSize(latestSeason);
+      var episodes = helperFunctions.objSize(latestSeason);
 
       for (j; j <= episodes; j++) {
          unwatched[j] = {
@@ -60,17 +60,5 @@ function WatchlistController(currentAuth, firebaseArray, $timeout){
 
    function checkAired(date) {
       return date - today < 0;
-   }
-
-   function objSize(obj) {
-      var count = 0;
-      for (var prop in obj) {
-         if (obj.hasOwnProperty(prop)) {
-            ++count;
-         }else {
-            break;
-         }
-      }
-      return count;
    }
 }
