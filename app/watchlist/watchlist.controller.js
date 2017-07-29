@@ -2,9 +2,9 @@ angular
    .module('app')
    .controller('WatchlistController', WatchlistController);
 
-WatchlistController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'helperFunctions'];
+WatchlistController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'helperFunctions', 'episodateApi'];
 
-function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctions){
+function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctions, episodateApi){
    var vm = this;
    var ref = 'watchlist/' + currentAuth.uid;
    var today = new Date().getTime();
@@ -12,6 +12,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    vm.watchlist = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
+   vm.search = search;
 
    vm.nextAired = nextAired;
    vm.checkAired = checkAired;
@@ -31,8 +32,24 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
       firebaseArray.save(ref, list);
    }
 
+   function search() {
+      var show = {
+         name: helperFunctions.spacesToDashes(vm.shows[vm.series].series),
+         on: {
+            season: vm.season,
+            episode: vm.episode
+         }
+      };
+
+      episodateApi.getShow(show.name).then(function(res) {
+         console.log(res);
+      });
+   }
+
+
+
    function nextAired(watchlist) {
-      var nextAired, i = 1, j = 1, unwatched = {}, toMs;
+      var nextAired, i = 1, j = 1, unwatched = {};
       var show = vm.shows[watchlist.seriesId];
       var seasons = helperFunctions.objSize(show.seasons);
       var latestSeason = show.seasons['season_'+ seasons];

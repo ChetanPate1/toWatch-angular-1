@@ -7,7 +7,9 @@ angular
 function helperFunctions(){
    var vm = this;
    var service = {
-      objSize: objSize
+      objSize: objSize,
+      spacesToDashes: spacesToDashes,
+      dateToMs: dateToMs
    };
 
    function objSize(obj) {
@@ -22,6 +24,13 @@ function helperFunctions(){
       return count;
    }
 
+   function spacesToDashes(str) {
+      return str.replace(/\s+/g, '-');
+   }
+
+   function dateToMs(date) {
+      return new Date(date).getTime();
+   }
 
    return service;
 }
