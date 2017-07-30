@@ -2,42 +2,30 @@ angular
    .module('app')
    .controller('ShowsController', ShowsController);
 
-ShowsController.$inject = ['firebaseArray', '$timeout'];
+ShowsController.$inject = ['firebaseArray', 'episodateApi', 'helperFunctions', '$timeout'];
 
-function ShowsController(firebaseArray, $timeout){
+function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout){
    var vm = this;
 
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
 
    function add() {
+      var series = vm.series;
+      if (vm.series) {
+         series = helperFunctions.spacesToDashes(series);
 
-      // var gen = generateEp('Silicon Valley', 'http://toptvshows.me/images/poster/Silicon%20Valley%20season%204%20poster.jpg', 4, 10);
-      firebaseArray.save('shows', gen);
-   }
+         episodateApi.getShow(series)
+            .then(function(showData) {
 
+               if (showData.seasons) {
+                  vm.h = showData;
+                  firebaseArray.save('shows', showData);
+               }else {
 
-   function generateEp(seriesName, url, seasons, episodes){
-      var eps = {}, series = {};
-      for(var i = 1; i <= episodes; i++){
-         eps[i] = {
-            number: i.toString()
-         }
+               }
+            }
+         );
       }
-
-      series.series = seriesName;
-      series.imgSrc = url;
-      series.seasons = {};
-
-      for(var i = 1; i <= seasons; i++){
-         series.seasons['season_'+ i] = {};
-         series.seasons['season_'+ i].number = i.toString();
-         series.seasons['season_'+ i] = eps;
-      }
-
-      console.log(series);
-      return series;
    }
-
-
 }
