@@ -9,8 +9,6 @@ firebase-debug.log*
 .firebaserc
 /functions
 
-towatch-shows-backup.json
-
 # Runtime data
 pids
 *.pid
