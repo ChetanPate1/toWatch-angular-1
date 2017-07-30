@@ -30,6 +30,7 @@ function episodateApi($http, helperFunctions, $timeout){
       var seasonNum = 1, j = 1, i = 0;
       var series = {};
       series.seasons = [];
+      series.series = show.name;
       series.imgSrc = show.image_path;
       series.thumbnailImgSrc = show.image_thumbnail_path;
 
