@@ -1,5 +1,5 @@
 <div class="container">
-   <h1>Shows</h1>
+
    <div class="row">
       <div class="col-md-4" ng-repeat="show in ShowsCtrl.shows">
          <countdown-card
@@ -19,24 +19,6 @@
             <div class="form-group">
                <label for="series">Series</label>
                <input type="text" name="series" class="form-control" ng-model="ShowsCtrl.series">
-            </div>
-
-            <div class="form-group">
-               <label for="imgSrc">Cover image url</label>
-               <input type="text" name="imgSrc" class="form-control" ng-model="ShowsCtrl.imgSrc">
-            </div>
-            <div class="form-group">
-               <label for="season">Season</label>
-               <input type="text" name="season" class="form-control" ng-model="ShowsCtrl.season">
-            </div>
-            <div class="form-group">
-               <label for="episodeNumber">Episode Number</label>
-               <input type="text" name="episodeNumber" class="form-control" ng-model="ShowsCtrl.episodeNumber">
-            </div>
-            <div class="form-group">
-               <label for="airDate">Air Date</label>
-               <small>January 1, 2017 00:00:00</small>
-               <input type="text" name="airDate" class="form-control" ng-model="ShowsCtrl.airDate">
             </div>
 
             <button class="btn btn-lg btn-primary pull-right" ng-click="ShowsCtrl.add()">Add</button>

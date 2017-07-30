@@ -13,7 +13,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
    vm.search = search;
-
+   
    vm.nextAired = nextAired;
    vm.checkAired = checkAired;
 
@@ -41,9 +41,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
          }
       };
 
-      episodateApi.getShow(show.name).then(function(res) {
-         console.log(res);
-      });
+
    }
 
 

@@ -4,11 +4,10 @@ angular
 
 episodateApi.$inject = ['$http', 'helperFunctions', '$timeout'];
 
-function episodateApi($http, helperFunctions,$timeout){
+function episodateApi($http, helperFunctions, $timeout){
    var vm = this;
    var service = {
-      getShow: getShow,
-      generateSeasons: generateSeasons
+      getShow: getShow
    };
 
    function getShow(show) {
@@ -16,19 +15,25 @@ function episodateApi($http, helperFunctions,$timeout){
          method: 'GET',
          url: 'https://www.episodate.com/api/show-details?q=' + show
       }).then(function(res) {
-         console.log(res.data.tvShow);
          return generateSeasons(res.data.tvShow);
+         if (helperFunctions.objSize(res.data.tvShow.episodes) === 0) {
+            return false;
+         }else {
+         }
       });
    }
 
    function generateSeasons(show) {
       var episodes = show.episodes;
-      var init = [];
+      var init = {};
       var size = helperFunctions.objSize(episodes) - 1;
       var seasonNum = 1, j = 1, i = 0;
-      var show = {};
+      var series = {};
+      series.seasons = [];
+      series.imgSrc = show.image_path;
+      series.thumbnailImgSrc = show.image_thumbnail_path;
 
-      init['season_'+ seasonNum] = [];
+      init['season_'+ seasonNum] = {};
 
       for (i; i < size; i++) {
          init['season_'+ seasonNum][ j ] = {
@@ -44,14 +49,13 @@ function episodateApi($http, helperFunctions,$timeout){
          }else {
             j = 1;
             seasonNum++;
-            init['season_'+ seasonNum] = [];
+            init['season_'+ seasonNum] = {};
          }
+
+         series.seasons = init;
       }
 
-      show.show = init;
-      show.imgUrl = show.image_path;
-      console.log(show);
-      return init;
+      return series;
    }
 
    return service;
