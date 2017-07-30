@@ -29,8 +29,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
          unwatched: {}
       };
       list['unwatched'] = nextAired(list).unwatched;
-console.log(list);
-      // firebaseArray.save(ref, list);
+      firebaseArray.save(ref, list);
    }
 
    function search() {
