@@ -25,7 +25,6 @@ function RewatchController(currentAuth, firebaseArray, $timeout, helperFunctions
       firebaseArray.save(ref, initRewatch);
    }
 
-//suits,got on season 7 Episode 3
 
    function initSeries(show) {
       var seasons = helperFunctions.objSize(show);

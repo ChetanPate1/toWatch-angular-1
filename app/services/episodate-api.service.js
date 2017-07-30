@@ -15,10 +15,10 @@ function episodateApi($http, helperFunctions, $timeout){
          method: 'GET',
          url: 'https://www.episodate.com/api/show-details?q=' + show
       }).then(function(res) {
-         return generateSeasons(res.data.tvShow);
          if (helperFunctions.objSize(res.data.tvShow.episodes) === 0) {
             return false;
          }else {
+            return generateSeasons(res.data.tvShow);
          }
       });
    }
@@ -32,8 +32,9 @@ function episodateApi($http, helperFunctions, $timeout){
       series.seasons = [];
       series.series = show.name;
       series.imgSrc = show.image_path;
-      series.thumbnailImgSrc = show.image_thumbnail_path;
-
+      series.imgSrcSm = show.image_thumbnail_path;
+      series.status = show.status;
+   
       init['season_'+ seasonNum] = {};
 
       for (i; i < size; i++) {

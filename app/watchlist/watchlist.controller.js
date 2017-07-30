@@ -13,14 +13,15 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
    vm.search = search;
-   
+
    vm.nextAired = nextAired;
    vm.checkAired = checkAired;
 
+//suits,got on season 7 Episode 3
    function add() {
       var list = {
          upToDate: false,
-         seriesId: vm.series,
+         showId: vm.seriesRef,
          on: {
             season: vm.season,
             episode: vm.episode
@@ -28,8 +29,8 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
          unwatched: {}
       };
       list['unwatched'] = nextAired(list).unwatched;
-
-      firebaseArray.save(ref, list);
+console.log(list);
+      // firebaseArray.save(ref, list);
    }
 
    function search() {
@@ -40,24 +41,25 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
             episode: vm.episode
          }
       };
-
-
    }
-
-
 
    function nextAired(watchlist) {
       var nextAired, i = 1, j = 1, unwatched = {};
-      var show = vm.shows[watchlist.seriesId];
+      var show = vm.shows.$getRecord(watchlist.showId);
       var seasons = helperFunctions.objSize(show.seasons);
       var latestSeason = show.seasons['season_'+ seasons];
       var episodes = helperFunctions.objSize(latestSeason);
+      var onEp = parseInt(watchlist.on.episode);
 
       for (j; j <= episodes; j++) {
          unwatched[j] = {
             watched: false,
             airDate: latestSeason[j].airDate
          };
+
+         if(j < onEp){
+            unwatched[j].watched = true;
+         }
       }
 
       for (i; i <= episodes; i++) {
