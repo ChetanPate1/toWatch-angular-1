@@ -16,6 +16,7 @@ function showsCountdownCard() {
       scope: {
          heading: '=',
          subheading: '=',
+         details: '=',
          imgsrc: '=',
          seasoninfo: '=',
          visible: '=',
