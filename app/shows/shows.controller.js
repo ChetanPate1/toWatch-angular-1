@@ -17,12 +17,12 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
 
          episodateApi.getShow(series)
             .then(function(showData) {
-               console.log(showData.seasons);
+
                if (showData.seasons) {
                   vm.h = showData;
                   firebaseArray.save('shows', showData);
                }else {
-                  //false
+
                }
             }
          );

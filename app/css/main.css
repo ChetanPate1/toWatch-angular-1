@@ -584,6 +584,22 @@ h1 {
       cursor: pointer;
       border: 1px solid #ffffff; }
 
+.fade-in {
+  -webkit-animation: 400ms fade-in;
+  animation: 400ms fade-in; }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .margin-none {
   margin: 0 !important; }
 

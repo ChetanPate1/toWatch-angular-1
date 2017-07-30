@@ -22,11 +22,10 @@ function RewatchController(currentAuth, firebaseArray, $timeout, helperFunctions
          show: initSeries(vm.shows.$getRecord(vm.seriesRef).seasons)
       };
 
-console.log(initRewatch);
       firebaseArray.save(ref, initRewatch);
    }
-//rewatch game of thrones on season 5 episode 3
-//suits on season 7 Episode 3
+
+//suits,got on season 7 Episode 3
 
    function initSeries(show) {
       var seasons = helperFunctions.objSize(show);

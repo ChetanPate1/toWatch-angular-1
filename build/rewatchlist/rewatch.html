@@ -1,12 +1,12 @@
 <div class="container">
 
    <div class="row">
-      <div class="col-md-4" ng-repeat="rewatch in RewatchCtrl.rewatch" ng-if="rewatch.show">
+      <div class="col-md-4 fade-in" ng-repeat="rewatch in RewatchCtrl.rewatch" ng-if="rewatch.show">
          <rewatch-card
             heading="RewatchCtrl.shows.$getRecord( rewatch.showId ).series"
             subheading="'Season '+ rewatch.on.season +' Episode ' + rewatch.on.episode"
-            details="RewatchCtrl.shows[ rewatch.showId ].seasons['season_'+ rewatch.on.season ][ rewatch.on.episode ].name"
-            imgsrc="RewatchCtrl.shows[ rewatch.showId ].imgSrc"
+            details="RewatchCtrl.shows.$getRecord( rewatch.showId ).seasons['season_'+ rewatch.on.season ][ rewatch.on.episode ].name"
+            imgsrc="RewatchCtrl.shows.$getRecord( rewatch.showId ).imgSrc"
             visible="true" >
 
             <season-info
