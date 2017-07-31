@@ -1,5 +1,7 @@
 .form-element{
+  position: relative;
   margin-bottom: 20px;
+
   label{
     margin: 0 0 5px 8px;
   }
@@ -23,6 +25,21 @@
     &:focus{
       border: 2px solid $base-color;
     }
+  }
+
+  select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+  }
+
+  .glyphicon{
+    position: absolute;
+    z-index: 200;
+    right: 10px;
+    top: auto;
+    bottom: 14px;
+    color: #909090;
   }
 
   input[type="text"]{

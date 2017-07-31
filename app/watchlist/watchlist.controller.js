@@ -60,7 +60,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
          }
       }
 
-      return { nextAired: nextAired, unwatched: unwatched };
+      return {  unwatched: unwatched, nextAired: nextAired };
    }
 
    function checkAired(date) {

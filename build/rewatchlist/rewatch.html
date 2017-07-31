@@ -25,6 +25,7 @@
          <form name="form">
             <div class="form-element">
                <label for="series">Series</label>
+               <span class="glyphicon glyphicon-chevron-down"></span>
                <select class="form-control" name="series" ng-model="RewatchCtrl.seriesRef">
                   <option ng-repeat="show in RewatchCtrl.shows" ng-selected="{{ show.$id == RewatchCtrl.seriesRef }}"
                      value="{{ show.$id }}">{{ show.series }}

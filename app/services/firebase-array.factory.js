@@ -8,8 +8,7 @@ function firebaseArray($firebaseArray){
    var vm = this;
    var service = {
       save: save,
-      getByRef: getByRef,
-      getAll: getAll
+      getByRef: getByRef
    };
 
    function save(ref, data) {
@@ -19,12 +18,6 @@ function firebaseArray($firebaseArray){
 
    function getByRef(ref) {
       var ref = firebase.database().ref(ref);
-      // this uses AngularFire to create the synchronized array
-      return $firebaseArray(ref);
-   }
-
-   function getAll() {
-      var ref = firebase.database().ref();
       // this uses AngularFire to create the synchronized array
       return $firebaseArray(ref);
    }

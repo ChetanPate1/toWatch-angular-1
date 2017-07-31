@@ -593,6 +593,7 @@ h1 {
       border: 1px solid #ffffff; }
 
 .form-element {
+  position: relative;
   margin-bottom: 20px; }
   .form-element label {
     margin: 0 0 5px 8px; }
@@ -611,6 +612,17 @@ h1 {
       border: 2px solid #000000; }
     .form-element input:focus, .form-element select:focus {
       border: 2px solid #6840e5; }
+  .form-element select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none; }
+  .form-element .glyphicon {
+    position: absolute;
+    z-index: 200;
+    right: 10px;
+    top: auto;
+    bottom: 14px;
+    color: #909090; }
   .form-element input[type="text"]:hover {
     cursor: text; }
   .form-element select:hover {
