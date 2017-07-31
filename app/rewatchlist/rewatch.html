@@ -20,10 +20,10 @@
    </div>
 
    <div class="row">
-      <h3>Add To Rewatch</h3>
       <div class="col-md-4">
-         <form class="form-horizontal" name="form">
-            <div class="form-group">
+         <h3>Add To Rewatch</h3>
+         <form name="form">
+            <div class="form-element">
                <label for="series">Series</label>
                <select class="form-control" name="series" ng-model="RewatchCtrl.seriesRef">
                   <option ng-repeat="show in RewatchCtrl.shows" ng-selected="{{ show.$id == RewatchCtrl.seriesRef }}"
@@ -31,8 +31,8 @@
                   </option>
                </select>
             </div>
-            
-            <button class="btn btn-lg btn-primary pull-right" ng-click="RewatchCtrl.add()">Add</button>
+
+            <button class="button pull-right" ng-click="RewatchCtrl.add()">Add</button>
          </form>
       </div>
    </div>

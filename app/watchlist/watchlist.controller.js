@@ -12,7 +12,6 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    vm.watchlist = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
-   vm.search = search;
 
    vm.nextAired = nextAired;
    vm.checkAired = checkAired;
@@ -30,16 +29,6 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
       };
       list['unwatched'] = nextAired(list).unwatched;
       firebaseArray.save(ref, list);
-   }
-
-   function search() {
-      var show = {
-         name: helperFunctions.spacesToDashes(vm.shows[vm.series].series),
-         on: {
-            season: vm.season,
-            episode: vm.episode
-         }
-      };
    }
 
    function nextAired(watchlist) {

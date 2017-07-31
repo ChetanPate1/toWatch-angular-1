@@ -1,0 +1,21 @@
+.button{
+  display: inline-block;
+  padding: 10px 15px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  background-image: none;
+  border: 3px solid $base-color;
+  border-radius: 6px;
+  color: $base-color;
+  background-color: transparent;
+  @include transition(all 150ms ease);
+
+  &:hover{
+    border: 3px solid $base-color;
+    color: #ffffff;
+    background-color: $base-color;
+  }
+}

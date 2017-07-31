@@ -12,16 +12,15 @@
    </div>
 
    <div class="row">
-      <h3>Add Show</h3>
-
-      <div class="col-md-6">
-         <form class="form-horizontal" name="form">
-            <div class="form-group">
+      <div class="col-md-4">
+         <h3>Add Show</h3>
+         <form name="form">
+            <div class="form-element">
                <label for="series">Series</label>
-               <input type="text" name="series" class="form-control" ng-model="ShowsCtrl.series">
+               <input type="text" name="series" ng-model="ShowsCtrl.series">
             </div>
 
-            <button class="btn btn-lg btn-primary pull-right" ng-click="ShowsCtrl.add()">Add</button>
+            <button class="button pull-right" ng-click="ShowsCtrl.add()">Add</button>
          </form>
       </div>
    </div>
