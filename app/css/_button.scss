@@ -18,4 +18,16 @@
     color: #ffffff;
     background-color: $base-color;
   }
+
+  &[disabled]{
+    border: 3px solid #bbbbbb;
+    background-color: #bbbbbb;
+    color: #ffffff;
+
+    &:hover{
+      border: 3px solid #bbbbbb;
+      background-color: #bbbbbb;
+      color: #ffffff;
+    }
+  }
 }

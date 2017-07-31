@@ -628,6 +628,14 @@ h1 {
   .form-element select:hover {
     cursor: pointer; }
 
+.form-element.search input {
+  padding-right: 40px; }
+
+.form-element .search-loader {
+  position: absolute;
+  right: 10px;
+  bottom: 10px; }
+
 .button {
   display: inline-block;
   padding: 10px 15px;
@@ -648,6 +656,48 @@ h1 {
     border: 3px solid #6840e5;
     color: #ffffff;
     background-color: #6840e5; }
+  .button[disabled] {
+    border: 3px solid #bbbbbb;
+    background-color: #bbbbbb;
+    color: #ffffff; }
+    .button[disabled]:hover {
+      border: 3px solid #bbbbbb;
+      background-color: #bbbbbb;
+      color: #ffffff; }
+
+.search-loader {
+  position: relative;
+  height: 23px;
+  width: 23px;
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease;
+  -ms-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  -webkit-animation: 1s rotate infinite;
+  animation: 1s rotate infinite; }
+  .search-loader:after {
+    z-index: 20;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: -1px;
+    right: 0;
+    height: 4px;
+    width: 4px;
+    background-color: #fff; }
+  .search-loader:before {
+    z-index: 10;
+    content: '';
+    height: 23px;
+    width: 23px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #6840e5; }
+  .search-loader.show {
+    opacity: 1; }
 
 .fade-in {
   -webkit-animation: 400ms fade-in;
@@ -664,6 +714,18 @@ h1 {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 
 .margin-none {
   margin: 0 !important; }

@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container-fluid">
 
    <div class="row">
-      <div class="col-md-4 fade-in" ng-repeat="show in ShowsCtrl.shows">
+      <div class="col-sm-4 col-md-2 fade-in" ng-repeat="show in ShowsCtrl.shows">
          <countdown-card
             heading="show.series"
             subheading="''"
@@ -12,15 +12,15 @@
    </div>
 
    <div class="row">
-      <div class="col-md-4">
+      <div class="col-sm-3 col-md-3 col-md-offset-1">
          <h3>Add Show</h3>
          <form name="form">
-            <div class="form-element">
+            <div class="form-element search">
                <label for="series">Series</label>
+               <div class="search-loader" ng-class="{'show' : ShowsCtrl.sendStatus.loader }"></div>
                <input type="text" name="series" ng-model="ShowsCtrl.series">
             </div>
-
-            <button class="button pull-right" ng-click="ShowsCtrl.add()">Add</button>
+            <button class="button pull-right" ng-click="ShowsCtrl.add()" ng-disabled="ShowsCtrl.sendStatus.disableButton">Add</button>
          </form>
       </div>
    </div>
