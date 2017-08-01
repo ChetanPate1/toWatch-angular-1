@@ -312,6 +312,10 @@ h1 {
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%); }
+    .countdown-card .season-info .button.red {
+      margin: 25px auto 10px auto;
+      width: 90%;
+      display: block; }
     .countdown-card .season-info.open {
       opacity: 1;
       -webkit-transform: translateX(0%);
@@ -364,7 +368,7 @@ h1 {
           opacity: 0.7; }
           .countdown-card .season-info .items li.disabled .watched .glyphicon:hover {
             opacity: 0.5; }
-  .countdown-card .shutter {
+  .countdown-card .shutter, .countdown-card .shutter-delete {
     z-index: 500;
     position: absolute;
     top: 0;
@@ -379,20 +383,23 @@ h1 {
     -webkit-transition: all 300ms ease;
     -ms-transition: all 300ms ease;
     transition: all 300ms ease; }
-    .countdown-card .shutter h2 {
+    .countdown-card .shutter h2, .countdown-card .shutter-delete h2 {
       width: 100%;
       position: absolute;
       top: 120px;
       left: 0; }
-    .countdown-card .shutter .button {
+    .countdown-card .shutter .button, .countdown-card .shutter-delete .button {
       margin: 200px auto 0 auto;
       display: block;
       max-width: 100px; }
-    .countdown-card .shutter.open {
+    .countdown-card .shutter.open, .countdown-card .shutter-delete.open {
       -webkit-transform: translateY(0%);
       -ms-transform: translateY(0%);
       transform: translateY(0%);
       opacity: 1; }
+  .countdown-card .shutter-delete h2 {
+    text-align: center;
+    top: 85px; }
 
 .countdown-timer .time {
   z-index: 100;
@@ -557,6 +564,10 @@ h1 {
       /* remove scrollbar space */
       background: transparent;
       /* optional: just make scrollbar invisible */ }
+    .season-info .lists .button.red {
+      width: 90%;
+      display: block;
+      margin: 25px auto 10px auto; }
   .season-info .items {
     z-index: 100;
     padding: 0;
@@ -650,6 +661,37 @@ h1 {
       cursor: pointer;
       border: 1px solid #ffffff; }
 
+.season-info .shutter {
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  transition: all 300ms ease; }
+  .season-info .shutter h2 {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 85px;
+    left: 0; }
+  .season-info .shutter .button {
+    margin: 200px auto 0 auto;
+    display: block;
+    max-width: 100px; }
+  .season-info .shutter.open {
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1; }
+
 .form-element {
   position: relative;
   margin-bottom: 20px; }
@@ -723,6 +765,13 @@ h1 {
       border: 3px solid #bbbbbb;
       background-color: #bbbbbb;
       color: #ffffff; }
+  .button.red {
+    color: #FF5154;
+    border: 3px solid #FF5154; }
+    .button.red:hover {
+      border: 3px solid #FF5154;
+      color: #ffffff;
+      background-color: #FF5154; }
 
 .search-loader {
   position: relative;

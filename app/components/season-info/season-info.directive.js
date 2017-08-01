@@ -23,6 +23,7 @@ function seasonInfo(helperFunctions) {
    function link(scope) {
       var now = new Date().getTime();
       scope.open = false;
+      scope.deleteOpen = false;
       scope.toggleOpen = toggleOpen;
       scope.tabActive = scope.currentseason;
       scope.tabSelect = tabSelect;

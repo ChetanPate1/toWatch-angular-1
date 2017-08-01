@@ -29,6 +29,12 @@
     margin: 0;
     height: 260px;
     overflow-y: auto;
+
+    .button.red{
+      width: 90%;
+      display: block;
+      margin: 25px auto 10px auto;
+    }
   }
 
   .items{
@@ -144,6 +150,41 @@
         cursor: pointer;
         border: 1px solid #ffffff;
       }
+    }
+  }
+}
+
+.season-info{
+  .shutter{
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+
+    h2{
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 85px;
+      left: 0;
+    }
+
+    .button{
+      margin: 200px auto 0 auto;
+      display: block;
+      max-width: 100px;
+    }
+
+    @include transforms(translateY(-100%));
+    @include transition(all 300ms ease);
+
+    &.open{
+      @include transforms(translateY(0%));
+      opacity: 1;
     }
   }
 }

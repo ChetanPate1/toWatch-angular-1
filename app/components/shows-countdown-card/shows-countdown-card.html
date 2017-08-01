@@ -9,6 +9,16 @@
       <a href class="button" ng-click="watchlistobj.$remove(index)">ok</a>
    </div>
 
+   <div class="shutter-delete" ng-class="{'open' : deleteOpen }">
+      <h2>Delete from Watchlist?</h2>
+      <div class="col-sm-6">
+         <button type="button" name="cancel" class="button" ng-click="deleteOpen = false">cancel</button>
+      </div>
+      <div class="col-sm-6">
+         <button type="button" name="delete" class="button red" ng-click="watchlistobj.$remove(index)">delete</button>
+      </div>
+   </div>
+
    <div class="season-info" ng-class="{ 'open': open }" >
       <ul class="items active">
          <li ng-repeat="info in seasoninfo" ng-if="$index > 0"  ng-class="{ 'disabled' : !aired(info.airDate).aired || !info.watched }">
@@ -18,6 +28,8 @@
                <span class="glyphicon" ng-class="{ 'glyphicon-eye-open' : info.watched, 'glyphicon-eye-close' : !info.watched }"></span>
             </span>
          </li>
+
+         <button class="button red" ng-click="deleteOpen = !deleteOpen">Delete</button>
       </ul>
    </div>
 

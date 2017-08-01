@@ -186,6 +186,12 @@
     @include transition(all 500ms ease);
     @include transforms(translateX(-100%));
 
+    .button.red{
+      margin: 25px auto 10px auto;
+      width: 90%;
+      display: block;
+    }
+
     &.open{
       opacity: 1;
       @include transforms(translateX(0%));
@@ -254,7 +260,7 @@
     }
   }
 
-  .shutter{
+  .shutter, .shutter-delete{
     z-index: 500;
     position: absolute;
     top: 0;
@@ -283,6 +289,13 @@
     &.open{
       @include transforms(translateY(0%));
       opacity: 1;
+    }
+  }
+
+  .shutter-delete{
+    h2{
+      text-align: center;
+      top: 85px;
     }
   }
 }
