@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
    <div class="row">
-      <div class="col-sm-4 col-md-2 fade-in" ng-repeat="show in ShowsCtrl.shows">
+      <div class="col-sm-4 col-md-2 fade-in" ng-repeat="show in ShowsCtrl.shows | orderBy: 'series'">
          <countdown-card
             heading="show.series"
             subheading="''"
