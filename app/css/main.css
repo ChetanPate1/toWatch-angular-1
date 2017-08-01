@@ -671,6 +671,7 @@ h1 {
     -moz-appearance: none;
     -ms-appearance: none; }
   .form-element .glyphicon {
+    pointer-events: none;
     position: absolute;
     z-index: 200;
     right: 10px;

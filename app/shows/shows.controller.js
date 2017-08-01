@@ -26,8 +26,6 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
                if (showData.seasons) {
                   firebaseArray.save('shows', showData);
                   vm.series = '';
-               }else {
-
                }
                vm.sendStatus.disableButton = false;
                vm.sendStatus.loader = false;
