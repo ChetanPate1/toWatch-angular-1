@@ -224,17 +224,71 @@ h1 {
   -webkit-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
   -ms-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4); }
+  .countdown-card .more-button span {
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    transition: all 500ms ease; }
   .countdown-card .more-button .glyphicon {
+    z-index: 20;
+    position: absolute;
+    left: 1px;
+    line-height: 23px;
+    width: 100%;
+    height: 100%;
     font-size: 11px;
-    left: 1px; }
-  .countdown-card .more-button:hover {
+    opacity: 0;
+    -webkit-transform: translateX(-20px) scale(0);
+    -ms-transform: translateX(-20px) scale(0);
+    transform: translateX(-20px) scale(0); }
+  .countdown-card .more-button .behind {
+    z-index: 10;
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 11px;
+    font-weight: bold;
+    opacity: 1;
+    -webkit-transform: translateX(0) scale(1);
+    -ms-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1); }
+  .countdown-card .more-button:hover, .countdown-card .more-button:focus {
     -webkit-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
     -ms-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6); }
+    .countdown-card .more-button:hover .behind, .countdown-card .more-button:focus .behind {
+      opacity: 0;
+      -webkit-transform: translateX(20px) scale(0);
+      -ms-transform: translateX(20px) scale(0);
+      transform: translateX(20px) scale(0); }
+    .countdown-card .more-button:hover .glyphicon, .countdown-card .more-button:focus .glyphicon {
+      opacity: 1;
+      -webkit-transform: translateY(0) scale(1);
+      -ms-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1); }
   .countdown-card .more-button.open {
     -webkit-transform: translateY(0) scale(1) rotate(45deg);
     -ms-transform: translateY(0) scale(1) rotate(45deg);
     transform: translateY(0) scale(1) rotate(45deg); }
+    .countdown-card .more-button.open .behind {
+      opacity: 0;
+      -webkit-transform: translateX(20px) scale(0);
+      -ms-transform: translateX(20px) scale(0);
+      transform: translateX(20px) scale(0); }
+    .countdown-card .more-button.open .glyphicon {
+      opacity: 1;
+      -webkit-transform: translateY(0) scale(1);
+      -ms-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1); }
+  .countdown-card .more-button.up-to-date .behind {
+    opacity: 0;
+    -webkit-transform: translateX(20px) scale(0);
+    -ms-transform: translateX(20px) scale(0);
+    transform: translateX(20px) scale(0); }
+  .countdown-card .more-button.up-to-date .glyphicon {
+    opacity: 1;
+    -webkit-transform: translateY(0) scale(1);
+    -ms-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1); }
 
 .countdown-card {
   overflow: hidden; }
@@ -326,7 +380,7 @@ h1 {
       position: absolute;
       top: 120px;
       left: 0; }
-    .countdown-card .shutter .btn {
+    .countdown-card .shutter .button {
       margin: 200px auto 0 auto;
       display: block;
       max-width: 100px; }

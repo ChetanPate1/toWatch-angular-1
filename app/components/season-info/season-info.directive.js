@@ -7,7 +7,7 @@ angular
    .module('app')
    .directive('seasonInfo', seasonInfo);
 
-function seasonInfo() {
+function seasonInfo(helperFunctions) {
    var directive = {
       link: link,
       templateUrl: 'components/season-info/season-info.html',
@@ -68,7 +68,7 @@ function seasonInfo() {
          var episode = parseInt(rewatchobj[index].on.episode);
          var season = parseInt(rewatchobj[index].on.season);
          var seasonKey = 'season_' + season;
-         var seasonsSize = objSize(show[seasonKey]);
+         var seasonsSize = helperFunctions.objSize(show[seasonKey]);
          var watched = 0;
 
          for (var j = 1; j <= seasonsSize; j++) {
@@ -92,16 +92,6 @@ function seasonInfo() {
          }else {
             return string;
          }
-      }
-
-      function objSize(obj) {
-         var count = 0;
-         for (var prop in obj) {
-            if (obj.hasOwnProperty(prop)) {
-               ++count;
-            }
-         }
-         return count;
       }
    }
 

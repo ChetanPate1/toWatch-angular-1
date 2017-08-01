@@ -1,12 +1,12 @@
 <div class="countdown-card" ng-style="{ 'background-image': 'url({{ imgsrc }})' }">
-   <button type="button" name="more" class="more-button" ng-class="{'open' : open}" ng-click="toggleOpen()">
+   <button type="button" name="more" class="more-button" ng-class="{'open' : open, 'up-to-date': behindCount(seasoninfo) == 0 }" ng-click="toggleOpen()">
       <span class="glyphicon glyphicon-plus"></span>
-      <!-- <span></span> -->
+      <span class="behind">{{ behindCount(seasoninfo) }}</span>
    </button>
 
    <div class="shutter" ng-class="{'open' : watchlistobj[index].upToDate }">
       <h2 class="text-center">Your Up to Date!</h2>
-      <a href class="btn btn-lg btn-success" ng-click="watchlistobj.$remove(index)">ok</a>
+      <a href class="button" ng-click="watchlistobj.$remove(index)">ok</a>
    </div>
 
    <div class="season-info" ng-class="{ 'open': open }" >

@@ -12,11 +12,9 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    vm.watchlist = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
-
    vm.nextAired = nextAired;
    vm.checkAired = checkAired;
 
-//suits,got on season 7 Episode 3
    function add() {
       var list = {
          upToDate: false,

@@ -33,6 +33,7 @@ function showsCountdownCard() {
       scope.save = save;
       scope.aired = aired;
       scope.countWatched = countWatched;
+      scope.behindCount = behindCount;
 
       function toggleOpen() {
          scope.open = !scope.open;
@@ -64,7 +65,11 @@ function showsCountdownCard() {
             aired.by = 'not aired';
          }
          else {
-            aired.by = '-' + Math.ceil(delta / 86400) + ' days';
+            if(Math.ceil(delta / 86400) > 30){
+               aired.by = 'aired';
+            }else {
+               aired.by = '-' + Math.ceil(delta / 86400) + ' days';
+            }
          }
 
          return aired;
@@ -80,6 +85,7 @@ function showsCountdownCard() {
                break;
             }
          }
+
          if(i > size){
             if(nextSeasonNull){
                watchlistobj[index].upToDate = true;
@@ -90,6 +96,19 @@ function showsCountdownCard() {
          }
 
          watchlistobj[index].on.episode = i;
+      }
+
+      function behindCount(seasoninfo) {
+         var i = 1, size = seasoninfo.length - 1;
+         var count = 0, aired = 0;
+
+         for (i; i <= size; i++) {
+            if(!seasoninfo[i].watched && seasoninfo[i].airDate - now < 0){
+               count++;
+            }
+         }
+
+         return (count > 0) ? '-'+ count : count;
       }
    }
    return directive;
