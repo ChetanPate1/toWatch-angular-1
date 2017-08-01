@@ -3,9 +3,16 @@
 </button>
 
 <div class="season-info" ng-class="{ 'open': open }" >
-   <button type="button" name="more" class="delete-button" ng-click="rewatchobj.$remove(index)">
-      <span class="glyphicon glyphicon-trash"></span>
-   </button>
+
+   <div class="shutter" ng-class="{'open' : deleteOpen }">
+      <h2>Delete from Rewatchlist?</h2>
+      <div class="col-sm-6">
+         <button type="button" name="cancel" class="button" ng-click="deleteOpen = false">cancel</button>
+      </div>
+      <div class="col-sm-6">
+         <button type="button" name="delete" class="button red" ng-click="rewatchobj.$remove(index)">delete</button>
+      </div>
+   </div>
 
    <div class="tabs">
       <ul ng-repeat="season in seasons">
@@ -21,6 +28,7 @@
                <span class="glyphicon" ng-class="{ 'glyphicon-eye-open' : episode.watched, 'glyphicon-eye-close' : !episode.watched }"></span>
             </span>
          </li>
+         <button type="button" name="delete button" class="button red" ng-click="deleteOpen = !deleteOpen">Delete</button>
       </ul>
    </div>
 </div>
