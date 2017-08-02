@@ -1,7 +1,7 @@
 <div class="container">
 
    <div class="row">
-      <div class="col-md-4" ng-repeat="watchlist in WatchlistCtrl.watchlist" ng-if="watchlist">
+      <div class="col-md-4 fade-in" ng-repeat="watchlist in WatchlistCtrl.watchlist" ng-if="watchlist">
          <shows-countdown-card
             heading="WatchlistCtrl.shows.$getRecord( watchlist.showId ).series"
             subheading="'Season '+ watchlist.on.season +' Episode '+ watchlist.on.episode"
@@ -15,6 +15,28 @@
             <countdown-timer to="WatchlistCtrl.nextAired( watchlist ).nextAired" ></countdown-timer>
          </shows-countdown-card>
       </div>
+
+
+   </div>
+
+   <div class="row">
+      {{ WatchlistCtrl.gened }}
+      <watchlist-card
+         heading="''"
+         subheading="''"
+         details="''"
+         imgsrc="WatchlistCtrl.shows.$getRecord( WatchlistCtrl.gened.showId ).imgSrc"
+         seasoninfo="WatchlistCtrl.gened.unwatched"
+         visible="true"
+         watchlistobj=""
+         index="$index">
+
+         <more-button action="WatchlistCardCtrl.toggleOpen()"></more-button>
+         <season-tabs open="WatchlistCardCtrl.open" seasons="WatchlistCtrl.gened.unwatched"></season-tabs>
+         <frost-glass imgsrc="WatchlistCtrl.shows.$getRecord( WatchlistCtrl.gened.showId ).imgSrc" >
+            <countdown-timer to="''" ></countdown-timer>
+         </frost-glass>
+      </watchlist-card>
    </div>
 
    <div class="row">
