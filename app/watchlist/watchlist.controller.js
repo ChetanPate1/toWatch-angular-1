@@ -25,8 +25,35 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
          },
          unwatched: {}
       };
-      list['unwatched'] = nextAired(list).unwatched;
-      firebaseArray.save(ref, list);
+      list['unwatched'] = initSeries(list);
+      // firebaseArray.save(ref, list);
+   }
+   
+   function initSeries(watchlist) {
+      var init = {};
+      var show = vm.shows.$getRecord(watchlist.showId);
+      var total_seasons = helperFunctions.objSize(show.seasons);
+
+      var onE = parseInt(watchlist.on.episode);
+      var onS = parseInt(watchlist.on.season);
+      var total_episodes_onS = helperFunctions.objSize(show.seasons['season_'+ onS]);
+
+      var seasonSize = 0;
+
+      for(onS; onS <= total_seasons; onS++){
+         seasonsSize = helperFunctions.objSize(show.seasons['season_'+ onS]);
+         init['season_' + onS] = show.seasons['season_'+ onS];
+
+         for (var j = 1; j <= seasonsSize; j++) {
+            init['season_' + onS][j].watched = false;
+
+            if(j < onE){
+               init['season_' + onS][j].watched = true;
+            }
+         }
+      }
+
+      return init;
    }
 
    function nextAired(watchlist) {
