@@ -11,8 +11,8 @@
             visible="true"
             watchlistobj="WatchlistCtrl.watchlist"
             index="$index">
-            <countdown-timer to="WatchlistCtrl.nextAired( watchlist ).nextAired" ></countdown-timer>
 
+            <countdown-timer to="WatchlistCtrl.nextAired( watchlist ).nextAired" ></countdown-timer>
          </shows-countdown-card>
       </div>
    </div>
@@ -25,7 +25,7 @@
                <label for="series">Series Name</label>
                <span class="glyphicon glyphicon-chevron-down"></span>
                <select name="series" ng-model="WatchlistCtrl.seriesRef" >
-                  <option ng-repeat="show in WatchlistCtrl.shows" ng-selected="{{ show.$id == WatchlistCtrl.seriesRef }}"
+                  <option ng-repeat="show in WatchlistCtrl.shows | orderBy: 'series'" ng-selected="{{ show.$id == WatchlistCtrl.seriesRef }}"
                      value="{{ show.$id }}"
                      ng-if="show.status == 'Running'" >{{ show.series }}
                   </option>
@@ -36,7 +36,7 @@
                <label for="season">Season</label>
                <span class="glyphicon glyphicon-chevron-down"></span>
                <select name="season" ng-model="WatchlistCtrl.season">
-                  <option ng-repeat="season in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons" ng-if="$last" value="{{ $index + 1 }}">{{ $index + 1 }}</option>
+                  <option ng-repeat="season in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons" value="{{ $index + 1 }}">{{ $index + 1 }}</option>
                </select>
             </div>
 
@@ -44,7 +44,8 @@
                <label for="episode">Episode</label>
                <span class="glyphicon glyphicon-chevron-down"></span>
                <select name="episode" ng-model="WatchlistCtrl.episode">
-                  <option ng-repeat="episode in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons[ 'season_' + WatchlistCtrl.season ]" ng-if="$index > 0 &&  WatchlistCtrl.checkAired(episode.airDate)" value="{{ $index }}">{{ $index }} {{ episode.name }}</option>
+                  <option ng-repeat="episode in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons[ 'season_' + WatchlistCtrl.season ]"
+                        ng-if="$index > 0 && WatchlistCtrl.checkAired(episode.airDate)" value="{{ $index }}">{{ $index }} {{ episode.name }}</option>
                </select>
             </div>
 

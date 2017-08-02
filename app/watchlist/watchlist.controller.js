@@ -36,6 +36,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
       var latestSeason = show.seasons['season_'+ seasons];
       var episodes = helperFunctions.objSize(latestSeason);
       var onEp = parseInt(watchlist.on.episode);
+      var onS = parseInt(watchlist.on.season);
 
       for (j; j <= episodes; j++) {
          unwatched[j] = {
@@ -62,6 +63,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    }
 
    function checkAired(date) {
+      date = parseInt(date);
       return date - today < 0;
    }
 }
