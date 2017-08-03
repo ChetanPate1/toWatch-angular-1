@@ -22,7 +22,7 @@
    <div class="row">
       {{ WatchlistCtrl.gened }}
       <watchlist-card
-         heading="''"
+         heading="WatchlistCardCtrl.toggleOpen()"
          subheading="''"
          details="''"
          imgsrc="WatchlistCtrl.shows.$getRecord( WatchlistCtrl.gened.showId ).imgSrc"
@@ -32,12 +32,15 @@
          index="$index">
 
          <more-button action="WatchlistCardCtrl.toggleOpen()"></more-button>
-         <season-tabs open="WatchlistCardCtrl.open" seasons="WatchlistCtrl.gened.unwatched"></season-tabs>
+         <season-tabs open="true" currentseason="WatchlistCtrl.gened.on.season" seasons="WatchlistCtrl.gened.unwatched"></season-tabs>
+
          <frost-glass imgsrc="WatchlistCtrl.shows.$getRecord( WatchlistCtrl.gened.showId ).imgSrc" >
             <countdown-timer to="''" ></countdown-timer>
          </frost-glass>
       </watchlist-card>
    </div>
+
+
 
    <div class="row">
       <div class="col-md-4">

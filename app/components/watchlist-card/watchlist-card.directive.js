@@ -8,9 +8,6 @@
       <countdown-timer></countdown-timer>
    <frost-glass>
 </watchlist-card>
-
-
-
 */
 angular
    .module('app')

@@ -15,7 +15,6 @@ function moreButton(helperFunctions) {
    };
 
    function link(scope) {
-console.log(scope);
       scope.behindCount = behindCount;
 
       function behindCount(seasoninfo) {

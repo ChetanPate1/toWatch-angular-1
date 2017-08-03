@@ -12,8 +12,8 @@ function seasonTabs(helperFunctions) {
          open: '=',
          seasons: '=',
          currentseason: '=',
-         rewatchobj: '=',
-         index: '='
+         // rewatchobj: '=',
+         // index: '='
       }
    };
 
@@ -29,7 +29,8 @@ function seasonTabs(helperFunctions) {
       scope.hasAired = hasAired;
       scope.currentSeason = currentSeason;
       scope.limitLength = limitLength;
-
+      scope.aired = aired;
+      
       function toggleOpen() {
          scope.open = !scope.open;
       }
@@ -55,6 +56,27 @@ function seasonTabs(helperFunctions) {
             currentSeason(rewatchobj[index].show, rewatchobj, index);
             rewatchobj.$save(index);
          }
+      }
+
+      function aired(date) {
+         if(!date){
+            return;
+         }
+         date = parseInt(date);
+         var delta = Math.abs((date - now))/1000;
+         var aired = { aired: date - now < 0 };
+
+         if( date - now < 0 ){
+            aired.by = '-' + Math.ceil(delta / 86400) + ' days';
+            if(Math.ceil(delta / 86400) > 30){
+               aired.by = 'aired';
+            }
+         }
+         else {
+            aired.by = 'not aired';
+         }
+
+         return aired;
       }
 
       function hasAired(airDate) {
