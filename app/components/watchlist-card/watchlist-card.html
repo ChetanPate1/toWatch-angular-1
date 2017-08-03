@@ -31,7 +31,7 @@
             <li ng-repeat="episode in season" ng-if="$index > 0"  ng-class="{ 'disabled' : !episode.watched }">
                <span class="left" ng-class="{'invisible': episode.watched }">{{ aired(episode.airDate).by }}</span>
                <span class="item">Episode {{ $index }}</span>
-               <span class="watched" ng-click="save(watchlistobj, index, seasoninfo, episode, $index)" >
+               <span class="watched" ng-click="save(watchlistobj, index, seasons, episode, $index)" >
                   <span class="glyphicon" ng-class="{ 'glyphicon-eye-open' : episode.watched, 'glyphicon-eye-close' : !episode.watched }"></span>
                </span>
             </li>

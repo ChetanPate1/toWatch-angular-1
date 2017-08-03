@@ -61,12 +61,14 @@ function watchlistCard(helperFunctions) {
          var on = parseInt(watchlistobj[index].on.episode);
          var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1 && (scope.tabActive).toString() == watchlistobj[index].on.season;
 
-         if( Math.abs((airDate - now))/1000 < 0 || !isOneLessOneMore){
+         console.log(episodeNumber, 'isOneLessOneMore ', isOneLessOneMore);
+
+         if( Math.abs(airDate - now) < 0 || !isOneLessOneMore){
             return;
          }else {
             watchlist.watched = !watchlist.watched;
             countWatched(seasoninfo, watchlistobj, index);
-            watchlistobj.$save(index);
+            // watchlistobj.$save(index);
          }
       }
 
@@ -92,26 +94,41 @@ function watchlistCard(helperFunctions) {
       }
 
       function countWatched(seasoninfo, watchlistobj, index) {
-         var i = 1, size = seasoninfo.length - 1;
-         var nextSeason = parseInt(watchlistobj[index].on.season) + 1;
-         var nextSeasonNull = watchlistobj[index].on.season['season_'+ nextSeason] == undefined;
+         var isLastSeason = watchlistobj[index].unwatched['season_'+ nextSeason] == undefined;
 
-         for (i; i <= size; i++) {
-            if(!seasoninfo[i].watched){
-               break;
+         var currentSeason = parseInt(watchlistobj[index].on.season);
+         var nextSeason = currentSeason + 1;
+         var seasonsLimit = helperFunctions.objSize(seasoninfo) + currentSeason;
+         var count = 0, j = 1, totalEpisodes = 0, season, on = 1;
+
+         for (currentSeason; currentSeason < seasonsLimit; currentSeason++) {
+            season = seasoninfo['season_' + currentSeason];
+            totalEpisodes = helperFunctions.objSize(season);
+
+            for (j; j < totalEpisodes; j++) {
+               if(season[j].watched){
+                  count++;
+               }
+               if (!season[j].watched) {
+                  on = count + 1;
+               }
             }
+
+            j = 1;
+         }
+         console.log(on, totalEpisodes);
+         if(on == totalEpisodes){
+            if(isLastSeason){
+               console.log('last season');
+            }
+            on = 1;
+            watchlistobj[index].on.season = nextSeason;
+            watchlistobj[index].on.episode = 1;
+         }else {
+
+            watchlistobj[index].on.episode = on;
          }
 
-         if(i > size){
-            if(nextSeasonNull){
-               watchlistobj[index].upToDate = true;
-            }else {
-               watchlistobj[index].on.season = nextSeason;
-               watchlistobj[index].on.episode = 1;
-            }
-         }
-
-         watchlistobj[index].on.episode = i;
       }
 
       function tabSelect(number) {

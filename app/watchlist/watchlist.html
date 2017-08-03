@@ -20,21 +20,23 @@
    </div>
 
    <div class="row">
-      {{ WatchlistCtrl.gened }}
-      <watchlist-card
-         heading=""
-         subheading="'Season '+ WatchlistCtrl.gened.on.season +' Episode '+ WatchlistCtrl.gened.on.episode"
-         details="''"
-         imgsrc="WatchlistCtrl.shows.$getRecord( WatchlistCtrl.gened.showId ).imgSrc"
-         seasons="WatchlistCtrl.gened.unwatched"
-         currentseason="WatchlistCtrl.gened.on.season"
-         watchlistobj=""
-         index="$index">
+      <div class="col-md-4 fade-in" ng-repeat="watchlist in WatchlistCtrl.watchlist" ng-if="watchlist">
+         <watchlist-card
+            heading="WatchlistCtrl.shows.$getRecord( watchlist.showId ).series"
+            subheading="'Season '+ watchlist.on.season +' Episode '+ watchlist.on.episode"
+            details="WatchlistCtrl.shows.$getRecord( watchlist.showId ).seasons['season_'+ watchlist.on.season ][ watchlist.on.episode ].name"
+            imgsrc="WatchlistCtrl.shows.$getRecord( watchlist.showId ).imgSrc"
+            seasons="watchlist.unwatched"
+            currentseason="watchlist.on.season"
+            watchlistobj="WatchlistCtrl.watchlist"
+            index="$index">
 
-         <frost-glass imgsrc="WatchlistCtrl.shows.$getRecord( WatchlistCtrl.gened.showId ).imgSrc" >
-            <countdown-timer to="''" ></countdown-timer>
-         </frost-glass>
-      </watchlist-card>
+            <frost-glass imgsrc="WatchlistCtrl.shows.$getRecord( watchlist.showId ).imgSrc" >
+               <countdown-timer to="WatchlistCtrl.nextAired( watchlist ).nextAired" ></countdown-timer>
+            </frost-glass>
+         </watchlist-card>
+      </div>
+
    </div>
 
 

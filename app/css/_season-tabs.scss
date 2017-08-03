@@ -78,6 +78,19 @@
       text-align: right;
       width: 30%;
       float: left;
+
+      .glyphicon{
+        cursor: pointer;
+        opacity: 0.5;
+        @include transition(opacity 200ms ease);
+        &.glyphicon-eye-open{
+          opacity: 1;
+        }
+
+        &:hover{
+          opacity: 1;
+        }
+      }
     }
 
     li{

@@ -771,6 +771,16 @@ h1 {
       text-align: right;
       width: 30%;
       float: left; }
+      .season-tabs .items .watched .glyphicon {
+        cursor: pointer;
+        opacity: 0.5;
+        -webkit-transition: opacity 200ms ease;
+        -ms-transition: opacity 200ms ease;
+        transition: opacity 200ms ease; }
+        .season-tabs .items .watched .glyphicon.glyphicon-eye-open {
+          opacity: 1; }
+        .season-tabs .items .watched .glyphicon:hover {
+          opacity: 1; }
     .season-tabs .items li {
       margin: 10px auto;
       height: 50px;
