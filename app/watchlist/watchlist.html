@@ -22,17 +22,14 @@
    <div class="row">
       {{ WatchlistCtrl.gened }}
       <watchlist-card
-         heading="WatchlistCardCtrl.toggleOpen()"
-         subheading="''"
+         heading=""
+         subheading="'Season '+ WatchlistCtrl.gened.on.season +' Episode '+ WatchlistCtrl.gened.on.episode"
          details="''"
          imgsrc="WatchlistCtrl.shows.$getRecord( WatchlistCtrl.gened.showId ).imgSrc"
-         seasoninfo="WatchlistCtrl.gened.unwatched"
-         visible="true"
+         seasons="WatchlistCtrl.gened.unwatched"
+         currentseason="WatchlistCtrl.gened.on.season"
          watchlistobj=""
          index="$index">
-
-         <more-button action="WatchlistCardCtrl.toggleOpen()"></more-button>
-         <season-tabs open="true" currentseason="WatchlistCtrl.gened.on.season" seasons="WatchlistCtrl.gened.unwatched"></season-tabs>
 
          <frost-glass imgsrc="WatchlistCtrl.shows.$getRecord( WatchlistCtrl.gened.showId ).imgSrc" >
             <countdown-timer to="''" ></countdown-timer>

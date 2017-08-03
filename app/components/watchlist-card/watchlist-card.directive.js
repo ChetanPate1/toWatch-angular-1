@@ -13,16 +13,12 @@ angular
    .module('app')
    .directive('watchlistCard', watchlistCard);
 
-function watchlistCard() {
+function watchlistCard(helperFunctions) {
    var directive = {
       link: link,
       templateUrl: 'components/watchlist-card/watchlist-card.html',
       restrict: 'E',
-      controller: 'WatchlistCardController',
-      controllerAs: 'WatchlistCardCtrl',
       transclude: {
-         button: 'moreButton',
-         tabs: 'seasonTabs',
          frostGlass: 'frostGlass'
       },
       scope: {
@@ -30,6 +26,8 @@ function watchlistCard() {
          subheading: '=',
          details: '=',
          imgsrc: '=',
+         seasons: '=',
+         currentseason: '=',
          watchlistobj: '=',
          index: '='
       }
@@ -40,10 +38,19 @@ function watchlistCard() {
       scope.deleteOpen = false;
       scope.open = false;
       scope.upToDate = false;
+
       scope.toggleOpen = toggleOpen;
       scope.save = save;
       scope.aired = aired;
       scope.countWatched = countWatched;
+
+      scope.tabActive = scope.currentseason;
+      scope.tabSelect = tabSelect;
+      scope.isTabSelected = isTabSelected;
+      scope.hasAired = hasAired;
+      scope.limitLength = limitLength;
+
+      scope.behindCount = behindCount;
 
       function toggleOpen() {
          scope.open = !scope.open;
@@ -52,7 +59,7 @@ function watchlistCard() {
       function save(watchlistobj, index, seasoninfo, watchlist, episodeNumber) {
          var airDate = parseInt(watchlist.airDate);
          var on = parseInt(watchlistobj[index].on.episode);
-         var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1;
+         var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1 && (scope.tabActive).toString() == watchlistobj[index].on.season;
 
          if( Math.abs((airDate - now))/1000 < 0 || !isOneLessOneMore){
             return;
@@ -107,23 +114,46 @@ function watchlistCard() {
          watchlistobj[index].on.episode = i;
       }
 
+      function tabSelect(number) {
+         scope.tabActive = number;
+      }
 
+      function isTabSelected(number) {
+         return scope.tabActive == number;
+      }
+
+      function hasAired(airDate) {
+         airDate = parseInt(airDate);
+         return airDate - now < 0;
+      }
+
+      function limitLength(string, limit) {
+         if (string.length > limit) {
+            return string.substring(0 ,limit) + '...';
+         }else {
+            return string;
+         }
+      }
+
+      function behindCount(seasons, currentSeason) {
+         var currentSeason = parseInt(currentSeason);
+         var seasonsLimit = helperFunctions.objSize(seasons) + currentSeason;
+         var count = 0, j = 1, totalEpisodes = 0, season;
+
+         for (currentSeason; currentSeason < seasonsLimit; currentSeason++) {
+            season = seasons['season_' + currentSeason];
+            totalEpisodes = helperFunctions.objSize(season);
+
+            for (j; j < totalEpisodes; j++) {
+               if(!season[j].watched && season[j].airDate - now < 0){
+                  count++;
+               }
+            }
+            j = 1;
+         }
+
+         return (count > 0) ? '-'+ count : count;
+      }
    }
    return directive;
-}
-
-angular
-   .module('app')
-   .controller('WatchlistCardController', WatchlistCardController);
-
-function WatchlistCardController() {
-   var vm = this;
-
-   vm.open = false;
-   vm.toggleOpen = toggleOpen;
-
-   function toggleOpen() {
-      console.log('click');
-      scope.open = !scope.open;
-   }
 }
