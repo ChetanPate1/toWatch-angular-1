@@ -418,6 +418,34 @@ h1 {
     display: block;
     width: 100%; }
 
+.glass {
+  z-index: 20;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.17); }
+
+.frost {
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  background-position: center 93%;
+  background-size: cover;
+  -webkit-transform: scale(1.08);
+  -ms-transform: scale(1.08);
+  transform: scale(1.08);
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  -webkit-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2); }
+
 .rewatch-card {
   overflow: hidden;
   position: relative;
@@ -500,35 +528,6 @@ h1 {
       -webkit-transform: rotate(135deg);
       -ms-transform: rotate(135deg);
       transform: rotate(135deg); }
-  .rewatch-card .glass {
-    z-index: 20;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 70px;
-    width: 100%;
-    border-top: 1px solid rgba(255, 255, 255, 0.17);
-    opacity: 0; }
-    .rewatch-card .glass.show {
-      opacity: 1; }
-  .rewatch-card .frost {
-    z-index: 5;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 70px;
-    width: 100%;
-    background-position: center 93%;
-    background-size: cover;
-    -webkit-transform: scale(1.08);
-    -ms-transform: scale(1.08);
-    transform: scale(1.08);
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-    -webkit-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2);
-    -ms-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2); }
 
 .season-info {
   padding-top: 50px;

@@ -2,12 +2,11 @@
 
    <div class="row">
       <div class="col-sm-4 col-md-2 fade-in" ng-repeat="show in ShowsCtrl.shows | orderBy: 'series'">
-         <countdown-card
+         <show-card
             heading="show.series"
             subheading="''"
-            imgsrc="show.imgSrc"
-            countdownvisible="false" >
-         </countdown-card>
+            imgsrc="show.imgSrc" >
+         </show-card>
       </div>
    </div>
 
