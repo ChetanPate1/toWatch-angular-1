@@ -523,6 +523,10 @@ h1 {
     position: relative;
     color: #ffffff; }
 
+.home .show-card {
+  max-width: 250px;
+  height: 370px; }
+
 .season-info {
   padding-top: 50px;
   position: absolute;

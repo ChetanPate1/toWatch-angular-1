@@ -9,14 +9,8 @@ function config($stateProvider, $urlRouterProvider){
       .state('home',{
          url: '/home',
          templateUrl: 'home/home.html',
-         resolve: {
-           // controller will not be loaded until $waitForSignIn resolves
-           // Auth refers to our $firebaseAuth wrapper in the factory below
-           'currentAuth': ['firebaseAuth', function(firebaseAuth) {
-             // $waitForSignIn returns a promise so the resolve waits for it to complete
-             return firebaseAuth.$waitForSignIn();
-           }]
-         }
+         controller: 'HomeController',
+         controllerAs: 'HomeCtrl'
       })
       .state('signin',{
          url: '/signin',

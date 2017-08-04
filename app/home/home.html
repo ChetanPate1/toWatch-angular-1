@@ -1,12 +1,10 @@
-<div class="container">
-   
-   <!-- <div class="row" ng-controller="CountdownCardController as CountdownCtrl">
-      <div class="col-md-4" ng-repeat="show in CountdownCtrl.shows">
-
-         <countdown-card heading="show.series" subheading="'Season '+ show.season +' Episode '+ show.episode.number" imgsrc="show.imgSrc" >
-            <countdown-timer to="show.episode.airDate" ></countdown-timer>
-         </countdown-card>
-
+<div class="container-fluid home">
+   <div class="row">
+      <div class="col-sm-4 col-md-2 fade-in" ng-repeat="show in HomeCtrl.mostPopular | limitTo:10">
+         <show-card
+            heading="show.name"
+            imgsrc="show.image_thumbnail_path" >
+         </show-card>
       </div>
-   </div> -->
+   </div>
 </div>

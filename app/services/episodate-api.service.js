@@ -7,8 +7,18 @@ episodateApi.$inject = ['$http', 'helperFunctions', '$timeout'];
 function episodateApi($http, helperFunctions, $timeout){
    var vm = this;
    var service = {
+      getMostPopular: getMostPopular,
       getShow: getShow
    };
+
+   function getMostPopular() {
+      return $http({
+         method: 'GET',
+         url: 'https://www.episodate.com/api/most-popular?page=1'
+      }).then(function(res) {
+         return res.data.tv_shows;
+      });
+   }
 
    function getShow(show) {
       return $http({
@@ -34,7 +44,7 @@ function episodateApi($http, helperFunctions, $timeout){
       series.imgSrc = show.image_path;
       series.imgSrcSm = show.image_thumbnail_path;
       series.status = show.status;
-   
+
       init['season_'+ seasonNum] = {};
 
       for (i; i < size; i++) {
