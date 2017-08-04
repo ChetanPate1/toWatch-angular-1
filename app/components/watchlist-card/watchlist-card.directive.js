@@ -59,11 +59,12 @@ function watchlistCard(helperFunctions) {
       function save(watchlistobj, index, seasoninfo, watchlist, episodeNumber) {
          var airDate = parseInt(watchlist.airDate);
          var on = parseInt(watchlistobj[index].on.episode);
-         var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1 && (scope.tabActive).toString() == watchlistobj[index].on.season;
+         var isCurrentTab = (scope.tabActive).toString() == watchlistobj[index].on.season;
+         var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1 && isCurrentTab;
 
-         console.log(episodeNumber, 'isOneLessOneMore ', isOneLessOneMore);
+         console.log('episodeNumber', episodeNumber, 'isOneLessOneMore ', isOneLessOneMore, 'isCurrentTab', isCurrentTab);
 
-         if( Math.abs(airDate - now) < 0 || !isOneLessOneMore){
+         if(airDate - now > 0 || !isOneLessOneMore){
             return;
          }else {
             watchlist.watched = !watchlist.watched;
@@ -94,15 +95,14 @@ function watchlistCard(helperFunctions) {
       }
 
       function countWatched(seasoninfo, watchlistobj, index) {
+         var currentSeasonNum = parseInt(watchlistobj[index].on.season);
+         var nextSeason = currentSeasonNum + 1;
          var isLastSeason = watchlistobj[index].unwatched['season_'+ nextSeason] == undefined;
+         var seasonsLimit = helperFunctions.objSize(seasoninfo) + currentSeasonNum;
+         var count = 0, j = 1, totalEpisodes = 0, season, on = 1, currentSeason = seasoninfo['season_' + currentSeasonNum];
 
-         var currentSeason = parseInt(watchlistobj[index].on.season);
-         var nextSeason = currentSeason + 1;
-         var seasonsLimit = helperFunctions.objSize(seasoninfo) + currentSeason;
-         var count = 0, j = 1, totalEpisodes = 0, season, on = 1;
-
-         for (currentSeason; currentSeason < seasonsLimit; currentSeason++) {
-            season = seasoninfo['season_' + currentSeason];
+         for (currentSeasonNum; currentSeasonNum < seasonsLimit; currentSeasonNum++) {
+            season = seasoninfo['season_' + currentSeasonNum];
             totalEpisodes = helperFunctions.objSize(season);
 
             for (j; j < totalEpisodes; j++) {
@@ -113,23 +113,23 @@ function watchlistCard(helperFunctions) {
                   on = count + 1;
                }
             }
-
             j = 1;
          }
-         console.log(on, totalEpisodes);
-         if(on == totalEpisodes){
-            if(isLastSeason){
-               console.log('last season');
-            }
-            on = 1;
+         
+         if(on == currentSeason.length){
             watchlistobj[index].on.season = nextSeason;
             watchlistobj[index].on.episode = 1;
          }else {
-
             watchlistobj[index].on.episode = on;
          }
 
+         if(isLastSeason){
+            if(on == currentSeason.length){
+               watchlistobj[index].upToDate = true;
+            }
+         }
       }
+
 
       function tabSelect(number) {
          scope.tabActive = number;
