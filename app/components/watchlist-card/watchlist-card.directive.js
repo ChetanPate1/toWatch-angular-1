@@ -1,14 +1,4 @@
-/*
-<watchlist-card>
-   <more-button></more-button>
-   <season-tabs>
-      <tab-content-layout></tab-content-layout>
-   </season-tabs>
-   <frost-glass>
-      <countdown-timer></countdown-timer>
-   <frost-glass>
-</watchlist-card>
-*/
+
 angular
    .module('app')
    .directive('watchlistCard', watchlistCard);
@@ -52,8 +42,8 @@ function watchlistCard(helperFunctions) {
 
       scope.behindCount = behindCount;
 
-      function toggleOpen() {
-         scope.open = !scope.open;
+      function toggleOpen(value) {
+         scope[value] = !scope[value];
       }
 
       function save(watchlistobj, index, seasoninfo, watchlist, episodeNumber) {
@@ -69,7 +59,7 @@ function watchlistCard(helperFunctions) {
          }else {
             watchlist.watched = !watchlist.watched;
             countWatched(seasoninfo, watchlistobj, index);
-            // watchlistobj.$save(index);
+            watchlistobj.$save(index);
          }
       }
 
@@ -115,7 +105,7 @@ function watchlistCard(helperFunctions) {
             }
             j = 1;
          }
-         
+
          if(on == currentSeason.length){
             watchlistobj[index].on.season = nextSeason;
             watchlistobj[index].on.episode = 1;

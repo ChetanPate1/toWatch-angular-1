@@ -1,5 +1,5 @@
 <div class="countdown-card" ng-style="{ 'background-image': 'url({{ imgsrc }})' }">
-   <button type="button" name="more" class="more-button" ng-class="{'open' : open, 'up-to-date':  0 }" ng-click="toggleOpen()">
+   <button type="button" name="more" class="more-button" ng-class="{'open' : open, 'up-to-date': behindCount(seasons, currentseason) == 0 }" ng-click="toggleOpen('open')">
       <span class="glyphicon glyphicon-plus"></span>
       <span class="behind">{{ behindCount(seasons, currentseason) }}</span>
    </button>
@@ -8,10 +8,11 @@
       <h2 class="text-center">Your Up to Date!</h2>
       <a href class="button" ng-click="watchlistobj.$remove(index)">ok</a>
    </div>
+
    <div class="shutter-delete" ng-class="{'open' : deleteOpen }">
       <h2>Delete from Watchlist?</h2>
       <div class="col-sm-6">
-         <button type="button" name="cancel" class="button" ng-click="deleteOpen = false">cancel</button>
+         <button type="button" name="cancel" class="button" ng-click="toggleOpen('deleteOpen')">cancel</button>
       </div>
       <div class="col-sm-6">
          <button type="button" name="delete" class="button red" ng-click="watchlistobj.$remove(index)">delete</button>
@@ -35,7 +36,7 @@
                </span>
             </li>
 
-            <button type="button" name="delete button" class="button red" ng-click="deleteOpen = !deleteOpen">Delete</button>
+            <button type="button" name="delete button" class="button red" ng-click="toggleOpen('deleteOpen')">Delete</button>
          </ul>
       </div>
    </div>
