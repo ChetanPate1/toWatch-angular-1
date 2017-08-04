@@ -127,280 +127,6 @@ h1 {
       top: 10px;
       left: 15px; } }
 
-.countdown-card {
-  position: relative;
-  display: block;
-  margin: 0 auto 25px auto;
-  max-width: 300px;
-  height: 400px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  padding: 20px 15px 0 15px;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3);
-  -ms-box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3); }
-  .countdown-card h2 {
-    letter-spacing: 1px; }
-  .countdown-card h5 {
-    font-size: 12px; }
-  .countdown-card h4 {
-    font-size: 16px;
-    color: #ffffff;
-    margin: 0px 0 10px 0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.26); }
-  .countdown-card h6 {
-    z-index: 20;
-    position: absolute;
-    bottom: 60px;
-    font-weight: bold;
-    left: 0;
-    width: 50%;
-    padding: 10px 0 10px 15px;
-    color: #ffffff;
-    font-size: 16px;
-    text-transform: uppercase;
-    background-color: rgba(0, 0, 0, 0.2); }
-    .countdown-card h6 small {
-      text-transform: none;
-      color: inherit; }
-  .countdown-card h2, .countdown-card h5 {
-    z-index: 10;
-    font-weight: bold;
-    position: relative;
-    color: #ffffff; }
-  .countdown-card .glass {
-    z-index: 20;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 70px;
-    width: 100%;
-    border-top: 1px solid rgba(255, 255, 255, 0.17);
-    opacity: 0; }
-    .countdown-card .glass.show {
-      opacity: 1; }
-  .countdown-card .frost {
-    z-index: 5;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 70px;
-    width: 100%;
-    background-position: center 93%;
-    background-size: cover;
-    -webkit-transform: scale(1.08);
-    -ms-transform: scale(1.08);
-    transform: scale(1.08);
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-    -webkit-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2);
-    -ms-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2); }
-
-.countdown-card .more-button {
-  z-index: 300;
-  overflow: hidden;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background-image: none;
-  height: 26px;
-  width: 26px;
-  border: none;
-  border-radius: 50%;
-  background-color: #ffffff;
-  text-align: center;
-  color: #000000;
-  padding: 0;
-  -webkit-transition: transform 300ms ease;
-  -ms-transition: transform 300ms ease;
-  transition: transform 300ms ease;
-  -webkit-transform: translateX(-5px) translateY(273px) scale(1.7);
-  -ms-transform: translateX(-5px) translateY(273px) scale(1.7);
-  transform: translateX(-5px) translateY(273px) scale(1.7);
-  -webkit-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
-  -ms-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4); }
-  .countdown-card .more-button span {
-    -webkit-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    transition: all 500ms ease; }
-  .countdown-card .more-button .glyphicon {
-    z-index: 20;
-    position: absolute;
-    left: 1px;
-    line-height: 23px;
-    width: 100%;
-    height: 100%;
-    font-size: 11px;
-    opacity: 0;
-    -webkit-transform: translateX(-20px) scale(0);
-    -ms-transform: translateX(-20px) scale(0);
-    transform: translateX(-20px) scale(0); }
-  .countdown-card .more-button .behind {
-    z-index: 10;
-    position: relative;
-    display: block;
-    width: 100%;
-    font-size: 14px;
-    font-weight: bold;
-    opacity: 1;
-    top: 1px;
-    color: #6840e5;
-    -webkit-transform: translateX(0) scale(1);
-    -ms-transform: translateX(0) scale(1);
-    transform: translateX(0) scale(1); }
-  .countdown-card .more-button:hover, .countdown-card .more-button:focus {
-    -webkit-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-    -ms-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6); }
-    .countdown-card .more-button:hover .behind, .countdown-card .more-button:focus .behind {
-      opacity: 0;
-      -webkit-transform: translateX(20px) scale(0);
-      -ms-transform: translateX(20px) scale(0);
-      transform: translateX(20px) scale(0); }
-    .countdown-card .more-button:hover .glyphicon, .countdown-card .more-button:focus .glyphicon {
-      opacity: 1;
-      -webkit-transform: translateY(0) scale(1);
-      -ms-transform: translateY(0) scale(1);
-      transform: translateY(0) scale(1); }
-  .countdown-card .more-button.open {
-    -webkit-transform: translateY(0) scale(1) rotate(45deg);
-    -ms-transform: translateY(0) scale(1) rotate(45deg);
-    transform: translateY(0) scale(1) rotate(45deg); }
-    .countdown-card .more-button.open .behind {
-      opacity: 0;
-      -webkit-transform: translateX(20px) scale(0);
-      -ms-transform: translateX(20px) scale(0);
-      transform: translateX(20px) scale(0); }
-    .countdown-card .more-button.open .glyphicon {
-      opacity: 1;
-      -webkit-transform: translateY(0) scale(1);
-      -ms-transform: translateY(0) scale(1);
-      transform: translateY(0) scale(1); }
-  .countdown-card .more-button.up-to-date .behind {
-    opacity: 0;
-    -webkit-transform: translateX(20px) scale(0);
-    -ms-transform: translateX(20px) scale(0);
-    transform: translateX(20px) scale(0); }
-  .countdown-card .more-button.up-to-date .glyphicon {
-    opacity: 1;
-    -webkit-transform: translateY(0) scale(1);
-    -ms-transform: translateY(0) scale(1);
-    transform: translateY(0) scale(1); }
-
-.countdown-card {
-  overflow: hidden; }
-  .countdown-card .season-info {
-    padding-top: 120px;
-    position: absolute;
-    z-index: 200;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    -webkit-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    transition: all 500ms ease;
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%); }
-    .countdown-card .season-info .button.red {
-      margin: 25px auto 10px auto;
-      width: 90%;
-      display: block; }
-    .countdown-card .season-info.open {
-      opacity: 1;
-      -webkit-transform: translateX(0%);
-      -ms-transform: translateX(0%);
-      transform: translateX(0%); }
-    .countdown-card .season-info .items {
-      position: relative;
-      width: 100%;
-      display: block;
-      padding: 0;
-      margin: 0;
-      max-height: 265px;
-      overflow-y: auto; }
-      .countdown-card .season-info .items::-webkit-scrollbar {
-        width: 0px;
-        /* remove scrollbar space */
-        background: transparent;
-        /* optional: just make scrollbar invisible */ }
-      .countdown-card .season-info .items .left {
-        font-size: 12px;
-        line-height: 20px;
-        font-weight: bold;
-        width: 30%;
-        float: left;
-        -webkit-transition: opacity 400ms ease;
-        -ms-transition: opacity 400ms ease;
-        transition: opacity 400ms ease; }
-        .countdown-card .season-info .items .left.invisible {
-          opacity: 0; }
-      .countdown-card .season-info .items .item {
-        font-weight: bold;
-        width: 40%;
-        float: left; }
-      .countdown-card .season-info .items .watched {
-        text-align: right;
-        width: 30%;
-        float: left; }
-      .countdown-card .season-info .items li {
-        margin: 10px auto;
-        height: 50px;
-        width: 90%;
-        background-color: #ffffff;
-        display: block;
-        padding: 15px 10px;
-        border-radius: 4px;
-        -webkit-transition: opacity 500ms ease;
-        -ms-transition: opacity 500ms ease;
-        transition: opacity 500ms ease; }
-        .countdown-card .season-info .items li.disabled {
-          opacity: 0.7; }
-          .countdown-card .season-info .items li.disabled .watched .glyphicon:hover {
-            opacity: 0.5; }
-  .countdown-card .shutter, .countdown-card .shutter-delete {
-    z-index: 500;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    opacity: 0;
-    -webkit-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    transform: translateY(-100%);
-    -webkit-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    transition: all 300ms ease; }
-    .countdown-card .shutter h2, .countdown-card .shutter-delete h2 {
-      width: 100%;
-      position: absolute;
-      top: 120px;
-      left: 0; }
-    .countdown-card .shutter .button, .countdown-card .shutter-delete .button {
-      margin: 200px auto 0 auto;
-      display: block;
-      max-width: 100px; }
-    .countdown-card .shutter.open, .countdown-card .shutter-delete.open {
-      -webkit-transform: translateY(0%);
-      -ms-transform: translateY(0%);
-      transform: translateY(0%);
-      opacity: 1; }
-  .countdown-card .shutter-delete h2 {
-    text-align: center;
-    top: 85px; }
-
 .countdown-timer .time {
   z-index: 100;
   width: 25%;
@@ -445,6 +171,251 @@ h1 {
   -webkit-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 -50px 30px rgba(0, 0, 0, 0.2); }
+
+.watchlist-card {
+  position: relative;
+  display: block;
+  margin: 0 auto 25px auto;
+  max-width: 300px;
+  height: 400px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px 15px 0 15px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3); }
+  .watchlist-card h2 {
+    letter-spacing: 1px; }
+  .watchlist-card h5 {
+    font-size: 12px; }
+  .watchlist-card h4 {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0px 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.26); }
+  .watchlist-card h6 {
+    z-index: 20;
+    position: absolute;
+    bottom: 60px;
+    font-weight: bold;
+    left: 0;
+    width: 50%;
+    padding: 10px 0 10px 15px;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.2); }
+    .watchlist-card h6 small {
+      text-transform: none;
+      color: inherit; }
+  .watchlist-card h2, .watchlist-card h5 {
+    z-index: 10;
+    font-weight: bold;
+    position: relative;
+    color: #ffffff; }
+
+.watchlist-card .more-button {
+  z-index: 300;
+  overflow: hidden;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-image: none;
+  height: 26px;
+  width: 26px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+  text-align: center;
+  color: #000000;
+  padding: 0;
+  -webkit-transition: transform 300ms ease;
+  -ms-transition: transform 300ms ease;
+  transition: transform 300ms ease;
+  -webkit-transform: translateX(-5px) translateY(273px) scale(1.7);
+  -ms-transform: translateX(-5px) translateY(273px) scale(1.7);
+  transform: translateX(-5px) translateY(273px) scale(1.7);
+  -webkit-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
+  -ms-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4); }
+  .watchlist-card .more-button span {
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    transition: all 500ms ease; }
+  .watchlist-card .more-button .glyphicon {
+    z-index: 20;
+    position: absolute;
+    left: 1px;
+    line-height: 23px;
+    width: 100%;
+    height: 100%;
+    font-size: 11px;
+    opacity: 0;
+    -webkit-transform: translateX(-20px) scale(0);
+    -ms-transform: translateX(-20px) scale(0);
+    transform: translateX(-20px) scale(0); }
+  .watchlist-card .more-button .behind {
+    z-index: 10;
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 1;
+    top: 1px;
+    color: #6840e5;
+    -webkit-transform: translateX(0) scale(1);
+    -ms-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1); }
+  .watchlist-card .more-button:hover, .watchlist-card .more-button:focus {
+    -webkit-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+    -ms-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6); }
+    .watchlist-card .more-button:hover .behind, .watchlist-card .more-button:focus .behind {
+      opacity: 0;
+      -webkit-transform: translateX(20px) scale(0);
+      -ms-transform: translateX(20px) scale(0);
+      transform: translateX(20px) scale(0); }
+    .watchlist-card .more-button:hover .glyphicon, .watchlist-card .more-button:focus .glyphicon {
+      opacity: 1;
+      -webkit-transform: translateY(0) scale(1);
+      -ms-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1); }
+  .watchlist-card .more-button.open {
+    -webkit-transform: translateY(0) scale(1) rotate(45deg);
+    -ms-transform: translateY(0) scale(1) rotate(45deg);
+    transform: translateY(0) scale(1) rotate(45deg); }
+    .watchlist-card .more-button.open .behind {
+      opacity: 0;
+      -webkit-transform: translateX(20px) scale(0);
+      -ms-transform: translateX(20px) scale(0);
+      transform: translateX(20px) scale(0); }
+    .watchlist-card .more-button.open .glyphicon {
+      opacity: 1;
+      -webkit-transform: translateY(0) scale(1);
+      -ms-transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1); }
+  .watchlist-card .more-button.up-to-date .behind {
+    opacity: 0;
+    -webkit-transform: translateX(20px) scale(0);
+    -ms-transform: translateX(20px) scale(0);
+    transform: translateX(20px) scale(0); }
+  .watchlist-card .more-button.up-to-date .glyphicon {
+    opacity: 1;
+    -webkit-transform: translateY(0) scale(1);
+    -ms-transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1); }
+
+.watchlist-card {
+  overflow: hidden; }
+  .watchlist-card .season-info {
+    padding-top: 120px;
+    position: absolute;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    transition: all 500ms ease;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%); }
+    .watchlist-card .season-info .button.red {
+      margin: 25px auto 10px auto;
+      width: 90%;
+      display: block; }
+    .watchlist-card .season-info.open {
+      opacity: 1;
+      -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      transform: translateX(0%); }
+    .watchlist-card .season-info .items {
+      position: relative;
+      width: 100%;
+      display: block;
+      padding: 0;
+      margin: 0;
+      max-height: 265px;
+      overflow-y: auto; }
+      .watchlist-card .season-info .items::-webkit-scrollbar {
+        width: 0px;
+        /* remove scrollbar space */
+        background: transparent;
+        /* optional: just make scrollbar invisible */ }
+      .watchlist-card .season-info .items .left {
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: bold;
+        width: 30%;
+        float: left;
+        -webkit-transition: opacity 400ms ease;
+        -ms-transition: opacity 400ms ease;
+        transition: opacity 400ms ease; }
+        .watchlist-card .season-info .items .left.invisible {
+          opacity: 0; }
+      .watchlist-card .season-info .items .item {
+        font-weight: bold;
+        width: 40%;
+        float: left; }
+      .watchlist-card .season-info .items .watched {
+        text-align: right;
+        width: 30%;
+        float: left; }
+      .watchlist-card .season-info .items li {
+        margin: 10px auto;
+        height: 50px;
+        width: 90%;
+        background-color: #ffffff;
+        display: block;
+        padding: 15px 10px;
+        border-radius: 4px;
+        -webkit-transition: opacity 500ms ease;
+        -ms-transition: opacity 500ms ease;
+        transition: opacity 500ms ease; }
+        .watchlist-card .season-info .items li.disabled {
+          opacity: 0.7; }
+          .watchlist-card .season-info .items li.disabled .watched .glyphicon:hover {
+            opacity: 0.5; }
+  .watchlist-card .shutter, .watchlist-card .shutter-delete {
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    transition: all 300ms ease; }
+    .watchlist-card .shutter h2, .watchlist-card .shutter-delete h2 {
+      width: 100%;
+      position: absolute;
+      top: 120px;
+      left: 0; }
+    .watchlist-card .shutter .button, .watchlist-card .shutter-delete .button {
+      margin: 200px auto 0 auto;
+      display: block;
+      max-width: 100px; }
+    .watchlist-card .shutter.open, .watchlist-card .shutter-delete.open {
+      -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      transform: translateY(0%);
+      opacity: 1; }
+  .watchlist-card .shutter-delete h2 {
+    text-align: center;
+    top: 85px; }
 
 .rewatch-card {
   overflow: hidden;

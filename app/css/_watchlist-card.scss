@@ -1,4 +1,4 @@
-.countdown-card{
+.watchlist-card{
   position: relative;
   display: block;
   margin: 0 auto 25px auto;
@@ -53,8 +53,9 @@
     position: relative;
     color: #ffffff;
   }
+}
 
-.countdown-card{
+.watchlist-card{
   .more-button{
     z-index: 300;
     overflow: hidden;
@@ -139,7 +140,7 @@
 }
 
 
-.countdown-card{
+.watchlist-card{
   overflow: hidden;
 
   .season-info{

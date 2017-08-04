@@ -1,4 +1,4 @@
-<div class="countdown-card" ng-style="{ 'background-image': 'url({{ imgsrc }})' }">
+<div class="watchlist-card" ng-style="{ 'background-image': 'url({{ imgsrc }})' }">
    <button type="button" name="more" class="more-button" ng-class="{'open' : open, 'up-to-date': behindCount(seasons, currentseason) == 0 }" ng-click="toggleOpen('open')">
       <span class="glyphicon glyphicon-plus"></span>
       <span class="behind">{{ behindCount(seasons, currentseason) }}</span>

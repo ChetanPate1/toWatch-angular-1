@@ -1,6 +1,6 @@
 /**
  * @desc Show Card directive
- * @example <show-card heading="" subheading="" imgsrc="" ></show-card>
+ * @example <show-card heading="" imgsrc="" ></show-card>
  */
 
 angular
@@ -11,10 +11,8 @@ function showCard() {
    var directive = {
       templateUrl: 'components/show-card/show-card.html',
       restrict: 'E',
-      transclude: true,
       scope: {
          heading: '=',
-         subheading: '=',
          imgsrc: '=',
       }
    };
