@@ -22,6 +22,7 @@
    <div class="row">
       <div class="col-md-4">
          <h3>Add To Watchlist</h3>
+
          <form name="form">
             <div class="form-element">
                <label for="series">Series Name</label>
@@ -32,6 +33,15 @@
                      ng-if="show.status == 'Running'" >{{ show.series }}
                   </option>
                </select>
+            </div>
+
+            <div class="form-element">
+               <div class="select-series">
+                  <label ng-repeat="season in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons" >
+                     <input type="radio" ng-model="WatchlistCtrl.season" value="{{ $index + 1 }}" >
+                        {{ $index + 1 }}
+                  </label>
+               </div>
             </div>
 
             <div class="form-element">
