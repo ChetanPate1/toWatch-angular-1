@@ -90,10 +90,9 @@
       position: relative;
       display: block;
       width: 100%;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: bold;
       opacity: 1;
-      top: 1px;
       color: $base-color;
       @include transforms(translateX(0) scale(1));
     }

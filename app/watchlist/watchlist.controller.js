@@ -26,9 +26,11 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
          unwatched: {}
       };
       list['unwatched'] = initSeries(list);
-      console.log(list);
 
       firebaseArray.save(ref, list);
+      vm.seriesRef = '';
+      vm.season = '';
+      vm.episode = '';
    }
 
    function initSeries(watchlist) {
