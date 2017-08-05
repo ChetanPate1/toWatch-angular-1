@@ -36,32 +36,34 @@
             </div>
 
             <div class="form-element">
+               <label for="seasons">Seasons</label>
                <div class="select-series">
-                  <label ng-repeat="season in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons" >
-                     <input type="radio" ng-model="WatchlistCtrl.season" value="{{ $index + 1 }}" >
-                        {{ $index + 1 }}
-                  </label>
+                  <div class="col-xs-3" ng-repeat="season in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons">
+                     <label class="radio" ng-class="{'selected' : WatchlistCtrl.season == $index + 1 }" >
+                        <input type="radio" ng-model="WatchlistCtrl.season" value="{{ $index + 1 }}" >
+                           {{ $index + 1 }}
+                     </label>
+                  </div>
+                  <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.seriesRef }">Select a series</span>
                </div>
             </div>
 
             <div class="form-element">
-               <label for="season">Season</label>
-               <span class="glyphicon glyphicon-chevron-down"></span>
-               <select name="season" ng-model="WatchlistCtrl.season">
-                  <option ng-repeat="season in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons" value="{{ $index + 1 }}">{{ $index + 1 }}</option>
-               </select>
+               <label for="seasons">Episodes</label>
+               <div class="select-series">
+                  <div class="col-xs-3"
+                     ng-repeat="episode in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons[ 'season_' + WatchlistCtrl.season ]"
+                     ng-if="$index > 0 && WatchlistCtrl.checkAired(episode.airDate)">
+                     <label class="radio" ng-class="{'selected' : WatchlistCtrl.episode == $index }" >
+                        <input type="radio" ng-model="WatchlistCtrl.episode" value="{{ $index }}" >
+                           {{ $index }}
+                     </label>
+                  </div>
+                  <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.season }">Select a season</span>
+               </div>
             </div>
 
-            <div class="form-element">
-               <label for="episode">Episode</label>
-               <span class="glyphicon glyphicon-chevron-down"></span>
-               <select name="episode" ng-model="WatchlistCtrl.episode">
-                  <option ng-repeat="episode in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons[ 'season_' + WatchlistCtrl.season ]"
-                        ng-if="$index > 0 && WatchlistCtrl.checkAired(episode.airDate)" value="{{ $index }}">{{ $index }} {{ episode.name }}</option>
-               </select>
-            </div>
-
-            <button class="button pull-right" ng-click="WatchlistCtrl.add()">Add</button>
+            <button class="button pull-right" ng-click="WatchlistCtrl.add()" ng-disabled="!WatchlistCtrl.seriesRef || !WatchlistCtrl.season || !WatchlistCtrl.episode">Add</button>
          </form>
       </div>
    </div>
