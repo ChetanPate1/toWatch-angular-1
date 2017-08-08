@@ -1,9 +1,3 @@
-<div class="container">
-   <div class="row">
-      <button class="button pull-right margin-bottom-30" ng-click="ShowsCtrl.openPopup()">New</button>
-   </div>
-</div>
-
 <div class="container-fluid">
    <div class="row">
       <div class="col-sm-4 col-md-2 fade-in" ng-repeat="show in ShowsCtrl.shows | orderBy: 'series'">
@@ -13,11 +7,9 @@
          </show-card>
       </div>
    </div>
-</div>
 
-<div class="popup slide-down" ng-class="{ 'open': ShowsCtrl.popupOpen }">
-   <div class="center">
-      <div class="content">
+   <div class="row">
+      <div class="col-sm-3 col-md-3 col-md-offset-1">
          <h3>Add Show</h3>
          <form name="form">
             <div class="form-element search">
@@ -25,8 +17,7 @@
                <div class="search-loader" ng-class="{'show' : ShowsCtrl.sendStatus.loader }"></div>
                <input type="text" name="series" ng-model="ShowsCtrl.series">
             </div>
-            <button class="button red" ng-click="ShowsCtrl.popupOpen = false">cancel</button>
-            <button class="button pull-right" ng-click="ShowsCtrl.add()" ng-disabled="ShowsCtrl.sendStatus.disableButton">add</button>
+            <button class="button pull-right" ng-click="ShowsCtrl.add()" ng-disabled="ShowsCtrl.sendStatus.disableButton">Add</button>
          </form>
       </div>
    </div>
