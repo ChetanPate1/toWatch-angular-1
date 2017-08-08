@@ -11,9 +11,7 @@ function seasonTabs(helperFunctions) {
       scope: {
          open: '=',
          seasons: '=',
-         currentseason: '=',
-         // rewatchobj: '=',
-         // index: '='
+         currentseason: '='
       }
    };
 
@@ -30,9 +28,9 @@ function seasonTabs(helperFunctions) {
       scope.currentSeason = currentSeason;
       scope.limitLength = limitLength;
       scope.aired = aired;
-      
-      function toggleOpen() {
-         scope.open = !scope.open;
+
+      function toggleOpen(button) {
+         scope[button] = !scope[button];
       }
 
       function tabSelect(number) {
