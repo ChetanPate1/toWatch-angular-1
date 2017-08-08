@@ -33,8 +33,8 @@ function seasonInfo(helperFunctions) {
       scope.currentSeason = currentSeason;
       scope.limitLength = limitLength;
 
-      function toggleOpen() {
-         scope.open = !scope.open;
+      function toggleOpen(button) {
+         scope[button] = !scope[button];
       }
 
       function tabSelect(number) {

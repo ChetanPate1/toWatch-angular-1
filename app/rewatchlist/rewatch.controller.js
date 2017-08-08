@@ -13,7 +13,7 @@ function RewatchController(currentAuth, firebaseArray, $timeout, helperFunctions
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
    vm.openPopup = openPopup;
-   
+
    function add() {
       var initRewatch = {
          showId: vm.seriesRef,
@@ -25,6 +25,7 @@ function RewatchController(currentAuth, firebaseArray, $timeout, helperFunctions
       };
 
       firebaseArray.save(ref, initRewatch);
+      vm.popupOpen = false;
    }
 
 

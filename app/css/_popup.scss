@@ -45,3 +45,22 @@
       width: 100%;
   }
 }
+
+.popup{
+  &.slide-down{
+    background-color: #ffffff;
+    .content{
+      max-height: none;
+      padding: 0;
+    }
+
+    width: 100%;
+    height: 220px;
+    @include transforms(translateY(-100%));
+
+    &.open{
+      opacity: 1;
+      @include transforms(translateY(0));
+    }
+  }
+}

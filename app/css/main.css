@@ -1090,6 +1090,22 @@ h1 {
     .popup {
       width: 100%; } }
 
+.popup.slide-down {
+  background-color: #ffffff;
+  width: 100%;
+  height: 220px;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%); }
+  .popup.slide-down .content {
+    max-height: none;
+    padding: 0; }
+  .popup.slide-down.open {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0); }
+
 .fade-in {
   -webkit-animation: 400ms fade-in;
   animation: 400ms fade-in; }
