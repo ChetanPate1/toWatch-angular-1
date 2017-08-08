@@ -1,7 +1,6 @@
 <div class="container">
-   <div class="row">
-      <button class="button pull-right margin-bottom-30" ng-click="WatchlistCtrl.openPopup()">New</div>
 
+   <div class="row">
       <div class="col-md-4 fade-in" ng-repeat="watchlist in WatchlistCtrl.watchlist" ng-if="watchlist">
          <watchlist-card
             heading="WatchlistCtrl.shows.$getRecord( watchlist.showId ).series"
@@ -19,12 +18,11 @@
          </watchlist-card>
       </div>
    </div>
-</div>
 
-<div class="popup" ng-class="{ 'open': WatchlistCtrl.popupOpen }" ng-click="ShowsCtrl.popupOpen = false">
-   <div class="center">
-      <div class="content">
+   <div class="row">
+      <div class="col-md-4">
          <h3>Add To Watchlist</h3>
+
          <form name="form">
             <div class="form-element">
                <label for="series">Series Name</label>
@@ -46,7 +44,7 @@
                            {{ $index + 1 }}
                      </label>
                   </div>
-                  <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.seriesRef }">Select a season</span>
+                  <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.seriesRef }">Select a series</span>
                </div>
             </div>
 
@@ -61,12 +59,11 @@
                            {{ $index }}
                      </label>
                   </div>
-                  <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.season }">Select a episode</span>
+                  <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.season }">Select a season</span>
                </div>
             </div>
 
-            <button class="button red" ng-click="WatchlistCtrl.popupOpen = false">cancel</button>
-            <button class="button pull-right" ng-click="WatchlistCtrl.add()" ng-disabled="!WatchlistCtrl.seriesRef || !WatchlistCtrl.season || !WatchlistCtrl.episode">add</button>
+            <button class="button pull-right" ng-click="WatchlistCtrl.add()" ng-disabled="!WatchlistCtrl.seriesRef || !WatchlistCtrl.season || !WatchlistCtrl.episode">Add</button>
          </form>
       </div>
    </div>

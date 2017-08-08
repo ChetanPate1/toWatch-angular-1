@@ -1,7 +1,6 @@
 <div class="container">
-   <div class="row">
-      <button class="button pull-right margin-bottom-30" ng-click="RewatchCtrl.openPopup()">New</div>
 
+   <div class="row">
       <div class="col-md-4 fade-in" ng-repeat="rewatch in RewatchCtrl.rewatch" ng-if="rewatch.show">
          <rewatch-card
             heading="RewatchCtrl.shows.$getRecord( rewatch.showId ).series"
@@ -20,11 +19,9 @@
          </rewatch-card>
       </div>
    </div>
-</div>
 
-<div class="popup slide-down" ng-class="{ 'open': RewatchCtrl.popupOpen }">
-   <div class="center">
-      <div class="content">
+   <div class="row">
+      <div class="col-md-4">
          <h3>Add To Rewatch</h3>
          <form name="form">
             <div class="form-element">
@@ -36,8 +33,8 @@
                   </option>
                </select>
             </div>
-            <button class="button red" ng-click="RewatchCtrl.popupOpen = false">cancel</button>
-            <button class="button pull-right" ng-click="RewatchCtrl.add()">add</button>
+
+            <button class="button pull-right" ng-click="RewatchCtrl.add()">Add</button>
          </form>
       </div>
    </div>

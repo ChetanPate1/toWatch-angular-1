@@ -7,14 +7,12 @@ ShowsController.$inject = ['firebaseArray', 'episodateApi', 'helperFunctions', '
 function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout){
    var vm = this;
 
-   vm.popupOpen = false;
+   vm.shows = firebaseArray.getByRef('shows');
+   vm.add = add;
    vm.sendStatus = {
       disableButton: false,
       loader: false
    }
-   vm.shows = firebaseArray.getByRef('shows');
-   vm.add = add;
-   vm.openPopup = openPopup;
 
    function add() {
       var series = vm.series;
@@ -34,9 +32,5 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
             }, 2000);
          });
       }
-   }
-
-   function openPopup() {
-      vm.popupOpen = true;
    }
 }
