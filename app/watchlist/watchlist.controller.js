@@ -9,11 +9,13 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    var ref = 'watchlist/' + currentAuth.uid;
    var today = new Date().getTime();
 
+   vm.popupOpen = false;
    vm.watchlist = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
    vm.nextAired = nextAired;
    vm.checkAired = checkAired;
+   vm.openPopup = openPopup;
 
    function add() {
       var list = {
@@ -31,6 +33,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
       vm.seriesRef = '';
       vm.season = '';
       vm.episode = '';
+      vm.popupOpen = false;
    }
 
    function initSeries(watchlist) {
@@ -96,5 +99,9 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    function checkAired(date) {
       date = parseInt(date);
       return date - today < 0;
+   }
+
+   function openPopup() {
+      vm.popupOpen = true;
    }
 }
