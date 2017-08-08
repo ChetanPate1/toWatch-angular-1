@@ -64,36 +64,18 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    }
 
    function nextAired(watchlist) {
-      var nextAired, i = 1, j = 1, unwatched = {};
+      var nextAired, i = 1, airDate = 0;
       var show = vm.shows.$getRecord(watchlist.showId);
       var seasons = helperFunctions.objSize(show.seasons);
-      var latestSeason = show.seasons['season_'+ seasons];
-      var episodes = helperFunctions.objSize(latestSeason);
-      var onEp = parseInt(watchlist.on.episode);
-      var onS = parseInt(watchlist.on.season);
+      var latestSeason = show.seasons['season_' + seasons];
+      var latestSeasonSize = helperFunctions.objSize(latestSeason);
 
-      for (j; j <= episodes; j++) {
-         unwatched[j] = {
-            watched: false,
-            airDate: latestSeason[j].airDate
-         };
-
-         if(j < onEp){
-            unwatched[j].watched = true;
-         }
-      }
-
-      for (i; i <= episodes; i++) {
-         unwatched[i].aired = true;
-
+      for (i; i <= latestSeasonSize; i++) {
          if (latestSeason[i].airDate - today > 0){
-            unwatched[i].aired = false;
-            nextAired = latestSeason[i].airDate;
             break;
          }
       }
-
-      return {  unwatched: unwatched, nextAired: nextAired };
+      return latestSeason[i].airDate;
    }
 
    function checkAired(date) {
