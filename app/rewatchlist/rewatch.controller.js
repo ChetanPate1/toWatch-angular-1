@@ -8,10 +8,12 @@ function RewatchController(currentAuth, firebaseArray, $timeout, helperFunctions
    var vm = this;
    var ref = 'rewatch/' + currentAuth.uid;
 
+   vm.popupOpen = false;
    vm.rewatch = firebaseArray.getByRef(ref);
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
-
+   vm.openPopup = openPopup;
+   
    function add() {
       var initRewatch = {
          showId: vm.seriesRef,
@@ -38,5 +40,9 @@ function RewatchController(currentAuth, firebaseArray, $timeout, helperFunctions
          }
       }
       return show;
+   }
+
+   function openPopup() {
+      vm.popupOpen = true;
    }
 }
