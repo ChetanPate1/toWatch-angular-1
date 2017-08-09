@@ -16,7 +16,8 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    vm.nextAired = nextAired;
    vm.checkAired = checkAired;
    vm.openPopup = openPopup;
-
+   vm.seriesAlreadyAdded = seriesAlreadyAdded;
+   
    function add() {
       var list = {
          upToDate: false,
@@ -85,5 +86,17 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
 
    function openPopup() {
       vm.popupOpen = true;
+   }
+
+   function seriesAlreadyAdded(seriesId){
+      var i = 0, exists = false;
+
+      for (i = 0; i < vm.watchlist.length; i++) {
+         if (vm.watchlist[i].showId == seriesId) {
+            exists = true;
+         }
+      }
+
+      return exists;
    }
 }

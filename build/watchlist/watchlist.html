@@ -32,7 +32,7 @@
                <select name="series" ng-model="WatchlistCtrl.seriesRef" ng-change="WatchlistCtrl.season = ''; WatchlistCtrl.episode = ''">
                   <option ng-repeat="show in WatchlistCtrl.shows | orderBy: 'series'" ng-selected="{{ show.$id == WatchlistCtrl.seriesRef }}"
                      value="{{ show.$id }}"
-                     ng-if="show.status == 'Running'" >{{ show.series }}
+                     ng-if="show.status == 'Running' && !WatchlistCtrl.seriesAlreadyAdded(show.$id)" >{{ show.series }}
                   </option>
                </select>
             </div>
