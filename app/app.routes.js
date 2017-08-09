@@ -7,7 +7,7 @@ config.$inject = ['$stateProvider', '$urlRouterProvider'];
 function config($stateProvider, $urlRouterProvider){
    $stateProvider
       .state('home',{
-         url: '/home',
+         url: '/most-popular',
          templateUrl: 'home/home.html',
          controller: 'HomeController',
          controllerAs: 'HomeCtrl'
