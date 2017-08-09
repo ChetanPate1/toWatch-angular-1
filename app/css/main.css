@@ -863,7 +863,10 @@ h1 {
     display: block;
     width: 100%;
     margin: 0 0 5px 8px; }
-  .form-element input[type="text"], .form-element select {
+  .form-element input[type="text"],
+  .form-element input[type="email"],
+  .form-element input[type="password"],
+  .form-element select {
     display: block;
     width: 100%;
     height: 45px;
@@ -874,9 +877,15 @@ h1 {
     background-image: none;
     border: 2px solid #e4e4e4;
     border-radius: 5px; }
-    .form-element input[type="text"]:hover, .form-element select:hover {
+    .form-element input[type="text"]:hover,
+    .form-element input[type="email"]:hover,
+    .form-element input[type="password"]:hover,
+    .form-element select:hover {
       border: 2px solid #000000; }
-    .form-element input[type="text"]:focus, .form-element select:focus {
+    .form-element input[type="text"]:focus,
+    .form-element input[type="email"]:focus,
+    .form-element input[type="password"]:focus,
+    .form-element select:focus {
       border: 2px solid #6840e5; }
   .form-element select {
     -webkit-appearance: none;

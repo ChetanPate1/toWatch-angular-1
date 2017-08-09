@@ -3,6 +3,8 @@ angular
    .module('app')
    .directive('watchlistCard', watchlistCard);
 
+watchlistCard.$inject = ['helperFunctions'];
+
 function watchlistCard(helperFunctions) {
    var directive = {
       link: link,

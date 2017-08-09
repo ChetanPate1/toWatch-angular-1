@@ -1,7 +1,13 @@
+/**
+ * @desc Season Tabs directive
+ * @example <season-tabs open="" seasons="" currentseason="" ></season-tabs>
+ */
 
 angular
    .module('app')
    .directive('seasonTabs', seasonTabs);
+
+seasonTabs.$inject = ['helperFunctions'];
 
 function seasonTabs(helperFunctions) {
    var directive = {

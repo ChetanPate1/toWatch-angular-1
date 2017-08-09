@@ -7,6 +7,8 @@ angular
    .module('app')
    .directive('seasonInfo', seasonInfo);
 
+seasonInfo.$inject = ['helperFunctions'];
+
 function seasonInfo(helperFunctions) {
    var directive = {
       link: link,

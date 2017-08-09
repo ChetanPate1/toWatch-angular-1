@@ -67,7 +67,7 @@ gulp.task('components', function(){
 });
 
 gulp.task('scripts', ['components', 'angular', 'angular-ui-router', 'firebase', 'angularfire'], function(){
-    return gulp.src(['app/components/**/*.js', 'app/**/*.js'])
+    return gulp.src(['app/**/*.js', 'app/components/**/*.js'])
         .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(rename('app.min.js'))
@@ -99,7 +99,7 @@ gulp.task('html', function(){
 gulp.task('browser-sync', function(){
     browserSync({
         server:{
-           baseDir: 'app',
+           baseDir: 'build',
            routes: {
              "/bower_components": "bower_components"
           }
