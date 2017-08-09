@@ -99,7 +99,7 @@ gulp.task('html', function(){
 gulp.task('browser-sync', function(){
     browserSync({
         server:{
-           baseDir: 'app',
+           baseDir: 'build',
            routes: {
              "/bower_components": "bower_components"
           }
