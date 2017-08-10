@@ -1,6 +1,6 @@
 <div class="container">
    <div class="row">
-      <button class="button pull-right margin-bottom-30" ng-click="ShowsCtrl.openPopup()">New</button>
+      <button class="button pull-right margin-bottom-30" ng-click="ShowsCtrl.openPopup()">Add a show</button>
    </div>
 </div>
 
@@ -13,6 +13,8 @@
          </show-card>
       </div>
    </div>
+
+   <no-content condition="!ShowsCtrl.shows[0]" message="'Your Show collection is empty!'"></no-content>
 </div>
 
 <div class="popup slide-down" ng-class="{ 'open': ShowsCtrl.popupOpen }">
