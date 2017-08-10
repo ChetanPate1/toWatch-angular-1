@@ -73,11 +73,11 @@
     opacity: 0;
     cursor: not-allowed;
     @include transition(opacity 500ms ease);
-    @include transforms(translateX(-100%));
+    @include transforms(translate(-100%, 0));
 
     &.selected{
       opacity: 1;
-      @include transforms(translateX(0));
+      @include transforms(translate(0, 0));
     }
   }
 }

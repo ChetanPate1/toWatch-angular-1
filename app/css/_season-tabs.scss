@@ -9,11 +9,11 @@
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
   @include transition(all 500ms ease);
-  @include transforms(translateX(-100%));
+  @include transforms(translate(-100%, 0));
 
   &.open{
     opacity: 1;
-    @include transforms(translateX(0%));
+    @include transforms(translate(0, 0));
   }
 
   .lists{
@@ -47,13 +47,13 @@
     left: 0;
     opacity: 0;
     display: block;
-    @include transforms(translateX(-100%));
+    @include transforms(translate(-100%, 0));
     @include transition(all 400ms ease);
 
     &.active{
       z-index: 200;
       opacity: 1;
-      @include transforms(translateX(0));
+      @include transforms(translate(0, 0));
     }
 
     .left{
@@ -185,11 +185,11 @@
       max-width: 100px;
     }
 
-    @include transforms(translateY(-100%));
+    @include transforms(translate(0, -100%));
     @include transition(all 300ms ease);
 
     &.open{
-      @include transforms(translateY(0%));
+      @include transforms(translate(0, 0));
       opacity: 1;
     }
   }

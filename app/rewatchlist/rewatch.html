@@ -1,7 +1,7 @@
 <div class="container">
    <div class="row">
       <button class="button pull-right margin-bottom-30" ng-click="RewatchCtrl.openPopup()">New</div>
-
+{{RewatchCtrl.rewatch}}
       <div class="col-md-4 fade-in" ng-repeat="rewatch in RewatchCtrl.rewatch" ng-if="rewatch.show">
          <rewatch-card
             heading="RewatchCtrl.shows.$getRecord( rewatch.showId ).series"
@@ -19,6 +19,10 @@
             <frost-glass imgsrc="RewatchCtrl.shows.$getRecord( rewatch.showId ).imgSrc"></frost-glass>
          </rewatch-card>
       </div>
+   </div>
+
+   <div class="no-content" ng-class="{ 'show': !RewatchCtrl.rewatch[0] }">
+      <h1>Nothing in Rewatchlist</h1>
    </div>
 </div>
 

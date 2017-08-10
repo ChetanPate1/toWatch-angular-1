@@ -1,4 +1,5 @@
 button {
+  position: relative;
   outline: 0; }
 
 #view {
@@ -65,16 +66,16 @@ h1 {
           float: left;
           width: 100%; } }
   .navigation-bar.open {
-    -webkit-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    transform: translateX(0%); }
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0); }
   @media (max-width: 991px) {
     .navigation-bar {
       height: 100%;
       width: 40%;
-      -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
-      transform: translateX(-100%); }
+      -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+      transform: translate(-100%, 0); }
       .navigation-bar .container {
         width: auto; } }
   @media (max-width: 767px) {
@@ -91,20 +92,20 @@ h1 {
   position: fixed;
   width: 100%;
   height: 100%;
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%); }
+  -webkit-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0); }
   .navigation-underlay:hover {
     cursor: pointer; }
   .navigation-underlay.open {
-    -webkit-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    transform: translateX(0%); }
+    -webkit-transform: translate(0%, 0);
+    -ms-transform: translate(0%, 0);
+    transform: translate(0%, 0); }
   @media (min-width: 992px) {
     .navigation-underlay.open {
-      -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-      transform: translateX(100%); } }
+      -webkit-transform: translate(100%, 0);
+      -ms-transform: translate(100%, 0);
+      transform: translate(100%, 0); } }
 
 .navigation-button {
   padding: 10px;
@@ -126,6 +127,34 @@ h1 {
       right: auto;
       top: 10px;
       left: 15px; } }
+
+.no-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 0;
+  -webkit-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%); }
+  .no-content h1 {
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+    color: #f1f1f1;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+  .no-content.show {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0); }
 
 .countdown-timer .time {
   z-index: 100;
@@ -236,9 +265,9 @@ h1 {
   -webkit-transition: transform 300ms ease;
   -ms-transition: transform 300ms ease;
   transition: transform 300ms ease;
-  -webkit-transform: translateX(-5px) translateY(273px) scale(1.7);
-  -ms-transform: translateX(-5px) translateY(273px) scale(1.7);
-  transform: translateX(-5px) translateY(273px) scale(1.7);
+  -webkit-transform: translate(-5px, 273px) scale(1.7);
+  -ms-transform: translate(-5px, 273px) scale(1.7);
+  transform: translate(-5px, 273px) scale(1.7);
   -webkit-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
   -ms-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4); }
@@ -255,9 +284,9 @@ h1 {
     height: 100%;
     font-size: 11px;
     opacity: 0;
-    -webkit-transform: translateX(-20px) scale(0);
-    -ms-transform: translateX(-20px) scale(0);
-    transform: translateX(-20px) scale(0); }
+    -webkit-transform: translate(-20px, 0) scale(0);
+    -ms-transform: translate(-20px, 0) scale(0);
+    transform: translate(-20px, 0) scale(0); }
   .watchlist-card .more-button .behind {
     z-index: 10;
     position: relative;
@@ -267,47 +296,47 @@ h1 {
     font-weight: bold;
     opacity: 1;
     color: #6840e5;
-    -webkit-transform: translateX(0) scale(1);
-    -ms-transform: translateX(0) scale(1);
-    transform: translateX(0) scale(1); }
+    -webkit-transform: translate(0, 0) scale(1);
+    -ms-transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1); }
   .watchlist-card .more-button:hover, .watchlist-card .more-button:focus {
     -webkit-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
     -ms-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6); }
     .watchlist-card .more-button:hover .behind, .watchlist-card .more-button:focus .behind {
       opacity: 0;
-      -webkit-transform: translateX(20px) scale(0);
-      -ms-transform: translateX(20px) scale(0);
-      transform: translateX(20px) scale(0); }
+      -webkit-transform: translate(20px, 0) scale(0);
+      -ms-transform: translate(20px, 0) scale(0);
+      transform: translate(20px, 0) scale(0); }
     .watchlist-card .more-button:hover .glyphicon, .watchlist-card .more-button:focus .glyphicon {
       opacity: 1;
-      -webkit-transform: translateY(0) scale(1);
-      -ms-transform: translateY(0) scale(1);
-      transform: translateY(0) scale(1); }
+      -webkit-transform: translate(0, 0) scale(1);
+      -ms-transform: translate(0, 0) scale(1);
+      transform: translate(0, 0) scale(1); }
   .watchlist-card .more-button.open {
-    -webkit-transform: translateY(0) scale(1) rotate(45deg);
-    -ms-transform: translateY(0) scale(1) rotate(45deg);
-    transform: translateY(0) scale(1) rotate(45deg); }
+    -webkit-transform: translate(0, 0) scale(1) rotate(45deg);
+    -ms-transform: translate(0, 0) scale(1) rotate(45deg);
+    transform: translate(0, 0) scale(1) rotate(45deg); }
     .watchlist-card .more-button.open .behind {
       opacity: 0;
-      -webkit-transform: translateX(20px) scale(0);
-      -ms-transform: translateX(20px) scale(0);
-      transform: translateX(20px) scale(0); }
+      -webkit-transform: translate(20px, 0) scale(0);
+      -ms-transform: translate(20px, 0) scale(0);
+      transform: translate(20px, 0) scale(0); }
     .watchlist-card .more-button.open .glyphicon {
       opacity: 1;
-      -webkit-transform: translateY(0) scale(1);
-      -ms-transform: translateY(0) scale(1);
-      transform: translateY(0) scale(1); }
+      -webkit-transform: translate(0, 0) scale(1);
+      -ms-transform: translate(0, 0) scale(1);
+      transform: translate(0, 0) scale(1); }
   .watchlist-card .more-button.up-to-date .behind {
     opacity: 0;
-    -webkit-transform: translateX(20px) scale(0);
-    -ms-transform: translateX(20px) scale(0);
-    transform: translateX(20px) scale(0); }
+    -webkit-transform: translate(20px, 0) scale(0);
+    -ms-transform: translate(20px, 0) scale(0);
+    transform: translate(20px, 0) scale(0); }
   .watchlist-card .more-button.up-to-date .glyphicon {
     opacity: 1;
-    -webkit-transform: translateY(0) scale(1);
-    -ms-transform: translateY(0) scale(1);
-    transform: translateY(0) scale(1); }
+    -webkit-transform: translate(0, 0) scale(1);
+    -ms-transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1); }
 
 .watchlist-card {
   overflow: hidden; }
@@ -324,18 +353,18 @@ h1 {
     -webkit-transition: all 500ms ease;
     -ms-transition: all 500ms ease;
     transition: all 500ms ease;
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%); }
+    -webkit-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    transform: translate(-100%, 0); }
     .watchlist-card .season-info .button.red {
       margin: 25px auto 10px auto;
       width: 90%;
       display: block; }
     .watchlist-card .season-info.open {
       opacity: 1;
-      -webkit-transform: translateX(0%);
-      -ms-transform: translateX(0%);
-      transform: translateX(0%); }
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0); }
     .watchlist-card .season-info .items {
       position: relative;
       width: 100%;
@@ -392,9 +421,9 @@ h1 {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     opacity: 0;
-    -webkit-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    transform: translateY(-100%);
+    -webkit-transform: translate(0, -100%);
+    -ms-transform: translate(0, -100%);
+    transform: translate(0, -100%);
     -webkit-transition: all 300ms ease;
     -ms-transition: all 300ms ease;
     transition: all 300ms ease; }
@@ -408,9 +437,9 @@ h1 {
       display: block;
       max-width: 100px; }
     .watchlist-card .shutter.open, .watchlist-card .shutter-delete.open {
-      -webkit-transform: translateY(0%);
-      -ms-transform: translateY(0%);
-      transform: translateY(0%);
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
       opacity: 1; }
   .watchlist-card .shutter-delete h2 {
     text-align: center;
@@ -476,9 +505,9 @@ h1 {
     border-radius: 50%;
     background-color: #ffffff;
     padding: 0;
-    -webkit-transform: translateX(-5px) translateY(338px) scale(1.7);
-    -ms-transform: translateX(-5px) translateY(338px) scale(1.7);
-    transform: translateX(-5px) translateY(338px) scale(1.7);
+    -webkit-transform: translate(-5px, 338px) scale(1.7);
+    -ms-transform: translate(-5px, 338px) scale(1.7);
+    transform: translate(-5px, 338px) scale(1.7);
     -webkit-box-shadow: 0 2px 13px rgba(0, 0, 0, 0.26);
     -ms-box-shadow: 0 2px 13px rgba(0, 0, 0, 0.26);
     box-shadow: 0 2px 13px rgba(0, 0, 0, 0.26);
@@ -539,14 +568,14 @@ h1 {
   -webkit-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
   transition: all 500ms ease;
-  -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  transform: translateX(-100%); }
+  -webkit-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%); }
   .season-info.open {
     opacity: 1;
-    -webkit-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    transform: translateX(0%); }
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0); }
   .season-info .lists {
     position: relative;
     width: 100%;
@@ -574,18 +603,18 @@ h1 {
     left: 0;
     opacity: 0;
     display: block;
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%);
+    -webkit-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
     -webkit-transition: all 400ms ease;
     -ms-transition: all 400ms ease;
     transition: all 400ms ease; }
     .season-info .items.active {
       z-index: 200;
       opacity: 1;
-      -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-      transform: translateX(0); }
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0); }
     .season-info .items li {
       margin: 10px auto;
       height: 50px;
@@ -666,9 +695,9 @@ h1 {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
-  -webkit-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  transform: translateY(-100%);
+  -webkit-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%);
   -webkit-transition: all 300ms ease;
   -ms-transition: all 300ms ease;
   transition: all 300ms ease; }
@@ -683,9 +712,9 @@ h1 {
     display: block;
     max-width: 100px; }
   .season-info .shutter.open {
-    -webkit-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    transform: translateY(0%);
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
     opacity: 1; }
 
 .season-tabs {
@@ -701,14 +730,14 @@ h1 {
   -webkit-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
   transition: all 500ms ease;
-  -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  transform: translateX(-100%); }
+  -webkit-transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0);
+  transform: translate(-100%, 0); }
   .season-tabs.open {
     opacity: 1;
-    -webkit-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    transform: translateX(0%); }
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0); }
   .season-tabs .lists {
     position: relative;
     width: 100%;
@@ -736,18 +765,18 @@ h1 {
     left: 0;
     opacity: 0;
     display: block;
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%);
+    -webkit-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
     -webkit-transition: all 400ms ease;
     -ms-transition: all 400ms ease;
     transition: all 400ms ease; }
     .season-tabs .items.active {
       z-index: 200;
       opacity: 1;
-      -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-      transform: translateX(0); }
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0); }
     .season-tabs .items .left {
       font-size: 12px;
       line-height: 20px;
@@ -834,9 +863,9 @@ h1 {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
-  -webkit-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  transform: translateY(-100%);
+  -webkit-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%);
   -webkit-transition: all 300ms ease;
   -ms-transition: all 300ms ease;
   transition: all 300ms ease; }
@@ -851,9 +880,9 @@ h1 {
     display: block;
     max-width: 100px; }
   .season-tabs .shutter.open {
-    -webkit-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    transform: translateY(0%);
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
     opacity: 1; }
 
 .form-element {
@@ -972,17 +1001,18 @@ h1 {
     -webkit-transition: opacity 500ms ease;
     -ms-transition: opacity 500ms ease;
     transition: opacity 500ms ease;
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%); }
+    -webkit-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    transform: translate(-100%, 0); }
     .select-series .selected-none.selected {
       opacity: 1;
-      -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-      transform: translateX(0); }
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0); }
 
 .button {
   display: inline-block;
+  z-index: 200;
   padding: 10px 15px;
   margin-bottom: 0;
   font-size: 14px;
@@ -1063,24 +1093,24 @@ h1 {
   width: 50%;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
+  -webkit-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0);
   -webkit-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
   transition: all 500ms ease; }
   .popup.open {
     opacity: 1;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0); }
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0); }
   .popup .center {
     position: absolute;
     top: 50%;
     width: 100%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
   .popup .content {
     position: relative;
     margin: auto;
@@ -1103,17 +1133,17 @@ h1 {
   background-color: #ffffff;
   width: 100%;
   height: 220px;
-  -webkit-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  transform: translateY(-100%); }
+  -webkit-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%); }
   .popup.slide-down .content {
     max-height: none;
     padding: 0; }
   .popup.slide-down.open {
     opacity: 1;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0); }
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0); }
 
 .fade-in {
   -webkit-animation: 400ms fade-in;
