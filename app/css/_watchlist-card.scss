@@ -2,8 +2,8 @@
   position: relative;
   display: block;
   margin: 0 auto 25px auto;
-  max-width: 300px;
-  height: 400px;
+  max-width: 357px;
+  height: 500px;
   background-color: #f8f8f8;
   border-radius: 8px;
   padding: 20px 15px 0 15px;
@@ -13,7 +13,9 @@
   @include box-shadow(inset 0 150px 150px rgba(0, 0, 0, 0.3));
 
   h2{
+    font-size: 40px;
     letter-spacing: 1px;
+    margin-bottom: 0;
   }
 
   h5{
@@ -21,7 +23,7 @@
   }
 
   h4{
-    font-size: 16px;
+    font-size: 20px;
     color: #ffffff;
     margin: 0px 0 10px 0;
     padding-bottom: 10px;
@@ -59,10 +61,11 @@
   }
 
   @media(max-width: 767px){
-    max-width: 270px;
-
     h2{
       font-size: 25px;
+    }
+    h4{
+      font-size: 15px;
     }
   }
 }
@@ -110,7 +113,7 @@
     }
 
     @include transition(transform 300ms ease);
-    @include transforms(translate(-5px, 273px) scale(1.7));
+    @include transforms(translate(-10px, 360px) scale(2));
     @include box-shadow(0 3px 13px rgba(0, 0, 0, 0.4));
 
     &:hover, &:focus{
@@ -252,14 +255,15 @@
     opacity: 0;
 
     h2{
+      text-align: center;
       width: 100%;
       position: absolute;
-      top: 120px;
+      top: 150px;
       left: 0;
     }
 
     .button{
-      margin: 200px auto 0 auto;
+      margin: 300px auto 0 auto;
       display: block;
       max-width: 100px;
     }
@@ -270,13 +274,6 @@
     &.open{
       @include transforms(translate(0, 0));
       opacity: 1;
-    }
-  }
-
-  .shutter-delete{
-    h2{
-      text-align: center;
-      top: 85px;
     }
   }
 }
