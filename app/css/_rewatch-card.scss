@@ -91,5 +91,11 @@
     }
   }
 
-  
+  @media(max-width: 767px){
+    max-width: 270px;
+
+    h2{
+      font-size: 25px;
+    }
+  }
 }

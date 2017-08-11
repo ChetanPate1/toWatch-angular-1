@@ -10,4 +10,8 @@ button{
   padding-top: 150px;
   padding-bottom: 150px;
   min-height: 500px;
+
+  @media(max-width: 991px){
+      padding-top: 50px;
+  }
 }
