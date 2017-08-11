@@ -8,6 +8,7 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
+  will-change: transform;
   @include transition(all 500ms ease);
   @include transforms(translate(-100%, 0));
 
