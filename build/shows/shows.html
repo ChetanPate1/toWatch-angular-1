@@ -1,12 +1,14 @@
 <div class="container">
    <div class="row">
-      <button class="button pull-right margin-bottom-30" ng-click="ShowsCtrl.openPopup()">Add a show</button>
+      <div class="col-xs-12">
+         <button class="button pull-right margin-bottom-30" ng-click="ShowsCtrl.openPopup()">Add a show</button>
+      </div>
    </div>
 </div>
 
 <div class="container-fluid">
-   <div class="row">
-      <div class="col-sm-4 col-md-2 fade-in" ng-repeat="show in ShowsCtrl.shows | orderBy: 'series'">
+   <div class="row show-layout">
+      <div class="col-xs-6 col-sm-3 col-md-2 fade-in" ng-repeat="show in ShowsCtrl.shows | orderBy: 'series'">
          <show-card
             heading="show.series"
             imgsrc="show.imgSrc" >

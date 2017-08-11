@@ -15,6 +15,15 @@ h1 {
   font-size: 60px;
   font-weight: bold; }
 
+@media (max-width: 1200px) {
+  .show-layout .col-sm-3 {
+    padding: 0; }
+  .show-layout .show-card {
+    margin: auto;
+    border-radius: 0; }
+    .show-layout .show-card h2 {
+      font-size: 20px; } }
+
 .navigation-bar {
   position: relative;
   background-color: rgba(255, 255, 255, 0.95);

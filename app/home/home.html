@@ -1,6 +1,6 @@
-<div class="container-fluid home">
-   <div class="row">
-      <div class="col-sm-4 col-md-2 fade-in" ng-repeat="show in HomeCtrl.mostPopular | limitTo:10">
+<div class="container-fluid">
+   <div class="row show-layout">
+      <div class="col-xs-6 col-sm-3 col-md-2 fade-in" ng-repeat="show in HomeCtrl.mostPopular | limitTo:10">
          <show-card
             heading="show.name"
             imgsrc="show.image_thumbnail_path" >
