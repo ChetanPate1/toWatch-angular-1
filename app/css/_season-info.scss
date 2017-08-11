@@ -179,7 +179,7 @@
       max-width: 100px;
     }
 
-    @include transforms(translate(0, -100%));
+    @include transforms(translate(0, -115%));
     @include transition(all 300ms ease);
 
     &.open{
