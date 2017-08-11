@@ -75,19 +75,20 @@
   .more-button{
     z-index: 300;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 5px;
+    right: 5px;
     background-image: none;
-    height: 26px;
-    width: 26px;
+    height: 60px;
+    width: 60px;
     border: none;
     border-radius: 50%;
     background-color: #ffffff;
     padding: 0;
-    @include transforms(translate(-10px, 402px) scale(2));
+    @include transforms(translate(-10px, 395px) scale(1));
 
     .glyphicon{
-      font-size: 11px;
+      font-size: 20px;
+      line-height: 60px;
       left: 1px;
       color: #000000;
     }
@@ -95,12 +96,12 @@
 
     &:hover{
       cursor: pointer;
-      @include box-shadow(0 4px 18px rgba(0, 0, 0, 0.26));
+      @include box-shadow(0 4px 25px rgba(0, 0, 0, 0.4));
     }
 
     @include transition(transform 300ms ease);
     &.open{
-      @include transforms(rotate(135deg));
+      @include transforms(rotate(135deg) scale(0.5));
     }
   }
 
