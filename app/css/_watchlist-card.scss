@@ -93,7 +93,7 @@
       height: 100%;
       font-size: 20px;
       opacity: 0;
-      @include transforms(translate(-20px, 0) scale(0));
+      @include transforms(translate(-60px, 0) scale(0));
     }
 
     .behind{
@@ -110,13 +110,13 @@
 
     @include transition(transform 300ms ease);
     @include transforms(translate(0, 345px) scale(1));
-    @include box-shadow(0 3px 13px rgba(0, 0, 0, 0.4));
+    @include box-shadow(0 4px 15px rgba(0, 0, 0, 0.4));
 
     &:hover, &:focus{
-      @include box-shadow(0 4px 18px rgba(0, 0, 0, 0.6));
+      @include box-shadow(0 4px 25px rgba(0, 0, 0, 0.8));
       .behind{
         opacity: 0;
-        @include transforms(translate(20px, 0) scale(0));
+        @include transforms(translate(60px, 0) scale(0));
       }
       .glyphicon{
         opacity: 1;
@@ -128,7 +128,7 @@
       @include transforms(translate(0, 0) scale(0.5) rotate(45deg));
       .behind{
         opacity: 0;
-        @include transforms(translate(20px, 0) scale(0));
+        @include transforms(translate(60px, 0) scale(0));
       }
       .glyphicon{
         opacity: 1;
@@ -139,7 +139,7 @@
     &.up-to-date{
       .behind{
         opacity: 0;
-        @include transforms(translate(20px, 0) scale(0));
+        @include transforms(translate(60px, 0) scale(0));
       }
       .glyphicon{
         opacity: 1;

@@ -287,9 +287,9 @@ h1 {
   -webkit-transform: translate(0, 345px) scale(1);
   -ms-transform: translate(0, 345px) scale(1);
   transform: translate(0, 345px) scale(1);
-  -webkit-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
-  -ms-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4); }
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  -ms-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); }
   .watchlist-card .more-button span {
     -webkit-transition: all 500ms ease;
     -ms-transition: all 500ms ease;
@@ -303,9 +303,9 @@ h1 {
     height: 100%;
     font-size: 20px;
     opacity: 0;
-    -webkit-transform: translate(-20px, 0) scale(0);
-    -ms-transform: translate(-20px, 0) scale(0);
-    transform: translate(-20px, 0) scale(0); }
+    -webkit-transform: translate(-60px, 0) scale(0);
+    -ms-transform: translate(-60px, 0) scale(0);
+    transform: translate(-60px, 0) scale(0); }
   .watchlist-card .more-button .behind {
     z-index: 10;
     position: relative;
@@ -319,14 +319,14 @@ h1 {
     -ms-transform: translate(0, 0) scale(1);
     transform: translate(0, 0) scale(1); }
   .watchlist-card .more-button:hover, .watchlist-card .more-button:focus {
-    -webkit-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-    -ms-box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6); }
+    -webkit-box-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
+    -ms-box-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.8); }
     .watchlist-card .more-button:hover .behind, .watchlist-card .more-button:focus .behind {
       opacity: 0;
-      -webkit-transform: translate(20px, 0) scale(0);
-      -ms-transform: translate(20px, 0) scale(0);
-      transform: translate(20px, 0) scale(0); }
+      -webkit-transform: translate(60px, 0) scale(0);
+      -ms-transform: translate(60px, 0) scale(0);
+      transform: translate(60px, 0) scale(0); }
     .watchlist-card .more-button:hover .glyphicon, .watchlist-card .more-button:focus .glyphicon {
       opacity: 1;
       -webkit-transform: translate(0, 0) scale(1);
@@ -338,9 +338,9 @@ h1 {
     transform: translate(0, 0) scale(0.5) rotate(45deg); }
     .watchlist-card .more-button.open .behind {
       opacity: 0;
-      -webkit-transform: translate(20px, 0) scale(0);
-      -ms-transform: translate(20px, 0) scale(0);
-      transform: translate(20px, 0) scale(0); }
+      -webkit-transform: translate(60px, 0) scale(0);
+      -ms-transform: translate(60px, 0) scale(0);
+      transform: translate(60px, 0) scale(0); }
     .watchlist-card .more-button.open .glyphicon {
       opacity: 1;
       -webkit-transform: translate(0, 0) scale(1);
@@ -348,9 +348,9 @@ h1 {
       transform: translate(0, 0) scale(1); }
   .watchlist-card .more-button.up-to-date .behind {
     opacity: 0;
-    -webkit-transform: translate(20px, 0) scale(0);
-    -ms-transform: translate(20px, 0) scale(0);
-    transform: translate(20px, 0) scale(0); }
+    -webkit-transform: translate(60px, 0) scale(0);
+    -ms-transform: translate(60px, 0) scale(0);
+    transform: translate(60px, 0) scale(0); }
   .watchlist-card .more-button.up-to-date .glyphicon {
     opacity: 1;
     -webkit-transform: translate(0, 0) scale(1);
