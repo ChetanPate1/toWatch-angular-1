@@ -1399,5 +1399,1461 @@
     },
     "series" : "Marvel's Daredevil",
     "status" : "Running"
+  },
+  "-KrW12mZl5EVXN6i-kxf" : {
+    "imgSrc" : "https://static.episodate.com/images/tv-show/full/35624.jpg",
+    "imgSrcSm" : "https://static.episodate.com/images/tv-show/thumbnail/35624.jpg",
+    "seasons" : {
+      "season_1" : [ null, {
+        "airDate" : 1412708400000,
+        "name" : "City of Heroes",
+        "number" : 1
+      }, {
+        "airDate" : 1413313200000,
+        "name" : "Fastest Man Alive",
+        "number" : 2
+      }, {
+        "airDate" : 1413918000000,
+        "name" : "Things You Can't Outrun",
+        "number" : 3
+      }, {
+        "airDate" : 1414526400000,
+        "name" : "Going Rogue",
+        "number" : 4
+      }, {
+        "airDate" : 1415736000000,
+        "name" : "Plastique",
+        "number" : 5
+      }, {
+        "airDate" : 1416340800000,
+        "name" : "The Flash is Born",
+        "number" : 6
+      }, {
+        "airDate" : 1416945600000,
+        "name" : "Power Outage",
+        "number" : 7
+      }, {
+        "airDate" : 1417550400000,
+        "name" : "Flash vs. Arrow",
+        "number" : 8
+      }, {
+        "airDate" : 1418155200000,
+        "name" : "The Man in the Yellow Suit",
+        "number" : 9
+      }, {
+        "airDate" : 1421784000000,
+        "name" : "Revenge of the Rogues",
+        "number" : 10
+      }, {
+        "airDate" : 1422388800000,
+        "name" : "The Sound and the Fury",
+        "number" : 11
+      }, {
+        "airDate" : 1422993600000,
+        "name" : "Crazy for You",
+        "number" : 12
+      }, {
+        "airDate" : 1423598400000,
+        "name" : "The Nuclear Man",
+        "number" : 13
+      }, {
+        "airDate" : 1424203200000,
+        "name" : "Fallout",
+        "number" : 14
+      }, {
+        "airDate" : 1426622400000,
+        "name" : "Out of Time",
+        "number" : 15
+      }, {
+        "airDate" : 1427227200000,
+        "name" : "Rogue Time",
+        "number" : 16
+      }, {
+        "airDate" : 1427828400000,
+        "name" : "Tricksters",
+        "number" : 17
+      }, {
+        "airDate" : 1429038000000,
+        "name" : "All Star Team Up",
+        "number" : 18
+      }, {
+        "airDate" : 1429642800000,
+        "name" : "Who is Harrison Wells?",
+        "number" : 19
+      }, {
+        "airDate" : 1430247600000,
+        "name" : "The Trap",
+        "number" : 20
+      }, {
+        "airDate" : 1430852400000,
+        "name" : "Grodd Lives",
+        "number" : 21
+      }, {
+        "airDate" : 1431457200000,
+        "name" : "Rogue Air",
+        "number" : 22
+      }, {
+        "airDate" : 1432062000000,
+        "name" : "Fast Enough",
+        "number" : 23
+      } ],
+      "season_2" : [ null, {
+        "airDate" : 1444158000000,
+        "name" : "The Man Who Saved Central City",
+        "number" : 1
+      }, {
+        "airDate" : 1444762800000,
+        "name" : "Flash of Two Worlds",
+        "number" : 2
+      }, {
+        "airDate" : 1445367600000,
+        "name" : "Family of Rogues",
+        "number" : 3
+      }, {
+        "airDate" : 1445976000000,
+        "name" : "The Fury of Firestorm",
+        "number" : 4
+      }, {
+        "airDate" : 1446580800000,
+        "name" : "The Darkness and the Light",
+        "number" : 5
+      }, {
+        "airDate" : 1447185600000,
+        "name" : "Enter Zoom",
+        "number" : 6
+      }, {
+        "airDate" : 1447790400000,
+        "name" : "Gorilla Warfare",
+        "number" : 7
+      }, {
+        "airDate" : 1449000000000,
+        "name" : "Legends of Today. Part 1",
+        "number" : 8
+      }, {
+        "airDate" : 1449604800000,
+        "name" : "Running to Stand Still",
+        "number" : 9
+      }, {
+        "airDate" : 1453233600000,
+        "name" : "Potential Energy",
+        "number" : 10
+      }, {
+        "airDate" : 1453838400000,
+        "name" : "The Reverse-Flash Returns",
+        "number" : 11
+      }, {
+        "airDate" : 1454443200000,
+        "name" : "Fast Lane",
+        "number" : 12
+      }, {
+        "airDate" : 1455048000000,
+        "name" : "Welcome to Earth-2",
+        "number" : 13
+      }, {
+        "airDate" : 1455652800000,
+        "name" : "Escape from Earth-2",
+        "number" : 14
+      }, {
+        "airDate" : 1456257600000,
+        "name" : "King Shark",
+        "number" : 15
+      }, {
+        "airDate" : 1458676800000,
+        "name" : "Trajectory",
+        "number" : 16
+      }, {
+        "airDate" : 1459278000000,
+        "name" : "Flash Back",
+        "number" : 17
+      }, {
+        "airDate" : 1461092400000,
+        "name" : "Versus Zoom",
+        "number" : 18
+      }, {
+        "airDate" : 1461697200000,
+        "name" : "Back to Normal",
+        "number" : 19
+      }, {
+        "airDate" : 1462302000000,
+        "name" : "Rupture",
+        "number" : 20
+      }, {
+        "airDate" : 1462906800000,
+        "name" : "The Runaway Dinosaur",
+        "number" : 21
+      }, {
+        "airDate" : 1463511600000,
+        "name" : "Invincible",
+        "number" : 22
+      }, {
+        "airDate" : 1464116400000,
+        "name" : "The Race of His Life",
+        "number" : 23
+      } ],
+      "season_3" : [ null, {
+        "airDate" : 1475607600000,
+        "name" : "Flashpoint",
+        "number" : 1
+      }, {
+        "airDate" : 1476212400000,
+        "name" : "Paradox",
+        "number" : 2
+      }, {
+        "airDate" : 1476817200000,
+        "name" : "Magenta",
+        "number" : 3
+      }, {
+        "airDate" : 1477422000000,
+        "name" : "The New Rogues",
+        "number" : 4
+      }, {
+        "airDate" : 1478030400000,
+        "name" : "Monster",
+        "number" : 5
+      }, {
+        "airDate" : 1479240000000,
+        "name" : "Shade",
+        "number" : 6
+      }, {
+        "airDate" : 1479844800000,
+        "name" : "Killer Frost",
+        "number" : 7
+      }, {
+        "airDate" : 1480449600000,
+        "name" : "Invasion!",
+        "number" : 8
+      }, {
+        "airDate" : 1481054400000,
+        "name" : "The Present",
+        "number" : 9
+      }, {
+        "airDate" : 1485288000000,
+        "name" : "Borrowing Problems from the Future",
+        "number" : 10
+      }, {
+        "airDate" : 1485892800000,
+        "name" : "Dead or Alive",
+        "number" : 11
+      }, {
+        "airDate" : 1486497600000,
+        "name" : "Untouchable",
+        "number" : 12
+      }, {
+        "airDate" : 1487707200000,
+        "name" : "Attack on Gorilla City",
+        "number" : 13
+      }, {
+        "airDate" : 1488312000000,
+        "name" : "Attack on Central City",
+        "number" : 14
+      }, {
+        "airDate" : 1488916800000,
+        "name" : "The Wrath of Savitar",
+        "number" : 15
+      }, {
+        "airDate" : 1489521600000,
+        "name" : "Into the Speed Force",
+        "number" : 16
+      }, {
+        "airDate" : 1490126400000,
+        "name" : "Duet",
+        "number" : 17
+      }, {
+        "airDate" : 1490727600000,
+        "name" : "Abra Kadabra",
+        "number" : 18
+      }, {
+        "airDate" : 1493146800000,
+        "name" : "The Once and Future Flash",
+        "number" : 19
+      }, {
+        "airDate" : 1493751600000,
+        "name" : "I Know Who You Are",
+        "number" : 20
+      }, {
+        "airDate" : 1494356400000,
+        "name" : "Cause and Effect",
+        "number" : 21
+      }, {
+        "airDate" : 1494961200000,
+        "name" : "Infantino Street",
+        "number" : 22
+      }, {
+        "airDate" : 1495566000000,
+        "name" : "Finish Line",
+        "number" : 23
+      } ],
+      "season_4" : [ null, {
+        "airDate" : 1507662000000,
+        "name" : "The Flash Reborn",
+        "number" : 1
+      }, {
+        "airDate" : 1508266800000,
+        "name" : "Mixed Signals",
+        "number" : 2
+      }, {
+        "airDate" : 1508871600000,
+        "name" : "Luck Be a Lady",
+        "number" : 3
+      } ]
+    },
+    "series" : "The Flash",
+    "status" : "Running"
+  },
+  "-KrW14j_FLpHaVayIGKb" : {
+    "imgSrc" : "https://static.episodate.com/images/tv-show/full/29560.jpg",
+    "imgSrcSm" : "https://static.episodate.com/images/tv-show/thumbnail/29560.jpg",
+    "seasons" : {
+      "season_1" : [ null, {
+        "airDate" : 1349895600000,
+        "name" : "Pilot",
+        "number" : 1
+      }, {
+        "airDate" : 1350500400000,
+        "name" : "Honor Thy Father",
+        "number" : 2
+      }, {
+        "airDate" : 1351105200000,
+        "name" : "Lone Gunmen",
+        "number" : 3
+      }, {
+        "airDate" : 1351713600000,
+        "name" : "An Innocent Man",
+        "number" : 4
+      }, {
+        "airDate" : 1352318400000,
+        "name" : "Damaged",
+        "number" : 5
+      }, {
+        "airDate" : 1352923200000,
+        "name" : "Legacies",
+        "number" : 6
+      }, {
+        "airDate" : 1354132800000,
+        "name" : "Muse of Fire",
+        "number" : 7
+      }, {
+        "airDate" : 1354737600000,
+        "name" : "Vendetta",
+        "number" : 8
+      }, {
+        "airDate" : 1355342400000,
+        "name" : "Year's End",
+        "number" : 9
+      }, {
+        "airDate" : 1358366400000,
+        "name" : "Burned",
+        "number" : 10
+      }, {
+        "airDate" : 1358971200000,
+        "name" : "Trust But Verify",
+        "number" : 11
+      }, {
+        "airDate" : 1359576000000,
+        "name" : "Vertigo",
+        "number" : 12
+      }, {
+        "airDate" : 1360180800000,
+        "name" : "Betrayal",
+        "number" : 13
+      }, {
+        "airDate" : 1360785600000,
+        "name" : "The Odyssey",
+        "number" : 14
+      }, {
+        "airDate" : 1361390400000,
+        "name" : "Dodger",
+        "number" : 15
+      }, {
+        "airDate" : 1361995200000,
+        "name" : "Dead to Rights",
+        "number" : 16
+      }, {
+        "airDate" : 1363809600000,
+        "name" : "The Huntress Returns",
+        "number" : 17
+      }, {
+        "airDate" : 1364414400000,
+        "name" : "Salvation",
+        "number" : 18
+      }, {
+        "airDate" : 1365015600000,
+        "name" : "Unfinished Business",
+        "number" : 19
+      }, {
+        "airDate" : 1366830000000,
+        "name" : "Home Invasion",
+        "number" : 20
+      }, {
+        "airDate" : 1367434800000,
+        "name" : "The Undertaking",
+        "number" : 21
+      }, {
+        "airDate" : 1368039600000,
+        "name" : "Darkness on the Edge of Town",
+        "number" : 22
+      }, {
+        "airDate" : 1368644400000,
+        "name" : "Sacrifice",
+        "number" : 23
+      } ],
+      "season_2" : [ null, {
+        "airDate" : 1381345200000,
+        "name" : "City of Heroes",
+        "number" : 1
+      }, {
+        "airDate" : 1381950000000,
+        "name" : "Identity",
+        "number" : 2
+      }, {
+        "airDate" : 1382554800000,
+        "name" : "Broken Dolls",
+        "number" : 3
+      }, {
+        "airDate" : 1383163200000,
+        "name" : "Crucible",
+        "number" : 4
+      }, {
+        "airDate" : 1383768000000,
+        "name" : "League of Assassins",
+        "number" : 5
+      }, {
+        "airDate" : 1384372800000,
+        "name" : "Keep Your Enemies Closer",
+        "number" : 6
+      }, {
+        "airDate" : 1384977600000,
+        "name" : "State v. Queen",
+        "number" : 7
+      }, {
+        "airDate" : 1386187200000,
+        "name" : "The Scientist",
+        "number" : 8
+      }, {
+        "airDate" : 1386792000000,
+        "name" : "Three Ghosts",
+        "number" : 9
+      }, {
+        "airDate" : 1389816000000,
+        "name" : "Blast Radius",
+        "number" : 10
+      }, {
+        "airDate" : 1390420800000,
+        "name" : "Blind Spot",
+        "number" : 11
+      }, {
+        "airDate" : 1391025600000,
+        "name" : "Tremors",
+        "number" : 12
+      }, {
+        "airDate" : 1391630400000,
+        "name" : "Heir to the Demon",
+        "number" : 13
+      }, {
+        "airDate" : 1393444800000,
+        "name" : "Time of Death",
+        "number" : 14
+      }, {
+        "airDate" : 1394049600000,
+        "name" : "The Promise",
+        "number" : 15
+      }, {
+        "airDate" : 1395259200000,
+        "name" : "Suicide Squad",
+        "number" : 16
+      }, {
+        "airDate" : 1395864000000,
+        "name" : "Birds of Prey",
+        "number" : 17
+      }, {
+        "airDate" : 1396465200000,
+        "name" : "Deathstroke",
+        "number" : 18
+      }, {
+        "airDate" : 1397674800000,
+        "name" : "The Man Under the Hood",
+        "number" : 19
+      }, {
+        "airDate" : 1398279600000,
+        "name" : "Seeing Red",
+        "number" : 20
+      }, {
+        "airDate" : 1398884400000,
+        "name" : "City of Blood",
+        "number" : 21
+      }, {
+        "airDate" : 1399489200000,
+        "name" : "Streets of Fire",
+        "number" : 22
+      }, {
+        "airDate" : 1400094000000,
+        "name" : "Unthinkable",
+        "number" : 23
+      } ],
+      "season_3" : [ null, {
+        "airDate" : 1412794800000,
+        "name" : "The Calm",
+        "number" : 1
+      }, {
+        "airDate" : 1413399600000,
+        "name" : "Sara",
+        "number" : 2
+      }, {
+        "airDate" : 1414004400000,
+        "name" : "Corto Maltese",
+        "number" : 3
+      }, {
+        "airDate" : 1414612800000,
+        "name" : "The Magician",
+        "number" : 4
+      }, {
+        "airDate" : 1415217600000,
+        "name" : "The Secret Origin of Felicity Smoak",
+        "number" : 5
+      }, {
+        "airDate" : 1415822400000,
+        "name" : "Guilty",
+        "number" : 6
+      }, {
+        "airDate" : 1416427200000,
+        "name" : "Draw Back Your Bow",
+        "number" : 7
+      }, {
+        "airDate" : 1417636800000,
+        "name" : "The Brave and the Bold",
+        "number" : 8
+      }, {
+        "airDate" : 1418241600000,
+        "name" : "The Climb",
+        "number" : 9
+      }, {
+        "airDate" : 1421870400000,
+        "name" : "Left Behind",
+        "number" : 10
+      }, {
+        "airDate" : 1422475200000,
+        "name" : "Midnight City",
+        "number" : 11
+      }, {
+        "airDate" : 1423080000000,
+        "name" : "Uprising",
+        "number" : 12
+      }, {
+        "airDate" : 1423684800000,
+        "name" : "Canaries",
+        "number" : 13
+      }, {
+        "airDate" : 1424289600000,
+        "name" : "The Return",
+        "number" : 14
+      }, {
+        "airDate" : 1424894400000,
+        "name" : "Nanda Parbat",
+        "number" : 15
+      }, {
+        "airDate" : 1426708800000,
+        "name" : "The Offer",
+        "number" : 16
+      }, {
+        "airDate" : 1427313600000,
+        "name" : "Suicidal Tendencies",
+        "number" : 17
+      }, {
+        "airDate" : 1427914800000,
+        "name" : "Public Enemy",
+        "number" : 18
+      }, {
+        "airDate" : 1429124400000,
+        "name" : "Broken Arrow",
+        "number" : 19
+      }, {
+        "airDate" : 1429729200000,
+        "name" : "The Fallen",
+        "number" : 20
+      }, {
+        "airDate" : 1430334000000,
+        "name" : "Al Sah-Him",
+        "number" : 21
+      }, {
+        "airDate" : 1430938800000,
+        "name" : "This is Your Sword",
+        "number" : 22
+      }, {
+        "airDate" : 1431543600000,
+        "name" : "My Name is Oliver Queen",
+        "number" : 23
+      } ],
+      "season_4" : [ null, {
+        "airDate" : 1444244400000,
+        "name" : "Green Arrow",
+        "number" : 1
+      }, {
+        "airDate" : 1444849200000,
+        "name" : "The Candidate",
+        "number" : 2
+      }, {
+        "airDate" : 1445454000000,
+        "name" : "Restoration",
+        "number" : 3
+      }, {
+        "airDate" : 1446062400000,
+        "name" : "Beyond Redemption",
+        "number" : 4
+      }, {
+        "airDate" : 1446667200000,
+        "name" : "Haunted",
+        "number" : 5
+      }, {
+        "airDate" : 1447272000000,
+        "name" : "Lost Souls",
+        "number" : 6
+      }, {
+        "airDate" : 1447876800000,
+        "name" : "Brotherhood",
+        "number" : 7
+      }, {
+        "airDate" : 1449086400000,
+        "name" : "Legends of Yesterday, Part 2",
+        "number" : 8
+      }, {
+        "airDate" : 1449691200000,
+        "name" : "Dark Waters",
+        "number" : 9
+      }, {
+        "airDate" : 1453320000000,
+        "name" : "Blood Debts",
+        "number" : 10
+      }, {
+        "airDate" : 1453924800000,
+        "name" : "A.W.O.L.",
+        "number" : 11
+      }, {
+        "airDate" : 1454529600000,
+        "name" : "Unchained",
+        "number" : 12
+      }, {
+        "airDate" : 1455134400000,
+        "name" : "Sins of the Father",
+        "number" : 13
+      }, {
+        "airDate" : 1455739200000,
+        "name" : "Code of Silence",
+        "number" : 14
+      }, {
+        "airDate" : 1456344000000,
+        "name" : "Taken",
+        "number" : 15
+      }, {
+        "airDate" : 1458763200000,
+        "name" : "Broken Hearts",
+        "number" : 16
+      }, {
+        "airDate" : 1459364400000,
+        "name" : "Beacon of Hope",
+        "number" : 17
+      }, {
+        "airDate" : 1459969200000,
+        "name" : "Eleven-Fifty-Nine",
+        "number" : 18
+      }, {
+        "airDate" : 1461783600000,
+        "name" : "Canary Cry",
+        "number" : 19
+      }, {
+        "airDate" : 1462388400000,
+        "name" : "Genesis",
+        "number" : 20
+      }, {
+        "airDate" : 1462993200000,
+        "name" : "Monument Point",
+        "number" : 21
+      }, {
+        "airDate" : 1463598000000,
+        "name" : "Lost in the Flood",
+        "number" : 22
+      }, {
+        "airDate" : 1464202800000,
+        "name" : "Schism",
+        "number" : 23
+      } ],
+      "season_5" : [ null, {
+        "airDate" : 1475694000000,
+        "name" : "Legacy",
+        "number" : 1
+      }, {
+        "airDate" : 1476298800000,
+        "name" : "The Recruits",
+        "number" : 2
+      }, {
+        "airDate" : 1476903600000,
+        "name" : "A Matter of Trust",
+        "number" : 3
+      }, {
+        "airDate" : 1477508400000,
+        "name" : "Penance",
+        "number" : 4
+      }, {
+        "airDate" : 1478116800000,
+        "name" : "Human Target",
+        "number" : 5
+      }, {
+        "airDate" : 1478721600000,
+        "name" : "So It Begins",
+        "number" : 6
+      }, {
+        "airDate" : 1479326400000,
+        "name" : "Vigilante",
+        "number" : 7
+      }, {
+        "airDate" : 1480536000000,
+        "name" : "Invasion!",
+        "number" : 8
+      }, {
+        "airDate" : 1481140800000,
+        "name" : "What We Leave Behind",
+        "number" : 9
+      }, {
+        "airDate" : 1485374400000,
+        "name" : "Who Are You?",
+        "number" : 10
+      }, {
+        "airDate" : 1485979200000,
+        "name" : "Second Chances",
+        "number" : 11
+      }, {
+        "airDate" : 1486584000000,
+        "name" : "Bratva",
+        "number" : 12
+      }, {
+        "airDate" : 1487188800000,
+        "name" : "Spectre of the Gun",
+        "number" : 13
+      }, {
+        "airDate" : 1487793600000,
+        "name" : "The Sin-Eater",
+        "number" : 14
+      }, {
+        "airDate" : 1488398400000,
+        "name" : "Fighting Fire with Fire",
+        "number" : 15
+      }, {
+        "airDate" : 1489608000000,
+        "name" : "Checkmate",
+        "number" : 16
+      }, {
+        "airDate" : 1490212800000,
+        "name" : "Kapiushon",
+        "number" : 17
+      }, {
+        "airDate" : 1490814000000,
+        "name" : "Disbanded",
+        "number" : 18
+      }, {
+        "airDate" : 1493233200000,
+        "name" : "Dangerous Liaisons",
+        "number" : 19
+      }, {
+        "airDate" : 1493838000000,
+        "name" : "Underneath",
+        "number" : 20
+      }, {
+        "airDate" : 1494442800000,
+        "name" : "Honor Thy Fathers",
+        "number" : 21
+      }, {
+        "airDate" : 1495047600000,
+        "name" : "Missing",
+        "number" : 22
+      }, {
+        "airDate" : 1495652400000,
+        "name" : "Lian Yu",
+        "number" : 23
+      } ],
+      "season_6" : [ null, {
+        "airDate" : 1507838400000,
+        "name" : "Fallout",
+        "number" : 1
+      }, {
+        "airDate" : 1508443200000,
+        "name" : "Tribute",
+        "number" : 2
+      }, {
+        "airDate" : 1509048000000,
+        "name" : "Next of Kin",
+        "number" : 3
+      }, {
+        "airDate" : 1509656400000,
+        "name" : "Cry for Justice",
+        "number" : 4
+      }, {
+        "airDate" : 1510261200000,
+        "name" : "Down a Crossroad",
+        "number" : 5
+      }, {
+        "airDate" : 1510866000000,
+        "name" : "TBA",
+        "number" : 6
+      } ]
+    },
+    "series" : "Arrow",
+    "status" : "Running"
+  },
+  "-KrW1ANms535MZJwhHx9" : {
+    "imgSrc" : "https://static.episodate.com/images/tv-show/full/52970.jpg",
+    "imgSrcSm" : "https://static.episodate.com/images/tv-show/thumbnail/52970.jpg",
+    "seasons" : {
+      "season_1" : [ null, {
+        "airDate" : 1474660800000,
+        "name" : "Chapter One: And Let My Cry Come Unto Thee",
+        "number" : 1
+      }, {
+        "airDate" : 1475265600000,
+        "name" : "Chapter Two: Lupus in Fabula",
+        "number" : 2
+      }, {
+        "airDate" : 1475870400000,
+        "name" : "Chapter Three: Let 'Em In",
+        "number" : 3
+      }, {
+        "airDate" : 1476475200000,
+        "name" : "Chapter Four: The Moveable Feast",
+        "number" : 4
+      }, {
+        "airDate" : 1477080000000,
+        "name" : "Chapter Five: Through My Most Grievous Fault",
+        "number" : 5
+      }, {
+        "airDate" : 1478293200000,
+        "name" : "Chapter Six: Star of the Morning",
+        "number" : 6
+      }, {
+        "airDate" : 1478898000000,
+        "name" : "Chapter Seven: Father of Lies",
+        "number" : 7
+      }, {
+        "airDate" : 1479502800000,
+        "name" : "Chapter Eight: The Griefbearers",
+        "number" : 8
+      }, {
+        "airDate" : 1481317200000,
+        "name" : "Chapter Nine: 162",
+        "number" : 9
+      }, {
+        "airDate" : 1481922000000,
+        "name" : "Chapter Ten: Three Rooms",
+        "number" : 10
+      } ],
+      "season_2" : [ null, {
+        "airDate" : 1506715200000,
+        "name" : "Janus",
+        "number" : 1
+      }, {
+        "airDate" : 1507320000000,
+        "name" : "Safe as Houses",
+        "number" : 2
+      } ]
+    },
+    "series" : "The Exorcist",
+    "status" : "Running"
+  },
+  "-KrW1cPYh17lUs23vaRc" : {
+    "imgSrc" : "https://static.episodate.com/images/tv-show/full/32008.jpg",
+    "imgSrcSm" : "https://static.episodate.com/images/tv-show/thumbnail/32008.jpg",
+    "seasons" : {
+      "season_1" : [ null, {
+        "airDate" : 1405285200000,
+        "name" : "Night Zero",
+        "number" : 1
+      }, {
+        "airDate" : 1405890000000,
+        "name" : "The Box",
+        "number" : 2
+      }, {
+        "airDate" : 1406494800000,
+        "name" : "Gone Smooth",
+        "number" : 3
+      }, {
+        "airDate" : 1407099600000,
+        "name" : "It's Not for Everyone",
+        "number" : 4
+      }, {
+        "airDate" : 1407704400000,
+        "name" : "Runaways",
+        "number" : 5
+      }, {
+        "airDate" : 1408309200000,
+        "name" : "Occultation",
+        "number" : 6
+      }, {
+        "airDate" : 1408914000000,
+        "name" : "For Services Rendered",
+        "number" : 7
+      }, {
+        "airDate" : 1409518800000,
+        "name" : "Creatures of the Night",
+        "number" : 8
+      }, {
+        "airDate" : 1410123600000,
+        "name" : "The Disappeared",
+        "number" : 9
+      }, {
+        "airDate" : 1410728400000,
+        "name" : "Loved Ones",
+        "number" : 10
+      }, {
+        "airDate" : 1411333200000,
+        "name" : "The Third Rail",
+        "number" : 11
+      }, {
+        "airDate" : 1411938000000,
+        "name" : "Last Rites",
+        "number" : 12
+      }, {
+        "airDate" : 1412542800000,
+        "name" : "The Master",
+        "number" : 13
+      } ],
+      "season_2" : [ null, {
+        "airDate" : 1436734800000,
+        "name" : "BK, NY",
+        "number" : 1
+      }, {
+        "airDate" : 1437339600000,
+        "name" : "By Any Means",
+        "number" : 2
+      }, {
+        "airDate" : 1437944400000,
+        "name" : "Fort Defiance",
+        "number" : 3
+      }, {
+        "airDate" : 1438549200000,
+        "name" : "The Silver Angel",
+        "number" : 4
+      }, {
+        "airDate" : 1439154000000,
+        "name" : "Quick and Painless",
+        "number" : 5
+      }, {
+        "airDate" : 1439758800000,
+        "name" : "Identity",
+        "number" : 6
+      }, {
+        "airDate" : 1440363600000,
+        "name" : "The Born",
+        "number" : 7
+      }, {
+        "airDate" : 1440968400000,
+        "name" : "Intruders",
+        "number" : 8
+      }, {
+        "airDate" : 1441573200000,
+        "name" : "The Battle for Red Hook",
+        "number" : 9
+      }, {
+        "airDate" : 1442178000000,
+        "name" : "The Assassin",
+        "number" : 10
+      }, {
+        "airDate" : 1442782800000,
+        "name" : "Dead End",
+        "number" : 11
+      }, {
+        "airDate" : 1443387600000,
+        "name" : "Fallen Light",
+        "number" : 12
+      }, {
+        "airDate" : 1443992400000,
+        "name" : "Night Train",
+        "number" : 13
+      } ],
+      "season_3" : [ null, {
+        "airDate" : 1472418000000,
+        "name" : "New York Strong",
+        "number" : 1
+      }, {
+        "airDate" : 1473022800000,
+        "name" : "Bad White",
+        "number" : 2
+      }, {
+        "airDate" : 1473627600000,
+        "name" : "First Born",
+        "number" : 3
+      }, {
+        "airDate" : 1474232400000,
+        "name" : "Gone But Not Forgotten",
+        "number" : 4
+      }, {
+        "airDate" : 1474837200000,
+        "name" : "Madness",
+        "number" : 5
+      }, {
+        "airDate" : 1475442000000,
+        "name" : "The Battle of Central Park",
+        "number" : 6
+      }, {
+        "airDate" : 1476046800000,
+        "name" : "Collaborators",
+        "number" : 7
+      }, {
+        "airDate" : 1476651600000,
+        "name" : "White Light",
+        "number" : 8
+      }, {
+        "airDate" : 1477256400000,
+        "name" : "Do or Die",
+        "number" : 9
+      }, {
+        "airDate" : 1477864800000,
+        "name" : "The Fall",
+        "number" : 10
+      } ],
+      "season_4" : [ null, {
+        "airDate" : 1500238800000,
+        "name" : "The Worm Turns",
+        "number" : 1
+      }, {
+        "airDate" : 1500843600000,
+        "name" : "The Blood Tax",
+        "number" : 2
+      }, {
+        "airDate" : 1501448400000,
+        "name" : "One Shot",
+        "number" : 3
+      }, {
+        "airDate" : 1502053200000,
+        "name" : "New Horizons",
+        "number" : 4
+      }, {
+        "airDate" : 1502658000000,
+        "name" : "Belly of the Beast",
+        "number" : 5
+      }, {
+        "airDate" : 1503262800000,
+        "name" : "Tainted Love",
+        "number" : 6
+      }, {
+        "airDate" : 1503867600000,
+        "name" : "Ouroboros",
+        "number" : 7
+      }, {
+        "airDate" : 1504472400000,
+        "name" : "Extraction",
+        "number" : 8
+      }, {
+        "airDate" : 1505077200000,
+        "name" : "The Traitor",
+        "number" : 9
+      } ]
+    },
+    "series" : "The Strain",
+    "status" : "Running"
+  },
+  "-KrW2WqTjAdxaNOvKrz0" : {
+    "imgSrc" : "https://static.episodate.com/images/tv-show/full/43467.com",
+    "imgSrcSm" : "https://static.episodate.com/images/tv-show/thumbnail/43467.com",
+    "seasons" : {
+      "season_1" : [ null, {
+        "airDate" : 1453755600000,
+        "name" : "Pilot",
+        "number" : 1
+      }, {
+        "airDate" : 1454360400000,
+        "name" : "Lucifer, Stay. Good Devil.",
+        "number" : 2
+      }, {
+        "airDate" : 1454965200000,
+        "name" : "The Would-Be Prince of Darkness",
+        "number" : 3
+      }, {
+        "airDate" : 1455570000000,
+        "name" : "Manly Whatnots",
+        "number" : 4
+      }, {
+        "airDate" : 1456174800000,
+        "name" : "Sweet Kicks",
+        "number" : 5
+      }, {
+        "airDate" : 1456779600000,
+        "name" : "Favorite Son",
+        "number" : 6
+      }, {
+        "airDate" : 1457384400000,
+        "name" : "Wingman",
+        "number" : 7
+      }, {
+        "airDate" : 1457989200000,
+        "name" : "Et Tu, Doctor?",
+        "number" : 8
+      }, {
+        "airDate" : 1458594000000,
+        "name" : "A Priest Walks Into a Bar",
+        "number" : 9
+      }, {
+        "airDate" : 1459195200000,
+        "name" : "Pops",
+        "number" : 10
+      }, {
+        "airDate" : 1460404800000,
+        "name" : "St. Lucifer",
+        "number" : 11
+      }, {
+        "airDate" : 1461009600000,
+        "name" : "#TeamLucifer",
+        "number" : 12
+      }, {
+        "airDate" : 1461614400000,
+        "name" : "Take Me Back to Hell",
+        "number" : 13
+      }, {
+        "airDate" : 1461628800000,
+        "name" : "Episode 14",
+        "number" : 14
+      } ],
+      "season_2" : [ null, {
+        "airDate" : 1474315200000,
+        "name" : "Everything's Coming Up Lucifer",
+        "number" : 1
+      }, {
+        "airDate" : 1475524800000,
+        "name" : "Liar, Liar, Slutty Dress on Fire",
+        "number" : 2
+      }, {
+        "airDate" : 1476129600000,
+        "name" : "Sin-Eater",
+        "number" : 3
+      }, {
+        "airDate" : 1476734400000,
+        "name" : "Lady Parts",
+        "number" : 4
+      }, {
+        "airDate" : 1477339200000,
+        "name" : "Weaponizer",
+        "number" : 5
+      }, {
+        "airDate" : 1477947600000,
+        "name" : "Monster",
+        "number" : 6
+      }, {
+        "airDate" : 1478552400000,
+        "name" : "My Little Monkey",
+        "number" : 7
+      }, {
+        "airDate" : 1479157200000,
+        "name" : "Trip to Stabby Town",
+        "number" : 8
+      }, {
+        "airDate" : 1479762000000,
+        "name" : "Homewrecker",
+        "number" : 9
+      }, {
+        "airDate" : 1480366800000,
+        "name" : "Quid Pro Ho",
+        "number" : 10
+      }, {
+        "airDate" : 1484600400000,
+        "name" : "Stewardess Interruptus",
+        "number" : 11
+      }, {
+        "airDate" : 1485205200000,
+        "name" : "Love Handles",
+        "number" : 12
+      }, {
+        "airDate" : 1485810000000,
+        "name" : "A Good Day to Die",
+        "number" : 13
+      }, {
+        "airDate" : 1493668800000,
+        "name" : "Candy Morningstar",
+        "number" : 14
+      }, {
+        "airDate" : 1494273600000,
+        "name" : "Deceptive Little Parasite",
+        "number" : 15
+      }, {
+        "airDate" : 1494878400000,
+        "name" : "God Johnson",
+        "number" : 16
+      }, {
+        "airDate" : 1495483200000,
+        "name" : "Sympathy for the Goddess",
+        "number" : 17
+      }, {
+        "airDate" : 1496088000000,
+        "name" : "The Good, the Bad and the Crispy",
+        "number" : 18
+      } ],
+      "season_3" : [ null, {
+        "airDate" : 1506970800000,
+        "name" : "They're Back Again, Aren't They?",
+        "number" : 1
+      }, {
+        "airDate" : 1507575600000,
+        "name" : "The One with the Baby Carrot",
+        "number" : 2
+      }, {
+        "airDate" : 1508180400000,
+        "name" : "What Would Lucifer Do?",
+        "number" : 3
+      } ]
+    },
+    "series" : "Lucifer",
+    "status" : "Running"
+  },
+  "-KrW3ifIE6UCjXZj2XAL" : {
+    "imgSrc" : "https://static.episodate.com/images/tv-show/full/17658.jpg",
+    "imgSrcSm" : "https://static.episodate.com/images/tv-show/thumbnail/17658.jpg",
+    "seasons" : {
+      "season_1" : [ null, {
+        "airDate" : 1200866400000,
+        "name" : "Pilot",
+        "number" : 1
+      }, {
+        "airDate" : 1201471200000,
+        "name" : "Cat's in the Bag...",
+        "number" : 2
+      }, {
+        "airDate" : 1202680800000,
+        "name" : "...and the Bag's in the River",
+        "number" : 3
+      }, {
+        "airDate" : 1203285600000,
+        "name" : "Cancer Man",
+        "number" : 4
+      }, {
+        "airDate" : 1203890400000,
+        "name" : "Gray Matter",
+        "number" : 5
+      }, {
+        "airDate" : 1204495200000,
+        "name" : "Crazy Handful of Nothin'",
+        "number" : 6
+      }, {
+        "airDate" : 1205100000000,
+        "name" : "A No-Rough-Stuff-Type Deal",
+        "number" : 7
+      } ],
+      "season_2" : [ null, {
+        "airDate" : 1236549600000,
+        "name" : "Seven Thirty-Seven",
+        "number" : 1
+      }, {
+        "airDate" : 1237154400000,
+        "name" : "Grilled",
+        "number" : 2
+      }, {
+        "airDate" : 1237759200000,
+        "name" : "Bit by a Dead Bee",
+        "number" : 3
+      }, {
+        "airDate" : 1238360400000,
+        "name" : "Down",
+        "number" : 4
+      }, {
+        "airDate" : 1238965200000,
+        "name" : "Breakage",
+        "number" : 5
+      }, {
+        "airDate" : 1239570000000,
+        "name" : "Peekaboo",
+        "number" : 6
+      }, {
+        "airDate" : 1240174800000,
+        "name" : "Negro Y Azul",
+        "number" : 7
+      }, {
+        "airDate" : 1240779600000,
+        "name" : "Better Call Saul",
+        "number" : 8
+      }, {
+        "airDate" : 1241384400000,
+        "name" : "4 Days Out",
+        "number" : 9
+      }, {
+        "airDate" : 1241989200000,
+        "name" : "Over",
+        "number" : 10
+      }, {
+        "airDate" : 1242594000000,
+        "name" : "Mandala",
+        "number" : 11
+      }, {
+        "airDate" : 1243198800000,
+        "name" : "Phoenix",
+        "number" : 12
+      }, {
+        "airDate" : 1243803600000,
+        "name" : "ABQ",
+        "number" : 13
+      } ],
+      "season_3" : [ null, {
+        "airDate" : 1269208800000,
+        "name" : "No Más",
+        "number" : 1
+      }, {
+        "airDate" : 1269810000000,
+        "name" : "Caballo sin Nombre",
+        "number" : 2
+      }, {
+        "airDate" : 1270414800000,
+        "name" : "I.F.T.",
+        "number" : 3
+      }, {
+        "airDate" : 1271019600000,
+        "name" : "Green Light",
+        "number" : 4
+      }, {
+        "airDate" : 1271624400000,
+        "name" : "Más",
+        "number" : 5
+      }, {
+        "airDate" : 1272229200000,
+        "name" : "Sunset",
+        "number" : 6
+      }, {
+        "airDate" : 1272834000000,
+        "name" : "One Minute",
+        "number" : 7
+      }, {
+        "airDate" : 1273438800000,
+        "name" : "I See You",
+        "number" : 8
+      }, {
+        "airDate" : 1274043600000,
+        "name" : "Kafkaesque",
+        "number" : 9
+      }, {
+        "airDate" : 1274648400000,
+        "name" : "Fly",
+        "number" : 10
+      }, {
+        "airDate" : 1275253200000,
+        "name" : "Abiquiu",
+        "number" : 11
+      }, {
+        "airDate" : 1275858000000,
+        "name" : "Half Measures",
+        "number" : 12
+      }, {
+        "airDate" : 1276462800000,
+        "name" : "Full Measure",
+        "number" : 13
+      } ],
+      "season_4" : [ null, {
+        "airDate" : 1310936400000,
+        "name" : "Box Cutter",
+        "number" : 1
+      }, {
+        "airDate" : 1311541200000,
+        "name" : "Thirty-Eight Snub",
+        "number" : 2
+      }, {
+        "airDate" : 1312146000000,
+        "name" : "Open House",
+        "number" : 3
+      }, {
+        "airDate" : 1312750800000,
+        "name" : "Bullet Points",
+        "number" : 4
+      }, {
+        "airDate" : 1313355600000,
+        "name" : "Shotgun",
+        "number" : 5
+      }, {
+        "airDate" : 1313960400000,
+        "name" : "Cornered",
+        "number" : 6
+      }, {
+        "airDate" : 1314565200000,
+        "name" : "Problem Dog",
+        "number" : 7
+      }, {
+        "airDate" : 1315170000000,
+        "name" : "Hermanos",
+        "number" : 8
+      }, {
+        "airDate" : 1315774800000,
+        "name" : "Bug",
+        "number" : 9
+      }, {
+        "airDate" : 1316379600000,
+        "name" : "Salud",
+        "number" : 10
+      }, {
+        "airDate" : 1316984400000,
+        "name" : "Crawl Space",
+        "number" : 11
+      }, {
+        "airDate" : 1317589200000,
+        "name" : "End Times",
+        "number" : 12
+      }, {
+        "airDate" : 1318194000000,
+        "name" : "Face Off",
+        "number" : 13
+      } ],
+      "season_5" : [ null, {
+        "airDate" : 1342386000000,
+        "name" : "Live Free or Die",
+        "number" : 1
+      }, {
+        "airDate" : 1342990800000,
+        "name" : "Madrigal",
+        "number" : 2
+      }, {
+        "airDate" : 1343595600000,
+        "name" : "Hazard Pay",
+        "number" : 3
+      }, {
+        "airDate" : 1344200400000,
+        "name" : "Fifty-One",
+        "number" : 4
+      }, {
+        "airDate" : 1344805200000,
+        "name" : "Dead Freight",
+        "number" : 5
+      }, {
+        "airDate" : 1345410000000,
+        "name" : "Buyout",
+        "number" : 6
+      }, {
+        "airDate" : 1346014800000,
+        "name" : "Say My Name",
+        "number" : 7
+      }, {
+        "airDate" : 1346619600000,
+        "name" : "Gliding Over All",
+        "number" : 8
+      }, {
+        "airDate" : 1376254800000,
+        "name" : "Blood Money",
+        "number" : 9
+      }, {
+        "airDate" : 1376859600000,
+        "name" : "Buried",
+        "number" : 10
+      }, {
+        "airDate" : 1377464400000,
+        "name" : "Confessions",
+        "number" : 11
+      }, {
+        "airDate" : 1378069200000,
+        "name" : "Rabid Dog",
+        "number" : 12
+      }, {
+        "airDate" : 1378674000000,
+        "name" : "To'hajiilee",
+        "number" : 13
+      }, {
+        "airDate" : 1379278800000,
+        "name" : "Ozymandias",
+        "number" : 14
+      }, {
+        "airDate" : 1379883600000,
+        "name" : "Granite State",
+        "number" : 15
+      } ]
+    },
+    "series" : "Breaking Bad",
+    "status" : "Ended"
   }
 }

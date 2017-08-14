@@ -12,7 +12,8 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
       disableButton: false,
       loader: false,
       validation: ''
-   }
+   };
+
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
    vm.openPopup = openPopup;
@@ -56,5 +57,22 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
          }
       }
       return exists;
+   }
+
+   function updateAll() {
+      var shows = vm.shows;
+      var numberOfShows = shows.length;
+      var seriesName;
+
+      for (var i = 0; i < 1; i++) {
+         if (shows[i].status) {
+            seriesName = helperFunctions.spacesToDashes(shows[i].series);
+         }
+
+         // episodateApi.getShow(seriesName).then(function(showData) {
+
+         // });
+      }
+      console.log(shows);
    }
 }

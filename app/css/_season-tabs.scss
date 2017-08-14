@@ -59,7 +59,7 @@
 
     .left{
       font-size: 12px;
-      line-height: 20px;
+      line-height: 1.5;
       font-weight: bold;
       width: 30%;
       float: left;
@@ -71,6 +71,7 @@
 
     .item{
       font-weight: bold;
+      line-height: 1.5;
       width: 40%;
       float: left;
     }
@@ -79,7 +80,9 @@
       text-align: right;
       width: 30%;
       float: left;
-
+      line-height: 1.5;
+      font-size: 16px;
+      
       .glyphicon{
         cursor: pointer;
         opacity: 0.5;
