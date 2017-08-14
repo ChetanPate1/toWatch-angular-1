@@ -576,15 +576,12 @@ h1 {
   -ms-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2); }
   .show-card h2 {
+    font-size: 25px;
     letter-spacing: 1px;
     z-index: 10;
     font-weight: bold;
     position: relative;
     color: #ffffff; }
-
-.home .show-card {
-  max-width: 250px;
-  height: 370px; }
 
 .season-info {
   padding-top: 50px;
@@ -1186,8 +1183,8 @@ h1 {
     transform: translate(0, 0); }
 
 .fade-in {
-  -webkit-animation: 400ms fade-in;
-  animation: 400ms fade-in; }
+  -webkit-animation: 500ms fade-in;
+  animation: 500ms fade-in; }
 
 @-webkit-keyframes fade-in {
   0% {

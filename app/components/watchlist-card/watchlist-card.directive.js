@@ -54,8 +54,6 @@ function watchlistCard(helperFunctions) {
          var isCurrentTab = (scope.tabActive).toString() == watchlistobj[index].on.season;
          var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1 && isCurrentTab;
 
-         console.log('episodeNumber', episodeNumber, 'isOneLessOneMore ', isOneLessOneMore, 'isCurrentTab', isCurrentTab);
-
          if(airDate - now > 0 || !isOneLessOneMore){
             return;
          }else {

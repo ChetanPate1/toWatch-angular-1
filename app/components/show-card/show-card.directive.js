@@ -1,6 +1,6 @@
 /**
  * @desc Show Card directive
- * @example <show-card heading="" imgsrc="" ></show-card>
+ * @example <show-card heading="" imgsrc="" shows="" index=""></show-card>
  */
 
 angular
@@ -18,7 +18,8 @@ function showCard(episodateApi, helperFunctions) {
          heading: '=',
          imgsrc: '=',
          shows: '=',
-         index: '='
+         index: '=',
+         loader: '=?'
       }
    };
 
@@ -27,25 +28,24 @@ function showCard(episodateApi, helperFunctions) {
 
       function update(shows, index) {
          var show = shows[index];
-         var seriesName = helperFunctions.spacesToDashes(show.series);
 
-         if (show.status === 'Running'){
+         if (show.status !== 'Running'){
             return;
          }
 
-         episodateApi.getShow(seriesName).then(function(data) {
-            if(data){
-               show.series = data.series;
-               show.imgSrc = data.imgSrc;
-               show.imgSrcSm = data.imgSrcSm;
-               show.status = data.status;
-               show.seasons = data.seasons;
-            }else {
-               console.log(seriesName);
-            }
-
-            shows.$save(index);
-         });
+         if (helperFunctions.hasDaysPast(show.lastUpdated, 7)) {
+            episodateApi.getShow(show.requestData).then(function(data) {
+               if(data){
+                  show.lastUpdated = new Date().getTime();
+                  show.series = data.series;
+                  show.imgSrc = data.imgSrc;
+                  show.imgSrcSm = data.imgSrcSm;
+                  show.status = data.status;
+                  show.seasons = data.seasons;
+               }
+               shows.$save(index);
+            });
+         }
       }
    }
 

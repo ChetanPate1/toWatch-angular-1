@@ -45,6 +45,7 @@ function episodateApi($http, helperFunctions, $timeout){
       series.imgSrc = show.image_path;
       series.imgSrcSm = show.image_thumbnail_path;
       series.status = show.status;
+      series.lastUpdated = new Date().getTime();
 
       init['season_'+ seasonNum] = {};
       for (i; i <= size; i++) {

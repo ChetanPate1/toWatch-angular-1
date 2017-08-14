@@ -33,6 +33,7 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
             episodateApi.getShow(series).then(function(showData) {
                $timeout(function() {
                   if (showData.seasons) {
+                     showData.requestData = series;
                      firebaseArray.save('shows', showData);
                      vm.series = '';
                   }

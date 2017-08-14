@@ -20,7 +20,7 @@ function countdownTimer($interval, helperFunctions) {
    };
 
    function link(scope, element) {
-
+      
       var inSeconds = {
          now: function () {
             return new Date().getTime() / 1000;

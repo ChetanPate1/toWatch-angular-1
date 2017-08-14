@@ -17,7 +17,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    vm.checkAired = checkAired;
    vm.openPopup = openPopup;
    vm.seriesAlreadyAdded = seriesAlreadyAdded;
-   
+
    function add() {
       var list = {
          upToDate: false,
@@ -73,10 +73,9 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
 
       for (i; i <= latestSeasonSize; i++) {
          if (latestSeason[i].airDate - today > 0){
-            break;
+            return latestSeason[i].airDate;
          }
       }
-      return latestSeason[i].airDate;
    }
 
    function checkAired(date) {
