@@ -8,7 +8,8 @@ function episodateApi($http, helperFunctions, $timeout){
    var vm = this;
    var service = {
       getMostPopular: getMostPopular,
-      getShow: getShow
+      getShow: getShow,
+      generateSeasons: generateSeasons
    };
 
    function getMostPopular() {
@@ -46,8 +47,7 @@ function episodateApi($http, helperFunctions, $timeout){
       series.status = show.status;
 
       init['season_'+ seasonNum] = {};
-
-      for (i; i < size; i++) {
+      for (i; i <= size; i++) {
          init['season_'+ seasonNum][ j ] = {
             name: episodes[i].name,
             number: episodes[i].episode,
