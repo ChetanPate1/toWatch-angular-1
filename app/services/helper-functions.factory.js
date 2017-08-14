@@ -25,6 +25,7 @@ function helperFunctions(){
    }
 
    function spacesToDashes(str) {
+      str = str.toLowerCase();
       return str.replace(/\s+/g, '-');
    }
 

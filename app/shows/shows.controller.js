@@ -58,28 +58,4 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
       }
       return exists;
    }
-
-   function updateAll() {
-      var shows = vm.shows;
-      var numberOfShows = shows.length;
-      var seriesName;
-
-      for (var i = 0; i < 2; i++) {
-         if (shows[i].status === 'Running') {
-            seriesName = helperFunctions.spacesToDashes(shows[i].series);
-         }
-
-         episodateApi.getShow(seriesName).then(function(showData) {
-            // shows[i].seasons = showData.seasons;
-            console.log('showData', showData);
-         });
-      }
-   }
-
-   $timeout(function() {
-      updateAll();
-   }, 2000);
-   $timeout(function() {
-      // console.log(vm.shows);
-   }, 4000);
 }

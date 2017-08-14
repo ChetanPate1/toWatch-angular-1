@@ -11,7 +11,9 @@
       <div class="col-xs-6 col-sm-3 col-md-2 fade-in" ng-repeat="show in ShowsCtrl.shows | orderBy: 'series'">
          <show-card
             heading="show.series"
-            imgsrc="show.imgSrc" >
+            imgsrc="show.imgSrc"
+            shows="ShowsCtrl.shows"
+            index="$index" >
          </show-card>
       </div>
    </div>
