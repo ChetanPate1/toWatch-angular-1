@@ -34,6 +34,7 @@ function showCard(episodateApi, helperFunctions) {
          }
 
          if (helperFunctions.hasDaysPast(show.lastUpdated, 7)) {
+            console.log('update');
             episodateApi.getShow(show.requestData).then(function(data) {
                if(data){
                   show.lastUpdated = new Date().getTime();
