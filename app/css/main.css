@@ -1681,35 +1681,18 @@ h1 {
 
 .search-loader {
   position: relative;
+  background: url("fonts/loader.svg") no-repeat;
   height: 23px;
   width: 23px;
+  display: block;
+  background-size: 23px 23px;
   opacity: 0;
   -webkit-transition: opacity 200ms ease;
   -ms-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
   -webkit-animation: 1s rotate infinite;
+  -ms-animation: 1s rotate infinite;
   animation: 1s rotate infinite; }
-  .search-loader:after {
-    z-index: 20;
-    position: absolute;
-    content: '';
-    top: 9px;
-    left: -1px;
-    right: 0;
-    height: 4px;
-    width: 4px;
-    background-color: #fff; }
-  .search-loader:before {
-    z-index: 10;
-    content: '';
-    height: 23px;
-    width: 23px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: 2px solid #6840e5; }
   .search-loader.show {
     opacity: 1; }
 
@@ -1778,6 +1761,7 @@ h1 {
 
 .fade-in {
   -webkit-animation: 500ms fade-in;
+  -ms-animation: 500ms fade-in;
   animation: 500ms fade-in; }
 
 @-webkit-keyframes fade-in {

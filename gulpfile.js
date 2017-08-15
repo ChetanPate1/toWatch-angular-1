@@ -22,7 +22,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('fonts', function(){
-    return gulp.src('app/css/fonts/dripicons-v2.*')
+    return gulp.src('app/css/fonts/*.*')
         .pipe(gulp.dest('build/css/fonts'));
 });
 

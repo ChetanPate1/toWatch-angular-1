@@ -29,6 +29,7 @@
 
 @mixin animation($animation){
   -webkit-animation: $animation;
+  -ms-animation: $animation;
   animation: $animation;
 }
 
