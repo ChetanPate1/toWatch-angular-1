@@ -58,14 +58,29 @@
     }
 
     .left{
+      position: relative;
       font-size: 12px;
       line-height: 1.5;
       font-weight: bold;
-      width: 30%;
+      width: 40%;
       float: left;
       @include transition(opacity 400ms ease);
-      &.invisible{
-        opacity: 0;
+
+      .aired-by{
+        float: left;
+        font-size: 11px;
+        line-height: 1;
+        border: 2px solid $base-color;
+        color: $base-color;
+        padding: 3px 8px;
+        border-radius: 11px;
+      }
+      &.not-aired{
+        .aired-by{
+          background-color: #999;
+          border: 2px solid #999;
+          color: #f5f5f5;
+        }
       }
     }
 
@@ -78,21 +93,23 @@
 
     .watched{
       text-align: right;
-      width: 30%;
+      width: 20%;
       float: left;
       line-height: 1.5;
-      font-size: 16px;
-      
-      .glyphicon{
+      font-size: 22px;
+
+      .dripicons-preview{
         cursor: pointer;
         opacity: 0.5;
         @include transition(opacity 200ms ease);
-        &.glyphicon-eye-open{
-          opacity: 1;
-        }
 
         &:hover{
           opacity: 1;
+        }
+
+        &.active{
+          opacity: 1;
+          color: $base-color;
         }
       }
     }
@@ -108,10 +125,12 @@
       @include transition(opacity 500ms ease);
 
       &.disabled{
-        opacity: 0.7;
+        opacity: 0.8;
 
         .watched{
-          .glyphicon{
+          .dripicons-preview{
+            cursor: default;
+
             &:hover{
               opacity: 0.5;
             }

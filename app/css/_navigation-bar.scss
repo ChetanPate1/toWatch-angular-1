@@ -34,13 +34,30 @@
       display: inline-block;
       float: left;
       a{
+        display: block;
+        position: relative;
         text-align: center;
         text-decoration: none;
         color: rgba(0, 0, 0, 0.6);
-        padding: 20px;
+        padding: 20px 40px;
         font-size: 12px;
         float: left;
         letter-spacing: 1px;
+
+        @media(max-width: 991px){
+          width: 100%;
+          text-align: left;
+        }
+      }
+
+      span{
+        font-size: 20px;
+        position: absolute;
+        left: 13px;
+        top: 0;
+        height: 100%;
+        line-height: 3.1;
+        color: rgba(0, 0, 0, 0.4);
       }
 
       &.active{
@@ -48,6 +65,10 @@
           cursor: default;
           color: #000000;
           font-weight: bold;
+
+          span{
+            color: $base-color;
+          }
         }
       }
 

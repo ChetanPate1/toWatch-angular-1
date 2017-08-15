@@ -1,6 +1,6 @@
 <div class="watchlist-card" ng-style="{ 'background-image': 'url({{ imgsrc }})' }">
    <button type="button" name="more" class="more-button" ng-class="{'open' : open, 'up-to-date': behindCount(seasons, currentseason) == 0 }" ng-click="toggleOpen('open')">
-      <span class="glyphicon glyphicon-plus"></span>
+      <span class="dripicons-plus"></span>
       <span class="behind">{{ behindCount(seasons, currentseason) }}</span>
    </button>
 
@@ -28,11 +28,15 @@
 
       <div class="lists">
          <ul class="items" ng-class="{ 'active': isTabSelected(season[0]) }" ng-repeat="season in seasons" >
-            <li ng-repeat="episode in season" ng-if="$index > 0"  ng-class="{ 'disabled' : !episode.watched }">
-               <span class="left" ng-class="{'invisible': episode.watched }">{{ aired(episode.airDate).by }}</span>
+            <li ng-repeat="episode in season" ng-if="$index > 0" ng-class="{ 'disabled' : !episode.watched }">
+               <span class="left" ng-class="{'not-aired': aired(episode.airDate).by == 'not aired' }">
+                  <span class="aired-by">
+                     <span class="dripicons-feed"></span> {{ aired(episode.airDate).by }}
+                  </span>
+               </span>
                <span class="item">Episode {{ $index }}</span>
                <span class="watched" ng-click="save(watchlistobj, index, seasons, episode, $index)" >
-                  <span class="glyphicon" ng-class="{ 'glyphicon-eye-open' : episode.watched, 'glyphicon-eye-close' : !episode.watched }"></span>
+                  <span class="dripicons-preview" ng-class="{ 'active' : episode.watched }"></span>
                </span>
             </li>
 

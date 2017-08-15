@@ -84,12 +84,15 @@
     padding: 0;
     span{ @include transition(all 500ms ease);}
 
-    .glyphicon{
+    .dripicons-plus{
       z-index: 20;
-      font-size: 20px;
-      line-height: 60px;
-      left: 1px;
-      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      font-size: 35px;
+      line-height: 2.1;
+      opacity: 1;
       @include transforms(translate(-60px, 0) scale(0));
     }
 
@@ -119,7 +122,8 @@
         opacity: 0;
         @include transforms(translate(60px, 0) scale(0));
       }
-      .glyphicon{
+
+      .dripicons-plus{
         opacity: 1;
         @include transforms(translate(0, 0) scale(1));
       }
@@ -131,7 +135,8 @@
         opacity: 0;
         @include transforms(translate(60px, 0) scale(0));
       }
-      .glyphicon{
+
+      .dripicons-plus{
         opacity: 1;
         @include transforms(translate(0, 0) scale(1));
       }
@@ -142,7 +147,8 @@
         opacity: 0;
         @include transforms(translate(60px, 0) scale(0));
       }
-      .glyphicon{
+
+      .dripicons-plus{
         opacity: 1;
         @include transforms(translate(0, 0) scale(1));
       }
@@ -153,93 +159,6 @@
 
 .watchlist-card{
   overflow: hidden;
-
-  .season-info{
-    padding-top: 120px;
-    position: absolute;
-    z-index: 200;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    @include transition(all 500ms ease);
-    @include transforms(translate(-100%, 0));
-
-    .button.red{
-      margin: 25px auto 10px auto;
-      width: 90%;
-      display: block;
-    }
-
-    &.open{
-      opacity: 1;
-      @include transforms(translate(0, 0));
-    }
-
-    .items{
-      &::-webkit-scrollbar {
-        width: 0px;  /* remove scrollbar space */
-        background: transparent;  /* optional: just make scrollbar invisible */
-      }
-
-      position: relative;
-      width: 100%;
-      display: block;
-      padding: 0;
-      margin: 0;
-      max-height: 265px;
-      overflow-y: auto;
-
-      .left{
-        font-size: 12px;
-        line-height: 20px;
-        font-weight: bold;
-        width: 30%;
-        float: left;
-        @include transition(opacity 400ms ease);
-        &.invisible{
-          opacity: 0;
-        }
-      }
-
-      .item{
-        font-weight: bold;
-        width: 40%;
-        float: left;
-      }
-
-      .watched{
-        text-align: right;
-        width: 30%;
-        float: left;
-      }
-
-      li{
-        margin: 10px auto;
-        height: 50px;
-        width: 90%;
-        background-color: #ffffff;
-        display: block;
-        padding: 15px 10px;
-        border-radius: 4px;
-        @include transition(opacity 500ms ease);
-
-        &.disabled{
-          opacity: 0.7;
-
-          .watched{
-            .glyphicon{
-              &:hover{
-                opacity: 0.5;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 
   .shutter, .shutter-delete{
     z-index: 500;

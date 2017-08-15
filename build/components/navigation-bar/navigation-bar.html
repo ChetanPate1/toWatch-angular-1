@@ -2,11 +2,11 @@
    <div class="container">
       <a class="brand" ui-sref="home"><strong>toWatch</strong></a>
 
-      <ul class="links">
-         <li ui-sref-active="active"><a ui-sref="home">MOST POPULAR</a></li>
-         <li ui-sref-active="active" ng-show="NavbarCtrl.userSignedIn()"><a ui-sref="rewatch">REWATCH LIST</a></li>
-         <li ui-sref-active="active" ng-show="NavbarCtrl.userSignedIn()"><a ui-sref="watchlist">WATCH LIST</a></li>
-         <li ui-sref-active="active" ng-show="NavbarCtrl.userSignedIn()"><a ui-sref="shows">SHOWS</a></li>
+      <ul class="links margin-top-xs-40">
+         <li ui-sref-active="active"><a ui-sref="home"><span class="dripicons-star"></span> MOST POPULAR</a></li>
+         <li ui-sref-active="active" ng-show="NavbarCtrl.userSignedIn()"><a ui-sref="rewatch"><span class="dripicons-clockwise"></span> REWATCH LIST</a></li>
+         <li ui-sref-active="active" ng-show="NavbarCtrl.userSignedIn()"><a ui-sref="watchlist"><span class="dripicons-preview"></span> WATCH LIST</a></li>
+         <li ui-sref-active="active" ng-show="NavbarCtrl.userSignedIn()"><a ui-sref="shows"><span class="dripicons-monitor"></span> SHOWS</a></li>
       </ul>
    </div>
    <ul class="links auth">

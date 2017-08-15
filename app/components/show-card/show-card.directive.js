@@ -27,6 +27,9 @@ function showCard(episodateApi, helperFunctions) {
       update(scope.shows, scope.index);
 
       function update(shows, index) {
+         if (!index) {
+            return;
+         }
          var show = shows[index];
 
          if (show.status !== 'Running'){

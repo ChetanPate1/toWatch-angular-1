@@ -86,10 +86,9 @@
     padding: 0;
     @include transforms(translate(-10px, 395px) scale(1));
 
-    .glyphicon{
-      font-size: 20px;
-      line-height: 60px;
-      left: 1px;
+    .dripicons-plus{
+      font-size: 35px;
+      line-height: 2.1;
       color: #000000;
     }
     @include box-shadow(0 2px 13px rgba(0, 0, 0, 0.26));
