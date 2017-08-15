@@ -22,8 +22,8 @@ gulp.task('sass', function () {
 });
 
 gulp.task('fonts', function(){
-    return gulp.src('bower_components/bootstrap/dist/fonts/**/*')
-        .pipe(gulp.dest('build/fonts'));
+    return gulp.src('app/css/fonts/dripicons-v2.*')
+        .pipe(gulp.dest('build/css/fonts'));
 });
 
 gulp.task('bootstrap', function(){
