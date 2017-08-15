@@ -2,9 +2,9 @@ angular
    .module('app')
    .controller('RewatchController', RewatchController);
 
-RewatchController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'helperFunctions'];
+RewatchController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'helperFunctions', 'seriesInitService'];
 
-function RewatchController(currentAuth, firebaseArray, $timeout, helperFunctions){
+function RewatchController(currentAuth, firebaseArray, $timeout, helperFunctions, seriesInitService){
    var vm = this;
    var ref = 'rewatch/' + currentAuth.uid;
 
@@ -15,32 +15,17 @@ function RewatchController(currentAuth, firebaseArray, $timeout, helperFunctions
    vm.openPopup = openPopup;
 
    function add() {
-      var initRewatch = {
+      var list = {
          showId: vm.seriesRef,
          on: {
             season: '1',
             episode: '1'
          },
-         show: initSeries(vm.shows.$getRecord(vm.seriesRef).seasons)
+         show: seriesInitService.initRewatchlist(vm.seriesRef)
       };
 
-      firebaseArray.save(ref, initRewatch);
+      firebaseArray.save(ref, list);
       vm.popupOpen = false;
-   }
-
-
-   function initSeries(show) {
-      var seasons = helperFunctions.objSize(show);
-      var seasonSize = 0;
-
-      for(var i = 1; i <= seasons; i++){
-         seasonsSize = helperFunctions.objSize(show['season_' + i]);
-
-         for (var j = 1; j <= seasonsSize; j++) {
-            show['season_' + i][j].watched = false;
-         }
-      }
-      return show;
    }
 
    function openPopup() {

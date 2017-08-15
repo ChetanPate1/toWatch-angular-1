@@ -2,9 +2,9 @@ angular
    .module('app')
    .controller('WatchlistController', WatchlistController);
 
-WatchlistController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'helperFunctions', 'episodateApi'];
+WatchlistController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'helperFunctions', 'episodateApi', 'seriesInitService'];
 
-function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctions, episodateApi){
+function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctions, episodateApi, seriesInitService){
    var vm = this;
    var ref = 'watchlist/' + currentAuth.uid;
    var today = new Date().getTime();
@@ -20,6 +20,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
 
    function add() {
       var list = {
+         lastUpdated: today,
          upToDate: false,
          showId: vm.seriesRef,
          on: {
@@ -28,40 +29,13 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
          },
          unwatched: {}
       };
-      list['unwatched'] = initSeries(list);
+      list['unwatched'] = seriesInitService.initWatchlist(list);
 
       firebaseArray.save(ref, list);
       vm.seriesRef = '';
       vm.season = '';
       vm.episode = '';
       vm.popupOpen = false;
-   }
-
-   function initSeries(watchlist) {
-      var init = {};
-      var show = vm.shows.$getRecord(watchlist.showId);
-      var total_seasons = helperFunctions.objSize(show.seasons);
-      var onE = parseInt(watchlist.on.episode);
-      var onS = parseInt(watchlist.on.season);
-      var i = onS;
-      var total_episodes_onS = helperFunctions.objSize(show.seasons['season_'+ onS]);
-      var seasonSize = 0;
-
-      for(i; i <= total_seasons; i++){
-         seasonsSize = helperFunctions.objSize(show.seasons['season_'+ i]);
-         init['season_' + i] = show.seasons['season_'+ i];
-         init['season_' + i][0] = i;
-
-         for (var j = 1; j <= seasonsSize; j++) {
-            init['season_' + i][j].watched = false;
-
-            if(j < onE && i == onS){
-               init['season_' + i][j].watched = true;
-            }
-         }
-      }
-
-      return init;
    }
 
    function nextAired(watchlist) {

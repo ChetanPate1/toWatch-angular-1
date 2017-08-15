@@ -3,9 +3,9 @@ angular
    .module('app')
    .directive('watchlistCard', watchlistCard);
 
-watchlistCard.$inject = ['helperFunctions'];
+watchlistCard.$inject = ['helperFunctions', 'seriesInitService'];
 
-function watchlistCard(helperFunctions) {
+function watchlistCard(helperFunctions, seriesInitService) {
    var directive = {
       link: link,
       templateUrl: 'components/watchlist-card/watchlist-card.html',
@@ -41,8 +41,9 @@ function watchlistCard(helperFunctions) {
       scope.isTabSelected = isTabSelected;
       scope.hasAired = hasAired;
       scope.limitLength = limitLength;
-
       scope.behindCount = behindCount;
+
+      update(scope.watchlistobj, scope.index);
 
       function toggleOpen(value) {
          scope[value] = !scope[value];
@@ -160,6 +161,18 @@ function watchlistCard(helperFunctions) {
          }
 
          return (count > 0) ? '-'+ count : count;
+      }
+
+      function update(watchlists, index) {
+         var watchlist = watchlists[index];
+
+         if (helperFunctions.hasDaysPast(watchlist.lastUpdated, 7)) {
+            console.log('update');
+            watchlist.unwatched = seriesInitService.initWatchlist(watchlist);
+            watchlist.lastUpdated = new Date().getTime();
+
+            watchlists.$save(index);
+         }
       }
    }
    return directive;
