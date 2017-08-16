@@ -32,7 +32,7 @@
          <form name="form">
             <div class="form-element">
                <label for="series">Series Name</label>
-               <span class="glyphicon glyphicon-chevron-down"></span>
+               <span class="dripicons-chevron-down"></span>
                <select name="series" ng-model="WatchlistCtrl.seriesRef" ng-change="WatchlistCtrl.season = ''; WatchlistCtrl.episode = ''">
                   <option ng-repeat="show in WatchlistCtrl.shows | orderBy: 'series'" ng-selected="{{ show.$id == WatchlistCtrl.seriesRef }}"
                      value="{{ show.$id }}"
