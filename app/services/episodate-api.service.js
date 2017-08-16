@@ -9,7 +9,8 @@ function episodateApi($http, helperFunctions, $timeout){
    var service = {
       getMostPopular: getMostPopular,
       getShow: getShow,
-      generateSeasons: generateSeasons
+      generateSeasons: generateSeasons,
+      search: search
    };
 
    function getMostPopular() {
@@ -69,6 +70,15 @@ function episodateApi($http, helperFunctions, $timeout){
       }
 
       return series;
+   }
+
+   function search(show) {
+      return $http({
+         method: 'GET',
+         url: 'https://www.episodate.com/api/search?q=' + show
+      }).then(function(res) {
+         return res.data.tv_shows;
+      });
    }
 
    return service;
