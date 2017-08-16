@@ -1,6 +1,6 @@
 /**
  * @desc Show Card directive
- * @example <show-card heading="" imgsrc="" shows="" index=""></show-card>
+ * @example <show-card heading="" imgsrc="" shows="" index="" ></show-card>
  */
 
 angular
@@ -24,6 +24,8 @@ function showCard(episodateApi, helperFunctions) {
    };
 
    function link(scope) {
+      scope.loader = false;
+
       update(scope.shows, scope.index);
 
       function update(shows, index) {

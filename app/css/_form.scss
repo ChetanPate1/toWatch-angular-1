@@ -38,14 +38,14 @@
     -ms-appearance: none;
   }
 
-  .glyphicon{
+  .dripicons-chevron-down{
     pointer-events: none;
     position: absolute;
     z-index: 200;
     right: 10px;
-    top: auto;
-    bottom: 14px;
+    top: 35px;
     color: #909090;
+    font-size: 25px;
   }
 
   input[type="text"]{
@@ -67,7 +67,7 @@
       padding-right: 40px;
     }
   }
-  .search-loader{
+  .loader{
     position: absolute;
     right: 10px;
     bottom: 10px;

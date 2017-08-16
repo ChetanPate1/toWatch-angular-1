@@ -1548,14 +1548,14 @@ h1 {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none; }
-  .form-element .glyphicon {
+  .form-element .dripicons-chevron-down {
     pointer-events: none;
     position: absolute;
     z-index: 200;
     right: 10px;
-    top: auto;
-    bottom: 14px;
-    color: #909090; }
+    top: 35px;
+    color: #909090;
+    font-size: 25px; }
   .form-element input[type="text"]:hover {
     cursor: text; }
   .form-element select:hover {
@@ -1564,7 +1564,7 @@ h1 {
 .form-element.search input {
   padding-right: 40px; }
 
-.form-element .search-loader {
+.form-element .loader {
   position: absolute;
   right: 10px;
   bottom: 10px; }
@@ -1679,7 +1679,7 @@ h1 {
     width: 100%;
     max-width: auto; }
 
-.search-loader {
+.loader {
   position: relative;
   background: url("fonts/loader.svg") no-repeat;
   height: 23px;
@@ -1693,7 +1693,7 @@ h1 {
   -webkit-animation: 1s rotate infinite;
   -ms-animation: 1s rotate infinite;
   animation: 1s rotate infinite; }
-  .search-loader.show {
+  .loader.show {
     opacity: 1; }
 
 .popup {
