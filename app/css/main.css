@@ -1562,12 +1562,26 @@ h1 {
     cursor: pointer; }
 
 .form-element.search input {
+  padding-left: 40px;
   padding-right: 40px; }
+  .form-element.search input:focus + .dripicons-search {
+    color: #6840e5; }
 
 .form-element .loader {
   position: absolute;
   right: 10px;
   bottom: 10px; }
+
+.form-element .dripicons-search {
+  background-color: transparent;
+  border: none;
+  color: #d8d8d8;
+  padding: 0;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 20px;
+  line-height: 1; }
 
 .select-series {
   position: relative;
@@ -1687,14 +1701,17 @@ h1 {
   display: block;
   background-size: 23px 23px;
   opacity: 0;
-  -webkit-transition: opacity 200ms ease;
-  -ms-transition: opacity 200ms ease;
-  transition: opacity 200ms ease;
+  -webkit-transition: opacity 200ms ease 2000ms;
+  -ms-transition: opacity 200ms ease 2000ms;
+  transition: opacity 200ms ease 2000ms;
   -webkit-animation: 1s rotate infinite;
   -ms-animation: 1s rotate infinite;
   animation: 1s rotate infinite; }
   .loader.show {
-    opacity: 1; }
+    opacity: 1;
+    -webkit-transition-delay: 0ms;
+    -ms-transition-delay: 0ms;
+    transition-delay: 0ms; }
 
 .popup {
   position: fixed;

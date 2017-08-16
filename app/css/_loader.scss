@@ -6,10 +6,11 @@
   display: block;
   background-size: 23px 23px;
   opacity: 0;
-  @include transition(opacity 200ms ease);
+  @include transition(opacity 200ms ease 2000ms);
 
   &.show{
     opacity: 1;
+    @include transition-delay(0ms);
   }
 
   @include animation(1s rotate infinite);

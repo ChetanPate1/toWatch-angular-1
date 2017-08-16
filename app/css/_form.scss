@@ -64,12 +64,30 @@
 .form-element{
   &.search{
     input{
+      padding-left: 40px;
       padding-right: 40px;
+
+      &:focus + .dripicons-search{
+        color: $base-color;
+      }
     }
   }
+
   .loader{
     position: absolute;
     right: 10px;
     bottom: 10px;
+  }
+
+  .dripicons-search{
+    background-color: transparent;
+    border: none;
+    color: #d8d8d8;
+    padding: 0;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 20px;
+    line-height: 1;
   }
 }

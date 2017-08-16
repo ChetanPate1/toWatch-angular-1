@@ -7,7 +7,6 @@ ShowsController.$inject = ['firebaseArray', 'episodateApi', 'helperFunctions', '
 function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout){
    var vm = this;
 
-   vm.popupOpen = false;
    vm.sendStatus = {
       disableButton: false,
       loader: false,
@@ -16,7 +15,6 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
 
    vm.shows = firebaseArray.getByRef('shows');
    vm.add = add;
-   vm.openPopup = openPopup;
 
    function add() {
       var series = vm.series;
@@ -24,6 +22,7 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
       if (vm.series) {
          vm.sendStatus.disableButton = true;
          vm.sendStatus.loader = true;
+
          if (seriesExists(series)) {
             vm.series = '';
             vm.sendStatus.disableButton = false;
@@ -31,22 +30,19 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
          }else {
             series = helperFunctions.spacesToDashes(series);
             episodateApi.getShow(series).then(function(showData) {
-               $timeout(function() {
-                  if (showData.seasons) {
-                     showData.requestData = series;
+               if (showData.seasons) {
+                  showData.requestData = series;
+
+                  $timeout(function() {
                      firebaseArray.save('shows', showData);
                      vm.series = '';
-                  }
-                  vm.sendStatus.disableButton = false;
-                  vm.sendStatus.loader = false;
-               }, 2000);
+                  }, 2000);
+               }
+               vm.sendStatus.disableButton = false;
+               vm.sendStatus.loader = false;
             });
          }
       }
-   }
-
-   function openPopup() {
-      vm.popupOpen = true;
    }
 
    function seriesExists(series) {

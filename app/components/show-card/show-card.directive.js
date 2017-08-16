@@ -17,39 +17,39 @@ function showCard(episodateApi, helperFunctions) {
       scope: {
          heading: '=',
          imgsrc: '=',
-         shows: '=',
-         index: '=',
-         loader: '=?'
+         shows: '=?',
+         index: '=?'
       }
    };
 
    function link(scope) {
-      scope.loader = false;
+      var now = new Date().getTime();
+
+      if (scope.index == undefined) {
+         return;
+      }
 
       update(scope.shows, scope.index);
 
       function update(shows, index) {
-         if (!index) {
-            return;
-         }
          var show = shows[index];
 
-         if (show.status !== 'Running'){
+         if (show.status !== 'Running' || !helperFunctions.hasDaysPast(show.lastUpdated, 7)){
             return;
          }
 
          if (helperFunctions.hasDaysPast(show.lastUpdated, 7)) {
-            console.log('update');
+
             episodateApi.getShow(show.requestData).then(function(data) {
                if(data){
-                  show.lastUpdated = new Date().getTime();
+                  show.lastUpdated = now;
                   show.series = data.series;
                   show.imgSrc = data.imgSrc;
                   show.imgSrcSm = data.imgSrcSm;
                   show.status = data.status;
                   show.seasons = data.seasons;
+                  shows.$save(index);
                }
-               shows.$save(index);
             });
          }
       }

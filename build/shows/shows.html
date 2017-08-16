@@ -1,7 +1,13 @@
 <div class="container">
    <div class="row">
-      <div class="col-xs-12">
-         <button class="button pull-right margin-bottom-30" ng-click="ShowsCtrl.openPopup()">Add a show</button>
+      <div class="col-xs-12 col-md-4">
+         <form name="form" ng-submit="ShowsCtrl.add()">
+            <div class="form-element search">
+               <div class="loader" ng-class="{'show' : ShowsCtrl.sendStatus.loader }"></div>
+               <input type="text" name="series" ng-model="ShowsCtrl.series">
+               <button class="dripicons-search" ng-click="ShowsCtrl.add()" ng-disabled="ShowsCtrl.sendStatus.disableButton"></button>
+            </div>
+         </form>
       </div>
    </div>
 </div>
@@ -19,21 +25,4 @@
    </div>
 
    <no-content condition="!ShowsCtrl.shows[0]" message="'Your show collection is empty!'"></no-content>
-</div>
-
-<div class="popup slide-down" ng-class="{ 'open': ShowsCtrl.popupOpen }">
-   <div class="center">
-      <div class="content">
-         <h3>Add Show</h3>
-         <form name="form">
-            <div class="form-element search">
-               <label for="series">Series</label>
-               <div class="loader" ng-class="{'show' : ShowsCtrl.sendStatus.loader }"></div>
-               <input type="text" name="series" ng-model="ShowsCtrl.series">
-            </div>
-            <button class="button red" ng-click="ShowsCtrl.popupOpen = false">cancel</button>
-            <button class="button pull-right" ng-click="ShowsCtrl.add()" ng-disabled="ShowsCtrl.sendStatus.disableButton">add</button>
-         </form>
-      </div>
-   </div>
 </div>
