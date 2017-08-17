@@ -2,17 +2,15 @@ angular
    .module('app')
    .factory('seriesInitService', seriesInitService);
 
-seriesInitService.$inject = ['currentAuth', 'firebaseArray', 'helperFunctions'];
+seriesInitService.$inject = ['firebaseArray', 'helperFunctions'];
 
-function seriesInitService(currentAuth, firebaseArray, helperFunctions){
-   var showsRef = 'shows/'+ currentAuth.uid;
-   var shows = firebaseArray.getByRef(showsRef);
+function seriesInitService(firebaseArray, helperFunctions){
    var service = {
       initWatchlist: initWatchlist,
       initRewatchlist: initRewatchlist
    };
 
-   function initWatchlist(watchlist) {
+   function initWatchlist(watchlist, shows) {
       var init = {};
       var show = shows.$getRecord(watchlist.showId);
       var total_seasons = helperFunctions.objSize(show.seasons);
@@ -38,7 +36,7 @@ function seriesInitService(currentAuth, firebaseArray, helperFunctions){
       return init;
    }
 
-   function initRewatchlist(showId) {
+   function initRewatchlist(showId, shows) {
       var show = {};
       var series = shows.$getRecord(showId).seasons;
       var seasons = helperFunctions.objSize(series);

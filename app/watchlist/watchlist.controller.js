@@ -30,7 +30,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
          },
          unwatched: {}
       };
-      list['unwatched'] = seriesInitService.initWatchlist(list);
+      list['unwatched'] = seriesInitService.initWatchlist(list, vm.shows);
 
       firebaseArray.save(watchlistRef, list);
       vm.seriesRef = '';

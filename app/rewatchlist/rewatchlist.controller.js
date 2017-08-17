@@ -22,7 +22,7 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
             season: '1',
             episode: '1'
          },
-         show: seriesInitService.initRewatchlist(vm.seriesRef)
+         show: seriesInitService.initRewatchlist(vm.seriesRef, vm.shows)
       };
 
       firebaseArray.save(rewatchRef, list);
