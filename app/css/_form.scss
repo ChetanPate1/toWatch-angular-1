@@ -98,3 +98,22 @@
     line-height: 1;
   }
 }
+
+.form-element{
+  &.validation{
+    .message{
+      width: 75%;
+      padding: 10px 20px;
+      border: 2px solid $danger-color;
+      border-radius: 5px;
+      background-color: transparentize($danger-color, 0.9);
+      color: $danger-color;
+      opacity: 0;
+      @include transition(opacity 800ms ease);
+
+      &.show{
+        opacity: 1;
+      }
+    }
+  }
+}

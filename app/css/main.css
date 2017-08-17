@@ -1,6 +1,5 @@
 button {
-  position: relative;
-  outline: 0; }
+  position: relative; }
 
 #view {
   padding-top: 150px;
@@ -1589,6 +1588,20 @@ h1 {
   font-size: 20px;
   line-height: 1; }
 
+.form-element.validation .message {
+  width: 75%;
+  padding: 10px 20px;
+  border: 2px solid #FF5154;
+  border-radius: 5px;
+  background-color: rgba(255, 81, 84, 0.1);
+  color: #FF5154;
+  opacity: 0;
+  -webkit-transition: opacity 800ms ease;
+  -ms-transition: opacity 800ms ease;
+  transition: opacity 800ms ease; }
+  .form-element.validation .message.show {
+    opacity: 1; }
+
 .select-series {
   position: relative;
   overflow: hidden;
@@ -1683,11 +1696,11 @@ h1 {
   .button[disabled] {
     border: 3px solid #bbbbbb;
     background-color: #bbbbbb;
-    color: #ffffff; }
+    color: #e6e6e6; }
     .button[disabled]:hover {
       border: 3px solid #bbbbbb;
       background-color: #bbbbbb;
-      color: #ffffff; }
+      color: #e6e6e6; }
   .button.red {
     color: #FF5154;
     border: 3px solid #FF5154; }
