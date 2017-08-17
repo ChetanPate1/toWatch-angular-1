@@ -1573,6 +1573,11 @@ h1 {
     position: absolute;
     top: 45px;
     left: 0; }
+  @media (max-width: 767px) {
+    .form-element.search {
+      float: none;
+      min-width: auto;
+      width: 100%; } }
 
 .form-element .loader {
   position: absolute;
