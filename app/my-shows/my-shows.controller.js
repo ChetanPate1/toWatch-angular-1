@@ -1,10 +1,10 @@
 angular
    .module('app')
-   .controller('ShowsController', ShowsController);
+   .controller('MyShowsController', MyShowsController);
 
-ShowsController.$inject = ['firebaseArray', 'episodateApi', 'helperFunctions', '$timeout'];
+MyShowsController.$inject = ['firebaseArray', 'episodateApi', 'helperFunctions', '$timeout'];
 
-function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout){
+function MyShowsController(firebaseArray, episodateApi, helperFunctions, $timeout){
    var vm = this;
 
    vm.foundShows = [];

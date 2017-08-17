@@ -1,0 +1,48 @@
+<div class="container">
+   <div class="row">
+      <div class="col-xs-12">
+         <button class="button pull-right margin-bottom-30" ng-click="RewatchlistCtrl.openPopup()">Rewatch a show</div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 fade-in" ng-repeat="rewatch in RewatchlistCtrl.rewatch" ng-if="rewatch.show">
+         <rewatch-card
+            heading="RewatchlistCtrl.shows.$getRecord( rewatch.showId ).series"
+            subheading="'Season '+ rewatch.on.season +' Episode ' + rewatch.on.episode"
+            details="RewatchlistCtrl.shows.$getRecord( rewatch.showId ).seasons['season_'+ rewatch.on.season ][ rewatch.on.episode ].name"
+            imgsrc="RewatchlistCtrl.shows.$getRecord( rewatch.showId ).imgSrc" >
+
+            <season-info
+               seasons="rewatch.show"
+               currentseason="rewatch.on.season"
+               rewatchobj="RewatchlistCtrl.rewatch"
+               index="$index">
+            </season-info>
+
+            <frost-glass imgsrc="RewatchlistCtrl.shows.$getRecord( rewatch.showId ).imgSrc"></frost-glass>
+         </rewatch-card>
+      </div>
+
+      <no-content condition="!RewatchlistCtrl.rewatch[0]" message="'Your rewatchlist is empty!'"></no-content>
+   </div>
+</div>
+
+<div class="popup slide-down" ng-class="{ 'open': RewatchlistCtrl.popupOpen }">
+   <div class="center">
+      <div class="content">
+         <h3>Add To Rewatch</h3>
+         <form name="form">
+            <div class="form-element">
+               <label for="series">Series</label>
+               <span class="dripicons-chevron-down"></span>
+               <select name="series" ng-model="RewatchlistCtrl.seriesRef">
+                  <option ng-repeat="show in RewatchlistCtrl.shows" ng-selected="{{ show.$id == RewatchlistCtrl.seriesRef }}"
+                     value="{{ show.$id }}">{{ show.series }}
+                  </option>
+               </select>
+            </div>
+            <button class="button red" ng-click="RewatchlistCtrl.popupOpen = false">cancel</button>
+            <button class="button pull-right" ng-click="RewatchlistCtrl.add()">add</button>
+         </form>
+      </div>
+   </div>
+</div>

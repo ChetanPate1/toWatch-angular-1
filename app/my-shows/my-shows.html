@@ -1,0 +1,36 @@
+<div class="container">
+   <div class="row margin-bottom-20">
+      <div class="col-xs-12 col-sm-offset-8 col-sm-4 col-md-offset-8 col-md-4">
+         <form name="form" ng-submit="MyShowsCtrl.find()">
+            <div class="form-element search">
+               <div class="loader" ng-class="{'show' : MyShowsCtrl.sendStatus.loader }"></div>
+               <input type="text" name="series" ng-model="MyShowsCtrl.series">
+               <button class="dripicons-search" ng-click="MyShowsCtrl.find()" ng-disabled="MyShowsCtrl.sendStatus.disableButton"></button>
+
+               <div class="search-results" ng-class="{'show' : MyShowsCtrl.foundShows }">
+                  <div class="result" ng-repeat="show in MyShowsCtrl.foundShows" ng-click="MyShowsCtrl.add(show.permalink)">
+                     <div class="number">{{ $index + 1 }}.</div>
+                     <div class="name">{{ show.name }}</div>
+                     <div class="network">{{ show.network }}</div>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+
+<div class="container-fluid">
+   <div class="row show-layout">
+      <div class="col-xs-6 col-sm-3 col-md-2 fade-in" ng-repeat="show in MyShowsCtrl.shows | orderBy: 'series'">
+         <show-card
+            heading="show.series"
+            imgsrc="show.imgSrc"
+            shows="MyShowsCtrl.shows"
+            index="$index" >
+         </show-card>
+      </div>
+   </div>
+
+   <no-content condition="!MyShowsCtrl.shows[0]" message="'Your show collection is empty!'"></no-content>
+</div>

@@ -33,11 +33,11 @@ function config($stateProvider, $urlRouterProvider){
            }]
          }
       })
-      .state('rewatch',{
-         url: '/rewatch',
-         templateUrl: 'rewatchlist/rewatch.html',
-         controller: 'RewatchController',
-         controllerAs: 'RewatchCtrl',
+      .state('rewatchlist',{
+         url: '/rewatchlist',
+         templateUrl: 'rewatchlist/rewatchlist.html',
+         controller: 'RewatchlistController',
+         controllerAs: 'RewatchlistCtrl',
          resolve: {
         // controller will not be loaded until $requireSignIn resolves
         // Auth refers to our $firebaseAuth wrapper in the factory below
@@ -48,11 +48,11 @@ function config($stateProvider, $urlRouterProvider){
            }]
          }
       })
-      .state('shows',{
-         url: '/shows',
-         templateUrl: 'shows/shows.html',
-         controller: 'ShowsController',
-         controllerAs: 'ShowsCtrl',
+      .state('my-shows',{
+         url: '/my-shows',
+         templateUrl: 'my-shows/my-shows.html',
+         controller: 'MyShowsController',
+         controllerAs: 'MyShowsCtrl',
          resolve: {
         // controller will not be loaded until $requireSignIn resolves
         // Auth refers to our $firebaseAuth wrapper in the factory below

@@ -1,10 +1,10 @@
 angular
    .module('app')
-   .controller('RewatchController', RewatchController);
+   .controller('RewatchlistController', RewatchlistController);
 
-RewatchController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'helperFunctions', 'seriesInitService'];
+RewatchlistController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'helperFunctions', 'seriesInitService'];
 
-function RewatchController(currentAuth, firebaseArray, $timeout, helperFunctions, seriesInitService){
+function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunctions, seriesInitService){
    var vm = this;
    var ref = 'rewatch/' + currentAuth.uid;
 
