@@ -4,14 +4,16 @@
 
       <form name="SigninCtrl.signinForm">
         <div class="form-element">
-          <label for="email">Email address</label>
-          <input type="email" id="email" placeholder="Email" ng-model="SigninCtrl.email">
+          <label for="email">Email</label>
+          <input type="email" id="email" ng-model="SigninCtrl.email">
         </div>
         <div class="form-element">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Password" ng-model="SigninCtrl.password">
+          <input type="password" id="password" ng-model="SigninCtrl.password">
         </div>
-
+        <div class="form-element validation">
+           <div class="message"></div>
+        </div>
         <button type="submit" class="button pull-right" ng-click="SigninCtrl.login()">Sign in</button>
       </form>
    </div>

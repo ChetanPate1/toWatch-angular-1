@@ -38,5 +38,5 @@ function SigninController(firebaseAuth, $state){
             console.log(error);
          }
       );
-   }   
+   }
 }
