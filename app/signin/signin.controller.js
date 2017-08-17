@@ -27,7 +27,7 @@ function SigninController(firebaseAuth, $state, $timeout){
 
       firebaseAuth.$signInWithEmailAndPassword(vm.email, vm.password)
          .then(function(firebaseUser) {
-            $state.go('shows');
+            $state.go('my-shows');
          }).catch(function(error) {
             validation(error);
          }
