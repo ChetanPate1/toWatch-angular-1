@@ -2,10 +2,11 @@ angular
    .module('app')
    .controller('MyShowsController', MyShowsController);
 
-MyShowsController.$inject = ['firebaseArray', 'episodateApi', 'helperFunctions', '$timeout'];
+MyShowsController.$inject = ['currentAuth', 'firebaseArray', 'episodateApi', 'helperFunctions', '$timeout'];
 
-function MyShowsController(firebaseArray, episodateApi, helperFunctions, $timeout){
+function MyShowsController(currentAuth, firebaseArray, episodateApi, helperFunctions, $timeout){
    var vm = this;
+   var ref = 'shows/' + currentAuth.uid;
 
    vm.foundShows = [];
    vm.sendStatus = {
@@ -14,7 +15,7 @@ function MyShowsController(firebaseArray, episodateApi, helperFunctions, $timeou
       validation: ''
    };
 
-   vm.shows = firebaseArray.getByRef('shows');
+   vm.shows = firebaseArray.getByRef(ref);
    vm.add = add;
    vm.find = find;
 
@@ -26,7 +27,7 @@ function MyShowsController(firebaseArray, episodateApi, helperFunctions, $timeou
             showData.requestData = series;
 
             $timeout(function() {
-               firebaseArray.save('shows', showData);
+               firebaseArray.save(ref, showData);
                vm.series = '';
             }, 2000);
          }

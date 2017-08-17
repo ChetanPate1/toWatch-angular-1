@@ -6,11 +6,12 @@ RewatchlistController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'he
 
 function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunctions, seriesInitService){
    var vm = this;
-   var ref = 'rewatch/' + currentAuth.uid;
+   var rewatchRef = 'rewatch/' + currentAuth.uid;
+   var showsRef = 'shows/' + currentAuth.uid;
 
    vm.popupOpen = false;
-   vm.rewatch = firebaseArray.getByRef(ref);
-   vm.shows = firebaseArray.getByRef('shows');
+   vm.rewatch = firebaseArray.getByRef(rewatchRef);
+   vm.shows = firebaseArray.getByRef(showsRef);
    vm.add = add;
    vm.openPopup = openPopup;
 
@@ -24,7 +25,7 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
          show: seriesInitService.initRewatchlist(vm.seriesRef)
       };
 
-      firebaseArray.save(ref, list);
+      firebaseArray.save(rewatchRef, list);
       vm.popupOpen = false;
    }
 

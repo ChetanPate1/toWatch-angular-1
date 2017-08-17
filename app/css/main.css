@@ -1560,17 +1560,19 @@ h1 {
   .form-element select:hover {
     cursor: pointer; }
 
-.form-element.search input {
-  padding-left: 40px;
-  padding-right: 40px; }
-  .form-element.search input:focus + .dripicons-search {
-    color: #6840e5; }
-
-.form-element.search .search-results {
-  z-index: 500;
-  position: absolute;
-  top: 45px;
-  left: 0; }
+.form-element.search {
+  min-width: 400px;
+  z-index: 200; }
+  .form-element.search input {
+    padding-left: 40px;
+    padding-right: 40px; }
+    .form-element.search input:focus + .dripicons-search {
+      color: #6840e5; }
+  .form-element.search .search-results {
+    z-index: 500;
+    position: absolute;
+    top: 45px;
+    left: 0; }
 
 .form-element .loader {
   position: absolute;

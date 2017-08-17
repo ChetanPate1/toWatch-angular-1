@@ -63,6 +63,8 @@
 
 .form-element{
   &.search{
+    min-width: 400px;
+    z-index: 200;
     input{
       padding-left: 40px;
       padding-right: 40px;

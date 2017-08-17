@@ -2,10 +2,11 @@ angular
    .module('app')
    .factory('seriesInitService', seriesInitService);
 
-seriesInitService.$inject = ['firebaseArray', 'helperFunctions'];
+seriesInitService.$inject = ['currentAuth', 'firebaseArray', 'helperFunctions'];
 
-function seriesInitService(firebaseArray, helperFunctions){
-   var shows = firebaseArray.getByRef('shows');
+function seriesInitService(currentAuth, firebaseArray, helperFunctions){
+   var showsRef = 'shows/'+ currentAuth.uid;
+   var shows = firebaseArray.getByRef(showsRef);
    var service = {
       initWatchlist: initWatchlist,
       initRewatchlist: initRewatchlist

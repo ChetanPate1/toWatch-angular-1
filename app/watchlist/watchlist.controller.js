@@ -6,12 +6,13 @@ WatchlistController.$inject = ['currentAuth', 'firebaseArray', '$timeout', 'help
 
 function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctions, episodateApi, seriesInitService){
    var vm = this;
-   var ref = 'watchlist/' + currentAuth.uid;
+   var showsRef = 'shows/' + currentAuth.uid;
+   var watchlistRef = 'watchlist/' + currentAuth.uid;
    var today = new Date().getTime();
 
    vm.popupOpen = false;
-   vm.watchlist = firebaseArray.getByRef(ref);
-   vm.shows = firebaseArray.getByRef('shows');
+   vm.watchlist = firebaseArray.getByRef(watchlistRef);
+   vm.shows = firebaseArray.getByRef(showsRef);
    vm.add = add;
    vm.nextAired = nextAired;
    vm.checkAired = checkAired;
@@ -31,7 +32,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
       };
       list['unwatched'] = seriesInitService.initWatchlist(list);
 
-      firebaseArray.save(ref, list);
+      firebaseArray.save(watchlistRef, list);
       vm.seriesRef = '';
       vm.season = '';
       vm.episode = '';
