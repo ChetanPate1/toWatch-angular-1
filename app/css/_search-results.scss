@@ -1,16 +1,25 @@
 .search-results{
   background-color: #ffffff;
   width: 100%;
+  border-radius: 0 0 6px 6px;
+  @include box-shadow(0 20px 40px -20px rgba(0, 0, 0, 0.3));
+  @include transition(all 500ms ease);
+  @include transforms(translate(-100%, 0));
+  opacity: 0;
 
   .result{
     display: block;
     float: left;
     width: 100%;
-    padding: 10px 20px;
-    border-bottom: 1px solid #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 5px;
 
     &:hover{
+      cursor: pointer;
       background-color: $base-color;
+      .name, .number{
+        color: #ffffff;
+      }
     }
 
     .number, .name, .network{
@@ -20,13 +29,13 @@
     .number{
       font-size: 14px;
       line-height: 2;
-      width: 10%;
+      width: 7%;
     }
 
     .name{
       font-size: 14px;
       font-weight: bold;
-      width: 50%;
+      width: 53%;
       line-height: 2;
     }
 
@@ -35,8 +44,13 @@
       width: 40%;
       padding: 5px;
       text-align: center;
-      border: 3px solid #f2f2f2;
+      background-color: #f2f2f2;
       border-radius: 5px;
     }
+  }
+
+  &.show{
+    @include transforms(translate(0, 0));
+    opacity: 1;
   }
 }

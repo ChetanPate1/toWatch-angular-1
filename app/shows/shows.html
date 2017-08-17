@@ -6,15 +6,16 @@
                <div class="loader" ng-class="{'show' : ShowsCtrl.sendStatus.loader }"></div>
                <input type="text" name="series" ng-model="ShowsCtrl.series">
                <button class="dripicons-search" ng-click="ShowsCtrl.find()" ng-disabled="ShowsCtrl.sendStatus.disableButton"></button>
+
+               <div class="search-results" ng-class="{'show' : ShowsCtrl.foundShows }">
+                  <div class="result" ng-repeat="show in ShowsCtrl.foundShows" ng-click="ShowsCtrl.add(show.permalink)">
+                     <div class="number">{{ $index + 1 }}.</div>
+                     <div class="name">{{ show.name }}</div>
+                     <div class="network">{{ show.network }}</div>
+                  </div>
+               </div>
             </div>
          </form>
-         <div class="search-results">
-            <div class="result" ng-repeat="show in ShowsCtrl.foundShows">
-               <div class="number">{{ $index + 1 }}.</div>
-               <div class="name">{{ show.name }}</div>
-               <div class="network">{{ show.network }}</div>
-            </div>
-         </div>
       </div>
    </div>
 </div>

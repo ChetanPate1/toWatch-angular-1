@@ -71,6 +71,13 @@
         color: $base-color;
       }
     }
+
+    .search-results{
+      z-index: 500;
+      position: absolute;
+      top: 45px;
+      left: 0;
+    }
   }
 
   .loader{

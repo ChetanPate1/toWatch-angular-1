@@ -7,35 +7,7 @@ ShowsController.$inject = ['firebaseArray', 'episodateApi', 'helperFunctions', '
 function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout){
    var vm = this;
 
-   vm.foundShows = [
-      {
-         "id":26718,
-         "name":"House of Cards",
-         "permalink":"house-of-cards-2013",
-         "country":"US",
-         "network":"Netflix",
-         "status":"To Be Determined",
-         "image_thumbnail_path":"https://static.episodate.com/images/tv-show/thumbnail/26718.jpg"
-      },
-      {
-         "id":17051,
-         "name":"House of Cards",
-         "permalink":"house-of-cards",
-         "country":"UK",
-         "network":"BBC One",
-         "status":"Ended",
-         "image_thumbnail_path":"https://static.episodate.com/images/tv-show/thumbnail/17051.jpg"
-      },
-      {
-         "id":28883,
-         "name":"House Of Cards (USA)",
-         "permalink":"house-of-cards-usa",
-         "country":"US",
-         "network":"USA Network",
-         "status":"Pilot Rejected",
-         "image_thumbnail_path":"https://static.episodate.com/images/no-image.png"
-      }
-   ];
+   vm.foundShows = [];
    vm.sendStatus = {
       disableButton: false,
       loader: false,
@@ -47,6 +19,8 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
    vm.find = find;
 
    function add(series) {
+      vm.foundShows = [];
+      vm.sendStatus.loader = true;
       episodateApi.getShow(series).then(function(showData) {
          if (showData.seasons) {
             showData.requestData = series;
@@ -76,7 +50,7 @@ function ShowsController(firebaseArray, episodateApi, helperFunctions, $timeout)
             series = helperFunctions.spacesToDashes(series);
             episodateApi.search(series).then(function(data) {
                if (helperFunctions.objSize(data) < 1) {
-                  //add
+                  add(series);
                }else {
                   vm.foundShows = data;
                }

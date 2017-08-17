@@ -1567,6 +1567,12 @@ h1 {
   .form-element.search input:focus + .dripicons-search {
     color: #6840e5; }
 
+.form-element.search .search-results {
+  z-index: 500;
+  position: absolute;
+  top: 45px;
+  left: 0; }
+
 .form-element .loader {
   position: absolute;
   right: 10px;
@@ -1778,33 +1784,52 @@ h1 {
 
 .search-results {
   background-color: #ffffff;
-  width: 100%; }
+  width: 100%;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  transition: all 500ms ease;
+  -webkit-transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+  opacity: 0; }
   .search-results .result {
     display: block;
     float: left;
     width: 100%;
-    padding: 10px 20px;
-    border-bottom: 1px solid #f1f1f1; }
+    padding: 10px 15px;
+    border-radius: 5px; }
     .search-results .result:hover {
+      cursor: pointer;
       background-color: #6840e5; }
+      .search-results .result:hover .name, .search-results .result:hover .number {
+        color: #ffffff; }
     .search-results .result .number, .search-results .result .name, .search-results .result .network {
       float: left; }
     .search-results .result .number {
       font-size: 14px;
       line-height: 2;
-      width: 10%; }
+      width: 7%; }
     .search-results .result .name {
       font-size: 14px;
       font-weight: bold;
-      width: 50%;
+      width: 53%;
       line-height: 2; }
     .search-results .result .network {
       font-size: 12px;
       width: 40%;
       padding: 5px;
       text-align: center;
-      border: 3px solid #f2f2f2;
+      background-color: #f2f2f2;
       border-radius: 5px; }
+  .search-results.show {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1; }
 
 .fade-in {
   -webkit-animation: 500ms fade-in;
