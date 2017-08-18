@@ -1,31 +1,22 @@
 .popup{
   position: fixed;
-  z-index: 3000;
   top: 0;
   right: 0;
+  z-index: 1000;
+  background-color: transparent;
+  width: 500px;
   height: 100%;
-  width: 100%;
-  background-color: transparentize($base-color, 0.05);
-  opacity: 0;
-
+  @include transition(all 500ms);
   @include transforms(translate(100%, 0));
-  @include transition(opacity 500ms);
 
-  &.open{
-    opacity: 1;
-    @include transforms(translate(0, 0));
-  }
-
-  .center{
-    position: absolute;
-    top: 50%;
+  @media(max-width: 991px){
     width: 100%;
-    @include transforms(translate(0, -50%));
   }
 
   .content{
-    position: relative;
-    margin: auto;
+    position: absolute;
+    right: 50px;
+    top: 120px;
     display: block;
     width: 100%;
     max-width: 400px;
@@ -50,6 +41,12 @@
         opacity: 1;
       }
     }
+
+    @media(max-width: 991px){
+      top: 70px;
+      right: 20px;
+      width: 90%;
+    }
   }
 
   h3{
@@ -59,42 +56,13 @@
   }
 
   .button{
-    width: 100%;
+    margin-top: 20px;
+    min-width: 50%;
+    float: right;
   }
 
-  @media(max-width: 991px){
-      .content{
-        width: 90%;
-      }
-  }
-}
-
-.popup{
-  &.slide-down{
-    z-index: 1000;
-    background-color: transparent;
-    width: 50%;
-    @include transition(all 500ms);
-    @include transforms(translate(100%, 0));
-
-    .content{
-      position: absolute;
-      right: 50px;
-      top: 110px;
-
-      @media(max-width: 991px){
-        top: 70px;
-        right: 20px;
-      }
-    }
-
-    @media(max-width: 991px){
-      width: 100%;
-    }
-
-    &.open{
-      opacity: 1;
-      @include transforms(translate(0, 0));
-    }
+  &.open{
+    opacity: 1;
+    @include transforms(translate(0, 0));
   }
 }
