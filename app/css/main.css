@@ -1827,6 +1827,7 @@ h1 {
     border-radius: 7px;
     padding: 40px 30px 20px 30px;
     background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     -webkit-box-shadow: 0 30px 65px -30px rgba(0, 0, 0, 0.3);
     -ms-box-shadow: 0 30px 65px -30px rgba(0, 0, 0, 0.3);
     box-shadow: 0 30px 65px -30px rgba(0, 0, 0, 0.3); }
@@ -1853,15 +1854,26 @@ h1 {
       width: 90%; } }
 
 .popup.slide-down {
-  background-color: #ffffff;
-  width: 100%;
-  height: 220px;
-  -webkit-transform: translate(0, -100%);
-  -ms-transform: translate(0, -100%);
-  transform: translate(0, -100%); }
+  z-index: 1000;
+  background-color: transparent;
+  width: 50%;
+  -webkit-transition: all 500ms;
+  -ms-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0); }
   .popup.slide-down .content {
-    max-height: none;
-    padding: 0; }
+    position: absolute;
+    right: 50px;
+    top: 110px; }
+    @media (max-width: 991px) {
+      .popup.slide-down .content {
+        top: 70px;
+        right: 20px; } }
+  @media (max-width: 991px) {
+    .popup.slide-down {
+      width: 100%; } }
   .popup.slide-down.open {
     opacity: 1;
     -webkit-transform: translate(0, 0);
