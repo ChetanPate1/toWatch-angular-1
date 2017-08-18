@@ -26,23 +26,22 @@
    </div>
 </div>
 
-<div class="popup slide-down" ng-class="{ 'open': RewatchlistCtrl.popupOpen }">
-   <div class="center">
-      <div class="content">
-         <h3>Add To Rewatch</h3>
-         <form name="form">
-            <div class="form-element">
-               <label for="series">Series</label>
-               <span class="dripicons-chevron-down"></span>
-               <select name="series" ng-model="RewatchlistCtrl.seriesRef">
-                  <option ng-repeat="show in RewatchlistCtrl.shows" ng-selected="{{ show.$id == RewatchlistCtrl.seriesRef }}"
-                     value="{{ show.$id }}">{{ show.series }}
-                  </option>
-               </select>
-            </div>
-            <button class="button red" ng-click="RewatchlistCtrl.popupOpen = false">cancel</button>
-            <button class="button pull-right" ng-click="RewatchlistCtrl.add()">add</button>
-         </form>
-      </div>
+<div class="popup" ng-class="{ 'open': RewatchlistCtrl.popupOpen }">
+   <div class="content">
+      <button class="close-button" ng-click="RewatchlistCtrl.popupOpen = false" type="button" name="close"><span class="dripicons-cross"></span></button>
+
+      <form name="form">
+         <div class="form-element">
+            <label for="series">Series</label>
+            <span class="dripicons-chevron-down"></span>
+            <select name="series" ng-model="RewatchlistCtrl.seriesRef">
+               <option ng-repeat="show in RewatchlistCtrl.shows" ng-selected="{{ show.$id == RewatchlistCtrl.seriesRef }}"
+                  value="{{ show.$id }}">{{ show.series }}
+               </option>
+            </select>
+         </div>
+
+         <button class="button pull-right" ng-click="RewatchlistCtrl.add()">add</button>
+      </form>
    </div>
 </div>

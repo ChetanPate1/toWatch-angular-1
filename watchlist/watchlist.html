@@ -25,53 +25,52 @@
    </div>
 </div>
 
-<div class="popup" ng-class="{ 'open': WatchlistCtrl.popupOpen }" ng-click="ShowsCtrl.popupOpen = false">
-   <div class="center">
-      <div class="content">
-         <h3>Add To Watchlist</h3>
-         <form name="form">
-            <div class="form-element">
-               <label for="series">Series Name</label>
-               <span class="dripicons-chevron-down"></span>
-               <select name="series" ng-model="WatchlistCtrl.seriesRef" ng-change="WatchlistCtrl.season = ''; WatchlistCtrl.episode = ''">
-                  <option ng-repeat="show in WatchlistCtrl.shows | orderBy: 'series'" ng-selected="{{ show.$id == WatchlistCtrl.seriesRef }}"
-                     value="{{ show.$id }}"
-                     ng-if="show.status == 'Running' && !WatchlistCtrl.seriesAlreadyAdded(show.$id)" >{{ show.series }}
-                  </option>
-               </select>
-            </div>
+<div class="popup" ng-class="{ 'open': WatchlistCtrl.popupOpen }">
+   <div class="content">
+      <button class="close-button" ng-click="WatchlistCtrl.popupOpen = false" type="button" name="close"><span class="dripicons-cross"></span></button>
 
-            <div class="form-element">
-               <label for="seasons">Seasons</label>
-               <div class="select-series">
-                  <div class="col-xs-3" ng-repeat="season in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons">
-                     <label class="radio" ng-class="{'selected' : WatchlistCtrl.season == $index + 1 }" >
-                        <input type="radio" ng-model="WatchlistCtrl.season" value="{{ $index + 1 }}" >
-                           {{ $index + 1 }}
-                     </label>
-                  </div>
-                  <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.seriesRef }">Select a season</span>
+      <form name="form">
+         <div class="form-element">
+            <label for="series">Series Name</label>
+            <span class="dripicons-chevron-down"></span>
+            <select name="series" ng-model="WatchlistCtrl.seriesRef" ng-change="WatchlistCtrl.season = ''; WatchlistCtrl.episode = ''">
+               <option ng-repeat="show in WatchlistCtrl.shows | orderBy: 'series'" ng-selected="{{ show.$id == WatchlistCtrl.seriesRef }}"
+                  value="{{ show.$id }}"
+                  ng-if="(show.status == 'In Development' || show.status == 'Running') && !WatchlistCtrl.seriesAlreadyAdded(show.$id)" >{{ show.series }}
+               </option>
+            </select>
+         </div>
+
+         <div class="form-element">
+            <label for="seasons">Seasons</label>
+            <div class="select-series">
+               <div class="col-xs-3" ng-repeat="season in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons">
+                  <label class="radio" ng-class="{'selected' : WatchlistCtrl.season == $index + 1 }" >
+                     <input type="radio" ng-model="WatchlistCtrl.season" value="{{ $index + 1 }}" >
+                        {{ $index + 1 }}
+                  </label>
                </div>
+               <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.seriesRef }">Select a season</span>
             </div>
+         </div>
 
-            <div class="form-element">
-               <label for="seasons">Episodes</label>
-               <div class="select-series">
-                  <div class="col-xs-3"
-                     ng-repeat="episode in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons[ 'season_' + WatchlistCtrl.season ]"
-                     ng-if="WatchlistCtrl.checkAired(episode.airDate)">
-                     <label class="radio" ng-class="{'selected' : WatchlistCtrl.episode == $index }" >
-                        <input type="radio" ng-model="WatchlistCtrl.episode" value="{{ $index }}" >
-                           {{ $index }}
-                     </label>
-                  </div>
-                  <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.season }">Select a episode</span>
+         <div class="form-element">
+            <label for="seasons">Episodes</label>
+            <div class="select-series">
+               <div class="col-xs-3"
+                  ng-repeat="episode in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons[ 'season_' + WatchlistCtrl.season ]"
+                  ng-if="WatchlistCtrl.checkAired(episode.airDate) || episode.number == 1">
+
+                  <label class="radio" ng-class="{'selected' : WatchlistCtrl.episode == $index }" >
+                     <input type="radio" ng-model="WatchlistCtrl.episode" value="{{ $index }}" >
+                        {{ $index }}
+                  </label>
                </div>
+               <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.season }">Select a episode</span>
             </div>
+         </div>
 
-            <button class="button red" ng-click="WatchlistCtrl.popupOpen = false">cancel</button>
-            <button class="button pull-right" ng-click="WatchlistCtrl.add()" ng-disabled="!WatchlistCtrl.seriesRef || !WatchlistCtrl.season || !WatchlistCtrl.episode">add</button>
-         </form>
-      </div>
+         <button class="button" ng-click="WatchlistCtrl.add()" ng-disabled="!WatchlistCtrl.seriesRef || !WatchlistCtrl.season || !WatchlistCtrl.episode">add</button>
+      </form>
    </div>
 </div>
