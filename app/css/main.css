@@ -1158,6 +1158,57 @@ h1 {
     font-weight: bold;
     position: relative;
     color: #ffffff; }
+  .show-card .delete-button {
+    z-index: 100;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 15px;
+    width: 90%;
+    margin: auto;
+    -webkit-transform: translate(0, 100px);
+    -ms-transform: translate(0, 100px);
+    transform: translate(0, 100px); }
+    .show-card .delete-button.red {
+      background-color: #FF5154;
+      color: #ffffff; }
+  .show-card.deleteable:focus .delete-button, .show-card.deleteable:hover .delete-button {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0); }
+
+.show-card {
+  overflow: hidden; }
+  .show-card .shutter-delete {
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    -webkit-transform: translate(0, -115%);
+    -ms-transform: translate(0, -115%);
+    transform: translate(0, -115%);
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    transition: all 300ms ease; }
+    .show-card .shutter-delete h2 {
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 100px;
+      left: 0; }
+    .show-card .shutter-delete .button {
+      margin: 210px auto 0 auto;
+      display: block;
+      max-width: 100px; }
+    .show-card .shutter-delete.open {
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+      opacity: 1; }
 
 .season-info {
   padding-top: 50px;

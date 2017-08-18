@@ -23,9 +23,13 @@ function showCard(episodateApi, helperFunctions) {
    };
 
    function link(scope) {
+      scope.deleteable = true;
+      scope.deleteOpen = false;
+
       var now = new Date().getTime();
 
       if (scope.index == undefined) {
+         scope.deleteable = false;
          return;
       }
 
