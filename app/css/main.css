@@ -1796,15 +1796,15 @@ h1 {
   top: 0;
   right: 0;
   height: 100%;
-  width: 50%;
-  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  background-color: rgba(104, 64, 229, 0.95);
   opacity: 0;
   -webkit-transform: translate(100%, 0);
   -ms-transform: translate(100%, 0);
   transform: translate(100%, 0);
-  -webkit-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  transition: all 500ms ease; }
+  -webkit-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  transition: opacity 500ms; }
   .popup.open {
     opacity: 1;
     -webkit-transform: translate(0, 0);
@@ -1824,18 +1824,33 @@ h1 {
     width: 100%;
     max-width: 400px;
     min-height: 200px;
-    border-radius: 5px;
-    padding: 20px;
-    background-color: #ffffff; }
+    border-radius: 7px;
+    padding: 40px 30px 20px 30px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 30px 65px -30px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 30px 65px -30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 65px -30px rgba(0, 0, 0, 0.3); }
+    .popup .content .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: transparent;
+      line-height: 1;
+      border: none;
+      padding: 10px;
+      font-size: 20px;
+      opacity: 0.6; }
+      .popup .content .close-button:hover {
+        opacity: 1; }
   .popup h3 {
     font-weight: bold;
     margin-bottom: 30px;
     margin-top: 10px; }
+  .popup .button {
+    width: 100%; }
   @media (max-width: 991px) {
-    .popup {
-      width: 100%; }
-      .popup .content {
-        width: 90%; } }
+    .popup .content {
+      width: 90%; } }
 
 .popup.slide-down {
   background-color: #ffffff;

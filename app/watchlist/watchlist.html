@@ -25,10 +25,11 @@
    </div>
 </div>
 
-<div class="popup" ng-class="{ 'open': WatchlistCtrl.popupOpen }" ng-click="ShowsCtrl.popupOpen = false">
+<div class="popup" ng-class="{ 'open': WatchlistCtrl.popupOpen }">
    <div class="center">
       <div class="content">
-         <h3>Add To Watchlist</h3>
+         <button class="close-button" ng-click="WatchlistCtrl.popupOpen = false" type="button" name="close"><span class="dripicons-cross"></span></button>
+
          <form name="form">
             <div class="form-element">
                <label for="series">Series Name</label>
@@ -69,8 +70,7 @@
                </div>
             </div>
 
-            <button class="button red" ng-click="WatchlistCtrl.popupOpen = false">cancel</button>
-            <button class="button pull-right" ng-click="WatchlistCtrl.add()" ng-disabled="!WatchlistCtrl.seriesRef || !WatchlistCtrl.season || !WatchlistCtrl.episode">add</button>
+            <button class="button" ng-click="WatchlistCtrl.add()" ng-disabled="!WatchlistCtrl.seriesRef || !WatchlistCtrl.season || !WatchlistCtrl.episode">add</button>
          </form>
       </div>
    </div>
