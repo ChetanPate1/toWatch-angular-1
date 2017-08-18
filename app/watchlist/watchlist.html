@@ -59,7 +59,8 @@
             <div class="select-series">
                <div class="col-xs-3"
                   ng-repeat="episode in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons[ 'season_' + WatchlistCtrl.season ]"
-                  ng-if="WatchlistCtrl.checkAired(episode.airDate)">
+                  ng-if="WatchlistCtrl.checkAired(episode.airDate) || episode.number == 1">
+
                   <label class="radio" ng-class="{'selected' : WatchlistCtrl.episode == $index }" >
                      <input type="radio" ng-model="WatchlistCtrl.episode" value="{{ $index }}" >
                         {{ $index }}

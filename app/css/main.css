@@ -1612,7 +1612,7 @@ h1 {
     cursor: pointer; }
 
 .form-element.search {
-  min-width: 400px;
+  min-width: 500px;
   z-index: 200; }
   .form-element.search input {
     padding-left: 40px;
@@ -1885,6 +1885,7 @@ h1 {
       line-height: 2;
       width: 7%; }
     .search-results .result .name {
+      padding: 0 5px 0 0;
       font-size: 14px;
       font-weight: bold;
       width: 53%;
@@ -1896,6 +1897,16 @@ h1 {
       text-align: center;
       background-color: #f2f2f2;
       border-radius: 5px; }
+    @media (max-width: 500px) {
+      .search-results .result {
+        padding-top: 20px;
+        min-height: 60px; }
+        .search-results .result .number, .search-results .result .name {
+          padding: 4px 0 0 0;
+          font-size: 12px;
+          line-height: 1; }
+        .search-results .result .name {
+          padding: 4px 10px 0 0; } }
   .search-results.show {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
