@@ -18,6 +18,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    vm.checkAired = checkAired;
    vm.openPopup = openPopup;
    vm.seriesAlreadyAdded = seriesAlreadyAdded;
+   vm.checkShowExist = checkShowExist;
 
    function add() {
       var list = {
@@ -72,5 +73,14 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
       }
 
       return exists;
+   }
+
+   function checkShowExist(showId, index) {
+      if(vm.shows.$getRecord(showId)){
+         return true;
+      }else {
+         vm.watchlist.$remove(index);
+         return false;
+      }
    }
 }

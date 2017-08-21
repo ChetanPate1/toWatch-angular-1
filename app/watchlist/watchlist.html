@@ -4,7 +4,7 @@
          <button class="button pull-right margin-bottom-30" ng-click="WatchlistCtrl.openPopup()">Track a show</div>
       </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-4 fade-in" ng-repeat="watchlist in WatchlistCtrl.watchlist" ng-if="watchlist">
+      <div class="col-xs-12 col-sm-6 col-md-4 fade-in" ng-repeat="watchlist in WatchlistCtrl.watchlist" ng-if="WatchlistCtrl.shows.$resolved && WatchlistCtrl.checkShowExist(watchlist.showId, $index)">
          <watchlist-card
             heading="WatchlistCtrl.shows.$getRecord( watchlist.showId ).series"
             subheading="'Season '+ watchlist.on.season +' Episode '+ watchlist.on.episode"
@@ -13,7 +13,7 @@
             seasons="watchlist.unwatched"
             currentseason="watchlist.on.season"
             watchlistobj="WatchlistCtrl.watchlist"
-            index="$index">
+            index="$index" >
 
             <frost-glass imgsrc="WatchlistCtrl.shows.$getRecord( watchlist.showId ).imgSrc" >
                <countdown-timer to="WatchlistCtrl.nextAired( watchlist )" ></countdown-timer>

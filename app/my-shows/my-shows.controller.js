@@ -8,6 +8,7 @@ function MyShowsController(currentAuth, firebaseArray, episodateApi, helperFunct
    var vm = this;
    var ref = 'shows/' + currentAuth.uid;
 
+   vm.uid = currentAuth.uid;
    vm.foundShows = [];
    vm.sendStatus = {
       disableButton: false,

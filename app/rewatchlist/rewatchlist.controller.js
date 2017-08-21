@@ -14,6 +14,7 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
    vm.shows = firebaseArray.getByRef(showsRef);
    vm.add = add;
    vm.openPopup = openPopup;
+   vm.checkShowExist = checkShowExist;
 
    function add() {
       var list = {
@@ -31,5 +32,14 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
 
    function openPopup() {
       vm.popupOpen = true;
+   }
+
+   function checkShowExist(showId, index) {
+      if(vm.shows.$getRecord(showId)){
+         return true;
+      }else {
+         vm.rewatch.$remove(index);
+         return false;
+      }
    }
 }

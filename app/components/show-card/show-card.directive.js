@@ -7,9 +7,9 @@ angular
    .module('app')
    .directive('showCard', showCard);
 
-showCard.$inject = ['episodateApi', 'helperFunctions'];
+showCard.$inject = ['episodateApi', 'helperFunctions', 'firebaseArray'];
 
-function showCard(episodateApi, helperFunctions) {
+function showCard(episodateApi, helperFunctions, firebaseArray) {
    var directive = {
       link: link,
       templateUrl: 'components/show-card/show-card.html',
@@ -23,10 +23,10 @@ function showCard(episodateApi, helperFunctions) {
    };
 
    function link(scope) {
+      var now = new Date().getTime();
+
       scope.deleteable = true;
       scope.deleteOpen = false;
-
-      var now = new Date().getTime();
 
       if (scope.index == undefined) {
          scope.deleteable = false;
