@@ -5,6 +5,8 @@
   @include box-shadow(0 20px 40px -20px rgba(0, 0, 0, 0.3));
   @include transition(all 500ms ease);
   @include transforms(translate(-100%, 0));
+  max-height: 220px;
+  overflow-y: auto;
   opacity: 0;
 
   .result{

@@ -1866,6 +1866,8 @@ h1 {
   -webkit-transform: translate(-100%, 0);
   -ms-transform: translate(-100%, 0);
   transform: translate(-100%, 0);
+  max-height: 220px;
+  overflow-y: auto;
   opacity: 0; }
   .search-results .result {
     display: block;
