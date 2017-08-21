@@ -5,4 +5,4 @@ Tracks shows and air dates
 Angular & Firebase
 
 ## Screenshot
-[Watchlist page](https://github.com/ChetanPate1/toWatch/blob/master/screenshot-watchlist.jpg)
+[Watchlist page](https://github.com/ChetanPate1/toWatch/blob/dev/screenshot-watchlist.jpg)
