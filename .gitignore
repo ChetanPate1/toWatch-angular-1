@@ -8,6 +8,7 @@ yarn-error.log*
 firebase-debug.log*
 .firebaserc
 /functions
+towatch-backup.json
 
 # Runtime data
 pids
