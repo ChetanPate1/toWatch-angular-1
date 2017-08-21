@@ -126,16 +126,6 @@
 
       &.disabled{
         opacity: 0.8;
-
-        .watched{
-          .dripicons-preview{
-            cursor: default;
-
-            &:hover{
-              opacity: 0.5;
-            }
-          }
-        }
       }
     }
   }

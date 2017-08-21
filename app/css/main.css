@@ -1495,10 +1495,6 @@ h1 {
       transition: opacity 500ms ease; }
       .season-tabs .items li.disabled {
         opacity: 0.8; }
-        .season-tabs .items li.disabled .watched .dripicons-preview {
-          cursor: default; }
-          .season-tabs .items li.disabled .watched .dripicons-preview:hover {
-            opacity: 0.5; }
 
 .season-tabs .tabs {
   min-height: 70px;
