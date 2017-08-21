@@ -39,11 +39,7 @@ function config($stateProvider, $urlRouterProvider){
          controller: 'RewatchlistController',
          controllerAs: 'RewatchlistCtrl',
          resolve: {
-        // controller will not be loaded until $requireSignIn resolves
-        // Auth refers to our $firebaseAuth wrapper in the factory below
            'currentAuth': ['firebaseAuth', function(firebaseAuth) {
-             // $requireSignIn returns a promise so the resolve waits for it to complete
-             // If the promise is rejected, it will throw a $stateChangeError (see above)
              return firebaseAuth.$requireSignIn();
            }]
          }
@@ -54,11 +50,7 @@ function config($stateProvider, $urlRouterProvider){
          controller: 'MyShowsController',
          controllerAs: 'MyShowsCtrl',
          resolve: {
-        // controller will not be loaded until $requireSignIn resolves
-        // Auth refers to our $firebaseAuth wrapper in the factory below
            'currentAuth': ['firebaseAuth', function(firebaseAuth) {
-             // $requireSignIn returns a promise so the resolve waits for it to complete
-             // If the promise is rejected, it will throw a $stateChangeError (see above)
              return firebaseAuth.$requireSignIn();
            }]
          }

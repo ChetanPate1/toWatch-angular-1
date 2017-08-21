@@ -14,6 +14,7 @@ function SigninController(firebaseAuth, $state, $timeout){
 
    vm.login = login;
    vm.signup = signup;
+   vm.signInAnonymously = signInAnonymously;
 
    function login() {
       var user = {
@@ -47,6 +48,10 @@ function SigninController(firebaseAuth, $state, $timeout){
             validation(error);
          }
       );
+   }
+
+   function signInAnonymously() {
+      firebaseAuth.$signInAnonymously();
    }
 
    function validation(error) {

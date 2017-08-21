@@ -11,9 +11,11 @@
           <label for="password">Password</label>
           <input name="password" type="password" ng-model="SigninCtrl.password" required>
         </div>
+
         <div class="form-element">
            <button type="submit" class="button pull-right" ng-click="SigninCtrl.login()" ng-disabled="SigninCtrl.signinForm.$invalid">Sign in</button>
         </div>
+
         <div class="form-element validation">
           <div class="message" ng-class="{ 'show': SigninCtrl.validation.show }">{{ SigninCtrl.validation.message }}</div>
         </div>
