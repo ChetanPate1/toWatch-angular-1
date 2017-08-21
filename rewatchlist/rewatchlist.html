@@ -4,7 +4,7 @@
          <button class="button pull-right margin-bottom-30" ng-click="RewatchlistCtrl.openPopup()">Rewatch a show</div>
       </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-4 fade-in" ng-repeat="rewatch in RewatchlistCtrl.rewatch" ng-if="rewatch.show">
+      <div class="col-xs-12 col-sm-6 col-md-4 fade-in" ng-repeat="rewatch in RewatchlistCtrl.rewatch" ng-if="RewatchlistCtrl.shows.$resolved && RewatchlistCtrl.checkShowExist(rewatch.showId, $index)">
          <rewatch-card
             heading="RewatchlistCtrl.shows.$getRecord( rewatch.showId ).series"
             subheading="'Season '+ rewatch.on.season +' Episode ' + rewatch.on.episode"
