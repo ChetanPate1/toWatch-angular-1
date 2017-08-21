@@ -15,10 +15,16 @@ function MyShowsController(currentAuth, firebaseArray, episodateApi, helperFunct
       loader: false,
       validation: ''
    };
+   vm.toast = {
+      content: '',
+      action: '',
+      show: false
+   };
 
    vm.shows = firebaseArray.getByRef(ref);
    vm.add = add;
    vm.find = find;
+   vm.showToast = showToast;
 
    function add(series) {
       vm.foundShows = [];
@@ -28,6 +34,7 @@ function MyShowsController(currentAuth, firebaseArray, episodateApi, helperFunct
             showData.requestData = series;
 
             $timeout(function() {
+               showToast(showData.series, 'added to My Shows');
                firebaseArray.save(ref, showData);
                vm.series = '';
             }, 2000);
@@ -72,5 +79,14 @@ function MyShowsController(currentAuth, firebaseArray, episodateApi, helperFunct
          }
       }
       return exists;
+   }
+
+   function showToast(content, action) {
+      vm.toast.content = content;
+      vm.toast.action = action;
+      vm.toast.show = true;
+      $timeout(function() {
+         vm.toast.show = false;
+      }, 3000);
    }
 }

@@ -11,6 +11,10 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    var today = new Date().getTime();
 
    vm.popupOpen = false;
+   vm.toast = {
+      content: '',
+      show: false
+   };
    vm.watchlist = firebaseArray.getByRef(watchlistRef);
    vm.shows = firebaseArray.getByRef(showsRef);
    vm.add = add;
@@ -19,8 +23,10 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    vm.openPopup = openPopup;
    vm.seriesAlreadyAdded = seriesAlreadyAdded;
    vm.checkShowExist = checkShowExist;
+   vm.showToast = showToast;
 
    function add() {
+      var show = vm.shows.$getRecord(vm.seriesRef).series;
       var list = {
          lastUpdated: today,
          upToDate: false,
@@ -34,6 +40,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
       list['unwatched'] = seriesInitService.initWatchlist(list, vm.shows);
 
       firebaseArray.save(watchlistRef, list);
+      showToast(show, 'added to Watch list');
       vm.seriesRef = '';
       vm.season = '';
       vm.episode = '';
@@ -82,5 +89,14 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
          vm.watchlist.$remove(index);
          return false;
       }
+   }
+
+   function showToast(content, action) {
+      vm.toast.content = content;
+      vm.toast.action = action;
+      vm.toast.show = true;
+      $timeout(function() {
+         vm.toast.show = false;
+      }, 3000);
    }
 }

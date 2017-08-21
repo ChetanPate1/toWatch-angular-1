@@ -786,6 +786,35 @@ h1 {
       top: 10px;
       left: 15px; } }
 
+.toast {
+  z-index: 5000;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: block;
+  border-radius: 7px;
+  padding: 20px 30px;
+  background-color: #6840e5;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  opacity: 0;
+  -webkit-box-shadow: 0 35px 35px -20px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 35px 35px -20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 35px 35px -20px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translate(120%, 0);
+  -ms-transform: translate(120%, 0);
+  transform: translate(120%, 0);
+  -webkit-transition: opacity 2s ease;
+  -ms-transition: opacity 2s ease;
+  transition: opacity 2s ease; }
+  .toast strong {
+    color: #ffffff; }
+  .toast.show {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0); }
+
 .no-content {
   position: absolute;
   width: 100%;

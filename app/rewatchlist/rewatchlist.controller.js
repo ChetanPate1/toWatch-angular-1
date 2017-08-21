@@ -10,13 +10,20 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
    var showsRef = 'shows/' + currentAuth.uid;
 
    vm.popupOpen = false;
+   vm.toast = {
+      content: '',
+      action: '',
+      show: false
+   };
    vm.rewatch = firebaseArray.getByRef(rewatchRef);
    vm.shows = firebaseArray.getByRef(showsRef);
    vm.add = add;
    vm.openPopup = openPopup;
    vm.checkShowExist = checkShowExist;
+   vm.showToast = showToast;
 
    function add() {
+      var show = vm.shows.$getRecord(vm.seriesRef).series;
       var list = {
          showId: vm.seriesRef,
          on: {
@@ -26,6 +33,7 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
          show: seriesInitService.initRewatchlist(vm.seriesRef, vm.shows)
       };
 
+      showToast(show, 'added to Rewatch list');
       firebaseArray.save(rewatchRef, list);
       vm.popupOpen = false;
    }
@@ -41,5 +49,14 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
          vm.rewatch.$remove(index);
          return false;
       }
+   }
+
+   function showToast(content, action) {
+      vm.toast.content = content;
+      vm.toast.action = action;
+      vm.toast.show = true;
+      $timeout(function() {
+         vm.toast.show = false;
+      }, 3000);
    }
 }

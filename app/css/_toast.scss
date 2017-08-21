@@ -1,0 +1,25 @@
+.toast{
+  z-index: 5000;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: block;
+  border-radius: 7px;
+  padding: 20px 30px;
+  background-color: #6840e5;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  
+  strong{
+    color: #ffffff;
+  }
+  opacity: 0;
+  @include box-shadow(0 35px 35px -20px rgba(0, 0, 0, 0.3));
+  @include transforms(translate(120%, 0));
+  @include transition(opacity 2s ease);
+
+  &.show{
+    opacity: 1;
+    @include transforms(translate(0, 0));
+  }
+}
