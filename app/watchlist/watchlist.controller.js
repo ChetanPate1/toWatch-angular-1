@@ -48,7 +48,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
    }
 
    function nextAired(watchlist) {
-      var nextAired, i = 1, airDate = 0;
+      var nextAired, i = 1;
       var show = vm.shows.$getRecord(watchlist.showId);
       var seasons = helperFunctions.objSize(show.seasons);
       var latestSeason = show.seasons['season_' + seasons];

@@ -60,7 +60,7 @@ function watchlistCard(helperFunctions, seriesInitService) {
          }else {
             watchlist.watched = !watchlist.watched;
             countWatched(seasoninfo, watchlistobj, index);
-            watchlistobj.$save(index);
+            // watchlistobj.$save(index);
          }
       }
 
@@ -90,7 +90,8 @@ function watchlistCard(helperFunctions, seriesInitService) {
          var nextSeason = currentSeasonNum + 1;
          var isLastSeason = watchlistobj[index].unwatched['season_'+ nextSeason] == undefined;
          var seasonsLimit = helperFunctions.objSize(seasoninfo) + currentSeasonNum;
-         var count = 0, j = 1, totalEpisodes = 0, season, on = 1, currentSeason = seasoninfo['season_' + currentSeasonNum];
+         var count = 0, j = 1, totalEpisodes = 0, season, on = 1;
+         var currentSeason = seasoninfo['season_' + currentSeasonNum];
 
          for (currentSeasonNum; currentSeasonNum < seasonsLimit; currentSeasonNum++) {
             season = seasoninfo['season_' + currentSeasonNum];
@@ -108,16 +109,14 @@ function watchlistCard(helperFunctions, seriesInitService) {
          }
 
          if(on == currentSeason.length){
-            watchlistobj[index].on.season = nextSeason;
-            watchlistobj[index].on.episode = 1;
+            if (isLastSeason){
+               watchlistobj[index].upToDate = true;
+            }else {
+               watchlistobj[index].on.season = nextSeason;
+               watchlistobj[index].on.episode = 1;
+            }
          }else {
             watchlistobj[index].on.episode = on;
-         }
-
-         if(isLastSeason){
-            if(on == currentSeason.length){
-               watchlistobj[index].upToDate = true;
-            }
          }
       }
 

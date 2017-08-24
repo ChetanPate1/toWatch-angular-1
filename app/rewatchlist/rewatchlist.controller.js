@@ -15,6 +15,7 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
       action: '',
       show: false
    };
+   vm.addButtonDisabled = false;
    vm.rewatch = firebaseArray.getByRef(rewatchRef);
    vm.shows = firebaseArray.getByRef(showsRef);
    vm.add = add;
@@ -23,6 +24,7 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
    vm.showToast = showToast;
 
    function add() {
+      vm.addButtonDisabled = true;
       var show = vm.shows.$getRecord(vm.seriesRef).series;
       var list = {
          showId: vm.seriesRef,
@@ -35,7 +37,11 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
 
       showToast(show, 'added to Rewatch list');
       firebaseArray.save(rewatchRef, list);
-      vm.popupOpen = false;
+      vm.seriesRef = '';
+      $timeout(function() {
+         vm.addButtonDisabled = false;
+         vm.popupOpen = false;
+      }, 2000);
    }
 
    function openPopup() {
