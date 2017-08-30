@@ -21,7 +21,8 @@ function watchlistCard(helperFunctions, seriesInitService) {
          seasons: '=',
          currentseason: '=',
          watchlistobj: '=',
-         index: '='
+         index: '=',
+         shows: '='
       }
    };
 
@@ -43,7 +44,7 @@ function watchlistCard(helperFunctions, seriesInitService) {
       scope.limitLength = limitLength;
       scope.behindCount = behindCount;
 
-      update(scope.watchlistobj, scope.index);
+      update(scope.watchlistobj, scope.index, scope.shows);
 
       function toggleOpen(value) {
          scope[value] = !scope[value];
@@ -60,7 +61,7 @@ function watchlistCard(helperFunctions, seriesInitService) {
          }else {
             watchlist.watched = !watchlist.watched;
             countWatched(seasoninfo, watchlistobj, index);
-            // watchlistobj.$save(index);
+            watchlistobj.$save(index);
          }
       }
 
@@ -162,12 +163,12 @@ function watchlistCard(helperFunctions, seriesInitService) {
          return (count > 0) ? '-'+ count : count;
       }
 
-      function update(watchlists, index) {
+      function update(watchlists, index, shows) {
          var watchlist = watchlists[index];
 
          if (helperFunctions.hasDaysPast(watchlist.lastUpdated, 7)) {
             console.log('update');
-            watchlist.unwatched = seriesInitService.initWatchlist(watchlist);
+            watchlist.unwatched = seriesInitService.initWatchlist(watchlist, shows);
             watchlist.lastUpdated = new Date().getTime();
 
             watchlists.$save(index);

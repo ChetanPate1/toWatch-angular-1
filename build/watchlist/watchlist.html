@@ -14,7 +14,8 @@
             seasons="watchlist.unwatched"
             currentseason="watchlist.on.season"
             watchlistobj="WatchlistCtrl.watchlist"
-            index="$index" >
+            index="$index"
+            shows="WatchlistCtrl.shows" >
 
             <frost-glass imgsrc="WatchlistCtrl.shows.$getRecord( watchlist.showId ).imgSrc" >
                <countdown-timer to="WatchlistCtrl.nextAired( watchlist )" ></countdown-timer>
