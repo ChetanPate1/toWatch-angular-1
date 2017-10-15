@@ -1,4 +1,4 @@
 # toWatch
 Tracks shows and air dates
 
-[link](https://chetanpate1.github.io/toWatch)
+[toWatch](https://chetanpate1.github.io/toWatch)
