@@ -166,7 +166,7 @@ function watchlistCard(helperFunctions, seriesInitService) {
       function update(watchlists, index, shows) {
          var watchlist = watchlists[index];
 
-         if (helperFunctions.hasDaysPast(watchlist.lastUpdated, 7)) {
+         if (helperFunctions.hasDaysPast(watchlist.lastUpdated, 3)) {
             console.log('update');
             watchlist.unwatched = seriesInitService.initWatchlist(watchlist, shows);
             watchlist.lastUpdated = new Date().getTime();

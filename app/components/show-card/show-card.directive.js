@@ -42,7 +42,7 @@ function showCard(episodateApi, helperFunctions, firebaseArray) {
             return;
          }
 
-         if (helperFunctions.hasDaysPast(show.lastUpdated, 7)) {
+         if (helperFunctions.hasDaysPast(show.lastUpdated, 3)) {
 
             episodateApi.getShow(show.requestData).then(function(data) {
                if(data){
