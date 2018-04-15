@@ -1,30 +1,33 @@
 <toast content="WatchlistCtrl.toast.content" action="WatchlistCtrl.toast.action" show="WatchlistCtrl.toast.show"></toast>
-<div class="container">
+<div class="container" ng-class="{'container-lg' : WatchlistCtrl.watchlist.length > 3 }">
    <div class="row">
       <div class="col-xs-12">
          <button class="button pull-right margin-bottom-30" ng-click="WatchlistCtrl.openPopup()">Track a show</div>
-      </div>
+         </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-4 fade-in" ng-repeat="watchlist in WatchlistCtrl.watchlist" ng-if="WatchlistCtrl.shows.$resolved && WatchlistCtrl.checkShowExist(watchlist.showId, $index)">
-         <watchlist-card
-            heading="WatchlistCtrl.shows.$getRecord( watchlist.showId ).series"
-            subheading="'Season '+ watchlist.on.season +' Episode '+ watchlist.on.episode"
-            details="WatchlistCtrl.shows.$getRecord( watchlist.showId ).seasons['season_'+ watchlist.on.season ][ watchlist.on.episode ].name"
-            imgsrc="WatchlistCtrl.shows.$getRecord( watchlist.showId ).imgSrc"
-            seasons="watchlist.unwatched"
-            currentseason="watchlist.on.season"
-            watchlistobj="WatchlistCtrl.watchlist"
-            index="$index"
-            shows="WatchlistCtrl.shows" >
+         <div class="col-xs-12 col-sm-6 fade-in"
+            ng-class="{'col-md-3' : WatchlistCtrl.watchlist.length > 3, 'col-md-4' : WatchlistCtrl.watchlist.length < 3 }"
+            ng-repeat="watchlist in WatchlistCtrl.watchlist"
+            ng-if="WatchlistCtrl.shows.$resolved && WatchlistCtrl.checkShowExist(watchlist.showId, $index)">
+            <watchlist-card
+               heading="WatchlistCtrl.shows.$getRecord( watchlist.showId ).series"
+               subheading="'Season '+ watchlist.on.season +' Episode '+ watchlist.on.episode"
+               details="WatchlistCtrl.shows.$getRecord( watchlist.showId ).seasons['season_'+ watchlist.on.season ][ watchlist.on.episode ].name"
+               imgsrc="WatchlistCtrl.shows.$getRecord( watchlist.showId ).imgSrc"
+               seasons="watchlist.unwatched"
+               currentseason="watchlist.on.season"
+               watchlistobj="WatchlistCtrl.watchlist"
+               index="$index"
+               shows="WatchlistCtrl.shows" >
 
-            <frost-glass imgsrc="WatchlistCtrl.shows.$getRecord( watchlist.showId ).imgSrc" >
-               <countdown-timer to="WatchlistCtrl.nextAired( watchlist )" ></countdown-timer>
-            </frost-glass>
-         </watchlist-card>
-      </div>
-
-      <no-content condition="!WatchlistCtrl.watchlist[0]" message="'Your watchlist is empty!'"></no-content>
+               <frost-glass imgsrc="WatchlistCtrl.shows.$getRecord( watchlist.showId ).imgSrc" >
+                  <countdown-timer to="WatchlistCtrl.nextAired( watchlist )" ></countdown-timer>
+               </frost-glass>
+      </watchlist-card>
    </div>
+
+   <no-content condition="!WatchlistCtrl.watchlist[0]" message="'Your watchlist is empty!'"></no-content>
+</div>
 </div>
 
 <div class="popup" ng-class="{ 'open': WatchlistCtrl.popupOpen }">
@@ -39,40 +42,40 @@
                <option ng-repeat="show in WatchlistCtrl.shows | orderBy: 'series'" ng-selected="{{ show.$id == WatchlistCtrl.seriesRef }}"
                   value="{{ show.$id }}"
                   ng-if="(show.status == 'In Development' || show.status == 'Running') && !WatchlistCtrl.seriesAlreadyAdded(show.$id)" >{{ show.series }}
-               </option>
-            </select>
-         </div>
+            </option>
+         </select>
+      </div>
 
-         <div class="form-element">
-            <label for="seasons">Seasons</label>
-            <div class="select-series">
-               <div class="col-xs-3" ng-repeat="season in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons">
-                  <label class="radio" ng-class="{'selected' : WatchlistCtrl.season == $index + 1 }" >
-                     <input type="radio" ng-model="WatchlistCtrl.season" value="{{ $index + 1 }}" >
-                        {{ $index + 1 }}
-                  </label>
-               </div>
-               <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.seriesRef }">Select a season</span>
+      <div class="form-element">
+         <label for="seasons">Seasons</label>
+         <div class="select-series">
+            <div class="col-xs-3" ng-repeat="season in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons">
+               <label class="radio" ng-class="{'selected' : WatchlistCtrl.season == $index + 1 }" >
+                  <input type="radio" ng-model="WatchlistCtrl.season" value="{{ $index + 1 }}" >
+                  {{ $index + 1 }}
+               </label>
             </div>
+            <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.seriesRef }">Select a season</span>
          </div>
+      </div>
 
-         <div class="form-element">
-            <label for="seasons">Episodes</label>
-            <div class="select-series">
-               <div class="col-xs-3"
-                  ng-repeat="episode in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons[ 'season_' + WatchlistCtrl.season ]"
-                  ng-if="WatchlistCtrl.checkAired(episode.airDate) || episode.number == 1">
+      <div class="form-element">
+         <label for="seasons">Episodes</label>
+         <div class="select-series">
+            <div class="col-xs-3"
+               ng-repeat="episode in WatchlistCtrl.shows.$getRecord( WatchlistCtrl.seriesRef ).seasons[ 'season_' + WatchlistCtrl.season ]"
+               ng-if="WatchlistCtrl.checkAired(episode.airDate) || episode.number == 1">
 
-                  <label class="radio" ng-class="{'selected' : WatchlistCtrl.episode == $index }" >
-                     <input type="radio" ng-model="WatchlistCtrl.episode" value="{{ $index }}" >
-                        {{ $index }}
-                  </label>
-               </div>
-               <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.season }">Select a episode</span>
-            </div>
+            <label class="radio" ng-class="{'selected' : WatchlistCtrl.episode == $index }" >
+               <input type="radio" ng-model="WatchlistCtrl.episode" value="{{ $index }}" >
+               {{ $index }}
+            </label>
          </div>
-
-         <button class="button" ng-click="WatchlistCtrl.add()" ng-disabled="!WatchlistCtrl.seriesRef || !WatchlistCtrl.season || !WatchlistCtrl.episode">add</button>
-      </form>
+         <span class="selected-none" ng-class="{'selected': !WatchlistCtrl.season }">Select a episode</span>
+      </div>
    </div>
+
+   <button class="button" ng-click="WatchlistCtrl.add()" ng-disabled="!WatchlistCtrl.seriesRef || !WatchlistCtrl.season || !WatchlistCtrl.episode">add</button>
+</form>
+</div>
 </div>

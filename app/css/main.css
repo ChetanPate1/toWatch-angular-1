@@ -657,6 +657,9 @@ h1 {
     .show-layout .show-card h2 {
       font-size: 20px; } }
 
+.container.container-lg {
+  width: 1400px; }
+
 .navigation-bar {
   position: relative;
   background-color: rgba(255, 255, 255, 0.95);
@@ -1940,7 +1943,7 @@ h1 {
     transform: translate(0, 0);
     opacity: 1; }
 
-.fade-in {
+A.fade-in {
   -webkit-animation: 500ms fade-in;
   -ms-animation: 500ms fade-in;
   animation: 500ms fade-in; }

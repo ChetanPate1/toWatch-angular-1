@@ -1,149 +1,149 @@
 .navigation-bar{
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.95);
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 1200;
-  padding-top: 50px;
+   position: relative;
+   background-color: rgba(255, 255, 255, 0.95);
+   position: fixed;
+   top: 0; left: 0;
+   width: 100%;
+   z-index: 1200;
+   padding-top: 50px;
 
-  .brand{
-    float: left;
-    font-weight: bold;
-    line-height: 56px;
-    font-size: 20px;
-    color: $base-color;
-  }
-
-  .links{
-    float: right;
-    margin: 0;
-    padding: 0;
-    display: block;
-
-    &.auth{
-      position: absolute;
-      top: 0;
-      right: 0;
-      a{
-        font-size: 10px;
-      }
-    }
-
-    li{
-      display: inline-block;
+   .brand{
       float: left;
-      a{
-        display: block;
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        color: rgba(0, 0, 0, 0.6);
-        padding: 20px 40px;
-        font-size: 12px;
-        float: left;
-        letter-spacing: 1px;
+      font-weight: bold;
+      line-height: 56px;
+      font-size: 20px;
+      color: $base-color;
+   }
 
-        @media(max-width: 991px){
-          width: 100%;
-          text-align: left;
-        }
+   .links{
+      float: right;
+      margin: 0;
+      padding: 0;
+      display: block;
+
+      &.auth{
+         position: absolute;
+         top: 0;
+         right: 0;
+         a{
+            font-size: 10px;
+         }
       }
 
-      span{
-        font-size: 20px;
-        position: absolute;
-        left: 13px;
-        top: 0;
-        height: 100%;
-        line-height: 3.1;
-        color: rgba(0, 0, 0, 0.4);
+      li{
+         display: inline-block;
+         float: left;
+         a{
+            display: block;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.6);
+            padding: 20px 40px;
+            font-size: 12px;
+            float: left;
+            letter-spacing: 1px;
+
+            @media(max-width: 991px){
+               width: 100%;
+               text-align: left;
+            }
+         }
+
+         span{
+            font-size: 20px;
+            position: absolute;
+            left: 13px;
+            top: 0;
+            height: 100%;
+            line-height: 3.1;
+            color: rgba(0, 0, 0, 0.4);
+         }
+
+         &.active{
+            a{
+               cursor: default;
+               color: #000000;
+               font-weight: bold;
+
+               span{
+                  color: $base-color;
+               }
+            }
+         }
+
+         /*tablet*/
+         @media (max-width: 991px){
+            display: block;
+            float: left;
+            width: 100%;
+         }
       }
+   }
+   @include transition(all 400ms ease);
+   &.open{
+      @include transforms(translate(0, 0));
+   }
 
-      &.active{
-        a{
-          cursor: default;
-          color: #000000;
-          font-weight: bold;
+   @media (max-width: 991px){
+      height: 100%;
+      width: 40%;
+      @include transforms(translate(-100%, 0));
 
-          span{
-            color: $base-color;
-          }
-        }
+      .container{
+         width: auto;
       }
+   }
 
-      /*tablet*/
-      @media (max-width: 991px){
-        display: block;
-        float: left;
-        width: 100%;
-      }
-    }
-  }
-  @include transition(all 400ms ease);
-  &.open{
-    @include transforms(translate(0, 0));
-  }
-
-  @media (max-width: 991px){
-    height: 100%;
-    width: 40%;
-    @include transforms(translate(-100%, 0));
-
-    .container{
-      width: auto;
-    }
-  }
-
-  @media (max-width: 767px){
-    width: 50%;
-  }
-  @media (max-width: 480px){
-    width: 90%;
-  }
+   @media (max-width: 767px){
+      width: 50%;
+   }
+   @media (max-width: 480px){
+      width: 90%;
+   }
 }
 
 .navigation-underlay{
-  top: 0; right: 0;
-  z-index: 1100;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  @include transforms(translate(100%, 0));
+   top: 0; right: 0;
+   z-index: 1100;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   @include transforms(translate(100%, 0));
 
-  &:hover{
-    cursor: pointer;
-  }
-  &.open{
-    @include transforms(translate(0%, 0));
-  }
+   &:hover{
+      cursor: pointer;
+   }
+   &.open{
+      @include transforms(translate(0%, 0));
+   }
 
-  @media (min-width: 992px){
-    &.open{
-      @include transforms(translate(100%, 0));
-    }
-  }
+   @media (min-width: 992px){
+      &.open{
+         @include transforms(translate(100%, 0));
+      }
+   }
 }
 
 .navigation-button{
-  padding: 10px;
-  z-index: 2000;
-  top: 15px; right: 15px;
-  position: fixed;
-  border: none;
-  background-color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  &:hover{
-    background-color: #f0f0f0;
-  }
+   padding: 10px;
+   z-index: 2000;
+   top: 15px; right: 15px;
+   position: fixed;
+   border: none;
+   background-color: #ffffff;
+   font-size: 16px;
+   font-weight: bold;
+   &:hover{
+      background-color: #f0f0f0;
+   }
 
-  @media (min-width: 992px){
-    display: none;
-  }
-  @media (max-width: 480px){
-    right: auto;
-    top: 10px;
-    left: 15px;
-  }
+   @media (min-width: 992px){
+      display: none;
+   }
+   @media (max-width: 480px){
+      right: auto;
+      top: 10px;
+      left: 15px;
+   }
 }

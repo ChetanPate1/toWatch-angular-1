@@ -1,86 +1,86 @@
 .show-card{
-  overflow: hidden;
-  position: relative;
-  display: block;
-  margin: 0 auto 25px auto;
-  max-width: 250px;
-  height: 369px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  padding: 20px 15px 0 15px;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  @include box-shadow(inset 0 130px 130px rgba(0, 0, 0, 0.2));
+   overflow: hidden;
+   position: relative;
+   display: block;
+   margin: 0 auto 25px auto;
+   max-width: 250px;
+   height: 369px;
+   background-color: #f8f8f8;
+   border-radius: 8px;
+   padding: 20px 15px 0 15px;
+   background-position: center center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   @include box-shadow(inset 0 130px 130px rgba(0, 0, 0, 0.2));
 
-  h2{
-    font-size: 25px;
-    letter-spacing: 1px;
-    z-index: 10;
-    font-weight: bold;
-    position: relative;
-    color: #ffffff;
-  }
-
-  .delete-button{
-    z-index: 100;
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 15px;
-    width: 90%;
-    margin: auto;
-
-    &.red{
-      background-color: $danger-color;
+   h2{
+      font-size: 25px;
+      letter-spacing: 1px;
+      z-index: 10;
+      font-weight: bold;
+      position: relative;
       color: #ffffff;
-    }
+   }
 
-    @include transforms(translate(0, 100px));
-  }
+   .delete-button{
+      z-index: 100;
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 15px;
+      width: 90%;
+      margin: auto;
 
-  &.deleteable{
-    &:focus, &:hover{
-      .delete-button{
-        @include transforms(translate(0, 0));
+      &.red{
+         background-color: $danger-color;
+         color: #ffffff;
       }
-    }
-  }
+
+      @include transforms(translate(0, 100px));
+   }
+
+   &.deleteable{
+      &:focus, &:hover{
+         .delete-button{
+            @include transforms(translate(0, 0));
+         }
+      }
+   }
 }
 
 .show-card{
-  overflow: hidden;
+   overflow: hidden;
 
-  .shutter-delete{
-    z-index: 500;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    opacity: 0;
-
-    h2{
-      text-align: center;
-      width: 100%;
+   .shutter-delete{
+      z-index: 500;
       position: absolute;
-      top: 100px;
+      top: 0;
       left: 0;
-    }
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      opacity: 0;
 
-    .button{
-      margin: 210px auto 0 auto;
-      display: block;
-      max-width: 100px;
-    }
+      h2{
+         text-align: center;
+         width: 100%;
+         position: absolute;
+         top: 100px;
+         left: 0;
+      }
 
-    @include transforms(translate(0, -115%));
-    @include transition(all 300ms ease);
+      .button{
+         margin: 210px auto 0 auto;
+         display: block;
+         max-width: 100px;
+      }
 
-    &.open{
-      @include transforms(translate(0, 0));
-      opacity: 1;
-    }
-  }
+      @include transforms(translate(0, -115%));
+      @include transition(all 300ms ease);
+
+      &.open{
+         @include transforms(translate(0, 0));
+         opacity: 1;
+      }
+   }
 }

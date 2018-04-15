@@ -1,16 +1,22 @@
 .show-layout{
-  @media(max-width: 1200px){
-    .col-sm-3{
-      padding: 0;
-    }
-
-    .show-card{
-      margin: auto;
-      border-radius: 0;
-
-      h2{
-        font-size: 20px;
+   @media(max-width: 1200px){
+      .col-sm-3{
+         padding: 0;
       }
-    }
-  }
+
+      .show-card{
+         margin: auto;
+         border-radius: 0;
+
+         h2{
+            font-size: 20px;
+         }
+      }
+   }
+}
+
+.container{
+   &.container-lg{
+      width: 1400px;
+   }
 }
