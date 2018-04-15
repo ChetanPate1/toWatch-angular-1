@@ -903,9 +903,9 @@ h1 {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3);
-  -ms-box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3); }
+  -webkit-box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3), 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3), 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 150px 150px rgba(0, 0, 0, 0.3), 0 20px 40px -10px rgba(0, 0, 0, 0.5); }
   .watchlist-card h2 {
     font-size: 35px;
     letter-spacing: 1px;
@@ -1085,9 +1085,9 @@ h1 {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2); }
+  -webkit-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2), 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2), 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2), 0 20px 40px -10px rgba(0, 0, 0, 0.5); }
   .rewatch-card h2 {
     font-size: 35px;
     letter-spacing: 1px;
@@ -1180,9 +1180,9 @@ h1 {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2); }
+  -webkit-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2), 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2), 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 130px 130px rgba(0, 0, 0, 0.2), 0 20px 40px -10px rgba(0, 0, 0, 0.5); }
   .show-card h2 {
     font-size: 25px;
     letter-spacing: 1px;

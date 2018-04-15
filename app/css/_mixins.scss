@@ -45,10 +45,10 @@
    perspective-origin: $x $y;
 }
 
-@mixin box-shadow($box-shadow){
-   -webkit-box-shadow: $box-shadow;
-   -ms-box-shadow: $box-shadow;
-   box-shadow: $box-shadow;
+@mixin box-shadow($args...){
+      -webkit-box-shadow: $args;
+      -ms-box-shadow: $args;
+      box-shadow: $args;
 }
 
 @mixin filter($function){
