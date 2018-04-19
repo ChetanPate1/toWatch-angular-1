@@ -649,13 +649,8 @@ h1 {
   content: "\e069"; }
 
 @media (max-width: 1200px) {
-  .show-layout .col-sm-3 {
-    padding: 0; }
-  .show-layout .show-card {
-    margin: auto;
-    border-radius: 0; }
-    .show-layout .show-card h2 {
-      font-size: 20px; } }
+  .show-layout .show-card h2 {
+    font-size: 20px; } }
 
 .container.container-lg {
   width: 1400px; }

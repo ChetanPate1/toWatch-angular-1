@@ -69,8 +69,13 @@ function countdownTimer($interval, helperFunctions) {
          return prettifiedTime;
       }
 
-      $interval(function() {
-         scope.counter = prettifyTime( delta(inSeconds.future, inSeconds.now()) );
+      var interval = $interval(function() {
+         if(angular.isDefined(scope.to)){
+            scope.counter = prettifyTime( delta(inSeconds.future, inSeconds.now()) );
+         }else{
+            $interval.cancel(interval);
+            scope.counter = prettifyTime([0, 0, 0, 0]);
+         }
       }, 1000);
    }
 
