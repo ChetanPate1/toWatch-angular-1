@@ -50,8 +50,7 @@ function seasonInfo(helperFunctions) {
       function save(rewatchobj, index, rewatch, episodeNumber) {
          var airDate = parseInt(rewatch.airDate);
          var onEp = parseInt(rewatchobj[index].on.episode);
-         var valid = episodeNumber === onEp || episodeNumber === (onEp - 1) && (scope.tabActive).toString() == rewatchobj[index].on.season;
-
+         var valid = episodeNumber === onEp || episodeNumber === (onEp - 1) && scope.tabActive == rewatchobj[index].on.season;
 
          if( Math.abs(airDate - now)/1000 < 0 || !valid){
             return;
@@ -85,13 +84,13 @@ function seasonInfo(helperFunctions) {
             }
          }
 
-         rewatchobj[index].on.episode = (watched + 1).toString();
-         rewatchobj[index].on.season = season.toString();
+         rewatchobj[index].on.episode = watched + 1;
+         rewatchobj[index].on.season = season;
       }
 
       function limitLength(string, limit) {
          if (string.length > limit) {
-            return string.substring(0 ,limit) + '...';
+            return string.substring(0, limit) + '...';
          }else {
             return string;
          }

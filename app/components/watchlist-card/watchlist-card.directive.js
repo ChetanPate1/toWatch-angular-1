@@ -53,7 +53,7 @@ function watchlistCard(helperFunctions, seriesInitService) {
       function save(watchlistobj, index, seasoninfo, watchlist, episodeNumber) {
          var airDate = parseInt(watchlist.airDate);
          var on = parseInt(watchlistobj[index].on.episode);
-         var isCurrentTab = (scope.tabActive).toString() == watchlistobj[index].on.season;
+         var isCurrentTab = scope.tabActive == watchlistobj[index].on.season;
          var isOneLessOneMore = episodeNumber == on || episodeNumber == on - 1 && isCurrentTab;
 
          if(airDate - now > 0 || !isOneLessOneMore){

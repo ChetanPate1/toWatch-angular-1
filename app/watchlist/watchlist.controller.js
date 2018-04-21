@@ -90,7 +90,7 @@ function WatchlistController(currentAuth, firebaseArray, $timeout, helperFunctio
          return false;
       }
    }
-   
+
    function showToast(content, action) {
       vm.toast.content = content;
       vm.toast.action = action;

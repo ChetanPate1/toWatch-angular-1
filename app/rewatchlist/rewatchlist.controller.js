@@ -29,8 +29,8 @@ function RewatchlistController(currentAuth, firebaseArray, $timeout, helperFunct
       var list = {
          showId: vm.seriesRef,
          on: {
-            season: '1',
-            episode: '1'
+            season: 1,
+            episode: 1
          },
          show: seriesInitService.initRewatchlist(vm.seriesRef, vm.shows)
       };
