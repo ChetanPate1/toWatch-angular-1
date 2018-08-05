@@ -1,4 +1,4 @@
 # toWatch
 Tracks shows and air dates
 
-[toWatch](https://chetanpate1.github.io/toWatch)
+[toWatch npw with vuejs + vuex](https://chetanpate1.github.io/toWatch)
